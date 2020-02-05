@@ -12,7 +12,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import nl.fh.group.test.CyclicTest;
+import nl.fh.group.test.*;
 
 /**
  *
@@ -21,7 +21,8 @@ import nl.fh.group.test.CyclicTest;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
     TestTheTest.class,
-    CyclicTest.class
+    CyclicTest.class,
+    SubstitutionsTest.class
 }
 
 )
