@@ -77,7 +77,16 @@ public class SubstitutionGroupFactory implements GroupFactory{
                 tab.table[i][j] = elements.indexOf(sij);
             }
         }
-         return tab;
+        
+        // overwrite the unit element with a visible string
+        elements.set(0, "1");
+        tab.format = elements;
+        
+        // to detect issues early on, check the group properties here
+        if(!tab.checkDefinition()){
+            throw new RuntimeException("group ill defined by " + this.getClass().getCanonicalName());
+        }
+        return tab;
     }
 
     /**

@@ -5,6 +5,8 @@
  */
 package nl.fh.group;
 
+import java.util.List;
+
 /**
  *
  * @author frank
@@ -18,6 +20,7 @@ public class GroupTable {
     int order;
     int unit;
     int[][] table;
+    List<String> format;
     
     /**
      * @return  the order of the group 
@@ -87,5 +90,27 @@ public class GroupTable {
             }
         }
         return true;
+    }
+
+    public int multiply(int i, int j) {
+        if( i < 0 || i >= this.order){
+            throw new IllegalArgumentException();
+        }
+        if( j < 0 || j >= this.order){
+            throw new IllegalArgumentException();
+        }
+        return table[i][j];
+    }
+
+    /**
+     * 
+     * @param i
+     * @return  the string representation of the i-th group element
+     */
+    public String getString(int i) {
+        if( i < 0 || i >= this.order){
+            throw new IllegalArgumentException();
+        }
+        return this.format.get(i);
     }
 }
