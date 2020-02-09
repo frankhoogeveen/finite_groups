@@ -13,12 +13,15 @@ import nl.fh.group.Multiplicator;
  */
 public class CyclicMultiplicator implements Multiplicator<CyclicElement> {
 
-    public CyclicMultiplicator() {
+    private final int order;
+
+    public CyclicMultiplicator(int order) {
+        this.order = order;
     }
 
     @Override
     public CyclicElement getProduct(CyclicElement factor1, CyclicElement factor2){
-        if(factor1.order != factor2.order){
+        if((factor1.order != this.order) || (factor2.order != this.order)){
             throw new IllegalArgumentException();
         }
         

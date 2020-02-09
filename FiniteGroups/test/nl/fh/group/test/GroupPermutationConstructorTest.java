@@ -5,8 +5,8 @@
  */
 package nl.fh.group.test;
 
-import nl.fh.group_cyclic.CyclicMultiplicator;
-import nl.fh.group_cyclic.CyclicElement;
+import nl.fh.group_permutation.PermutationMultiplicator;
+import nl.fh.group_permutation.PermutationElement;
 import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Element;
@@ -23,22 +23,22 @@ import org.junit.Test;
  *
  * @author frank
  */
-public class GroupCyclicConstructorTest {
-    
+public class GroupPermutationConstructorTest {
     @Test
-    public void Cyclic7Test(){
+    public void S4Test(){
         Set<Element> generators = new HashSet<Element>();
-        generators.add(CyclicElement.generatorOfOrder(11));
+        generators.add(new PermutationElement(new int[]{1,0,2,3}));
+        generators.add(new PermutationElement(new int[]{1,2,3,0}));
         
-        Multiplicator multiplication = new CyclicMultiplicator(11);
+        Multiplicator multiplication = new PermutationMultiplicator(4);
         
-        String name = "C11";
+        String name = "S4";
         
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
             GroupInfoTable info = definition.constructInfoTable();
-            assertEquals(11, info.getOrder());
+            assertEquals(24, info.getOrder());
             
             InfoTableChecker check = new InfoTableChecker();
             assertTrue(check.isGroup(info));
@@ -48,19 +48,20 @@ public class GroupCyclicConstructorTest {
     }
     
     @Test
-    public void TrivialTest(){
+    public void A4Test(){
         Set<Element> generators = new HashSet<Element>();
-        generators.add(CyclicElement.generatorOfOrder(1));
+        generators.add(new PermutationElement(new int[]{1,0,3,2}));
+        generators.add(new PermutationElement(new int[]{0,2,3,1}));
         
-        Multiplicator multiplication = new CyclicMultiplicator(1);
+        Multiplicator multiplication = new PermutationMultiplicator(4);
         
-        String name = "C1";
+        String name = "A4";
         
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
             GroupInfoTable info = definition.constructInfoTable();
-            assertEquals(1, info.getOrder());
+            assertEquals(12, info.getOrder());
             
             InfoTableChecker check = new InfoTableChecker();
             assertTrue(check.isGroup(info));

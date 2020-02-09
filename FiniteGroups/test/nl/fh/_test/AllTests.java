@@ -22,7 +22,9 @@ import nl.fh.group.test.*;
 @Suite.SuiteClasses({
     TestTheTest.class,
     GroupSubstitutionConstructorTest.class,
-    GroupCyclicConstructorTest.class
+    GroupCyclicConstructorTest.class,
+    GroupProductConstructorTest.class,
+    GroupPermutationConstructorTest.class
 }
 
 )
