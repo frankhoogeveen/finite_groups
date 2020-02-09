@@ -8,10 +8,10 @@ package nl.fh.group.test;
 import nl.fh.group.GroupInfoConstructionException;
 import nl.fh.group.GroupDefinition;
 import nl.fh.group.GroupInfoTable;
-import nl.fh.free_group.StringSubstitution;
+import nl.fh.group_substitutions.StringSubstitution;
 import nl.fh.group.Element;
-import nl.fh.free_group.StringElement;
-import nl.fh.free_group.StringMultiplicator;
+import nl.fh.group_substitutions.StringElement;
+import nl.fh.group_substitutions.StringMultiplicator;
 import java.util.HashSet;
 import java.util.Set;
 import nl.fh.info_table_checker.InfoTableChecker;
@@ -23,7 +23,7 @@ import org.junit.Test;
  *
  * @author frank
  */
-public class GroupConstructorTest {
+public class GroupSubstitutionConstructorTest {
     @Test
     public void Cyclic3Test(){
         Set<Element> generators = new HashSet<Element>();

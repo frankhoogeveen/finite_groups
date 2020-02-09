@@ -21,9 +21,7 @@ import nl.fh.group.test.*;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
     TestTheTest.class,
-    CyclicTest.class,
-    SubstitutionsTest.class,
-    GroupConstructorTest.class
+    GroupSubstitutionConstructorTest.class
 }
 
 )

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.free_group;
+package nl.fh.group_substitutions;
 
 import java.util.Objects;
 import nl.fh.group.Element;

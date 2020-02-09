@@ -11,8 +11,8 @@ package nl.fh.info_table_checker;
  */
 class InfoTableException extends Exception{
 
-    InfoTableException(String non_positive_order) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    InfoTableException(String message) {
+        super(message);
     }
     
 }
