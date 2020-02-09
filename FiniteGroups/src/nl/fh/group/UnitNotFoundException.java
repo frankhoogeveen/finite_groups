@@ -9,9 +9,10 @@ package nl.fh.group;
  *
  * @author frank
  */
-@Deprecated
-public interface GroupFactory {
+public class UnitNotFoundException extends GroupInfoConstructionException {
 
-    public GroupTable createTable();
+    public UnitNotFoundException(String message) {
+        super(message);
+    }
     
 }

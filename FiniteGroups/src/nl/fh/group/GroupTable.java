@@ -16,6 +16,7 @@ import java.util.List;
  * 
  * 
  */
+@Deprecated
 public class GroupTable {
     int order;
     int unit;

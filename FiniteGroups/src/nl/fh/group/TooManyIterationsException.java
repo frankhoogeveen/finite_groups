@@ -9,9 +9,9 @@ package nl.fh.group;
  *
  * @author frank
  */
-@Deprecated
-public interface GroupFactory {
+public class TooManyIterationsException extends GroupInfoConstructionException {
 
-    public GroupTable createTable();
-    
+    public TooManyIterationsException(String message) {
+        super(message);
+    }
 }

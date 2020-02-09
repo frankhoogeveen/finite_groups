@@ -9,9 +9,9 @@ package nl.fh.group;
  *
  * @author frank
  */
-@Deprecated
-public interface GroupFactory {
-
-    public GroupTable createTable();
+public class GroupInfoConstructionException extends Exception{
     
+    public GroupInfoConstructionException(String message) {
+        super(message);
+    }
 }

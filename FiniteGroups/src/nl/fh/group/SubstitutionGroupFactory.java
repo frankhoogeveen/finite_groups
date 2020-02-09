@@ -16,6 +16,7 @@ import java.util.Set;
  *
  * @author frank
  */
+@Deprecated
 public class SubstitutionGroupFactory implements GroupFactory{
 
     private Set<String> gen = new HashSet<String>();

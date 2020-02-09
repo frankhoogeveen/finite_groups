@@ -7,11 +7,10 @@ package nl.fh.group;
 
 /**
  *
+ *  Interface shared by all types of group elements
+ * 
  * @author frank
  */
-@Deprecated
-public interface GroupFactory {
-
-    public GroupTable createTable();
+public interface Element {
     
 }
