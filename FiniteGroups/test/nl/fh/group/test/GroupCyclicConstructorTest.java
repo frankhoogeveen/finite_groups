@@ -28,17 +28,39 @@ public class GroupCyclicConstructorTest {
     @Test
     public void Cyclic7Test(){
         Set<Element> generators = new HashSet<Element>();
-        generators.add(CyclicElement.generatorOfOrder(7));
+        generators.add(CyclicElement.generatorOfOrder(11));
         
         Multiplicator multiplication = new CyclicMultiplicator();
         
-        String name = "C7";
+        String name = "C11";
         
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
             GroupInfoTable info = definition.constructInfoTable();
-            assertEquals(7, info.getOrder());
+            assertEquals(11, info.getOrder());
+            
+            InfoTableChecker check = new InfoTableChecker();
+            assertTrue(check.isGroup(info));
+        } catch (GroupInfoConstructionException ex) {
+            assertTrue(false);
+        }
+    }
+    
+    @Test
+    public void TrivialTest(){
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(CyclicElement.generatorOfOrder(1));
+        
+        Multiplicator multiplication = new CyclicMultiplicator();
+        
+        String name = "C1";
+        
+        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        
+        try {
+            GroupInfoTable info = definition.constructInfoTable();
+            assertEquals(1, info.getOrder());
             
             InfoTableChecker check = new InfoTableChecker();
             assertTrue(check.isGroup(info));
