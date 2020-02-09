@@ -1,0 +1,33 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package nl.fh.group_cyclic;
+
+import nl.fh.group.Multiplicator;
+
+/**
+ *
+ * @author frank
+ */
+public class CyclicMultiplicator implements Multiplicator<CyclicElement> {
+
+    public CyclicMultiplicator() {
+    }
+
+    @Override
+    public CyclicElement getProduct(CyclicElement factor1, CyclicElement factor2){
+        if(factor1.order != factor2.order){
+            throw new IllegalArgumentException();
+        }
+        
+        CyclicElement result = new CyclicElement();
+        result.order = factor1.order;
+        result.number = (factor1.number + factor2.number) % result.order;
+        
+        return result;
+    }
+
+    
+}
