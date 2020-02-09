@@ -73,6 +73,8 @@ public class GroupDefinition {
     private GroupInfoTable createTable(Set<Element> elements) throws GroupInfoConstructionException{
         GroupInfoTable info = new GroupInfoTable();
         
+        info.definition = this;
+        
         info.groupElements = new ArrayList<Element>(elements);
         info.order = info.groupElements.size();
             info.multiplicationTable = fillMultiplicationTable(elements);

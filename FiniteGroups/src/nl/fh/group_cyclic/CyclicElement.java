@@ -34,7 +34,13 @@ public class CyclicElement implements Element {
         }
         
         CyclicElement result = new CyclicElement();
-        result.number = 1;
+        
+        if(order == 1){
+            result.number = 0;
+        } else {
+            result.number = 1;
+        }
+        
         result.order = order;
         
         return result;
