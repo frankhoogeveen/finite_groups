@@ -3,16 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.group;
+package nl.fh.group_substitutions;
+
+import nl.fh.group.GroupInfoConstructionException;
 
 /**
  *
  * @author frank
  */
-public class UnitNotFoundException extends GroupInfoConstructionException {
+class TooManyIterationsException extends GroupInfoConstructionException {
 
-    public UnitNotFoundException(String message) {
+    public TooManyIterationsException(String message) {
         super(message);
     }
-    
 }

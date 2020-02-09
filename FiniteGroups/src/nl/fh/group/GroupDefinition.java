@@ -52,7 +52,7 @@ public class GroupDefinition {
               sb.append(Integer.toString(MAX_ITERATIONS));
               sb.append(" iterations when looking for elements");
               
-              throw new TooManyIterationsException(sb.toString());
+              throw new GroupInfoConstructionException(sb.toString());
           }
         
           startSize = currentElements.size();
@@ -82,7 +82,7 @@ public class GroupDefinition {
         return info;
     }
 
-    private int findUnit(GroupInfoTable info) throws UnitNotFoundException {
+    private int findUnit(GroupInfoTable info) throws GroupInfoConstructionException {
         for(int i = 0; i < info.order; i++){
             boolean isUnit = true;
             for(int j = 0; j < info.order; j++){
@@ -95,7 +95,7 @@ public class GroupDefinition {
             }
         }
         
-        throw new UnitNotFoundException("Unit not found " + info.definition.name);
+        throw new GroupInfoConstructionException("Unit not found " + info.definition.name);
     }
 
     /**

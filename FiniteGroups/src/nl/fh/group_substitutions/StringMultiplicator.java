@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 import nl.fh.group.Element;
 import nl.fh.group.Multiplicator;
-import nl.fh.group.TooManyIterationsException;
 
 /**
  *
