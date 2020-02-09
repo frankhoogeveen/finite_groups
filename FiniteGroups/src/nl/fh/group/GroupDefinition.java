@@ -18,7 +18,7 @@ public class GroupDefinition {
 
     private final String name;
     private final Set<Element> generators;
-    private final Multiplicator multiplication;
+    private final Multiplicator multiplicator;
     private final int MAX_ITERATIONS = 10000;
 
     /**
@@ -31,7 +31,7 @@ public class GroupDefinition {
     public GroupDefinition(String name, Set<Element> generators, Multiplicator multiplication) {
         this.name = name;
         this.generators = generators;
-        this.multiplication = multiplication;
+        this.multiplicator = multiplication;
     }
 
     public GroupInfoTable constructInfoTable() throws GroupInfoConstructionException{
@@ -39,7 +39,7 @@ public class GroupDefinition {
         return createTable(elements);
     }   
 
-    private Set<Element> findAllElements() throws TooManyIterationsException {
+    private Set<Element> findAllElements() throws GroupInfoConstructionException {
         Set<Element> currentElements = new HashSet<Element>(generators);
         int startSize;
         int iterations = 0;
@@ -60,7 +60,7 @@ public class GroupDefinition {
           
           for(Element g1 : currentElements){
               for(Element g2 : currentElements){
-                  products.add(this.multiplication.getProduct(g1, g2));
+                  products.add(this.multiplicator.getProduct(g1, g2));
               }
           }
           
@@ -102,7 +102,7 @@ public class GroupDefinition {
      *
      * @param elements the set of all elements of the group
      */
-    private int[][] fillMultiplicationTable(Set<Element> elements) throws TooManyIterationsException {
+    private int[][] fillMultiplicationTable(Set<Element> elements) throws GroupInfoConstructionException {
         List<Element> elementList = new ArrayList(elements);
         
         int[][] result = new int[elements.size()][];
@@ -111,10 +111,22 @@ public class GroupDefinition {
             for(int i2 = 0; i2 < elements.size(); i2++){
                 Element g1 = elementList.get(i1);
                 Element g2 = elementList.get(i2);
-                Element g3 = this.multiplication.getProduct(g1,g2);
+                Element g3 = this.multiplicator.getProduct(g1,g2);
                 result[i1][i2] = elementList.indexOf(g3);
             }
         }
         return result;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public Set<Element> getGenerators() {
+        return generators;
+    }
+
+    public Multiplicator getMultiplicator() {
+        return multiplicator;
     }
 }

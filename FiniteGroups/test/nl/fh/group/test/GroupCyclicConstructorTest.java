@@ -26,7 +26,7 @@ import org.junit.Test;
 public class GroupCyclicConstructorTest {
     
     @Test
-    public void Cyclic7Test(){
+    public void Cyclic11Test(){
         Set<Element> generators = new HashSet<Element>();
         generators.add(CyclicElement.generatorOfOrder(11));
         

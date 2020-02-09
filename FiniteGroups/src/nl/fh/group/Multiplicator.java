@@ -20,5 +20,11 @@ public interface Multiplicator<E extends Element> {
      * 
      * @return factor1 * factor2 
      */
-    E getProduct(E factor1, E factor2) throws TooManyIterationsException;
+    E getProduct(E factor1, E factor2) throws GroupInfoConstructionException;
+
+    /**
+     * 
+     * @return  the unit element of this multiplicator
+     */
+    public Element getUnit();
 }

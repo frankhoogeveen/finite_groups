@@ -5,6 +5,7 @@
  */
 package nl.fh.group_permutation;
 
+import nl.fh.group.Element;
 import nl.fh.group.Multiplicator;
 
 /**
@@ -13,12 +14,26 @@ import nl.fh.group.Multiplicator;
  */
 public class PermutationMultiplicator implements Multiplicator<PermutationElement> {
 
+    private static PermutationElement unit;
+    private int degree;
+
     public PermutationMultiplicator(int degree) {
+        if(degree < 1){
+            throw new IllegalArgumentException();
+        }
+        
+        this.degree = degree;
+        
+        int[] unitPermutation = new int[degree];
+        for(int i = 0; i < degree; i++){
+            unitPermutation[i] = i;
+        }
+        this.unit = new PermutationElement(unitPermutation);
     }
 
     @Override
     public PermutationElement getProduct(PermutationElement e1, PermutationElement e2)  {
-        if(e1.permutation.length != e2.permutation.length){
+        if((e1.permutation.length != this.degree) ||(e1.permutation.length != this.degree)) {
             throw new IllegalArgumentException();
         }
         
@@ -28,6 +43,11 @@ public class PermutationMultiplicator implements Multiplicator<PermutationElemen
             result[i] = e1.permutation[e2.permutation[i]];
         }
         return new PermutationElement(result);
+    }
+
+    @Override
+    public Element getUnit() {
+        return PermutationMultiplicator.unit;
     }
     
 }

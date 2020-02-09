@@ -7,6 +7,7 @@ package nl.fh.group_substitutions;
 
 import java.util.HashMap;
 import java.util.Map;
+import nl.fh.group.Element;
 import nl.fh.group.Multiplicator;
 import nl.fh.group.TooManyIterationsException;
 
@@ -20,6 +21,7 @@ public class StringMultiplicator implements Multiplicator<StringElement> {
     
     private final Map<String, String> substitutions = new HashMap<String, String>();
     private final int MAX_ITERATIONS = 10000;
+    private static Element unit = new StringElement("");
     
     public void addSubstitution(StringSubstitution substitution) {
          this.substitutions.put(substitution.getFrom(), substitution.getTo());
@@ -48,5 +50,10 @@ public class StringMultiplicator implements Multiplicator<StringElement> {
             result = result.replace(key, this.substitutions.get(key));
         }
         return result;
+    }
+
+    @Override
+    public Element getUnit() {
+        return StringMultiplicator.unit;
     }
 }

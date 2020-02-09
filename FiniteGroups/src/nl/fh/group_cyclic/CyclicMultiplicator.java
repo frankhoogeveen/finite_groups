@@ -5,6 +5,7 @@
  */
 package nl.fh.group_cyclic;
 
+import nl.fh.group.Element;
 import nl.fh.group.Multiplicator;
 
 /**
@@ -14,9 +15,14 @@ import nl.fh.group.Multiplicator;
 public class CyclicMultiplicator implements Multiplicator<CyclicElement> {
 
     private final int order;
+    private CyclicElement unit;
 
     public CyclicMultiplicator(int order) {
         this.order = order;
+        
+        this.unit = new CyclicElement();
+        this.unit.order = order;
+        this.unit.number = 0;
     }
 
     @Override
@@ -30,6 +36,11 @@ public class CyclicMultiplicator implements Multiplicator<CyclicElement> {
         result.number = (factor1.number + factor2.number) % result.order;
         
         return result;
+    }
+
+    @Override
+    public Element getUnit() {
+        return this.unit;
     }
 
     
