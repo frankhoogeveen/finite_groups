@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.info_table_checker;
+package nl.fh.group_info_table_checker;
 
-import nl.fh.group.GroupInfoTable;
+import nl.fh.group_info.GroupInfoConstructionException;
+import nl.fh.group_info.GroupInfoTable;
 
 /**
  *
@@ -13,7 +14,7 @@ import nl.fh.group.GroupInfoTable;
  */
 public class InfoTableChecker {
     
-    public boolean isGroup(GroupInfoTable info){
+    public boolean isGroup(GroupInfoTable info) throws GroupInfoConstructionException{
         int order = info.getOrder();
         try{
             checkOrder(info);
@@ -27,13 +28,13 @@ public class InfoTableChecker {
         return true;
     }
 
-    private void checkOrder(GroupInfoTable info) throws InfoTableException {
+    private void checkOrder(GroupInfoTable info) throws InfoTableException, GroupInfoConstructionException {
         if(info.getOrder() < 1){
             throw new InfoTableException("Non positive order");
         }
     }
 
-    private void checkClosed(GroupInfoTable info) throws InfoTableException {
+    private void checkClosed(GroupInfoTable info) throws InfoTableException, GroupInfoConstructionException {
         int n = info.getOrder();
         for(int i1 = 0; i1<n; i1++){
             for(int i2 = 0; i2<n; i2++){
@@ -48,7 +49,7 @@ public class InfoTableChecker {
         }
     }
 
-    private void checkNeutralElement(GroupInfoTable info) throws InfoTableException {
+    private void checkNeutralElement(GroupInfoTable info) throws InfoTableException, GroupInfoConstructionException {
         int u = info.getUnit();
         for(int i = 0; i<info.getOrder(); i++){
             if((info.multiply(u, i) != i) || (info.multiply(i, u) != i)){
@@ -57,13 +58,13 @@ public class InfoTableChecker {
         }
     }
 
-    private void checkInverses(GroupInfoTable info) throws InfoTableException {
+    private void checkInverses(GroupInfoTable info) throws InfoTableException, GroupInfoConstructionException {
         for(int i = 0; i < info.getOrder(); i++){
             checkHasInverse(i, info);
         }
     }
     
-    private void checkHasInverse(int i, GroupInfoTable info) throws InfoTableException {
+    private void checkHasInverse(int i, GroupInfoTable info) throws InfoTableException, GroupInfoConstructionException {
         for(int j = 0; j < info.getOrder(); j++){
             if((info.multiply(i, j) == info.getUnit()) && (info.multiply(j, i) == info.getUnit())){
                 return;
@@ -72,7 +73,7 @@ public class InfoTableChecker {
         throw new InfoTableException("Inverses do not exist for every element " + Integer.toString(i));
     }
 
-    private void checkAssociativity(GroupInfoTable info) throws InfoTableException {
+    private void checkAssociativity(GroupInfoTable info) throws InfoTableException, GroupInfoConstructionException {
         for(int i1 = 0; i1 < info.getOrder(); i1++){
             for(int i2 = 0; i2 < info.getOrder(); i2++){
                 for(int i3 = 0; i3 < info.getOrder(); i3++){

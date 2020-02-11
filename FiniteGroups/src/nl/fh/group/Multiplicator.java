@@ -5,6 +5,8 @@
  */
 package nl.fh.group;
 
+import nl.fh.group_info.GroupInfoConstructionException;
+
 /**
  *
  * @author frank

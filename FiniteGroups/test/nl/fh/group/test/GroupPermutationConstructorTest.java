@@ -5,16 +5,16 @@
  */
 package nl.fh.group.test;
 
-import nl.fh.group_permutation.PermutationMultiplicator;
-import nl.fh.group_permutation.PermutationElement;
+import nl.fh.group_def_permutation.PermutationMultiplicator;
+import nl.fh.group_def_permutation.PermutationElement;
 import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group.GroupInfoConstructionException;
-import nl.fh.group.GroupInfoTable;
+import nl.fh.group_info.GroupInfoConstructionException;
+import nl.fh.group_info.GroupInfoTable;
 import nl.fh.group.Multiplicator;
-import nl.fh.info_table_checker.InfoTableChecker;
+import nl.fh.group_info_table_checker.InfoTableChecker;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -37,7 +37,7 @@ public class GroupPermutationConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            GroupInfoTable info = definition.constructInfoTable();
+            GroupInfoTable info = new GroupInfoTable(definition);
             assertEquals(24, info.getOrder());
             
             InfoTableChecker check = new InfoTableChecker();
@@ -60,7 +60,7 @@ public class GroupPermutationConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            GroupInfoTable info = definition.constructInfoTable();
+            GroupInfoTable info = new GroupInfoTable(definition);
             assertEquals(12, info.getOrder());
             
             InfoTableChecker check = new InfoTableChecker();

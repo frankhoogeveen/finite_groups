@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.group_permutation;
+package nl.fh.group_def_permutation;
 
 import java.util.Arrays;
 import nl.fh.group.Element;

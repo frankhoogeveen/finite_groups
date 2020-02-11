@@ -5,10 +5,7 @@
  */
 package nl.fh.group;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.Collection;
 
 /**
  *
@@ -17,9 +14,8 @@ import java.util.Set;
 public class GroupDefinition {
 
     private final String name;
-    private final Set<Element> generators;
+    private final Collection<Element> generators;
     private final Multiplicator multiplicator;
-    private final int MAX_ITERATIONS = 10000;
 
     /**
      * abstractly defines a group
@@ -28,101 +24,17 @@ public class GroupDefinition {
      * @param generators
      * @param multiplication 
      */
-    public GroupDefinition(String name, Set<Element> generators, Multiplicator multiplication) {
+    public GroupDefinition(String name, Collection<Element> generators, Multiplicator multiplication) {
         this.name = name;
         this.generators = generators;
         this.multiplicator = multiplication;
-    }
-
-    public GroupInfoTable constructInfoTable() throws GroupInfoConstructionException{
-        Set<Element> elements = findAllElements();
-        return createTable(elements);
-    }   
-
-    private Set<Element> findAllElements() throws GroupInfoConstructionException {
-        Set<Element> currentElements = new HashSet<Element>(generators);
-        int startSize;
-        int iterations = 0;
-        
-        do{
-          if(iterations > MAX_ITERATIONS){
-              StringBuilder sb = new StringBuilder();
-              sb.append(this.getClass().getCanonicalName());
-              sb.append(" hit ");
-              sb.append(Integer.toString(MAX_ITERATIONS));
-              sb.append(" iterations when looking for elements");
-              
-              throw new GroupInfoConstructionException(sb.toString());
-          }
-        
-          startSize = currentElements.size();
-          Set<Element> products = new HashSet<Element>();
-          
-          for(Element g1 : currentElements){
-              for(Element g2 : currentElements){
-                  products.add(this.multiplicator.getProduct(g1, g2));
-              }
-          }
-          
-          currentElements.addAll(products);
-        } while(currentElements.size() > startSize);
-        
-        return currentElements;
-    }
-
-    private GroupInfoTable createTable(Set<Element> elements) throws GroupInfoConstructionException{
-        GroupInfoTable info = new GroupInfoTable();
-        
-        info.definition = this;
-        
-        info.groupElements = new ArrayList<Element>(elements);
-        info.order = info.groupElements.size();
-            info.multiplicationTable = fillMultiplicationTable(elements);
-            info.unit = findUnit(info);
-        return info;
-    }
-
-    private int findUnit(GroupInfoTable info) throws GroupInfoConstructionException {
-        for(int i = 0; i < info.order; i++){
-            boolean isUnit = true;
-            for(int j = 0; j < info.order; j++){
-                isUnit = isUnit && (info.multiplicationTable[i][j] == j);
-                isUnit = isUnit && (info.multiplicationTable[j][i] == j);
-            }
-            
-            if(isUnit){
-                return i;
-            }
-        }
-        
-        throw new GroupInfoConstructionException("Unit not found " + info.definition.name);
-    }
-
-    /**
-     *
-     * @param elements the set of all elements of the group
-     */
-    private int[][] fillMultiplicationTable(Set<Element> elements) throws GroupInfoConstructionException {
-        List<Element> elementList = new ArrayList(elements);
-        
-        int[][] result = new int[elements.size()][];
-        for(int i1 = 0; i1 < elements.size(); i1++){
-            result[i1] = new int[elements.size()];
-            for(int i2 = 0; i2 < elements.size(); i2++){
-                Element g1 = elementList.get(i1);
-                Element g2 = elementList.get(i2);
-                Element g3 = this.multiplicator.getProduct(g1,g2);
-                result[i1][i2] = elementList.indexOf(g3);
-            }
-        }
-        return result;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public Set<Element> getGenerators() {
+    public Collection<Element> getGenerators() {
         return generators;
     }
 

@@ -5,21 +5,21 @@
  */
 package nl.fh.group.test;
 
-import nl.fh.group_product.GroupProduct;
+import nl.fh.group_def_product.GroupProduct;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group.GroupInfoConstructionException;
-import nl.fh.group.GroupInfoTable;
+import nl.fh.group_info.GroupInfoConstructionException;
+import nl.fh.group_info.GroupInfoTable;
 import nl.fh.group.Multiplicator;
-import nl.fh.group_cyclic.CyclicElement;
-import nl.fh.group_cyclic.CyclicMultiplicator;
-import nl.fh.group_permutation.PermutationElement;
-import nl.fh.group_permutation.PermutationMultiplicator;
-import nl.fh.info_table_checker.InfoTableChecker;
+import nl.fh.group_def_cyclic.CyclicElement;
+import nl.fh.group_def_cyclic.CyclicMultiplicator;
+import nl.fh.group_def_permutation.PermutationElement;
+import nl.fh.group_def_permutation.PermutationMultiplicator;
+import nl.fh.group_info_table_checker.InfoTableChecker;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -55,7 +55,7 @@ public class GroupProductConstructorTest {
         
         // check the assertions
         try {
-            GroupInfoTable info = product.constructInfoTable();
+            GroupInfoTable info = new GroupInfoTable(product);
             assertEquals(12*7, info.getOrder());
             
             InfoTableChecker check = new InfoTableChecker();

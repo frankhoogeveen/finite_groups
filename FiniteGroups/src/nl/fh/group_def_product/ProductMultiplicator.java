@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.group_product;
+package nl.fh.group_def_product;
 
 import java.util.List;
 import nl.fh.group.Element;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group.GroupInfoConstructionException;
+import nl.fh.group_info.GroupInfoConstructionException;
 import nl.fh.group.Multiplicator;
 
 /**

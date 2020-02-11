@@ -3,15 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.group;
+package nl.fh.group_def_substitutions;
+
+import nl.fh.group_info.GroupInfoConstructionException;
 
 /**
  *
  * @author frank
  */
-public class GroupInfoConstructionException extends Exception{
-    
-    public GroupInfoConstructionException(String message) {
+class TooManyIterationsException extends GroupInfoConstructionException {
+
+    public TooManyIterationsException(String message) {
         super(message);
     }
 }

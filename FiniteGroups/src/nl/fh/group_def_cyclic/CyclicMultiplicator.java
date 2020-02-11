@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.group_cyclic;
+package nl.fh.group_def_cyclic;
 
 import nl.fh.group.Element;
 import nl.fh.group.Multiplicator;
