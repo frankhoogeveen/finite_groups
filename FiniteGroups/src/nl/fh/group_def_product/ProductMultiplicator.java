@@ -8,7 +8,7 @@ package nl.fh.group_def_product;
 import java.util.List;
 import nl.fh.group.Element;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group_info.GroupInfoConstructionException;
+import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.group.Multiplicator;
 
 /**
@@ -41,7 +41,7 @@ class ProductMultiplicator implements Multiplicator<ProductElement> {
     }
     
     @Override
-    public ProductElement getProduct(ProductElement factor1, ProductElement factor2) throws GroupInfoConstructionException {
+    public ProductElement getProduct(ProductElement factor1, ProductElement factor2) throws GroupInfoTableException {
         if(factor1.getDimension() != this.multiplicators.length){
             throw new IllegalArgumentException(factor1.toString());
         }

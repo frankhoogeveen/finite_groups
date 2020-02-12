@@ -5,8 +5,6 @@
  */
 package nl.fh.group;
 
-import nl.fh.group_info.GroupInfoConstructionException;
-
 /**
  *
  * @author frank
@@ -17,12 +15,12 @@ public interface Multiplicator<E extends Element> {
     /**
      * 
      * @param factor1
-     * @param factor2
-     * @throws TooManyIterationsException 
+     * @param factor2 
      * 
      * @return factor1 * factor2 
+     * @throws MultiplicatorException 
      */
-    E getProduct(E factor1, E factor2) throws GroupInfoConstructionException;
+    E getProduct(E factor1, E factor2) throws MultiplicatorException;
 
     /**
      * 

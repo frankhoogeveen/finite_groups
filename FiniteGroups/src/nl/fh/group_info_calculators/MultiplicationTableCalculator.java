@@ -5,29 +5,37 @@
  */
 package nl.fh.group_info_calculators;
 
-import nl.fh.group_info.GroupInfoConstructionException;
+import nl.fh.info_table_values.IntArray2dValue;
+import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.group.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import nl.fh.group_info.GroupInfoTable;
+import nl.fh.info_table.InfoTable;
+import nl.fh.info_table.Property;
+import nl.fh.info_table.Value;
 
 /**
- *
+ * Instances of this class calculate the multiplication table based on a list
+ * of elements and the multiplicator.
+ * 
  * @author frank
  */
-public class MultiplicationTableCalculator {
+public class MultiplicationTableCalculator implements GroupCalculator{
 
-    private final int maxIter;
-    public MultiplicationTableCalculator(int maxIter) {
-        this.maxIter = maxIter;
-    } 
+    private final List<Element> elements;
+    private final Multiplicator multiplicator;
 
-    public int[][] calculate(GroupInfoTable info) throws GroupInfoConstructionException {
-        GroupDefinition def = info.getDefinition();
-        List<Element> elements = info.getGroupElements();
-        Multiplicator multiplicator = info.getDefinition().getMultiplicator();
-        
+    public MultiplicationTableCalculator(List<Element> elements, Multiplicator multiplicator) {
+        this.elements = elements;
+        this.multiplicator = multiplicator;
+    }
+
+    @Override
+    public Property getProperty() {
+        return GroupProperty.MultiplicationTable;
+    }
+    
+    @Override
+    public Value evaluate(InfoTable info) throws GroupInfoTableException {
         int[][] result = new int[elements.size()][];
         for(int i1 = 0; i1 < elements.size(); i1++){
             result[i1] = new int[elements.size()];
@@ -38,11 +46,11 @@ public class MultiplicationTableCalculator {
                 result[i1][i2] = elements.indexOf(g3);
                 
                 if(result[i1][i2] < 0){
-                    throw new GroupInfoConstructionException("could not domultiplication");
+                    throw new GroupInfoTableException("could not build multiplication table [not closed]");
                 }
             }
         }
-        return result;
         
+        return new IntArray2dValue(result);
     }
 }

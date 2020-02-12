@@ -5,16 +5,16 @@
  */
 package nl.fh.group.test;
 
-import nl.fh.group_info.GroupInfoConstructionException;
+import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group_info.GroupInfoTable;
+import nl.fh.info_table.InfoTable;
 import nl.fh.group_def_substitutions.StringSubstitution;
 import nl.fh.group.Element;
 import nl.fh.group_def_substitutions.StringElement;
 import nl.fh.group_def_substitutions.StringMultiplicator;
 import java.util.HashSet;
 import java.util.Set;
-import nl.fh.group_info_table_checker.InfoTableChecker;
+import nl.fh.group_info_table.GroupInfoTableChecker;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -37,12 +37,12 @@ public class GroupSubstitutionConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            GroupInfoTable info = new GroupInfoTable(definition);
+            InfoTable info = new InfoTable(definition);
             assertEquals(3, info.getOrder());
             
-            InfoTableChecker check = new InfoTableChecker();
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoConstructionException ex) {
+        } catch (GroupInfoTableException ex) {
             assertTrue(false);
         }
     }
@@ -60,12 +60,12 @@ public class GroupSubstitutionConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            GroupInfoTable info = new GroupInfoTable(definition);
+            InfoTable info = new InfoTable(definition);
             assertEquals(7, info.getOrder());
             
-            InfoTableChecker check = new InfoTableChecker();
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoConstructionException ex) {
+        } catch (GroupInfoTableException ex) {
             assertTrue(false);
         }
     }
@@ -85,12 +85,12 @@ public class GroupSubstitutionConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            GroupInfoTable info = new GroupInfoTable(definition);
+            InfoTable info = new InfoTable(definition);
             assertEquals(6, info.getOrder());
             
-            InfoTableChecker check = new InfoTableChecker();
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoConstructionException ex) {
+        } catch (GroupInfoTableException ex) {
             assertTrue(false);
         }
     }
@@ -119,12 +119,12 @@ public class GroupSubstitutionConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            GroupInfoTable info = new GroupInfoTable(definition);
+            InfoTable info = new InfoTable(definition);
             assertEquals(84, info.getOrder());
             
-            InfoTableChecker check = new InfoTableChecker();
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoConstructionException ex) {
+        } catch (GroupInfoTableException ex) {
             assertTrue(false);
         }
     }

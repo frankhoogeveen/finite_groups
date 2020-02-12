@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.group_info_calculators;
+package nl.fh.group;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,35 +12,17 @@ import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group_info.GroupInfoConstructionException;
+import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.group.Multiplicator;
-import nl.fh.group_info.GroupInfoTable;
+import nl.fh.info_table.InfoTable;
 
 /**
  *
  * @author frank
  */
-public class GroupElementsCalculator{
-    private final int maxIter;
-    
-    /**
-     * 
-     * @param maxIter the maximum number of iterations made to 
-     * identify all elements
-     */
-    public GroupElementsCalculator(int maxIter) {
-        this.maxIter = maxIter;
-    }
+public class GroupElementsConstructor{
 
-    /**
-     * calculate the set of all elements from the group info table
-     * 
-     * @param info
-     * @return a list of elements
-     * @throws GroupInfoConstructionException
-     */    
-    public List<Element> calculate(GroupInfoTable info) throws GroupInfoConstructionException {
-        GroupDefinition def = info.getDefinition();
+    static List<Element> construct(GroupDefinition def, int maxIter) throws GroupInfoTableException {
         Multiplicator multiplicator = def.getMultiplicator();     
         Set<Element> currentElements = new HashSet<Element>(def.getGenerators());
         
@@ -48,8 +30,8 @@ public class GroupElementsCalculator{
         int iterations = 0;
         
         do{
-          if(iterations++ > this.maxIter){
-                stopIterations();
+          if(iterations++ > maxIter){
+                stopIterations(maxIter);
           }
         
           startSize = currentElements.size();
@@ -62,7 +44,8 @@ public class GroupElementsCalculator{
         return new ArrayList<Element>(currentElements);
     }
 
-    private Set<Element> makeAllProducts(Set<Element> currentElements, Multiplicator multiplicator) throws GroupInfoConstructionException {
+
+    private static Set<Element> makeAllProducts(Set<Element> currentElements, Multiplicator multiplicator) throws GroupInfoTableException {
         Set<Element> products = new HashSet<Element>();
         
         for(Element g1 : currentElements){
@@ -74,13 +57,12 @@ public class GroupElementsCalculator{
         return products;
     }
 
-    private void stopIterations() throws GroupInfoConstructionException {
+    private static void stopIterations(int maxIter) throws GroupInfoTableException {
         StringBuilder sb = new StringBuilder();
-        sb.append(this.getClass().getCanonicalName());
-        sb.append(" hit ");
-        sb.append(Integer.toString(this.maxIter));
+        sb.append("The group element constructor hit ");
+        sb.append(Integer.toString(maxIter));
         sb.append(" iterations when looking for elements");
         
-        throw new GroupInfoConstructionException(sb.toString());
+        throw new GroupInfoTableException(sb.toString());
     }
 }

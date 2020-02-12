@@ -5,6 +5,7 @@
  */
 package nl.fh.group_def_substitutions;
 
+import nl.fh.group.MultiplicatorException;
 import java.util.HashMap;
 import java.util.Map;
 import nl.fh.group.Element;
@@ -27,7 +28,7 @@ public class StringMultiplicator implements Multiplicator<StringElement> {
     }
     
     @Override
-    public StringElement getProduct(StringElement factor1, StringElement factor2) throws TooManyIterationsException {
+    public StringElement getProduct(StringElement factor1, StringElement factor2) throws MultiplicatorException {
         String result = factor1.characters + factor2.characters;
         String oldResult;
         int iterations = 0;
@@ -36,7 +37,7 @@ public class StringMultiplicator implements Multiplicator<StringElement> {
           oldResult = result;
           result = applyAllSubstitutions(oldResult);
           if(iterations++ > MAX_ITERATIONS){
-              throw new TooManyIterationsException(factor1.toString() + "  " + factor2.toString());
+              throw new MultiplicatorException(factor1.toString() + "  " + factor2.toString());
           }
         } while(!result.equals(oldResult));
         

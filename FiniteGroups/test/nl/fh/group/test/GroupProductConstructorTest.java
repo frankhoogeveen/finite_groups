@@ -12,14 +12,14 @@ import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group_info.GroupInfoConstructionException;
-import nl.fh.group_info.GroupInfoTable;
+import nl.fh.group_info_table.GroupInfoTableException;
+import nl.fh.info_table.InfoTable;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
 import nl.fh.group_def_permutation.PermutationMultiplicator;
-import nl.fh.group_info_table_checker.InfoTableChecker;
+import nl.fh.group_info_table.GroupInfoTableChecker;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -55,15 +55,15 @@ public class GroupProductConstructorTest {
         
         // check the assertions
         try {
-            GroupInfoTable info = new GroupInfoTable(product);
+            InfoTable info = new InfoTable(product);
             assertEquals(12*7, info.getOrder());
             
-            InfoTableChecker check = new InfoTableChecker();
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
             
             assertEquals("A4xC7", product.getName());
             
-        } catch (GroupInfoConstructionException ex) {
+        } catch (GroupInfoTableException ex) {
             assertTrue(false);
         }
     }

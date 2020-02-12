@@ -11,10 +11,10 @@ import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group_info.GroupInfoConstructionException;
-import nl.fh.group_info.GroupInfoTable;
+import nl.fh.group_info_table.GroupInfoTableException;
+import nl.fh.info_table.InfoTable;
 import nl.fh.group.Multiplicator;
-import nl.fh.group_info_table_checker.InfoTableChecker;
+import nl.fh.group_info_table.GroupInfoTableChecker;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -37,12 +37,12 @@ public class GroupCyclicConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            GroupInfoTable info =  new GroupInfoTable(definition);
+            InfoTable info =  new InfoTable(definition);
             assertEquals(11, info.getOrder());
             
-            InfoTableChecker check = new InfoTableChecker();
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoConstructionException ex) {
+        } catch (GroupInfoTableException ex) {
             assertTrue(false);
         }
     }
@@ -59,12 +59,12 @@ public class GroupCyclicConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            GroupInfoTable info = new GroupInfoTable(definition);
+            InfoTable info = new InfoTable(definition);
             assertEquals(1, info.getOrder());
             
-            InfoTableChecker check = new InfoTableChecker();
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoConstructionException ex) {
+        } catch (GroupInfoTableException ex) {
             assertTrue(false);
         }
     }

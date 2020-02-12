@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.group_info_table_checker;
+package nl.fh.group_info_calculators;
+
+import nl.fh.info_table.Calculator;
 
 /**
- *
+ * Classes implementing this interface calculate group properties
+ * 
  * @author frank
  */
-class InfoTableException extends Exception{
-
-    InfoTableException(String message) {
-        super(message);
-    }
+public interface GroupCalculator extends Calculator{
     
 }

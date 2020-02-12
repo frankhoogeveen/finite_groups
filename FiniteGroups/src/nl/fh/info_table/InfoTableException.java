@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nl.fh.group_info;
+package nl.fh.info_table;
 
 /**
  *
  * @author frank
  */
-public class GroupInfoConstructionException extends Exception{
-    
-    public GroupInfoConstructionException(String message) {
+public class InfoTableException extends Exception {
+
+    public InfoTableException(String message) {
         super(message);
     }
+    
 }
