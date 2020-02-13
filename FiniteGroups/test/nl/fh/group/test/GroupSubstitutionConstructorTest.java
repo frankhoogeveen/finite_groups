@@ -14,7 +14,11 @@ import nl.fh.group_def_substitutions.StringElement;
 import nl.fh.group_def_substitutions.StringMultiplicator;
 import java.util.HashSet;
 import java.util.Set;
+import nl.fh.group.Group;
+import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
+import nl.fh.info_table.InfoTableException;
+import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -37,12 +41,13 @@ public class GroupSubstitutionConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            InfoTable info = new InfoTable(definition);
-            assertEquals(3, info.getOrder());
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(3, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoTableException ex) {
+        } catch (InfoTableException ex) {
             assertTrue(false);
         }
     }
@@ -60,18 +65,19 @@ public class GroupSubstitutionConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            InfoTable info = new InfoTable(definition);
-            assertEquals(7, info.getOrder());
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(7, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoTableException ex) {
+        } catch (InfoTableException ex) {
             assertTrue(false);
         }
     }
     
     @Test
-    public void D3Test(){
+    public void D3Test() throws InfoTableException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("a"));
         generators.add(new StringElement("b"));
@@ -85,12 +91,13 @@ public class GroupSubstitutionConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            InfoTable info = new InfoTable(definition);
-            assertEquals(6, info.getOrder());
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(6, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoTableException ex) {
+        } catch (InfoTableException ex) {
             assertTrue(false);
         }
     }
@@ -119,12 +126,13 @@ public class GroupSubstitutionConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            InfoTable info = new InfoTable(definition);
-            assertEquals(84, info.getOrder());
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(84, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoTableException ex) {
+        } catch (InfoTableException ex) {
             assertTrue(false);
         }
     }

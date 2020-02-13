@@ -10,11 +10,15 @@ import nl.fh.group_def_permutation.PermutationElement;
 import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Element;
+import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
 import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.info_table.InfoTable;
 import nl.fh.group.Multiplicator;
+import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
+import nl.fh.info_table.InfoTableException;
+import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -37,12 +41,13 @@ public class GroupPermutationConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            InfoTable info = new InfoTable(definition);
-            assertEquals(24, info.getOrder());
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(24, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoTableException ex) {
+        } catch (InfoTableException ex) {
             assertTrue(false);
         }
     }
@@ -60,12 +65,13 @@ public class GroupPermutationConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            InfoTable info = new InfoTable(definition);
-            assertEquals(12, info.getOrder());
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(12, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoTableException ex) {
+        } catch (InfoTableException ex) {
             assertTrue(false);
         }
     }

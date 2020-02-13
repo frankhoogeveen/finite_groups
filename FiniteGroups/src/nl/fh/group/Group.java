@@ -28,4 +28,12 @@ public class Group {
         this.elements = GroupElementsConstructor.construct(def, MAX_ITER);
         this.info = new GroupInfoTable(elements, def.getMultiplicator());
     }
+
+    public List<Element> getElements() {
+        return elements;
+    }
+
+    public GroupInfoTable getInfo() {
+        return info;
+    }
 }

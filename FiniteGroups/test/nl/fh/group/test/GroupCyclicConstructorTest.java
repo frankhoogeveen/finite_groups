@@ -9,12 +9,18 @@ import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nl.fh.group.Element;
+import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
 import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.info_table.InfoTable;
 import nl.fh.group.Multiplicator;
+import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
+import nl.fh.info_table.InfoTableException;
+import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -37,14 +43,16 @@ public class GroupCyclicConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            InfoTable info =  new InfoTable(definition);
-            assertEquals(11, info.getOrder());
+            
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(11, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoTableException ex) {
+        } catch (InfoTableException ex) {
             assertTrue(false);
-        }
+        } 
     }
     
     @Test
@@ -59,12 +67,13 @@ public class GroupCyclicConstructorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
         try {
-            InfoTable info = new InfoTable(definition);
-            assertEquals(1, info.getOrder());
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(1, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (GroupInfoTableException ex) {
+        } catch (InfoTableException ex) {
             assertTrue(false);
         }
     }

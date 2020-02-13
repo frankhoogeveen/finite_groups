@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
+import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
 import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.info_table.InfoTable;
@@ -19,7 +20,10 @@ import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
 import nl.fh.group_def_permutation.PermutationMultiplicator;
+import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
+import nl.fh.info_table.InfoTableException;
+import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -55,15 +59,16 @@ public class GroupProductConstructorTest {
         
         // check the assertions
         try {
-            InfoTable info = new InfoTable(product);
-            assertEquals(12*7, info.getOrder());
+            Group g = new Group(product);
+            InfoTable info =  g.getInfo();
+            assertEquals(7*12, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
             
             assertEquals("A4xC7", product.getName());
             
-        } catch (GroupInfoTableException ex) {
+        } catch (InfoTableException ex) {
             assertTrue(false);
         }
     }
