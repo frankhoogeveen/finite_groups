@@ -49,7 +49,7 @@ public class CyclicElement implements Element {
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(Integer.toBinaryString(number));
+        sb.append(Integer.toString(number));
         sb.append("mod");
         sb.append(Integer.toString(order));
         return sb.toString();

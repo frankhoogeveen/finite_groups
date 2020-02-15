@@ -17,9 +17,6 @@ import nl.fh.group_def_permutation.PermutationMultiplicator;
 import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.info_table.InfoTable;
 import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table_values.IntArray1dValue;
-import nl.fh.info_table_values.IntArray2dValue;
-import nl.fh.info_table_values.IntValue;
 import nl.fh.info_table_values.SubsetValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -65,7 +62,8 @@ public class ConjugationClassCalculatorTest {
             for(int j = i+1; j < nClass; j++){
 
                SubsetValue class_j = classes.getSubset(j);
-               // differnent classes should have nothing in common
+               
+               // different classes should have nothing in common
                assertTrue(class_i.intersection(class_j).isEmpty());
             }
         }
