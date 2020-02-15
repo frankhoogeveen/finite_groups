@@ -6,6 +6,7 @@
 package nl.fh.group_formatter;
 
 import nl.fh.group.Group;
+import nl.fh.group_catalogue.GroupCatalog;
 
 /**
  *
@@ -20,6 +21,21 @@ public class GroupFormatter {
 
     public GroupFormatter(){
         
+    }
+    
+    public String createReport(GroupCatalog catalog){
+        StringBuilder sb = new StringBuilder();
+        sb.append("*** ");
+        sb.append(catalog.getClass().getSimpleName());
+        sb.append(" [");
+        sb.append(Integer.toString(catalog.getList().size()));
+        sb.append(" items] ***");
+        sb.append("\n");
+        
+        for(Group g : catalog.getList()){
+            sb.append(createReport(g));
+        }
+        return sb.toString();
     }
     
     public String createReport(Group g){
@@ -57,5 +73,4 @@ public class GroupFormatter {
 
         return sb;
     }
-    
 }

@@ -6,7 +6,6 @@
 package nl.fh.group;
 
 import java.util.List;
-import nl.fh.group_formatter.GroupFormatter;
 import nl.fh.group_info_table.GroupInfoTable;
 import nl.fh.group_info_table.GroupInfoTableException;
 
@@ -18,7 +17,6 @@ public class Group {
     private GroupDefinition def;
     private final List<Element> elements;
     private final GroupInfoTable info;
-    private final GroupFormatter formatter = new GroupFormatter();
     
     private final int MAX_ITER = 10000;
     
@@ -33,6 +31,10 @@ public class Group {
         this.info = new GroupInfoTable(elements, def.getMultiplicator());
     }
 
+    public GroupDefinition getDefinition() {
+        return def;
+    }
+
     public List<Element> getElements() {
         return elements;
     }
@@ -43,9 +45,5 @@ public class Group {
 
     public String getName() {
         return this.def.getName();
-    }
-    
-    public String createReport(){
-        return this.formatter.createReport(this);
     }
 }

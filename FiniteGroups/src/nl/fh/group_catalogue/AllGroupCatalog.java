@@ -5,18 +5,8 @@
  */
 package nl.fh.group_catalogue;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.logging.Level;
 import java.util.logging.Logger;
-import nl.fh.group.Element;
-import nl.fh.group.GroupDefinition;
-import nl.fh.group.Multiplicator;
-import nl.fh.group_def_cyclic.CyclicElement;
-import nl.fh.group_def_cyclic.CyclicMultiplicator;
-import nl.fh.group_def_product.GroupProduct;
+import nl.fh.group_definition_factory.GroupDefinitionFactory;
 
 /**
  *
@@ -24,6 +14,7 @@ import nl.fh.group_def_product.GroupProduct;
  */
 public class AllGroupCatalog extends GroupCatalog {
     private static final Logger LOGGER = Logger.getLogger(AllGroupCatalog.class.getSimpleName());
+    private final GroupDefinitionFactory factory;
     
     /**
      * main method that prints the entire catalog
@@ -38,62 +29,27 @@ public class AllGroupCatalog extends GroupCatalog {
     
     public AllGroupCatalog(){
         super();
-
+        this.factory = new GroupDefinitionFactory();
+        
         /* order one */
-        super.add(cyclicGroup(1));
+        super.add(factory.getCyclicGroup(1));
 
         /* order two */
-        super.add(cyclicGroup(2));
+        super.add(factory.getCyclicGroup(2));
         
         /*order three */
-        super.add(cyclicGroup(3));
+        super.add(factory.getCyclicGroup(3));
         
         /*order four*/
-        super.add(cyclicGroup(4));
-        super.add(abeleanGroup(new int[]{2,2}));
+        super.add(factory.getCyclicGroup(4));
+        super.add(factory.getAbeleanGroup(new int[]{2,2}));
         
-        /* order fve */
-        super.add(cyclicGroup(5));
+        /* order five */
+        super.add(factory.getCyclicGroup(5));
         
         /* order six */
-        super.add(cyclicGroup(6));
+        super.add(factory.getCyclicGroup(6));
         //TODO add groups of this order
          
-    }
-    
-     /**
-     * 
-     * @param n
-     * @return the definition of the cyclic group of order n 
-     */
-    private GroupDefinition cyclicGroup(int n){
-        if(n < 1){
-            String mess = "could not define cyclic group of order " + Integer.toString(n);
-            LOGGER.log(Level.SEVERE, mess);
-            throw new IllegalArgumentException(mess);
-        }
-        
-        Set<Element> generators = new HashSet<Element>();
-        generators.add(CyclicElement.generatorOfOrder(n));
-        
-        Multiplicator multiplication = new CyclicMultiplicator(n);
-        
-        String name = "C" + Integer.toString(n);
-        
-        return new GroupDefinition(name, generators, multiplication);
-        
-    }
-
-    /**
-    * @return the product of several cyclic groups
-    */
-    private GroupDefinition abeleanGroup(int[] orders) {
-        List<GroupDefinition> defs = new ArrayList<GroupDefinition>();
-        
-        for(int i = 0; i < orders.length; i++){
-            defs.add(cyclicGroup(orders[i]));
-        }
-                
-        return GroupProduct.of(defs);
     }
 }

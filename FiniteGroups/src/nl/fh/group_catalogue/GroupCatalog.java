@@ -14,17 +14,17 @@ import nl.fh.group.GroupDefinition;
 import nl.fh.group_info_table.GroupInfoTableException;
 
 /**
- *
+ * A collection/ catalog of groups 
+ * 
+ * 
  * @author frank
  */
 public class GroupCatalog {
-        private static final Logger LOGGER = Logger.getLogger(GroupCatalog.class.getSimpleName());
+    private static final Logger LOGGER = Logger.getLogger(GroupCatalog.class.getSimpleName());
     private List<Group> list;
     
     public GroupCatalog(){
         this.list = new ArrayList<Group>();
-        
-
     }
     
     /**
@@ -41,15 +41,8 @@ public class GroupCatalog {
                 Logger.getLogger(GroupCatalog.class.getName()).log(Level.SEVERE, null, ex);
             }
     }
-    
 
-    
-    @Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        for(Group g : this.list){
-            sb.append(g.createReport());
-        }
-        return sb.toString();
+    public List<Group> getList() {
+        return list;
     }
 }

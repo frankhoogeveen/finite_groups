@@ -30,10 +30,11 @@ import nl.fh.group.test.*;
     InverseCalculatorTest.class,
     GroupSubstitutionInconsistentTest.class,
     CenterCalculatorTest.class,
-    ConjugationClassCalculatorTest.class
-}
+    ConjugationClassCalculatorTest.class,
+    GroupFactoryTest.class
+})
 
-)
+
 public class AllTests {
 
     @BeforeClass
