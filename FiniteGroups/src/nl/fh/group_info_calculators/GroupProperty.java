@@ -16,5 +16,8 @@ public enum GroupProperty implements Property {
     MultiplicationTable, 
     UnitElement,
     ElementOrders,
-    Inverses
+    Inverses,
+    Center,
+    IsAbelean,   //TODO
+    ConjugationClasses
 }

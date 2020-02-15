@@ -7,6 +7,8 @@ package nl.fh.info_table;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Class to support lazy evaluation
@@ -14,19 +16,25 @@ import java.util.Map;
  * @author frank
  */
 public class InfoTable {
+    private static final Logger LOGGER = Logger.getLogger(InfoTable.class.getName());
+    
     private final Map<Property,Value> values;
     private final Map<Property,Calculator> calculators;
 
+    
     public InfoTable() {
+        
         this.values = new HashMap<Property,Value>();
         this.calculators = new HashMap<Property,Calculator>();
+        
+        LOGGER.setLevel(Level.WARNING);
     }
     
     /**
      * 
      * @param propertyType defines what property will be retrieved
      * @return the value of that property
-     * @throws InfoTableException 
+     * @throws InfoTableException used when calculators do not exist or crash
      */
     public Value getValue(Property propertyType) throws InfoTableException{
         if(!values.containsKey(propertyType)){
@@ -37,9 +45,14 @@ public class InfoTable {
 
     private void calculateAndStoreMissingValue(Property propertyType) throws InfoTableException {
         Calculator calculator = calculators.get(propertyType);
+        
         if(calculator == null){
-            throw new InfoTableException("no calculator loaded: " + propertyType.toString());
+            
+            String mess = "no calculator loaded: " + propertyType.toString();
+            LOGGER.warning(mess);
+            throw new InfoTableException(mess);
         }
+        
         values.put(propertyType, calculator.evaluate(this));
     }
     

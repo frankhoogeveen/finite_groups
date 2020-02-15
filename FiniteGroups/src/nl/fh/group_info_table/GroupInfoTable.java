@@ -5,6 +5,9 @@
  */
 package nl.fh.group_info_table;
 
+import nl.fh.group_info_calculators.ConjugationClassCalculator;
+import nl.fh.group_info_calculators.IsAbeleanCalculator;
+import nl.fh.group_info_calculators.CenterCalculator;
 import nl.fh.group_info_calculators.InverseCalculator;
 import nl.fh.group_info_calculators.ElementOrderCalculator;
 import java.util.List;
@@ -26,5 +29,8 @@ public class GroupInfoTable extends InfoTable {
         super.add(new UnitCalculator());
         super.add(new ElementOrderCalculator());
         super.add(new InverseCalculator());
+        super.add(new CenterCalculator());
+        super.add(new IsAbeleanCalculator());
+        super.add(new ConjugationClassCalculator());
     }
 }

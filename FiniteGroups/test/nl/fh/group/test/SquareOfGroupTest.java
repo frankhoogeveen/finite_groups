@@ -5,7 +5,6 @@
  */
 package nl.fh.group.test;
 
-import nl.fh.group_def_product.GroupProduct;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -13,14 +12,13 @@ import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
-import nl.fh.info_table.InfoTable;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
-import nl.fh.group_def_permutation.PermutationElement;
-import nl.fh.group_def_permutation.PermutationMultiplicator;
+import nl.fh.group_def_product.GroupProduct;
 import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
+import nl.fh.info_table.InfoTable;
 import nl.fh.info_table.InfoTableException;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
@@ -28,44 +26,39 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
- *
+ * Tests what happens if we create the direct product of a group with itself
+ * 
  * @author frank
  */
-public class GroupProductConstructorTest {
-    @Test
-    public void ProductTest(){
-        List<GroupDefinition> defs = new ArrayList<GroupDefinition>();
-        
-        // create an instance of A4
+public class SquareOfGroupTest {
+    
+    @Test 
+    public void C3squaredTest(){
+
+        // create an instance of C3
         Set<Element> generators = new HashSet<Element>();
-        generators.add(new PermutationElement(new int[]{1,0,3,2}));
-        generators.add(new PermutationElement(new int[]{0,2,3,1}));
+        generators.add(CyclicElement.generatorOfOrder(3));
         
-        Multiplicator multiplication = new PermutationMultiplicator(4);
+        Multiplicator multiplication = new CyclicMultiplicator(3);
         
-        defs.add(new GroupDefinition("A4", generators, multiplication));
-        
-        // create an instance of C7
-        generators = new HashSet<Element>();
-        generators.add(CyclicElement.generatorOfOrder(7));
-        
-        multiplication = new CyclicMultiplicator(7);
-        
-        defs.add(new GroupDefinition("C7", generators, multiplication));
+        GroupDefinition def = new GroupDefinition("C3", generators, multiplication);
         
         //define the product
+        List<GroupDefinition> defs = new ArrayList<GroupDefinition>();
+        defs.add(def);
+        defs.add(def);
         GroupDefinition product = GroupProduct.of(defs);
         
         // check the assertions
         try {
             Group g = new Group(product);
             InfoTable info =  g.getInfo();
-            assertEquals(7*12, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            assertEquals(3*3, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
             
-            assertEquals("A4xC7", product.getName());
+            assertEquals("C3xC3", product.getName());
             
         } catch (InfoTableException ex) {
             assertTrue(false);

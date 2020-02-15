@@ -17,8 +17,6 @@ import nl.fh.group.Group;
 import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
 import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table_values.IntArray1dValue;
-import nl.fh.info_table_values.IntArray2dValue;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

@@ -32,10 +32,10 @@ public class GroupSubstitutionInconsistentTest {
      *  The test set up here looks like the construction of Y21, but is 
      *  subtly different.
      * 
-     *  Instead of yx-> xyy,, we take yx-> xyyy
+     *  Instead of y.x-> x.y.y,, we take y.x-> x.y.y.y
      * 
      * From this relation we can prove
-     * y = yxxx = x yyy xx = ... = xxx yyyyyy, thus y = y^6 
+     * y = y.x.x.x = x y.y.y .x.x = ... = x^3 y^6, thus y = y^6 
      * 
      * From this one can conclude y = unit. 
      * 

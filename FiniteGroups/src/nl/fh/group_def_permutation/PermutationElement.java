@@ -21,7 +21,7 @@ public class PermutationElement implements Element{
 
     /**
      *
-     * @param perm
+     * @param perm a permutation 
      */
     public PermutationElement(int[] perm) {
         checkPermutation(perm);

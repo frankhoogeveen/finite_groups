@@ -19,7 +19,7 @@ public interface Calculator {
     
     /**
      * 
-     * @param info
+     * @param info the information on which the property will be based
      * @return the output of this calculator, using info as input
      * @throws InfoTableException when the calculation does not succeed
      */
