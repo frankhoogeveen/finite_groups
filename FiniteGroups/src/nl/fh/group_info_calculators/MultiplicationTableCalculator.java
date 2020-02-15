@@ -9,6 +9,8 @@ import nl.fh.info_table_values.IntArray2dValue;
 import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.group.*;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nl.fh.info_table.InfoTable;
 import nl.fh.info_table.Property;
 import nl.fh.info_table.Value;
@@ -42,9 +44,14 @@ public class MultiplicationTableCalculator implements GroupCalculator{
             for(int i2 = 0; i2 < elements.size(); i2++){
                 Element g1 = elements.get(i1);
                 Element g2 = elements.get(i2);
-                Element g3 = multiplicator.getProduct(g1,g2);
-                result[i1][i2] = elements.indexOf(g3);
-                
+
+                try {
+                    Element g3 = multiplicator.getProduct(g1,g2);
+                    result[i1][i2] = elements.indexOf(g3);
+                } catch (MultiplicatorException ex) {
+                    throw new GroupInfoTableException("could not build multiplication table [operation not defined]");
+                }
+
                 if(result[i1][i2] < 0){
                     throw new GroupInfoTableException("could not build multiplication table [not closed]");
                 }

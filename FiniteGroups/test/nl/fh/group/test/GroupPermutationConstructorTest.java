@@ -12,7 +12,6 @@ import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.info_table.InfoTable;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_info_calculators.GroupProperty;

@@ -24,5 +24,20 @@ public class IntArray1dValue implements Value {
     public int[] content(){
         return content;
     }
+
+    /**
+     * 
+     * @param k
+     * @return the number of occurrences of k in the array
+     */
+    public int count(int k) {
+        int cnt = 0;
+        for(int i = 0; i < content.length; i++){
+            if(content[i] == k){
+                cnt++;
+            }
+        }
+        return cnt;
+    }
     
 }

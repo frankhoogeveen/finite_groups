@@ -14,5 +14,6 @@ import nl.fh.info_table.Property;
 public enum GroupProperty implements Property {
     Order,
     MultiplicationTable, 
-    UnitElement
+    UnitElement,
+    ElementOrders
 }

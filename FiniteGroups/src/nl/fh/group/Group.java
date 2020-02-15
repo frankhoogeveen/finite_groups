@@ -17,6 +17,7 @@ public class Group {
     private GroupDefinition def;
     private final List<Element> elements;
     private final GroupInfoTable info;
+    
     private final int MAX_ITER = 10000;
     
     /**

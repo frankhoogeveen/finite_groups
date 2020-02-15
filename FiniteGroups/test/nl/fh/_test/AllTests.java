@@ -6,6 +6,7 @@ package nl.fh._test;
  * and open the template in the editor.
  */
 
+import nl.fh.calculators.test.ElementOrderCalculatorTest;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -24,7 +25,8 @@ import nl.fh.group.test.*;
     GroupSubstitutionConstructorTest.class,
     GroupCyclicConstructorTest.class,
     GroupProductConstructorTest.class,
-    GroupPermutationConstructorTest.class
+    GroupPermutationConstructorTest.class,
+    ElementOrderCalculatorTest.class
 }
 
 )
