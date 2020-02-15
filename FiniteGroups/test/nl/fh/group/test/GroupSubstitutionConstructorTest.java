@@ -5,7 +5,6 @@
  */
 package nl.fh.group.test;
 
-import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.group.GroupDefinition;
 import nl.fh.info_table.InfoTable;
 import nl.fh.group_def_substitutions.StringSubstitution;
@@ -18,6 +17,8 @@ import nl.fh.group.Group;
 import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
 import nl.fh.info_table.InfoTableException;
+import nl.fh.info_table_values.IntArray1dValue;
+import nl.fh.info_table_values.IntArray2dValue;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -101,6 +102,34 @@ public class GroupSubstitutionConstructorTest {
             assertTrue(false);
         }
     }
+    
+    @Test
+    public void Y21Test() throws InfoTableException{
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("x"));
+        generators.add(new StringElement("y"));
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution("xxx", ""));
+        multiplication.addSubstitution(new StringSubstitution("yyyyyyy", ""));
+        multiplication.addSubstitution(new StringSubstitution("yx", "xyy"));
+        
+        String name = "Y21";
+        
+        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        
+        try {
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(21, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            assertTrue(check.isGroup(info));
+        } catch (InfoTableException ex) {
+            assertTrue(false);
+        }
+    }
+    
     
 
     /**

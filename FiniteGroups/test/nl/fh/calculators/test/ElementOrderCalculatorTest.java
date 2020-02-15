@@ -7,8 +7,6 @@ package nl.fh.calculators.test;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
@@ -16,15 +14,11 @@ import nl.fh.group.Multiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
 import nl.fh.group_def_permutation.PermutationMultiplicator;
 import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.group_info_table.GroupInfoTableChecker;
-import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.info_table.InfoTable;
 import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table.Value;
 import nl.fh.info_table_values.IntArray1dValue;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
@@ -47,7 +41,8 @@ public class ElementOrderCalculatorTest {
 
         Group g = new Group(definition);
         InfoTable info =  g.getInfo();
-        IntArray1dValue val  = ((IntArray1dValue)info.getValue(GroupProperty.ElementOrders));
+        
+        IntArray1dValue val = (IntArray1dValue)info.getValue(GroupProperty.ElementOrders);
 
         assertEquals(0, val.count(0));
         

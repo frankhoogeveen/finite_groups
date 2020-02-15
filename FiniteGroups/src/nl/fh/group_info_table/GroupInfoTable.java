@@ -5,6 +5,7 @@
  */
 package nl.fh.group_info_table;
 
+import nl.fh.group_info_calculators.InverseCalculator;
 import nl.fh.group_info_calculators.ElementOrderCalculator;
 import java.util.List;
 import nl.fh.group.Element;
@@ -24,5 +25,6 @@ public class GroupInfoTable extends InfoTable {
         super.add(new OrderCalculator());
         super.add(new UnitCalculator());
         super.add(new ElementOrderCalculator());
+        super.add(new InverseCalculator());
     }
 }

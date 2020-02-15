@@ -14,6 +14,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import nl.fh.group.test.*;
+import nl.fh.calculators.test.InverseCalculatorTest;
 
 /**
  *
@@ -26,7 +27,9 @@ import nl.fh.group.test.*;
     GroupCyclicConstructorTest.class,
     GroupProductConstructorTest.class,
     GroupPermutationConstructorTest.class,
-    ElementOrderCalculatorTest.class
+    ElementOrderCalculatorTest.class,
+    InverseCalculatorTest.class,
+    GroupSubstitutionInconsistentTest.class
 }
 
 )

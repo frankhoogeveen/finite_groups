@@ -6,7 +6,6 @@
 package nl.fh.group_info_table;
 
 import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.info_table.InfoTable;
 import nl.fh.info_table.InfoTableException;
 import nl.fh.info_table_values.IntArray2dValue;
