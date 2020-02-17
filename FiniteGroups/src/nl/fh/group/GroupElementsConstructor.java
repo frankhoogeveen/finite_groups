@@ -13,14 +13,18 @@ import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.info_table.InfoTableException;
 
 /**
- *
+ * Given a group definition, this object calculates the set of all group elements
+ *  
  * @author frank
  */
 public class GroupElementsConstructor{
 
     static List<Element> construct(GroupDefinition def, int maxIter) throws InfoTableException, MultiplicatorException {
         Multiplicator multiplicator = def.getMultiplicator();     
-        Set<Element> currentElements = new HashSet<Element>(def.getGenerators());
+        
+        Set<Element> currentElements = new HashSet<Element>();
+        currentElements.add(def.getMultiplicator().getUnit());
+        currentElements.addAll(def.getGenerators());
         
         int startSize;
         int iterations = 0;

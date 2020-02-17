@@ -8,7 +8,10 @@ package nl.fh.group;
 import java.util.Collection;
 
 /**
- *
+ * Defines a group as something with a name, a set of generators and a 
+ * way to multiply them
+ * 
+ * 
  * @author frank
  */
 public class GroupDefinition {

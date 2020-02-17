@@ -36,10 +36,7 @@ public class Group {
             String mess = "could not construct group " + this.def.getName();
             Logger.getLogger(Group.class.getName()).log(Level.SEVERE, mess, ex);
             
-            this.elements = null;
-            this.info = null;
         }
-
     }
 
     public GroupDefinition getDefinition() {
