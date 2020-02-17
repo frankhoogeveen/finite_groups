@@ -6,15 +6,11 @@
 package nl.fh.group;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import nl.fh.group.Element;
-import nl.fh.group.GroupDefinition;
 import nl.fh.group_info_table.GroupInfoTableException;
-import nl.fh.group.Multiplicator;
-import nl.fh.info_table.InfoTable;
+import nl.fh.info_table.InfoTableException;
 
 /**
  *
@@ -22,7 +18,7 @@ import nl.fh.info_table.InfoTable;
  */
 public class GroupElementsConstructor{
 
-    static List<Element> construct(GroupDefinition def, int maxIter) throws GroupInfoTableException {
+    static List<Element> construct(GroupDefinition def, int maxIter) throws InfoTableException, MultiplicatorException {
         Multiplicator multiplicator = def.getMultiplicator();     
         Set<Element> currentElements = new HashSet<Element>(def.getGenerators());
         
@@ -45,7 +41,7 @@ public class GroupElementsConstructor{
     }
 
 
-    private static Set<Element> makeAllProducts(Set<Element> currentElements, Multiplicator multiplicator) throws GroupInfoTableException {
+    private static Set<Element> makeAllProducts(Set<Element> currentElements, Multiplicator multiplicator) throws InfoTableException, MultiplicatorException {
         Set<Element> products = new HashSet<Element>();
         
         for(Element g1 : currentElements){

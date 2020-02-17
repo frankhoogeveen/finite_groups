@@ -6,8 +6,10 @@
 package nl.fh.group;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nl.fh.group_info_table.GroupInfoTable;
-import nl.fh.group_info_table.GroupInfoTableException;
+import nl.fh.info_table.InfoTableException;
 
 /**
  *
@@ -15,8 +17,8 @@ import nl.fh.group_info_table.GroupInfoTableException;
  */
 public class Group {
     private GroupDefinition def;
-    private final List<Element> elements;
-    private final GroupInfoTable info;
+    private List<Element> elements;
+    private GroupInfoTable info;
     
     private final int MAX_ITER = 10000;
     
@@ -25,10 +27,19 @@ public class Group {
      * @param def the definition of the group
      * @throws nl.fh.group_info_table.GroupInfoTableException
      */
-    public Group(GroupDefinition def) throws GroupInfoTableException {
+    public Group(GroupDefinition def) throws InfoTableException {
         this.def = def;
-        this.elements = GroupElementsConstructor.construct(def, MAX_ITER);
-        this.info = new GroupInfoTable(elements, def.getMultiplicator());
+        try {
+            this.elements = GroupElementsConstructor.construct(def, MAX_ITER);
+            this.info = new GroupInfoTable(elements, def.getMultiplicator());
+        } catch (MultiplicatorException ex) {
+            String mess = "could not construct group " + this.def.getName();
+            Logger.getLogger(Group.class.getName()).log(Level.SEVERE, mess, ex);
+            
+            this.elements = null;
+            this.info = null;
+        }
+
     }
 
     public GroupDefinition getDefinition() {

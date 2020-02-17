@@ -6,13 +6,18 @@
 package nl.fh.group_def_product;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nl.fh.group.Element;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.group.Multiplicator;
+import nl.fh.group.MultiplicatorException;
 
 /**
- *
+ * This class defines a multiplication on the direct product of groups,
+ * based on the multiplications in the factors of the product
+ * 
+ * 
  * @author frank
  */
 class ProductMultiplicator implements Multiplicator<ProductElement> {
@@ -41,7 +46,7 @@ class ProductMultiplicator implements Multiplicator<ProductElement> {
     }
     
     @Override
-    public ProductElement getProduct(ProductElement factor1, ProductElement factor2) throws GroupInfoTableException {
+    public ProductElement getProduct(ProductElement factor1, ProductElement factor2) throws MultiplicatorException {
         if(factor1.getDimension() != this.multiplicators.length){
             throw new IllegalArgumentException(factor1.toString());
         }
@@ -52,7 +57,13 @@ class ProductMultiplicator implements Multiplicator<ProductElement> {
         
         Element[] result = new Element[this.multiplicators.length];
         for(int i =0 ; i < this.multiplicators.length; i++){
-            result[i] = this.multiplicators[i].getProduct(factor1.get(i), factor2.get(i));
+            try {
+                result[i] = this.multiplicators[i].getProduct(factor1.get(i), factor2.get(i));
+            } catch (MultiplicatorException ex) {
+                String mess = "could not multiply " + factor1.toString() + " " + factor2.toString();
+                Logger.getLogger(ProductMultiplicator.class.getName()).log(Level.SEVERE, mess, ex);
+                throw new MultiplicatorException(mess);
+            }
         }
         return new ProductElement(result);
     }

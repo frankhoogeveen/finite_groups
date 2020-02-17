@@ -40,5 +40,9 @@ public class FamilyValue implements Value {
     public SubsetValue getSubset(int alpha) {
         return new SubsetValue(sets[alpha]);
     }
+
+    public boolean[][] content() {
+        return this.sets;
+    }
     
 }
