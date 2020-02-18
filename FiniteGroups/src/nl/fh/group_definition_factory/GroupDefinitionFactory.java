@@ -12,14 +12,14 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.group.Element;
-import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_catalogue.AllGroupCatalog;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
+import nl.fh.group_def_permutation.PermutationElement;
+import nl.fh.group_def_permutation.PermutationMultiplicator;
 import nl.fh.group_def_product.GroupProduct;
-import nl.fh.group_info_table.GroupInfoTableException;
 
 /**
  * Factory object for groups
@@ -65,7 +65,39 @@ public class GroupDefinitionFactory {
         }
 
         return GroupProduct.of(defs);
-
+    }
+    
+    /**
+     * 
+     * @param n
+     * @return the definition of the symmetric group of order n!
+     */
+    public GroupDefinition getSymmetricGroup(int n){
+        if(n < 1){
+            throw new IllegalArgumentException(" cannot define S_n for n < 1");
+        }
+        
+        int[] cycle = new int[n];
+        int[] flip = new int[n];
+        for(int i = 0; i < n; i++){
+            cycle[i] = i+1;
+            flip[i] = i;
+        }
+        cycle[n-1] = 0;
+        flip[0] = 1;
+        flip[1] = 0;
+        
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new PermutationElement(flip));
+        generators.add(new PermutationElement(cycle));
+        
+        Multiplicator multiplication = new PermutationMultiplicator(n);
+        
+        String name = "S"+Integer.toString(n);
+        
+        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        
+        return definition;
     }
     
 }

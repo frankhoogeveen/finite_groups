@@ -31,11 +31,11 @@ public class PermutationElement implements Element{
     private void checkPermutation(int[] perm) {
         for(int i = 0; i < perm.length; i++){
             if((perm[i] < 0) || perm[i] >= perm.length){
-                throw new IllegalArgumentException("argument is not a permutation");
+                throw new IllegalArgumentException("argument is not a permutation/ out of range");
             }
             for(int j = 0; j < perm.length; j++){
                 if((i!=j) && perm[i] == perm[j]){
-                    throw new IllegalArgumentException("argument is not a permutation");
+                    throw new IllegalArgumentException("argument is not a permutation/ not bijective");
                 }
             }
         }

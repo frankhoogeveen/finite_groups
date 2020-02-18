@@ -42,7 +42,7 @@ public class AllGroupCatalog extends GroupCatalog {
         
         /* order six */
         super.add(factory.getCyclicGroup(6));
-        //TODO add groups of this order
+        super.add(factory.getSymmetricGroup(3));
          
     }
     
