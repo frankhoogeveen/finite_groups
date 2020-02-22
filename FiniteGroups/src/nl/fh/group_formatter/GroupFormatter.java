@@ -18,14 +18,15 @@ import nl.fh.group_catalogue.GroupCatalog;
  */
 public class GroupFormatter {
 
-    private int PAGE_WIDTH = 80;
-    private List<ItemFormatter> list;
+    private final int PAGE_WIDTH = 80;
+    private final List<ItemFormatter> list;
     
 
     public GroupFormatter(){
         this.list = new ArrayList<ItemFormatter>();
         this.list.add(new OrderFormatter());
         this.list.add(new IsAbeleanFormatter());
+        this.list.add(new CenterFormatter());
         this.list.add(new ConjugationClassesFormatter());
     }
     

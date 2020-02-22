@@ -40,8 +40,6 @@ public class ConjugationClassesFormatter implements ItemFormatter {
             sb.append(mess);
         }
         
-
-        
         return sb;
     }
     

@@ -92,4 +92,8 @@ public class SubsetValue implements Value {
         
         return new SubsetValue(result);
     }
+
+    public boolean[] content() {
+        return this.index;
+    }
 }

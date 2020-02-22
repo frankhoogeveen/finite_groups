@@ -20,6 +20,9 @@ import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
 import nl.fh.group_def_permutation.PermutationMultiplicator;
 import nl.fh.group_def_product.GroupProduct;
+import nl.fh.group_def_substitutions.StringElement;
+import nl.fh.group_def_substitutions.StringMultiplicator;
+import nl.fh.group_def_substitutions.StringSubstitution;
 
 /**
  * Factory object for groups
@@ -94,6 +97,38 @@ public class GroupDefinitionFactory {
         Multiplicator multiplication = new PermutationMultiplicator(n);
         
         String name = "S"+Integer.toString(n);
+        
+        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        
+        return definition;
+    }
+
+    /**
+     * 
+     * @param n
+     * @return the Alternating group A_n 
+     */
+    
+    public GroupDefinition getAlternatingGroup(int n) {
+        
+        if( n != 4){
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+        
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("a"));
+        generators.add(new StringElement("b"));
+        generators.add(new StringElement("c"));        
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution("aa", ""));
+        multiplication.addSubstitution(new StringSubstitution("bb", ""));
+        multiplication.addSubstitution(new StringSubstitution("ccc", ""));
+        multiplication.addSubstitution(new StringSubstitution("ba", "ab"));
+        multiplication.addSubstitution(new StringSubstitution("ca", "bc"));
+        multiplication.addSubstitution(new StringSubstitution("cb", "abc"));
+        
+        String name = "A4";
         
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         

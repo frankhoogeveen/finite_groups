@@ -14,7 +14,9 @@ import nl.fh.info_table_values.IntArray2dValue;
 import nl.fh.info_table_values.SubsetValue;
 
 /**
- *
+ *  Calculates the center of the group
+ * 
+ * 
  * @author frank
  */
 public class CenterCalculator implements Calculator {
