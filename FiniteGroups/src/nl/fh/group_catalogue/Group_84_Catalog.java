@@ -38,9 +38,6 @@ public class Group_84_Catalog extends GroupCatalog {
     private static final Logger LOGGER = Logger.getLogger(Group_84_Catalog.class.getSimpleName());
     private final GroupDefinitionFactory factory;
     
-
-    
-    
     public Group_84_Catalog(){
         super();
         factory = new GroupDefinitionFactory();
@@ -107,6 +104,32 @@ public class Group_84_Catalog extends GroupCatalog {
         GroupDefinition g4 = GroupProduct.of(list);
         
         super.add(g4);
+        
+        /* G84_5 */
+        generators = new HashSet<Element>();
+        generators.add(new StringElement("a"));
+        generators.add(new StringElement("b"));
+        generators.add(new StringElement("x"));
+        generators.add(new StringElement("y"));
+
+        
+        multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution("aa", ""));
+        multiplication.addSubstitution(new StringSubstitution("bb", ""));
+        multiplication.addSubstitution(new StringSubstitution("xxx", ""));
+        multiplication.addSubstitution(new StringSubstitution("yyyyyyy", ""));
+        multiplication.addSubstitution(new StringSubstitution("ba", "ab"));
+        multiplication.addSubstitution(new StringSubstitution("xa", "ax"));
+        multiplication.addSubstitution(new StringSubstitution("xb", "bx"));
+        multiplication.addSubstitution(new StringSubstitution("ya", "ayyyyyy"));
+        multiplication.addSubstitution(new StringSubstitution("yb", "by"));
+        multiplication.addSubstitution(new StringSubstitution("yx", "xyy"));
+        
+        name = "G84_5";
+        
+        GroupDefinition g5 = new GroupDefinition(name, generators, multiplication);
+        
+        super.add(g5);
 
     }
     

@@ -22,7 +22,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.info_table.InfoTableException;
 
 /**
