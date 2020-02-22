@@ -14,33 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_info_calculators;
-
-import nl.fh.info_table.InfoTable;
-import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table.Property;
-import nl.fh.info_table.Value;
-import nl.fh.info_table_values.IntArray2dValue;
-import nl.fh.info_table_values.IntValue;
-
 
 /**
  *
  * @author frank
  */
-public class OrderCalculator implements GroupCalculator{
-
+public class NewClass {
     
-    @Override
-    public Property getProperty() {
-        return GroupProperty.Order;
-    }
-    
-    @Override
-    public Value evaluate(InfoTable info) throws InfoTableException {
-        int[][] table = ((IntArray2dValue)info.getValue(GroupProperty.MultiplicationTable)).content();
-        return new IntValue(table.length);
-    }
-
-
 }
