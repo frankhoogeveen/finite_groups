@@ -145,5 +145,33 @@ public class GroupDefinitionFactory {
         
         return definition;
     }
+
+    public GroupDefinition getDihedralGroup(int n) {
+        if(n < 1){
+            String mess = "cannot not define cyclic group of order 2*" + Integer.toString(n);
+            LOGGER.log(Level.SEVERE, mess);
+            throw new IllegalArgumentException(mess);
+        }
+        
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("a"));
+        generators.add(new StringElement("b"));
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution(repeat("a",n), ""));
+        multiplication.addSubstitution(new StringSubstitution("bb", ""));
+         multiplication.addSubstitution(new StringSubstitution("ba", repeat("a", n-1) + "b"));      
+        String name = "D" + Integer.toString(n);
+        
+        return new GroupDefinition(name, generators, multiplication);
+    }
+
+    private String repeat(String a, int n) {
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < n; i++){
+            sb.append(a);
+        }
+        return sb.toString();
+    }
     
 }
