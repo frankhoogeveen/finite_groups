@@ -14,10 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group.test;
+package nl.fh.group_test;
 
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
 import nl.fh.group_definition_factory.GroupDefinitionFactory;
 import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.info_table.InfoTableException;

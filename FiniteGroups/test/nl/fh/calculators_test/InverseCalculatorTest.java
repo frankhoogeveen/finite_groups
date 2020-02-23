@@ -14,20 +14,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.calculators.test;
+package nl.fh.calculators_test;
 
 import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
-import nl.fh.group.Multiplicator;
-import nl.fh.group_def_permutation.PermutationElement;
-import nl.fh.group_def_permutation.PermutationMultiplicator;
+import nl.fh.group_def_substitutions.StringElement;
+import nl.fh.group_def_substitutions.StringMultiplicator;
+import nl.fh.group_def_substitutions.StringSubstitution;
 import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.info_table.InfoTable;
 import nl.fh.info_table.InfoTableException;
 import nl.fh.info_table_values.IntArray1dValue;
+import nl.fh.info_table_values.IntArray2dValue;
+import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -35,38 +37,36 @@ import org.junit.Test;
  *
  * @author frank
  */
-public class ElementOrderCalculatorTest {
-    
+public class InverseCalculatorTest {
     @Test
-    public void S4Test() throws InfoTableException{
+    public void Y21Test() throws InfoTableException{
         Set<Element> generators = new HashSet<Element>();
-        generators.add(new PermutationElement(new int[]{1,0,2,3}));
-        generators.add(new PermutationElement(new int[]{1,2,3,0}));
+        generators.add(new StringElement("x"));
+        generators.add(new StringElement("y"));
         
-        Multiplicator multiplication = new PermutationMultiplicator(4);
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution("xxx", ""));
+        multiplication.addSubstitution(new StringSubstitution("yyyyyyy", ""));
+        multiplication.addSubstitution(new StringSubstitution("yx", "xyy"));
         
-        String name = "S4";
+        String name = "Y21";
         
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
-
+        
         Group g = new Group(definition);
         InfoTable info =  g.getInfo();
         
-        IntArray1dValue val = (IntArray1dValue)info.getValue(GroupProperty.ElementOrders);
-
-        assertEquals(0, val.count(0));
         
-        assertEquals(1, val.count(1));            
-        assertEquals(9, val.count(2));
-        assertEquals(8, val.count(3));
-        assertEquals(6, val.count(4));
-        assertEquals(0, val.count(6));  
-        assertEquals(0, val.count(8));            
-        assertEquals(0, val.count(12));
-        assertEquals(0, val.count(24));
-
-        assertEquals(0, val.count(7));
-        assertEquals(0, val.count(9));
-        assertEquals(0, val.count(11));
+        
+        int[][] table = ((IntArray2dValue)info.getValue(GroupProperty.MultiplicationTable)).content();
+        int[] inv  = ((IntArray1dValue)info.getValue(GroupProperty.Inverses)).content();
+        int unit   = ((IntValue)info.getValue(GroupProperty.UnitElement)).content();
+        
+        assertEquals(21, table.length);
+        
+        for(int i = 0; i < 21; i++){
+            assertEquals(unit, table[i][inv[i]]);
+            assertEquals(unit, table[inv[i]][i]);
+        }
     }
 }

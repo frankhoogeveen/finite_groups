@@ -24,14 +24,14 @@ import nl.fh.group_formatter.GroupFormatter;
  *
  * @author frank
  */
-public class AllGroupCatalog extends GroupCatalog {
-    private static final Logger LOGGER = Logger.getLogger(AllGroupCatalog.class.getSimpleName());
+public class SmallGroupCatalog extends GroupCatalog {
+    private static final Logger LOGGER = Logger.getLogger(SmallGroupCatalog.class.getSimpleName());
     private final GroupDefinitionFactory factory;
     
 
     
     
-    public AllGroupCatalog(){
+    public SmallGroupCatalog(){
         super();
         this.factory = new GroupDefinitionFactory();
         
@@ -63,7 +63,7 @@ public class AllGroupCatalog extends GroupCatalog {
      */
     public static void main(String[] args){
   
-        GroupCatalog cat = new AllGroupCatalog();
+        GroupCatalog cat = new SmallGroupCatalog();
         GroupFormatter format = new GroupFormatter();
         System.out.println(format.createReport(cat));
     }

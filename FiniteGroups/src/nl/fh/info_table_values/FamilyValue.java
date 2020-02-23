@@ -16,6 +16,8 @@
  */
 package nl.fh.info_table_values;
 
+import java.util.Arrays;
+import nl.fh.group.Group;
 import nl.fh.info_table.Value;
 
 /**
@@ -54,6 +56,61 @@ public class FamilyValue implements Value {
 
     public boolean[][] content() {
         return this.sets;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Arrays.deepHashCode(this.sets);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final FamilyValue other = (FamilyValue) obj;
+        if (!Arrays.deepEquals(this.sets, other.sets)) {
+            return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < this.sets.length; i++){
+            for(int j = 0; j < this.sets[i].length; j++){
+                if(this.sets[i][j]){
+                    sb.append(Integer.toString(j));
+                    sb.append(" ");
+                }
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+    
+    public String toString(Group g){
+        StringBuilder sb = new StringBuilder();
+        
+            for(int i = 0; i < sets.length; i++){
+                for(int j = 0; j < sets[i].length; j++){
+                    if(sets[i][j]){
+                        sb.append(g.getElements().get(j));
+                        sb.append(" ");
+                    }
+                }
+                sb.append("\n");
+            }
+        return sb.toString();
     }
     
 }

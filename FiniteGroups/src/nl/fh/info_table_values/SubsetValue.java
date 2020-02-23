@@ -16,6 +16,7 @@
  */
 package nl.fh.info_table_values;
 
+import java.util.Arrays;
 import nl.fh.info_table.Value;
 
 /**
@@ -107,4 +108,33 @@ public class SubsetValue implements Value {
     public boolean[] content() {
         return this.index;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 67 * hash + Arrays.hashCode(this.index);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final SubsetValue other = (SubsetValue) obj;
+        if (!Arrays.equals(this.index, other.index)) {
+            return false;
+        }
+        return true;
+    }
+
+
+    
+    
 }

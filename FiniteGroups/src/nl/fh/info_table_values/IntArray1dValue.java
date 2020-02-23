@@ -16,6 +16,7 @@
  */
 package nl.fh.info_table_values;
 
+import java.util.Arrays;
 import nl.fh.info_table.Value;
 
 /**
@@ -49,6 +50,31 @@ public class IntArray1dValue implements Value {
             }
         }
         return cnt;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 19 * hash + Arrays.hashCode(this.content);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final IntArray1dValue other = (IntArray1dValue) obj;
+        if (!Arrays.equals(this.content, other.content)) {
+            return false;
+        }
+        return true;
     }
     
 }

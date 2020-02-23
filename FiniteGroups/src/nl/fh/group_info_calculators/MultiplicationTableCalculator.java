@@ -20,8 +20,6 @@ import nl.fh.info_table_values.IntArray2dValue;
 import nl.fh.group_info_table.GroupInfoTableException;
 import nl.fh.group.*;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import nl.fh.info_table.InfoTable;
 import nl.fh.info_table.Property;
 import nl.fh.info_table.Value;

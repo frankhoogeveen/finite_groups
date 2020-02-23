@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.calculators.test;
+package nl.fh.calculators_test;
 
 import nl.fh.info_table_values.BooleanValue;
 import nl.fh.info_table_values.SubsetValue;

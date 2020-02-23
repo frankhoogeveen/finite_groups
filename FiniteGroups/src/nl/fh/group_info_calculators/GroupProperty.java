@@ -29,6 +29,8 @@ public enum GroupProperty implements Property {
     ElementOrders,
     Inverses,
     Center,
-    IsAbelean,   //TODO
-    ConjugationClasses
+    IsAbelean,
+    ConjugationClasses,
+    StronglyMinimalGeneratingSets, 
+    GeneratorMap
 }

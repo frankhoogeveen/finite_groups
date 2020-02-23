@@ -14,17 +14,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group.test;
+package nl.fh.group_test;
 
-import nl.fh.group_def_cyclic.CyclicMultiplicator;
-import nl.fh.group_def_cyclic.CyclicElement;
+import nl.fh.group_def_product.GroupProduct;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
 import nl.fh.info_table.InfoTable;
 import nl.fh.group.Multiplicator;
+import nl.fh.group_def_cyclic.CyclicElement;
+import nl.fh.group_def_cyclic.CyclicMultiplicator;
+import nl.fh.group_def_permutation.PermutationElement;
+import nl.fh.group_def_permutation.PermutationMultiplicator;
 import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
 import nl.fh.info_table.InfoTableException;
@@ -37,50 +42,42 @@ import org.junit.Test;
  *
  * @author frank
  */
-public class GroupCyclicConstructorTest {
-    
+public class GroupProductConstructorTest {
     @Test
-    public void Cyclic11Test(){
+    public void ProductTest(){
+        List<GroupDefinition> defs = new ArrayList<GroupDefinition>();
+        
+        // create an instance of A4
         Set<Element> generators = new HashSet<Element>();
-        generators.add(CyclicElement.generatorOfOrder(11));
+        generators.add(new PermutationElement(new int[]{1,0,3,2}));
+        generators.add(new PermutationElement(new int[]{0,2,3,1}));
         
-        Multiplicator multiplication = new CyclicMultiplicator(11);
+        Multiplicator multiplication = new PermutationMultiplicator(4);
         
-        String name = "C11";
+        defs.add(new GroupDefinition("A4", generators, multiplication));
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        // create an instance of C7
+        generators = new HashSet<Element>();
+        generators.add(CyclicElement.generatorOfOrder(7));
         
+        multiplication = new CyclicMultiplicator(7);
+        
+        defs.add(new GroupDefinition("C7", generators, multiplication));
+        
+        //define the product
+        GroupDefinition product = GroupProduct.of(defs);
+        
+        // check the assertions
         try {
-            
-            Group g = new Group(definition);
+            Group g = new Group(product);
             InfoTable info =  g.getInfo();
-            assertEquals(11, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            assertEquals(7*12, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
-        } catch (InfoTableException ex) {
-            assertTrue(false);
-        } 
-    }
-    
-    @Test
-    public void TrivialTest(){
-        Set<Element> generators = new HashSet<Element>();
-        generators.add(CyclicElement.generatorOfOrder(1));
-        
-        Multiplicator multiplication = new CyclicMultiplicator(1);
-        
-        String name = "C1";
-        
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
-        
-        try {
-            Group g = new Group(definition);
-            InfoTable info =  g.getInfo();
-            assertEquals(1, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
-            GroupInfoTableChecker check = new GroupInfoTableChecker();
-            assertTrue(check.isGroup(info));
+            assertEquals("A4xC7", product.getName());
+            
         } catch (InfoTableException ex) {
             assertTrue(false);
         }

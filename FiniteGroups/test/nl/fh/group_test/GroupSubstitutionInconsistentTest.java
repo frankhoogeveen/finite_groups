@@ -14,32 +14,49 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.calculators.test;
+package nl.fh.group_test;
 
-import java.util.HashSet;
-import java.util.Set;
-import nl.fh.group.Element;
-import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
+import nl.fh.info_table.InfoTable;
+import nl.fh.group_def_substitutions.StringSubstitution;
+import nl.fh.group.Element;
 import nl.fh.group_def_substitutions.StringElement;
 import nl.fh.group_def_substitutions.StringMultiplicator;
-import nl.fh.group_def_substitutions.StringSubstitution;
+import java.util.HashSet;
+import java.util.Set;
+import nl.fh.group.Group;
 import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.info_table.InfoTable;
+import nl.fh.group_info_table.GroupInfoTableChecker;
 import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table_values.IntArray1dValue;
-import nl.fh.info_table_values.IntArray2dValue;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
  *
  * @author frank
  */
-public class InverseCalculatorTest {
+public class GroupSubstitutionInconsistentTest {
+    /**
+     *  The test set up here looks like the construction of Y21, but is 
+     *  subtly different.
+     * 
+     *  Instead of y.x-> x.y.y,, we take y.x-> x.y.y.y
+     * 
+     * From this relation we can prove
+     * y = y.x.x.x = x y.y.y .x.x = ... = x^3 y^6, thus y = y^6 
+     * 
+     * From this one can conclude y = unit. 
+     * 
+     * Therefore the group definition is inconsistent. 
+     * The expected behavior is to return false when checked.
+     * 
+     * @throws InfoTableException 
+     */
     @Test
-    public void Y21Test() throws InfoTableException{
+    public void PseudoY21Test() throws InfoTableException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("x"));
         generators.add(new StringElement("y"));
@@ -47,26 +64,23 @@ public class InverseCalculatorTest {
         StringMultiplicator multiplication = new StringMultiplicator();
         multiplication.addSubstitution(new StringSubstitution("xxx", ""));
         multiplication.addSubstitution(new StringSubstitution("yyyyyyy", ""));
-        multiplication.addSubstitution(new StringSubstitution("yx", "xyy"));
+        multiplication.addSubstitution(new StringSubstitution("yx", "xyyy"));
         
         String name = "Y21";
         
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
-        Group g = new Group(definition);
-        InfoTable info =  g.getInfo();
-        
-        
-        
-        int[][] table = ((IntArray2dValue)info.getValue(GroupProperty.MultiplicationTable)).content();
-        int[] inv  = ((IntArray1dValue)info.getValue(GroupProperty.Inverses)).content();
-        int unit   = ((IntValue)info.getValue(GroupProperty.UnitElement)).content();
-        
-        assertEquals(21, table.length);
-        
-        for(int i = 0; i < 21; i++){
-            assertEquals(unit, table[i][inv[i]]);
-            assertEquals(unit, table[inv[i]][i]);
+        try {
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(21, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            
+            assertFalse(check.isGroup(info));
+        } catch (InfoTableException ex) {
+            assertTrue(false);
         }
     }
-}
+    
+ }

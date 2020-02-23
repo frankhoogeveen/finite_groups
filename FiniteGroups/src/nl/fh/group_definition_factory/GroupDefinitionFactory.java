@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 import nl.fh.group.Element;
 import nl.fh.group.GroupDefinition;
 import nl.fh.group.Multiplicator;
-import nl.fh.group_catalogue.AllGroupCatalog;
+import nl.fh.group_catalogue.SmallGroupCatalog;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
@@ -41,7 +41,7 @@ import nl.fh.group_def_substitutions.StringSubstitution;
  * @author frank
  */
 public class GroupDefinitionFactory {
-    private static final Logger LOGGER = Logger.getLogger(AllGroupCatalog.class.getSimpleName());
+    private static final Logger LOGGER = Logger.getLogger(SmallGroupCatalog.class.getSimpleName());
     
     
      /**

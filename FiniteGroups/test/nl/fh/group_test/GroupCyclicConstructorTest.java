@@ -14,22 +14,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group.test;
+package nl.fh.group_test;
 
-import java.util.ArrayList;
+import nl.fh.group_def_cyclic.CyclicMultiplicator;
+import nl.fh.group_def_cyclic.CyclicElement;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
+import nl.fh.info_table.InfoTable;
 import nl.fh.group.Multiplicator;
-import nl.fh.group_def_cyclic.CyclicElement;
-import nl.fh.group_def_cyclic.CyclicMultiplicator;
-import nl.fh.group_def_product.GroupProduct;
 import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
-import nl.fh.info_table.InfoTable;
 import nl.fh.info_table.InfoTableException;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
@@ -37,40 +34,53 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
- * Tests what happens if we create the direct product of a group with itself
- * 
+ *
  * @author frank
  */
-public class SquareOfGroupTest {
+public class GroupCyclicConstructorTest {
     
-    @Test 
-    public void C3squaredTest(){
-
-        // create an instance of C3
+    @Test
+    public void Cyclic11Test(){
         Set<Element> generators = new HashSet<Element>();
-        generators.add(CyclicElement.generatorOfOrder(3));
+        generators.add(CyclicElement.generatorOfOrder(11));
         
-        Multiplicator multiplication = new CyclicMultiplicator(3);
+        Multiplicator multiplication = new CyclicMultiplicator(11);
         
-        GroupDefinition def = new GroupDefinition("C3", generators, multiplication);
+        String name = "C11";
         
-        //define the product
-        List<GroupDefinition> defs = new ArrayList<GroupDefinition>();
-        defs.add(def);
-        defs.add(def);
-        GroupDefinition product = GroupProduct.of(defs);
+        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
         
-        // check the assertions
         try {
-            Group g = new Group(product);
+            
+            Group g = new Group(definition);
             InfoTable info =  g.getInfo();
-            assertEquals(3*3, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            assertEquals(11, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
             GroupInfoTableChecker check = new GroupInfoTableChecker();
             assertTrue(check.isGroup(info));
+        } catch (InfoTableException ex) {
+            assertTrue(false);
+        } 
+    }
+    
+    @Test
+    public void TrivialTest(){
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(CyclicElement.generatorOfOrder(1));
+        
+        Multiplicator multiplication = new CyclicMultiplicator(1);
+        
+        String name = "C1";
+        
+        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        
+        try {
+            Group g = new Group(definition);
+            InfoTable info =  g.getInfo();
+            assertEquals(1, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
-            assertEquals("C3xC3", product.getName());
-            
+            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            assertTrue(check.isGroup(info));
         } catch (InfoTableException ex) {
             assertTrue(false);
         }

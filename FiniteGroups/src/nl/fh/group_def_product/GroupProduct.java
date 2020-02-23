@@ -16,6 +16,7 @@
  */
 package nl.fh.group_def_product;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -29,6 +30,8 @@ import nl.fh.group.Multiplicator;
  */
 public class GroupProduct {
 
+
+    
     public static GroupDefinition of(List<GroupDefinition> defs) {
         String name = productName(defs);
         
@@ -39,6 +42,10 @@ public class GroupProduct {
         return product;
     }
 
+    public static GroupDefinition of(GroupDefinition[] defs){
+        return GroupProduct.of(Arrays.asList(defs));
+    }
+    
     private static String productName(List<GroupDefinition> defs) {
         if(defs.isEmpty()){
             return "C1";
