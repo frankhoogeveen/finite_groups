@@ -53,7 +53,20 @@ public class InfoTable {
         }
         return values.get(propertyType);
     }
-
+    
+    /**
+     * 
+     * @param calc Calculator added to this lazy evaluator, overrides previous entries
+     */
+    public void add(Calculator calc){
+        this.calculators.put(calc.getProperty(), calc);
+    }
+    
+    /**
+     *  
+     * @param propertyType the property to calculate
+     * @throws InfoTableException if the appropriate calculator has not been loaded
+     */
     private void calculateAndStoreMissingValue(Property propertyType) throws InfoTableException {
         Calculator calculator = calculators.get(propertyType);
         
@@ -65,13 +78,5 @@ public class InfoTable {
         }
         
         values.put(propertyType, calculator.evaluate(this));
-    }
-    
-    /**
-     * 
-     * @param calc Calculator added to this lazy evaluator, overrides previous entries
-     */
-    public void add(Calculator calc){
-        this.calculators.put(calc.getProperty(), calc);
-    }
+    }    
 }

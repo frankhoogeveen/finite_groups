@@ -32,7 +32,7 @@ import nl.fh.info_table.InfoTableException;
  */
 public class GroupCatalog {
     private static final Logger LOGGER = Logger.getLogger(GroupCatalog.class.getSimpleName());
-    private List<Group> list;
+    private final List<Group> list;
     
     public GroupCatalog(){
         this.list = new ArrayList<Group>();

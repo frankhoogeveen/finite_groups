@@ -34,6 +34,13 @@ import nl.fh.info_table.InfoTable;
 public class GroupInfoTable extends InfoTable {
     
 
+    /**
+     * This is an info table pre-loaded with a set of calculators that are 
+     * relevant for groups.
+     * 
+     * @param elements
+     * @param multiplicator 
+     */
     public GroupInfoTable(List<Element> elements, Multiplicator multiplicator) {
         super.add(new MultiplicationTableCalculator(elements, multiplicator));
         super.add(new OrderCalculator());
