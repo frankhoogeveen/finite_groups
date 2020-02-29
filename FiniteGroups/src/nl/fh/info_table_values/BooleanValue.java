@@ -58,7 +58,4 @@ public class BooleanValue implements Value{
         }
         return true;
     }
-    
-    
-    
 }

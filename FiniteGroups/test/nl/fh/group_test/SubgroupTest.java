@@ -20,12 +20,15 @@ import java.util.ArrayList;
 import java.util.List;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
+import nl.fh.group.GroupDefinition;
 import nl.fh.group.SubgroupDefinition;
 import nl.fh.group_definition_factory.GroupDefinitionFactory;
 import nl.fh.group_info_calculators.GroupProperty;
 import nl.fh.group_info_table.GroupInfoTableChecker;
 import nl.fh.info_table.InfoTableException;
+import nl.fh.info_table_values.BooleanValue;
 import nl.fh.info_table_values.FamilyValue;
+import nl.fh.info_table_values.SubsetValue;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
@@ -59,4 +62,30 @@ public class SubgroupTest {
             
         }
     }
+    
+    @Test
+    public void S5CenterTest() throws InfoTableException{
+        GroupDefinitionFactory fac = new GroupDefinitionFactory();
+        Group s5 = new Group(fac.getSymmetricGroup(5));
+        
+        SubsetValue center = (SubsetValue) s5.getInfo().getValue(GroupProperty.Center);
+        boolean[] centerBoolean = center.content();
+        
+        List<Element> list = new ArrayList<Element>();
+        for(int i = 0; i < centerBoolean.length; i++){
+            if(centerBoolean[i]){
+                list.add(s5.getElements().get(i));
+            }
+        }
+        
+        Group sub =new Group( new SubgroupDefinition(s5.getDefinition(), list));
+
+        GroupInfoTableChecker checker = new GroupInfoTableChecker();
+        assertTrue(checker.isGroup(sub.getInfo()));
+        
+        boolean isAbelean = ((BooleanValue)(sub.getInfo().getValue(GroupProperty.IsAbelean))).content();
+        assertTrue(isAbelean);
+    }
+    
+    
 }
