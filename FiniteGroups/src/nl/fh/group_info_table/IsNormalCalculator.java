@@ -14,24 +14,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_info_calculators;
+package nl.fh.group_info_table;
 
+import nl.fh.group_info_calculators.GroupProperty;
+import nl.fh.info_table.Calculator;
+import nl.fh.info_table.InfoTable;
+import nl.fh.info_table.InfoTableException;
 import nl.fh.info_table.Property;
+import nl.fh.info_table.Value;
 
 /**
  *
  * @author frank
  */
-public enum GroupProperty implements Property {
-    Order,
-    MultiplicationTable, 
-    UnitElement,
-    ElementOrders,
-    Inverses,
-    Center,
-    IsAbelean,
-    ConjugationClasses,
-    StronglyMinimalGeneratingSets, 
-    GeneratorMap,
-    IsNormal
+public class IsNormalCalculator implements Calculator {
+
+    public IsNormalCalculator() {
+    }
+
+    @Override
+    public Property getProperty() {
+        return GroupProperty.IsNormal;
+    }
+
+    @Override
+    public Value evaluate(InfoTable info) throws InfoTableException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

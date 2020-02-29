@@ -51,5 +51,6 @@ public class GroupInfoTable extends InfoTable {
         super.add(new IsAbeleanCalculator());
         super.add(new ConjugationClassCalculator());
         super.add(new StronglyMinimalGeneratorsCalculator());
+        super.add(new IsNormalCalculator());
     }
 }

@@ -51,6 +51,16 @@ public class PermutationElement implements Element{
             }
         }
     }
+
+    /**
+     * 
+     * @return the permutation represented by this element
+     * 
+     * i -> returned_value[i]
+     */
+    public int[] getPermutation() {
+        return permutation;
+    }
     
     @Override
     public String toString(){

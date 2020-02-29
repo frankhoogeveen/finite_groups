@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
 import nl.fh.group.SubgroupDefinition;
 import nl.fh.group_definition_factory.GroupDefinitionFactory;
 import nl.fh.group_info_calculators.GroupProperty;
