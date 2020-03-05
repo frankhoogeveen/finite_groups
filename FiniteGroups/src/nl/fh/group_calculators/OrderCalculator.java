@@ -14,16 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group;
+package nl.fh.group_calculators;
+
+import java.util.Set;
+import nl.fh.group.GroupProperty;
+import nl.fh.group.Group;
+import nl.fh.calculator.Calculator;
+import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
+
 
 /**
  *
  * @author frank
  */
-public class MultiplicatorException extends Exception { 
+public class OrderCalculator implements Calculator<Group>{
 
-    public MultiplicatorException(String message) {
-        super(message);
+    @Override
+    public Integer evaluate(Group group) throws EvaluationException {
+        int result = ((Set<Element>)(group.getProperty(GroupProperty.Elements))).size();
+        return Integer.valueOf(result);
     }
-
 }

@@ -14,12 +14,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.info_table;
+package nl.fh.group;
 
 /**
  *
  * @author frank
  */
-public interface Property {
-    
+public class GroupException extends Exception { 
+
+    /**
+     * Exception that is thrown when creating the group does not succeed
+     * 
+     * @param message 
+     */
+    public GroupException(String message) {
+        super(message);
+    }
+
 }

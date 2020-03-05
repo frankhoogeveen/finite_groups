@@ -27,10 +27,10 @@ import nl.fh.group.Multiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_product.GroupProduct;
-import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.group_info_table.GroupInfoTableChecker;
-import nl.fh.info_table.InfoTable;
-import nl.fh.info_table.InfoTableException;
+import nl.fh.group.GroupProperty;
+import nl.fh.group.GroupChecker;
+import nl.fh.info_table.Cache;
+import nl.fh.calculator.EvaluationException;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -63,15 +63,15 @@ public class SquareOfGroupTest {
         // check the assertions
         try {
             Group g = new Group(product);
-            InfoTable info =  g.getInfo();
+            Cache info =  g.getInfo();
             assertEquals(3*3, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
-            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            GroupChecker check = new GroupChecker();
             assertTrue(check.isGroup(info));
             
             assertEquals("C3xC3", product.getName());
             
-        } catch (InfoTableException ex) {
+        } catch (EvaluationException ex) {
             assertTrue(false);
         }
     }

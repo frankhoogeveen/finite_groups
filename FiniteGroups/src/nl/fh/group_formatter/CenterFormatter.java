@@ -16,12 +16,13 @@
  */
 package nl.fh.group_formatter;
 
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.group.Group;
-import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table_values.SubsetValue;
+import nl.fh.group.GroupProperty;
+import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
 
 /**
  *
@@ -37,23 +38,19 @@ public class CenterFormatter implements ItemFormatter {
         StringBuilder sb = new StringBuilder();
         
         try {   
-            SubsetValue center = ((SubsetValue)g.getInfo().getValue(GroupProperty.Center));
-            boolean[] inCenter = center.content();
-            int centerSize = center.count();
+            Set<Element> center = ((Set<Element>)g.getProperty(GroupProperty.Center));
             
             sb.append("center size: ");
-            sb.append(centerSize);
+            sb.append(center.size());
             sb.append("\n");
             sb.append("   ");
-            for(int i = 0; i < inCenter.length; i++){
-                if(inCenter[i]){
-                    sb.append(g.getElements().get(i).toString());
-                    sb.append(" ");
-                }
+            for(Element z : center){
+                sb.append(z.toString());
+                sb.append(" ");
             }
             sb.append("\n");
                    
-        } catch (InfoTableException ex) {
+        } catch (EvaluationException ex) {
             String mess = "cannot retrieve the center";
             Logger.getLogger(CenterFormatter.class.getName()).log(Level.SEVERE, mess, ex);
             sb.append(mess);

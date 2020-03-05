@@ -14,15 +14,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_info_calculators;
+package nl.fh.group_calculators;
 
-import nl.fh.info_table.Calculator;
+import java.util.Set;
+import nl.fh.calculator.Calculator;
+import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
+import nl.fh.group.Group;
+import nl.fh.group.GroupProperty;
 
 /**
- * Classes implementing this interface calculate group properties
+ *
+ *  returns true if the group is abelean
+ * 
  * 
  * @author frank
  */
-public interface GroupCalculator extends Calculator{
-    
+public class IsAbeleanCalculator implements Calculator<Group> {
+
+    public IsAbeleanCalculator() {
+    }
+
+    @Override
+    public Boolean evaluate(Group group) throws EvaluationException {
+        Set<Element> center = (Set<Element>)(group.getProperty(GroupProperty.Center));
+        int order = (int)(group.getProperty(GroupProperty.Order));
+        return (order == center.size());
+    }
 }

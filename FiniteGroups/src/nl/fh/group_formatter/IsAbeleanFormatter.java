@@ -19,9 +19,8 @@ package nl.fh.group_formatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.group.Group;
-import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table_values.BooleanValue;
+import nl.fh.calculator.EvaluationException;
+import nl.fh.group.GroupProperty;
 
 /**
  *
@@ -38,9 +37,9 @@ public class IsAbeleanFormatter implements ItemFormatter {
         StringBuilder sb = new StringBuilder();
         sb.append("Is abelean: ");
         try {
-            boolean abelean= ((BooleanValue)g.getInfo().getValue(GroupProperty.IsAbelean)).content();
+            boolean abelean= (boolean) g.getProperty(GroupProperty.IsAbelean);
             sb.append(abelean);
-        } catch (InfoTableException ex) {
+        } catch (EvaluationException ex) {
             String mess = "cannot retrieve IsAbelean";
             Logger.getLogger(OrderFormatter.class.getName()).log(Level.SEVERE, mess, ex);
             sb.append(mess);

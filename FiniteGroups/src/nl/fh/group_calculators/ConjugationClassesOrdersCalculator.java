@@ -14,31 +14,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_info_table;
+package nl.fh.group_calculators;
 
-import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.info_table.Calculator;
-import nl.fh.info_table.InfoTable;
-import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table.Property;
-import nl.fh.info_table.Value;
+import java.util.Map;
+import java.util.Set;
+import nl.fh.calculator.Calculator;
+import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
+import nl.fh.group.Group;
 
 /**
- *
+ * Object to calculate a map that assigns the order to each conjugation class
+ * 
+ * 
  * @author frank
  */
-public class IsNormalCalculator implements Calculator {
+public class ConjugationClassesOrdersCalculator implements Calculator<Group> {
 
-    public IsNormalCalculator() {
+    public ConjugationClassesOrdersCalculator() {
     }
 
     @Override
-    public Property getProperty() {
-        return GroupProperty.IsNormal;
-    }
-
-    @Override
-    public Value evaluate(InfoTable info) throws InfoTableException {
+    public Map<Set<Element>, Integer> evaluate(Group subject) throws EvaluationException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

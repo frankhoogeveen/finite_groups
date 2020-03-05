@@ -14,25 +14,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.info_table;
+package nl.fh.calculator;
 
 /**
  *
  * @author frank
+ * @param <T> the type of object on which this calculator acts
  */
-public interface Calculator {
-    
-     /**
-     * 
-     * @return a enum describing the property calculated by this
-     */
-    public Property getProperty();
+public interface Calculator <T> {
     
     /**
      * 
-     * @param info the information on which the property will be based
-     * @return the output of this calculator, using info as input
-     * @throws InfoTableException when the calculation does not succeed
+     * @param subject of which a property will be calculated
+     * @return the output of this calculator
+     * @throws EvaluationException when the calculation does not succeed
      */
-    public Value evaluate(InfoTable info) throws InfoTableException;
+    public Object evaluate(T subject) throws EvaluationException;
 }

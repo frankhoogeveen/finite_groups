@@ -14,40 +14,38 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_formatter;
+package nl.fh.group_calculators;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import nl.fh.group.Group;
 import nl.fh.group.GroupProperty;
+import nl.fh.group.Element;
+import nl.fh.group.Group;
+import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Multiplicator;
 
 /**
- *
- *  Formats the report element on the order of the group
+ * Searches for the unit element of the group 
  * 
  * @author frank
  */
-public class OrderFormatter implements ItemFormatter {
-
-    public OrderFormatter() {
-    }
+public class UnitCalculator  implements Calculator<Group> {
 
     @Override
-    public StringBuilder format(Group g) {
+    public  Element evaluate(Group group) throws EvaluationException {
+        Multiplicator mult = (Multiplicator)(group.getProperty(GroupProperty.MultiplicationTable));
         
-        StringBuilder sb = new StringBuilder();
-        sb.append("Order: ");
-        try {
-            int order = (int) g.getProperty(GroupProperty.Order);
-            sb.append(order);
-        } catch (EvaluationException ex) {
-            String mess = "cannot retrieve order";
-            Logger.getLogger(OrderFormatter.class.getName()).log(Level.SEVERE, mess, ex);
-            sb.append(mess);
+        for(Element g : group){
+            boolean found = true;
+            
+            for(Element h : group){
+                found &= ((mult.getProduct(g, h).equals(h)) && (mult.getProduct(h, g).equals(g)));
+            }
+            
+            if(found){
+                return g;
+            }
         }
-        sb.append("\n");
-        return sb;
+        
+        throw new EvaluationException("could not find unit element");
     }
-    
 }

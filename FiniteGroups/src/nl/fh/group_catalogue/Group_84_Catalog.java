@@ -21,13 +21,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
+import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
-import nl.fh.group.GroupDefinition;
+import nl.fh.group.Group;
+import nl.fh.group.GroupException;
 import nl.fh.group_def_product.GroupProduct;
 import nl.fh.group_def_substitutions.StringElement;
 import nl.fh.group_def_substitutions.StringMultiplicator;
 import nl.fh.group_def_substitutions.StringSubstitution;
-import nl.fh.group_definition_factory.GroupDefinitionFactory;
+import nl.fh.group_definition_factory.GroupFactory;
 import nl.fh.group_formatter.GroupFormatter;
 
 /**
@@ -36,19 +38,19 @@ import nl.fh.group_formatter.GroupFormatter;
  */
 public class Group_84_Catalog extends GroupCatalog {
     private static final Logger LOGGER = Logger.getLogger(Group_84_Catalog.class.getSimpleName());
-    private final GroupDefinitionFactory factory;
+    private final GroupFactory factory;
     
-    public Group_84_Catalog(){
+    public Group_84_Catalog() throws EvaluationException, GroupException{
         super();
-        factory = new GroupDefinitionFactory();
+        factory = new GroupFactory();
         
         /* G84_1  A4 x C7 */
-        GroupDefinition c7 = factory.getCyclicGroup(7);
-        GroupDefinition a4 = factory.getAlternatingGroup(4);
-        List<GroupDefinition> list = new ArrayList<GroupDefinition>();
+        Group c7 = factory.getCyclicGroup(7);
+        Group a4 = factory.getAlternatingGroup(4);
+        List<Group> list = new ArrayList<Group>();
         list.add(a4);
         list.add(c7);
-        GroupDefinition g1 = GroupProduct.of(list);
+        Group g1 = GroupProduct.of(list);
         
         super.add(g1);
         
@@ -68,7 +70,7 @@ public class Group_84_Catalog extends GroupCatalog {
         
         String name = "G84_2";
         
-        GroupDefinition g2 = new GroupDefinition(name, generators, multiplication);
+        Group g2 = new Group(name, generators, multiplication);
         
         super.add(g2);
         
@@ -84,24 +86,24 @@ public class Group_84_Catalog extends GroupCatalog {
         
         name = "Y21";
         
-        GroupDefinition y21 = new GroupDefinition(name, generators, multiplication);
-        GroupDefinition c4 = factory.getCyclicGroup(4);
+        Group y21 = new Group(name, generators, multiplication);
+        Group c4 = factory.getCyclicGroup(4);
         
-        list = new ArrayList<GroupDefinition>();
+        list = new ArrayList<Group>();
         list.add(y21);
         list.add(c4);
-        GroupDefinition g3 = GroupProduct.of(list);
+        Group g3 = GroupProduct.of(list);
         
         super.add(g3);
         
         /* G84_4 */
-        GroupDefinition c2= factory.getCyclicGroup(2);
+        Group c2= factory.getCyclicGroup(2);
         
-        list = new ArrayList<GroupDefinition>();
+        list = new ArrayList<Group>();
         list.add(y21);
         list.add(c2);
         list.add(c2);
-        GroupDefinition g4 = GroupProduct.of(list);
+        Group g4 = GroupProduct.of(list);
         
         super.add(g4);
         
@@ -127,7 +129,7 @@ public class Group_84_Catalog extends GroupCatalog {
         
         name = "G84_5";
         
-        GroupDefinition g5 = new GroupDefinition(name, generators, multiplication);
+        Group g5 = new Group(name, generators, multiplication);
         
         super.add(g5);
         
@@ -154,62 +156,62 @@ public class Group_84_Catalog extends GroupCatalog {
         
         name = "G84_6";
         
-        GroupDefinition g6 = new GroupDefinition(name, generators, multiplication);
+        Group g6 = new Group(name, generators, multiplication);
         
         super.add(g6);
         
         /* G84_7  C42 x C2 */
-        GroupDefinition c42 = factory.getCyclicGroup(42);
-        list = new ArrayList<GroupDefinition>();
+        Group c42 = factory.getCyclicGroup(42);
+        list = new ArrayList<Group>();
         list.add(c42);
         list.add(c2);
-        GroupDefinition g7 = GroupProduct.of(list);
+        Group g7 = GroupProduct.of(list);
 
         super.add(g7);
         
         /* G84_8 */
-        GroupDefinition d7 = factory.getDihedralGroup(7);
-        GroupDefinition d3 = factory.getDihedralGroup(3);
+        Group d7 = factory.getDihedralGroup(7);
+        Group d3 = factory.getDihedralGroup(3);
         
-        list = new ArrayList<GroupDefinition>();
+        list = new ArrayList<Group>();
         list.add(d7);
         list.add(d3);
-        GroupDefinition g8 = GroupProduct.of(list);
+        Group g8 = GroupProduct.of(list);
     
         super.add(g8);
         
         /* G84_9 */
-        GroupDefinition c6  = factory.getCyclicGroup(6);
+        Group c6  = factory.getCyclicGroup(6);
         
-        list = new ArrayList<GroupDefinition>();
+        list = new ArrayList<Group>();
         list.add(d7);
         list.add(c6);
-        GroupDefinition g9 = GroupProduct.of(list);
+        Group g9 = GroupProduct.of(list);
         
         super.add(g9);
         
         /* G84_10 */
-        GroupDefinition d21  = factory.getDihedralGroup(21);
+        Group d21  = factory.getDihedralGroup(21);
         
-        list = new ArrayList<GroupDefinition>();
+        list = new ArrayList<Group>();
         list.add(d21);
         list.add(c2);
-        GroupDefinition g10 = GroupProduct.of(list);
+        Group g10 = GroupProduct.of(list);
                 
         super.add(g10);
         
         /* G84_11 */
-        GroupDefinition c14 = factory.getCyclicGroup(14);
+        Group c14 = factory.getCyclicGroup(14);
         
-        list = new ArrayList<GroupDefinition>();
+        list = new ArrayList<Group>();
         list.add(d3);
         list.add(c14);
-        GroupDefinition g11 = GroupProduct.of(list);
+        Group g11 = GroupProduct.of(list);
                     
         super.add(g11);
         
         /* G84_12 */
-        GroupDefinition g12 = factory.getCyclicGroup(84);
+        Group g12 = factory.getCyclicGroup(84);
                     
         super.add(g12);
         
@@ -229,7 +231,7 @@ public class Group_84_Catalog extends GroupCatalog {
         
         name = "G84_13";
         
-        GroupDefinition g13 = new GroupDefinition(name, generators, multiplication);
+        Group g13 = new Group(name, generators, multiplication);
         
         super.add(g13);
         
@@ -249,7 +251,7 @@ public class Group_84_Catalog extends GroupCatalog {
         
         name = "G84_14";
         
-        GroupDefinition g14 = new GroupDefinition(name, generators, multiplication);
+        Group g14 = new Group(name, generators, multiplication);
         
         super.add(g14); 
         
@@ -269,7 +271,7 @@ public class Group_84_Catalog extends GroupCatalog {
         
         name = "G84_15";
         
-        GroupDefinition g15 = new GroupDefinition(name, generators, multiplication);
+        Group g15 = new Group(name, generators, multiplication);
         
         super.add(g15);  
 
@@ -280,7 +282,7 @@ public class Group_84_Catalog extends GroupCatalog {
      * main method that prints the entire catalog
      * @param args 
      */
-    public static void main(String[] args){
+    public static void main(String[] args) throws EvaluationException, GroupException{
   
         GroupCatalog cat = new Group_84_Catalog();
         GroupFormatter format = new GroupFormatter();

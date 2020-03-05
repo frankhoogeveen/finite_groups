@@ -17,7 +17,7 @@
 package nl.fh.group_test;
 
 import nl.fh.group.GroupDefinition;
-import nl.fh.info_table.InfoTable;
+import nl.fh.info_table.Cache;
 import nl.fh.group_def_substitutions.StringSubstitution;
 import nl.fh.group.Element;
 import nl.fh.group_def_substitutions.StringElement;
@@ -25,9 +25,9 @@ import nl.fh.group_def_substitutions.StringMultiplicator;
 import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Group;
-import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.group_info_table.GroupInfoTableChecker;
-import nl.fh.info_table.InfoTableException;
+import nl.fh.group.GroupProperty;
+import nl.fh.group.GroupChecker;
+import nl.fh.calculator.EvaluationException;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -52,12 +52,12 @@ public class GroupSubstitutionConstructorTest {
         
         try {
             Group g = new Group(definition);
-            InfoTable info =  g.getInfo();
+            Cache info =  g.getInfo();
             assertEquals(3, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
-            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            GroupChecker check = new GroupChecker();
             assertTrue(check.isGroup(info));
-        } catch (InfoTableException ex) {
+        } catch (EvaluationException ex) {
             assertTrue(false);
         }
     }
@@ -76,18 +76,18 @@ public class GroupSubstitutionConstructorTest {
         
         try {
             Group g = new Group(definition);
-            InfoTable info =  g.getInfo();
+            Cache info =  g.getInfo();
             assertEquals(7, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
-            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            GroupChecker check = new GroupChecker();
             assertTrue(check.isGroup(info));
-        } catch (InfoTableException ex) {
+        } catch (EvaluationException ex) {
             assertTrue(false);
         }
     }
     
     @Test
-    public void D3Test() throws InfoTableException{
+    public void D3Test() throws EvaluationException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("a"));
         generators.add(new StringElement("b"));
@@ -102,18 +102,18 @@ public class GroupSubstitutionConstructorTest {
         
         try {
             Group g = new Group(definition);
-            InfoTable info =  g.getInfo();
+            Cache info =  g.getInfo();
             assertEquals(6, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
-            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            GroupChecker check = new GroupChecker();
             assertTrue(check.isGroup(info));
-        } catch (InfoTableException ex) {
+        } catch (EvaluationException ex) {
             assertTrue(false);
         }
     }
     
     @Test
-    public void Y21Test() throws InfoTableException{
+    public void Y21Test() throws EvaluationException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("x"));
         generators.add(new StringElement("y"));
@@ -129,12 +129,12 @@ public class GroupSubstitutionConstructorTest {
         
         try {
             Group g = new Group(definition);
-            InfoTable info =  g.getInfo();
+            Cache info =  g.getInfo();
             assertEquals(21, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
-            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            GroupChecker check = new GroupChecker();
             assertTrue(check.isGroup(info));
-        } catch (InfoTableException ex) {
+        } catch (EvaluationException ex) {
             assertTrue(false);
         }
     }
@@ -165,12 +165,12 @@ public class GroupSubstitutionConstructorTest {
         
         try {
             Group g = new Group(definition);
-            InfoTable info =  g.getInfo();
+            Cache info =  g.getInfo();
             assertEquals(84, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
-            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            GroupChecker check = new GroupChecker();
             assertTrue(check.isGroup(info));
-        } catch (InfoTableException ex) {
+        } catch (EvaluationException ex) {
             assertTrue(false);
         }
     }

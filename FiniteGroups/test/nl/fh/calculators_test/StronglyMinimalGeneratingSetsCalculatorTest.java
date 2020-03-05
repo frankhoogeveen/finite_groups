@@ -19,9 +19,9 @@ package nl.fh.calculators_test;
 import nl.fh.group.Group;
 import nl.fh.group.GroupDefinition;
 import nl.fh.group_def_product.GroupProduct;
-import nl.fh.group_definition_factory.GroupDefinitionFactory;
-import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.info_table.InfoTableException;
+import nl.fh.group_definition_factory.GroupFactory;
+import nl.fh.group.GroupProperty;
+import nl.fh.calculator.EvaluationException;
 import nl.fh.info_table_values.FamilyValue;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
@@ -36,8 +36,8 @@ public class StronglyMinimalGeneratingSetsCalculatorTest {
     private boolean verbose = false;
     
     @Test
-    public void S3Test() throws InfoTableException{
-        GroupDefinitionFactory fac = new GroupDefinitionFactory();
+    public void S3Test() throws EvaluationException{
+        GroupFactory fac = new GroupFactory();
         Group s3 = new Group(fac.getSymmetricGroup(3));
         
         FamilyValue val = (FamilyValue)(s3.getInfo().getValue(GroupProperty.StronglyMinimalGeneratingSets));
@@ -72,8 +72,8 @@ public class StronglyMinimalGeneratingSetsCalculatorTest {
     
     
     @Test
-    public void S4Test() throws InfoTableException{
-        GroupDefinitionFactory fac = new GroupDefinitionFactory();
+    public void S4Test() throws EvaluationException{
+        GroupFactory fac = new GroupFactory();
         Group s4 = new Group(fac.getSymmetricGroup(4));
         
         FamilyValue val = (FamilyValue)(s4.getInfo().getValue(GroupProperty.StronglyMinimalGeneratingSets));
@@ -102,8 +102,8 @@ public class StronglyMinimalGeneratingSetsCalculatorTest {
     }
     
     @Test
-    public void C6Test() throws InfoTableException{
-        GroupDefinitionFactory fac = new GroupDefinitionFactory();
+    public void C6Test() throws EvaluationException{
+        GroupFactory fac = new GroupFactory();
         Group c6 = new Group(fac.getCyclicGroup(6));
         
         /*
@@ -137,8 +137,8 @@ public class StronglyMinimalGeneratingSetsCalculatorTest {
     }
     
     @Test
-    public void D3D4Test() throws InfoTableException{
-        GroupDefinitionFactory fac = new GroupDefinitionFactory();
+    public void D3D4Test() throws EvaluationException{
+        GroupFactory fac = new GroupFactory();
 
         Group d3 = new Group(fac.getDihedralGroup(3));
         Group d4 = new Group(fac.getDihedralGroup(4));
@@ -153,8 +153,8 @@ public class StronglyMinimalGeneratingSetsCalculatorTest {
     
     
     @Test
-    public void MoreThanTwoGeneratorsTest() throws InfoTableException{
-        GroupDefinitionFactory fac = new GroupDefinitionFactory();
+    public void MoreThanTwoGeneratorsTest() throws EvaluationException{
+        GroupFactory fac = new GroupFactory();
         
         GroupDefinition[] factors = new GroupDefinition[2];
         factors[0] = fac.getDihedralGroup(3);

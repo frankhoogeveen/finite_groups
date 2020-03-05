@@ -17,7 +17,7 @@
 package nl.fh.group_catalogue;
 
 import java.util.logging.Logger;
-import nl.fh.group_definition_factory.GroupDefinitionFactory;
+import nl.fh.group_definition_factory.GroupFactory;
 import nl.fh.group_formatter.GroupFormatter;
 
 /**
@@ -26,14 +26,14 @@ import nl.fh.group_formatter.GroupFormatter;
  */
 public class SmallGroupCatalog extends GroupCatalog {
     private static final Logger LOGGER = Logger.getLogger(SmallGroupCatalog.class.getSimpleName());
-    private final GroupDefinitionFactory factory;
+    private final GroupFactory factory;
     
 
     
     
     public SmallGroupCatalog(){
         super();
-        this.factory = new GroupDefinitionFactory();
+        this.factory = new GroupFactory();
         
         /* order one */
         super.add(factory.getCyclicGroup(1));

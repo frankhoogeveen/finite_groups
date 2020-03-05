@@ -14,34 +14,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_info_calculators;
-
-import nl.fh.info_table.Calculator;
-import nl.fh.info_table.InfoTable;
-import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table.Property;
-import nl.fh.info_table.Value;
-import nl.fh.info_table_values.BooleanValue;
-import nl.fh.info_table_values.SubsetValue;
+package nl.fh.calculator;
 
 /**
  *
  * @author frank
  */
-public class IsAbeleanCalculator implements Calculator {
+public class EvaluationException extends Exception {
 
-    public IsAbeleanCalculator() {
+    public EvaluationException(String message) {
+        super(message);
     }
-
-    @Override
-    public Property getProperty() {
-        return GroupProperty.IsAbelean;
-    }
-
-    @Override
-    public Value evaluate(InfoTable info) throws InfoTableException {
-        SubsetValue center = (SubsetValue)info.getValue(GroupProperty.Center);
-        return new BooleanValue(center.isAll());
-    }
-   
+    
 }

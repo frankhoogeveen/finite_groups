@@ -18,11 +18,8 @@ package nl.fh.group_catalogue;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
-import nl.fh.info_table.InfoTableException;
 
 /**
  * A collection/ catalog of groups 
@@ -40,17 +37,12 @@ public class GroupCatalog {
     
     /**
      * 
-     * @param def definition of a finite group
+     * @param group definition of a finite group
      * 
      * Add a group to the catalog
      */
-    public void add(GroupDefinition def){
-            try {
-                this.list.add(new Group(def));
-            } catch (InfoTableException ex) {
-                String mess = "could not add group " + def.getName();
-                Logger.getLogger(GroupCatalog.class.getName()).log(Level.SEVERE, null, ex);
-            }
+    public void add(Group group){
+        this.list.add(group);
     }
 
     public List<Group> getList() {

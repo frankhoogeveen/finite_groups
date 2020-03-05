@@ -21,66 +21,67 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
-import nl.fh.group.GroupDefinition;
+import nl.fh.group.Group;
 import nl.fh.group.Multiplicator;
+import nl.fh.group.GroupProperty;
+import nl.fh.calculator.EvaluationException;
+import nl.fh.group.GroupException;
 
 /**
- *
+ * Creates the direct product of several groups
+ * 
  * @author frank
  */
 public class GroupProduct {
 
-
-    
-    public static GroupDefinition of(List<GroupDefinition> defs) {
-        String name = productName(defs);
+    public static Group of(List<Group> factors) throws EvaluationException, GroupException {
+        String name = productName(factors);
         
-        Set<Element> generators = createGenerators(defs);
-        Multiplicator<ProductElement> multiplication = new ProductMultiplicator(defs);
+        Set<Element> generators = createGenerators(factors);
+        Multiplicator<ProductElement> multiplication = new ProductMultiplicator(factors);
      
-        GroupDefinition product = new GroupDefinition(name, generators, multiplication );
+        Group product = new Group(name, generators, multiplication );
         return product;
     }
 
-    public static GroupDefinition of(GroupDefinition[] defs){
-        return GroupProduct.of(Arrays.asList(defs));
+    public static Group of(Group[] factors) throws EvaluationException, GroupException{
+        return GroupProduct.of(Arrays.asList(factors));
     }
     
-    private static String productName(List<GroupDefinition> defs) {
-        if(defs.isEmpty()){
+    private static String productName(List<Group> factors) throws EvaluationException {
+        if(factors.isEmpty()){
             return "C1";
         }
         
         StringBuilder sb = new StringBuilder();
-        sb.append(defs.get(0).getName());
-        for(int i = 1; i < defs.size(); i++){
+        sb.append((String)factors.get(0).getProperty(GroupProperty.Name));
+        for(int i = 1; i < factors.size(); i++){
             sb.append("x");
-            sb.append(defs.get(i).getName());
+            sb.append((String)factors.get(i).getProperty(GroupProperty.Name));
         }
         
         return sb.toString();
     }
     
-    
-    private static Set<Element> createGenerators(List<GroupDefinition> defs) {
-        Element[] unitElement = getUnitElementOfProduct(defs);
+    private static Set<Element> createGenerators(List<Group> factors) throws EvaluationException {
+        Element[] unitElement = getUnitElementOfProduct(factors);
         
         Set<Element> result = new HashSet<Element>();
-        for(int i =0; i < defs.size(); i++){
-            for(Element gen : defs.get(i).getGenerators()){
-                Element[] newGen = unitElement.clone();
-                newGen[i] = gen;
-                result.add(new ProductElement(newGen));
+        for(int i =0; i < factors.size(); i++){
+            for(Element g : (Set<Element>)factors.get(i).getProperty(GroupProperty.Elements)){
+                    Element[] newGen = unitElement.clone();
+                    newGen[i] = g;
+                    result.add(new ProductElement(newGen));
             }
         }
         
         return result;
     }
 
-    private static Element[] getUnitElementOfProduct(List<GroupDefinition> defs) {
-        Element[] result = new Element[defs.size()];
-        for(int i =0; i< defs.size(); i++){
-            result[i] = defs.get(i).getMultiplicator().getUnit();
+    private static Element[] getUnitElementOfProduct(List<Group> factors) throws EvaluationException {
+        Element[] result = new Element[factors.size()];
+        for(int i =0; i< factors.size(); i++){
+            result[i] = (Element) factors.get(i).getProperty(GroupProperty.UnitElement);
         }
         return result;
     }

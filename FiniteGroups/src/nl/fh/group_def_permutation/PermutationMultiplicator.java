@@ -16,7 +16,6 @@
  */
 package nl.fh.group_def_permutation;
 
-import nl.fh.group.Element;
 import nl.fh.group.Multiplicator;
 
 /**
@@ -25,7 +24,6 @@ import nl.fh.group.Multiplicator;
  */
 public class PermutationMultiplicator implements Multiplicator<PermutationElement> {
 
-    private static PermutationElement unit;
     private int degree;
 
     public PermutationMultiplicator(int degree) {
@@ -34,12 +32,6 @@ public class PermutationMultiplicator implements Multiplicator<PermutationElemen
         }
         
         this.degree = degree;
-        
-        int[] unitPermutation = new int[degree];
-        for(int i = 0; i < degree; i++){
-            unitPermutation[i] = i;
-        }
-        this.unit = new PermutationElement(unitPermutation);
     }
 
     @Override
@@ -55,10 +47,4 @@ public class PermutationMultiplicator implements Multiplicator<PermutationElemen
         }
         return new PermutationElement(result);
     }
-
-    @Override
-    public Element getUnit() {
-        return PermutationMultiplicator.unit;
-    }
-    
 }

@@ -17,7 +17,7 @@
 package nl.fh.group_test;
 
 import nl.fh.group.GroupDefinition;
-import nl.fh.info_table.InfoTable;
+import nl.fh.info_table.Cache;
 import nl.fh.group_def_substitutions.StringSubstitution;
 import nl.fh.group.Element;
 import nl.fh.group_def_substitutions.StringElement;
@@ -25,9 +25,9 @@ import nl.fh.group_def_substitutions.StringMultiplicator;
 import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Group;
-import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.group_info_table.GroupInfoTableChecker;
-import nl.fh.info_table.InfoTableException;
+import nl.fh.group.GroupProperty;
+import nl.fh.group.GroupChecker;
+import nl.fh.calculator.EvaluationException;
 import nl.fh.info_table_values.IntValue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -53,10 +53,10 @@ public class GroupSubstitutionInconsistentTest {
      * Therefore the group definition is inconsistent. 
      * The expected behavior is to return false when checked.
      * 
-     * @throws InfoTableException 
+     * @throws EvaluationException 
      */
     @Test
-    public void PseudoY21Test() throws InfoTableException{
+    public void PseudoY21Test() throws EvaluationException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("x"));
         generators.add(new StringElement("y"));
@@ -72,13 +72,13 @@ public class GroupSubstitutionInconsistentTest {
         
         try {
             Group g = new Group(definition);
-            InfoTable info =  g.getInfo();
+            Cache info =  g.getInfo();
             assertEquals(21, ((IntValue)info.getValue(GroupProperty.Order)).content());
             
-            GroupInfoTableChecker check = new GroupInfoTableChecker();
+            GroupChecker check = new GroupChecker();
             
             assertFalse(check.isGroup(info));
-        } catch (InfoTableException ex) {
+        } catch (EvaluationException ex) {
             assertTrue(false);
         }
     }

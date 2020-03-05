@@ -16,6 +16,8 @@
  */
 package nl.fh.group;
 
+import nl.fh.calculator.EvaluationException;
+
 /**
  *
  * @author frank
@@ -29,13 +31,7 @@ public interface Multiplicator<E extends Element> {
      * @param factor2 
      * 
      * @return factor1 * factor2 
-     * @throws MultiplicatorException 
+     * @throws nl.fh.calculator.EvaluationException 
      */
-    E getProduct(E factor1, E factor2) throws MultiplicatorException;
-
-    /**
-     * 
-     * @return  the unit element of this multiplicator
-     */
-    public Element getUnit();
+    E getProduct(E factor1, E factor2) throws EvaluationException;
 }

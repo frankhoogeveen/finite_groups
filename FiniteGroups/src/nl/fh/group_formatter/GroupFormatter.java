@@ -18,7 +18,11 @@ package nl.fh.group_formatter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
+import nl.fh.group.GroupProperty;
 import nl.fh.group_catalogue.GroupCatalog;
 
 /**
@@ -100,7 +104,13 @@ public class GroupFormatter {
         }
         sb.append("\n");
         
-        sb.append(g.getName());
+        try {
+            sb.append(g.getProperty(GroupProperty.Name));
+        } catch (EvaluationException ex) {
+            String mess = "*** unknown name ***";
+            sb.append(mess);
+            Logger.getLogger(GroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
+        }
         sb.append("\n");
         return sb;
     }

@@ -16,13 +16,14 @@
  */
 package nl.fh.group_formatter;
 
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.group.Group;
-import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table_values.FamilyValue;
-import nl.fh.info_table_values.IntArray1dValue;
+import nl.fh.group.GroupProperty;
+import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
 
 /**
  *
@@ -38,15 +39,17 @@ public class ConjugationClassesFormatter implements ItemFormatter {
         
         StringBuilder sb = new StringBuilder();
         try { 
-            boolean[][] conj = ((FamilyValue)g.getInfo().getValue(GroupProperty.ConjugationClasses)).content();   
-
+            Set<Set<Element>> conj = (Set<Set<Element>>) g.getProperty(GroupProperty.ConjugationClassesSet);
+            Map<Set<Element>, Integer> conjOrder = (Map<Set<Element>, Integer>) g.getProperty(GroupProperty.ConjugationsClassesOrders);
+            
             totalNumberOfClasses(sb, conj);
-            for(int i = 0; i < conj.length; i++){
-                reportConjugationClass(sb, g, i);
+            
+            for(Set<Element> conjClass : conj){
+                reportConjugationClass(sb, g, conjClass, conjOrder.get(conjClass));
             }
                 
-        } catch (InfoTableException ex) {
-            String mess = "cannot retrieve conjugation classes";
+        } catch (EvaluationException ex) {
+            String mess = "cannot report on conjugation classes";
             Logger.getLogger(OrderFormatter.class.getName()).log(Level.SEVERE, mess, ex);
             sb.append(mess);
         }
@@ -54,40 +57,21 @@ public class ConjugationClassesFormatter implements ItemFormatter {
         return sb;
     }
     
-    private void totalNumberOfClasses(StringBuilder sb, boolean[][] conj){
+    private void totalNumberOfClasses(StringBuilder sb, Set<Set<Element>> conj){
         sb.append("\nTotal number of conjugation classes: ");
-        sb.append(conj.length);
+        sb.append(conj.size());
         sb.append("\n");
     }
 
-    private void reportConjugationClass(StringBuilder sb, Group g, int classNumber) throws InfoTableException {
-        boolean[] conj = ((FamilyValue)g.getInfo().getValue(GroupProperty.ConjugationClasses)).content()[classNumber];
-        int[] order = ((IntArray1dValue)g.getInfo().getValue(GroupProperty.ElementOrders)).content();
-        
-        // find the first element in the conjugation class and count the class size
-        int first = -1;
-        int count = 0;
-        for(int i = 0; i < conj.length; i++){
-            if((first == -1) && conj[i]){
-                first = i;
-            }
-            if(conj[i]){
-                count++;
-            }
-        }
-        
-        int elementOrder = order[first];
-        
-        sb.append("conjugation class: ");
-        sb.append(count);
+    private void reportConjugationClass(StringBuilder sb, Group g, Set<Element> conjClass, int order) throws EvaluationException {        
+        sb.append("conjugation class of size: ");
+        sb.append(conjClass.size());
         sb.append(" elements of order ");
-        sb.append(elementOrder);
+        sb.append(order);
         sb.append("\n     ");
-        for(int i = 0; i < conj.length; i++){
-            if(conj[i]){
-                sb.append(g.getElements().get(i).toString());
-                sb.append(" ");
-            }
+        for(Element c : conjClass){
+            sb.append(" ");
+            sb.append(c.toString());
         }
         sb.append("\n\n");
     }

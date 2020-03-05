@@ -14,16 +14,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.info_table;
+package nl.fh.group_calculators;
+
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import nl.fh.calculator.Calculator;
+import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
+import nl.fh.group.Group;
+import nl.fh.group.GroupProperty;
 
 /**
- *
+ * Calculate the set of conjugation classes
+ * 
  * @author frank
  */
-public class InfoTableException extends Exception {
+public class ConjugationClassesSetCalculator implements Calculator<Group> {
 
-    public InfoTableException(String message) {
-        super(message);
+    public ConjugationClassesSetCalculator() {
     }
-    
+
+    @Override
+    public Set<Set<Element>> evaluate(Group group) throws EvaluationException {
+         Map<Element, Set<Element>> map = (Map<Element, Set<Element>>)group.getProperty(GroupProperty.ConjugationClassesMap);         
+         return new HashSet(map.values());
+    }
 }

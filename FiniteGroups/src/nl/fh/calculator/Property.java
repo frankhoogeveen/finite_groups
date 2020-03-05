@@ -14,21 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group;
-
-import java.util.Collection;
+package nl.fh.calculator;
 
 /**
  *
  * @author frank
  */
-public class SubgroupDefinition extends GroupDefinition{
-
-    private final GroupDefinition parent;
+public interface Property<T> {
     
-    public SubgroupDefinition(GroupDefinition def, Collection<Element> generators) {
-        super("subgroup of " + def.getName(), generators, def.getMultiplicator());
-        this.parent = def;
-    }
-   
+    /**
+     * 
+     * @return  the calculator to calculate this property
+     */
+    public Calculator<T> getCalculator();
 }

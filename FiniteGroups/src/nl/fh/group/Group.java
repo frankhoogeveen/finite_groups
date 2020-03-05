@@ -16,53 +16,138 @@
  */
 package nl.fh.group;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.EnumMap;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import nl.fh.group_info_table.GroupInfoTable;
-import nl.fh.info_table.InfoTableException;
+import nl.fh.calculator.EvaluationException;
 
 /**
  *
  * @author frank
  */
-public class Group {
-    private GroupDefinition def;
-    private List<Element> elements;
-    private GroupInfoTable info;
+public class Group implements Iterable<Element> {
     
-    private final int MAX_ITER = 10000;
+    private final Map<GroupProperty, Object> cache;
     
     /**
      * 
-     * @param def the definition of the group
-     * @throws nl.fh.group_info_table.GroupInfoTableException
+     * @param name
+     * @param generators
+     * @param multiplication
+     * @throws nl.fh.group.GroupException
+     * 
+     * The constructor calculates and stores the multiplication table and the set of elements (and the name). All other
+     * properties are calculated on-demand.
      */
-    public Group(GroupDefinition def) throws InfoTableException {
-        this.def = def;
-        try {
-            this.elements = GroupElementsConstructor.construct(def, MAX_ITER);
-            this.info = new GroupInfoTable(elements, def.getMultiplicator());
-        } catch (MultiplicatorException ex) {
-            String mess = "could not construct group " + this.def.getName();
-            Logger.getLogger(Group.class.getName()).log(Level.SEVERE, mess, ex);
-            
+    public Group(String name, Collection<Element> generators, Multiplicator multiplication) throws GroupException {
+       
+        Set<Element> toBeAdded = new HashSet(generators);
+        GroupTable table = findGeneratedGroup(toBeAdded, multiplication);
+        
+        this.cache = new EnumMap<GroupProperty, Object>(GroupProperty.class);
+        this.cache.put(GroupProperty.Name, name);
+        this.cache.put(GroupProperty.Elements, table.keySet());
+        this.cache.put(GroupProperty.MultiplicationTable, table);
+    }
+
+
+    
+    /**
+     * 
+     * @param property
+     * @return the value of the property for this group
+     * @throws nl.fh.calculator.EvaluationException 
+     * 
+     * 
+     * The method caches all results
+     * The calling code should know how to cast the resulting object
+     */
+    public Object getProperty(GroupProperty property) throws EvaluationException{
+        if(!cache.containsKey(property)){
+            cache.put(property, property.getCalculator().evaluate(this));
         }
+        return cache.get(property);
     }
+    
+    /**
+     * 
+     * @param set of elements
+     * @return the smallest set that contains set and is closed under 
+     * the group operation
+     */
+    public Set<Element> generateFrom(Set<Element> set) throws EvaluationException{
+        Multiplicator mult = (Multiplicator)this.getProperty(GroupProperty.MultiplicationTable);
+        try {
+            return (Set<Element>) findGeneratedGroup(set, mult);
+        } catch (GroupException ex) {
+            String mess = "generatedFrom failed";
+            Logger.getLogger(Group.class.getName()).log(Level.SEVERE, mess, ex);
+            throw new EvaluationException(mess);
+        }
+    }    
+    
+    /**
+     * 
+     * @param set
+     * @param multiplication
+     * @returnt the smallest set that contains set and is closed under 
+     * the group operation
+     * @throws GroupException 
+     */
+    private GroupTable findGeneratedGroup(Set<Element> set,  Multiplicator multiplication) throws GroupException {
+        GroupTable table = new GroupTable();
+        Set<Element> toBeAdded = new HashSet(set);
+        Set<Element> currentTotal = new HashSet();
+        
+        while(!toBeAdded.isEmpty()){
+            Set<Element> nextToBeAdded = new HashSet<Element>();
+            
+            try{
+                for(Element g : toBeAdded){
+                    table.put(g, new HashMap<Element, Element>());
+                    for(Element h : currentTotal){
+                        Element gh = multiplication.getProduct(g, h);
+                        table.get(g).put(h, gh);
+                        nextToBeAdded.add(gh);
 
-    public GroupDefinition getDefinition() {
-        return def;
+                        Element hg = multiplication.getProduct(h, g);
+                        table.get(h).put(g, hg);
+                        nextToBeAdded.add(hg);
+                    }
+
+                    for(Element g2 : toBeAdded){
+                        Element g12 = multiplication.getProduct(g, g2);
+                        table.get(g).put(g2, g12);
+                        nextToBeAdded.add(g12);
+                    }
+                }
+            } catch(EvaluationException e){
+                throw new GroupException(e.getMessage());
+            }
+            
+            currentTotal.addAll(toBeAdded);
+            toBeAdded = nextToBeAdded;
+            toBeAdded.removeAll(currentTotal);
+        }
+        
+        return table;
     }
-
-    public List<Element> getElements() {
-        return elements;
-    }
-
-    public GroupInfoTable getInfo() {
-        return info;
-    }
-
-    public String getName() {
-        return this.def.getName();
+    
+    
+    @Override
+    public Iterator<Element> iterator() {
+        try {
+            return ((Set<Element>)this.getProperty(GroupProperty.Elements)).iterator();
+        } catch (EvaluationException ex) {
+            String mess = "iterator cannot be defined";
+            Logger.getLogger(Group.class.getName()).log(Level.SEVERE, mess, ex);
+            throw new IllegalStateException(mess);
+        }
     }
 }

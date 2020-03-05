@@ -17,12 +17,11 @@
 package nl.fh.group_def_product;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
-import nl.fh.group.GroupDefinition;
+import nl.fh.group.Group;
 import nl.fh.group.Multiplicator;
-import nl.fh.group.MultiplicatorException;
+import nl.fh.group.GroupProperty;
 
 /**
  * This class defines a multiplication on the direct product of groups,
@@ -39,25 +38,25 @@ class ProductMultiplicator implements Multiplicator<ProductElement> {
     public ProductMultiplicator() {
     }
 
-    ProductMultiplicator(List<GroupDefinition> defs) {
-        this.unit = new ProductElement(getUnitElementsOfFactors(defs));
+    ProductMultiplicator(List<Group> factors) throws EvaluationException {
+        this.unit = new ProductElement(getUnitElementsOfFactors(factors));
         
-        this.multiplicators = new Multiplicator[defs.size()];
-        for(int i = 0; i < defs.size(); i++){
-            this.multiplicators[i] = defs.get(i).getMultiplicator();
+        this.multiplicators = new Multiplicator[factors.size()];
+        for(int i = 0; i < factors.size(); i++){
+            this.multiplicators[i] = (Multiplicator) factors.get(i).getProperty(GroupProperty.MultiplicationTable);
         }
     }
 
-    private static Element[] getUnitElementsOfFactors(List<GroupDefinition> defs) {
+    private static Element[] getUnitElementsOfFactors(List<Group> defs) throws EvaluationException {
         Element[] result = new Element[defs.size()];
         for(int i =0; i< defs.size(); i++){
-            result[i] = defs.get(i).getMultiplicator().getUnit();
+            result[i] = (Element) defs.get(i).getProperty(GroupProperty.UnitElement);
         }
         return result;
     }
     
     @Override
-    public ProductElement getProduct(ProductElement factor1, ProductElement factor2) throws MultiplicatorException {
+    public ProductElement getProduct(ProductElement factor1, ProductElement factor2) throws EvaluationException {
         if(factor1.getDimension() != this.multiplicators.length){
             throw new IllegalArgumentException(factor1.toString());
         }
@@ -68,20 +67,8 @@ class ProductMultiplicator implements Multiplicator<ProductElement> {
         
         Element[] result = new Element[this.multiplicators.length];
         for(int i =0 ; i < this.multiplicators.length; i++){
-            try {
-                result[i] = this.multiplicators[i].getProduct(factor1.get(i), factor2.get(i));
-            } catch (MultiplicatorException ex) {
-                String mess = "could not multiply " + factor1.toString() + " " + factor2.toString();
-                Logger.getLogger(ProductMultiplicator.class.getName()).log(Level.SEVERE, mess, ex);
-                throw new MultiplicatorException(mess);
-            }
+            result[i] = this.multiplicators[i].getProduct(factor1.get(i), factor2.get(i));
         }
         return new ProductElement(result);
     }
-
-    @Override
-    public Element getUnit() {
-        return this.unit;
-    }
-    
 }

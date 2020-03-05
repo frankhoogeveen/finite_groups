@@ -14,33 +14,21 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_info_calculators;
+package nl.fh.group;
 
-import nl.fh.info_table.InfoTable;
-import nl.fh.info_table.InfoTableException;
-import nl.fh.info_table.Property;
-import nl.fh.info_table.Value;
-import nl.fh.info_table_values.IntArray2dValue;
-import nl.fh.info_table_values.IntValue;
-
+import java.util.HashMap;
+import nl.fh.calculator.EvaluationException;
 
 /**
  *
+ * Implements group multiplication by table look-up
+ * 
  * @author frank
  */
-public class OrderCalculator implements GroupCalculator{
+public class GroupTable extends HashMap<Element, HashMap<Element, Element>> implements Multiplicator<Element>{
 
-    
     @Override
-    public Property getProperty() {
-        return GroupProperty.Order;
+    public Element getProduct(Element factor1, Element factor2) throws EvaluationException {
+        return this.get(factor1).get(factor2);
     }
-    
-    @Override
-    public Value evaluate(InfoTable info) throws InfoTableException {
-        int[][] table = ((IntArray2dValue)info.getValue(GroupProperty.MultiplicationTable)).content();
-        return new IntValue(table.length);
-    }
-
-
 }

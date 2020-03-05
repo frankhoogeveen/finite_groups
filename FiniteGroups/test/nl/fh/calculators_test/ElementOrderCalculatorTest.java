@@ -24,9 +24,9 @@ import nl.fh.group.GroupDefinition;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
 import nl.fh.group_def_permutation.PermutationMultiplicator;
-import nl.fh.group_info_calculators.GroupProperty;
-import nl.fh.info_table.InfoTable;
-import nl.fh.info_table.InfoTableException;
+import nl.fh.group.GroupProperty;
+import nl.fh.info_table.Cache;
+import nl.fh.calculator.EvaluationException;
 import nl.fh.info_table_values.IntArray1dValue;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
@@ -38,7 +38,7 @@ import org.junit.Test;
 public class ElementOrderCalculatorTest {
     
     @Test
-    public void S4Test() throws InfoTableException{
+    public void S4Test() throws EvaluationException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new PermutationElement(new int[]{1,0,2,3}));
         generators.add(new PermutationElement(new int[]{1,2,3,0}));
@@ -50,7 +50,7 @@ public class ElementOrderCalculatorTest {
         GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
 
         Group g = new Group(definition);
-        InfoTable info =  g.getInfo();
+        Cache info =  g.getInfo();
         
         IntArray1dValue val = (IntArray1dValue)info.getValue(GroupProperty.ElementOrders);
 
