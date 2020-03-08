@@ -16,8 +16,6 @@
  */
 package nl.fh.group_test;
 
-import nl.fh.group.GroupDefinition;
-import nl.fh.info_table.Cache;
 import nl.fh.group_def_substitutions.StringSubstitution;
 import nl.fh.group.Element;
 import nl.fh.group_def_substitutions.StringElement;
@@ -28,7 +26,7 @@ import nl.fh.group.Group;
 import nl.fh.group.GroupProperty;
 import nl.fh.group.GroupChecker;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -47,19 +45,16 @@ public class GroupSubstitutionConstructorTest {
         multiplication.addSubstitution(new StringSubstitution("aaa", ""));
         
         String name = "C3";
-        
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
-        
+
         try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(3, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            Group g = new Group(name, generators, multiplication);
+            assertEquals(3, (g.getProperty(GroupProperty.Order)));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
-        } catch (EvaluationException ex) {
+            assertTrue(check.isGroup(g));
+        } catch (EvaluationException | GroupException ex) {
             assertTrue(false);
-        }
+        } 
     }
     
     @Test
@@ -72,18 +67,15 @@ public class GroupSubstitutionConstructorTest {
         
         String name = "C7";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
-        
         try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(7, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            Group g = new Group(name, generators, multiplication);
+            assertEquals(7, (g.getProperty(GroupProperty.Order)));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
-        } catch (EvaluationException ex) {
+            assertTrue(check.isGroup(g));
+        } catch (Exception ex) {
             assertTrue(false);
-        }
+        } 
     }
     
     @Test
@@ -96,20 +88,18 @@ public class GroupSubstitutionConstructorTest {
         multiplication.addSubstitution(new StringSubstitution("aa", ""));
         multiplication.addSubstitution(new StringSubstitution("bbb", ""));
         multiplication.addSubstitution(new StringSubstitution("ba", "abb"));
+
         String name = "D3";
-        
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
-        
+      
         try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(6, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            Group g = new Group(name, generators, multiplication);
+            assertEquals(6, (g.getProperty(GroupProperty.Order)));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
-        } catch (EvaluationException ex) {
+            assertTrue(check.isGroup(g));
+        } catch (Exception ex) {
             assertTrue(false);
-        }
+        } 
     }
     
     @Test
@@ -125,18 +115,15 @@ public class GroupSubstitutionConstructorTest {
         
         String name = "Y21";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
-        
         try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(21, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            Group g = new Group(name, generators, multiplication);
+            assertEquals(21, (g.getProperty(GroupProperty.Order)));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
-        } catch (EvaluationException ex) {
+            assertTrue(check.isGroup(g));
+        } catch (Exception ex) {
             assertTrue(false);
-        }
+        } 
     }
     
     
@@ -161,17 +148,14 @@ public class GroupSubstitutionConstructorTest {
         
         String name = "G84_2";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
-        
         try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(84, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            Group g = new Group(name, generators, multiplication);
+            assertEquals(84, (g.getProperty(GroupProperty.Order)));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
-        } catch (EvaluationException ex) {
+            assertTrue(check.isGroup(g));
+        } catch (Exception ex) {
             assertTrue(false);
-        }
+        } 
     }
 }

@@ -16,19 +16,17 @@
  */
 package nl.fh.calculators_test;
 
-import nl.fh.info_table_values.FamilyValue;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
 import nl.fh.group_def_permutation.PermutationMultiplicator;
 import nl.fh.group.GroupProperty;
-import nl.fh.info_table.Cache;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.SubsetValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -39,7 +37,7 @@ import org.junit.Test;
  */
 public class ConjugationClassCalculatorTest {
     @Test
-    public void S4Test() throws EvaluationException{
+    public void S4Test() throws EvaluationException, GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new PermutationElement(new int[]{1,0,2,3}));
         generators.add(new PermutationElement(new int[]{1,2,3,0}));
@@ -47,39 +45,34 @@ public class ConjugationClassCalculatorTest {
         Multiplicator multiplication = new PermutationMultiplicator(4);
         
         String name = "S4";
-        
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
 
-        Group g = new Group(definition);
-        Cache info =  g.getInfo();
+        Group group = new Group(name, generators, multiplication);
         
-        FamilyValue classes =  ((FamilyValue)info.getValue(GroupProperty.ConjugationClassesMap));
-        
-        int nClass = classes.getCount();
+        Map<Element,Set<Element>> classes =  (Map<Element,Set<Element>>)group.getProperty(GroupProperty.ConjugationClassesMap);
         
         // check on the number of classes
-        assertEquals(5, nClass);
+        assertEquals(5, classes.values().size());
         
         // check that the conjugation classes form a partition
-        boolean[] empty = new boolean[24];
-        for(int i = 0; i < 24; i++){
-            empty[i] = false;
+        // 1) check that they add up to the entire group
+        Set<Element> union = new HashSet<Element>();
+        for(Set<Element> c : classes.values()){
+            union.addAll(c);
         }
-        SubsetValue union = new SubsetValue(empty);
+        assertEquals(24, union.size());
         
-        for(int i = 0; i < nClass; i++){
-            SubsetValue class_i = classes.getSubset(i);
-            union = union.union(class_i);
-            for(int j = i+1; j < nClass; j++){
-
-               SubsetValue class_j = classes.getSubset(j);
-               
-               // different classes should have nothing in common
-               assertTrue(class_i.intersection(class_j).isEmpty());
+        //2) make sure that two conjugation class are either the same or disjoint
+        // the union of all classes should be the entire group
+        for(Element g : group){
+            for(Element h : group){
+                boolean same = classes.get(g).equals(classes.get(h));
+                
+                Set<Element> intersection = (new HashSet(classes.get(g)));
+                intersection.removeAll(classes.get(h));
+                boolean disjoint = intersection.isEmpty();
+                
+                assertTrue(disjoint || same);
             }
         }
-        
-        // the union of all classes should be the entire group
-        assertTrue(union.isAll());
     }
 }

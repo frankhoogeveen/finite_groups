@@ -29,9 +29,7 @@ import nl.fh.group_test.GroupPermutationConstructorTest;
 import nl.fh.group_test.GroupProductConstructorTest;
 import nl.fh.group_test.GroupSubstitutionConstructorTest;
 import nl.fh.group_test.GroupSubstitutionInconsistentTest;
-import nl.fh.group_test.NormalSubgroupTest;
 import nl.fh.group_test.SubgroupTest;
-import nl.fh.value_test.SubsetValueTest;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -57,9 +55,7 @@ import org.junit.runners.Suite;
     ConjugationClassCalculatorTest.class,
     GroupFactoryTest.class,
     StronglyMinimalGeneratingSetsCalculatorTest.class,
-    SubsetValueTest.class,
     SubgroupTest.class,
-    NormalSubgroupTest.class
 })
 
 

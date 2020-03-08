@@ -83,6 +83,7 @@ public class Group implements Iterable<Element> {
      */
     public Set<Element> generateFrom(Set<Element> set) throws EvaluationException{
         Multiplicator mult = (Multiplicator)this.getProperty(GroupProperty.MultiplicationTable);
+        
         try {
             return (Set<Element>) findGeneratedGroup(set, mult);
         } catch (GroupException ex) {

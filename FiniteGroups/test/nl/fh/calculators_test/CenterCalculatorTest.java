@@ -16,15 +16,12 @@
  */
 package nl.fh.calculators_test;
 
-import nl.fh.info_table_values.BooleanValue;
-import nl.fh.info_table_values.SubsetValue;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
@@ -33,11 +30,9 @@ import nl.fh.group_def_substitutions.StringElement;
 import nl.fh.group_def_substitutions.StringMultiplicator;
 import nl.fh.group_def_substitutions.StringSubstitution;
 import nl.fh.group.GroupProperty;
-import nl.fh.info_table.Cache;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
@@ -48,7 +43,7 @@ import org.junit.Test;
 public class CenterCalculatorTest {
     
     @Test 
-    public void C3squaredTest(){
+    public void C3squaredTest() throws GroupException, EvaluationException{
 
         // create an instance of C3
         Set<Element> generators = new HashSet<Element>();
@@ -56,32 +51,26 @@ public class CenterCalculatorTest {
         
         Multiplicator multiplication = new CyclicMultiplicator(3);
         
-        GroupDefinition def = new GroupDefinition("C3", generators, multiplication);
+        Group def = new Group("C3", generators, multiplication);
         
-        //define the product
-        List<GroupDefinition> defs = new ArrayList<GroupDefinition>();
+        //define the product of c3 with itself
+        List<Group> defs = new ArrayList<Group>();
         defs.add(def);
         defs.add(def);
-        GroupDefinition product = GroupProduct.of(defs);
+        Group product = GroupProduct.of(defs);
 
-        try {
-            Group g = new Group(product);
-            Cache info =  g.getInfo();
-            assertEquals(3*3, ((IntValue)info.getValue(GroupProperty.Order)).content());
-            
-            SubsetValue center = ((SubsetValue)info.getValue(GroupProperty.Center));
-            BooleanValue abelean = ((BooleanValue)info.getValue(GroupProperty.IsAbelean));
-            
-            assertEquals(9, center.count());
-            assertTrue(abelean.content());
-            
-        } catch (EvaluationException ex) {
-            assertTrue(false);
-        }
+        assertEquals(3*3, (int)product.getProperty(GroupProperty.Order));
+
+        Set<Element> center = ((Set<Element>)product.getProperty(GroupProperty.Center));
+        assertEquals(9, center.size());
+        
+        boolean abelean = ((boolean)product.getProperty(GroupProperty.IsAbelean));
+        assertTrue(abelean);
+
     }
     
     @Test
-    public void Y21Test() throws EvaluationException{
+    public void Y21Test() throws EvaluationException, GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("x"));
         generators.add(new StringElement("y"));
@@ -93,26 +82,19 @@ public class CenterCalculatorTest {
         
         String name = "Y21";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        Group group = new Group(name, generators, multiplication);
         
-        try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(21, ((IntValue)info.getValue(GroupProperty.Order)).content());
-            
-            SubsetValue center = ((SubsetValue)info.getValue(GroupProperty.Center));
-            BooleanValue abelean = ((BooleanValue)info.getValue(GroupProperty.IsAbelean));
-            
-            assertEquals(1, center.count());
-            assertFalse(abelean.content());
-            
-        } catch (EvaluationException ex) {
-            assertTrue(false);
-        }
+        assertEquals(21, (int)group.getProperty(GroupProperty.Order));
+        
+        Set<Element> center = ((Set<Element>)group.getProperty(GroupProperty.Center));
+        assertEquals(1, center.size());
+        
+        boolean abelean = ((boolean)group.getProperty(GroupProperty.IsAbelean));
+        assertTrue(!abelean);
     }
     
         @Test
-    public void D4Test() throws EvaluationException{
+    public void D4Test() throws EvaluationException, GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("a"));
         generators.add(new StringElement("b"));
@@ -123,19 +105,15 @@ public class CenterCalculatorTest {
         multiplication.addSubstitution(new StringSubstitution("ba", "abbb"));
         String name = "D4";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        Group group = new Group(name, generators, multiplication);
         
-        try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(8, ((IntValue)info.getValue(GroupProperty.Order)).content());
-            
-            SubsetValue center = ((SubsetValue)info.getValue(GroupProperty.Center));
-            assertEquals(2, center.count());
-            
-        } catch (EvaluationException ex) {
-            assertTrue(false);
-        }
+        assertEquals(8, (int)group.getProperty(GroupProperty.Order));
+
+        Set<Element> center = ((Set<Element>)group.getProperty(GroupProperty.Center));
+        assertEquals(2, center.size());
+        
+        boolean abelean = ((boolean)group.getProperty(GroupProperty.IsAbelean));
+        assertTrue(!abelean);
     }
     
     

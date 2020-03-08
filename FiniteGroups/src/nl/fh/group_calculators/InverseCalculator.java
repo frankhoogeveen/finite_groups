@@ -53,6 +53,4 @@ public class InverseCalculator implements Calculator<Group> {
         
         return result;
     }
-
-    
 }

@@ -17,17 +17,16 @@
 package nl.fh.calculators_test;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
 import nl.fh.group_def_permutation.PermutationMultiplicator;
 import nl.fh.group.GroupProperty;
-import nl.fh.info_table.Cache;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntArray1dValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -38,7 +37,7 @@ import org.junit.Test;
 public class ElementOrderCalculatorTest {
     
     @Test
-    public void S4Test() throws EvaluationException{
+    public void S4Test() throws EvaluationException, GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new PermutationElement(new int[]{1,0,2,3}));
         generators.add(new PermutationElement(new int[]{1,2,3,0}));
@@ -46,27 +45,22 @@ public class ElementOrderCalculatorTest {
         Multiplicator multiplication = new PermutationMultiplicator(4);
         
         String name = "S4";
-        
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
 
-        Group g = new Group(definition);
-        Cache info =  g.getInfo();
+        Group group = new Group(name, generators, multiplication);
         
-        IntArray1dValue val = (IntArray1dValue)info.getValue(GroupProperty.ElementOrders);
+        Map<Element, Integer> val = (Map<Element, Integer>)group.getProperty(GroupProperty.ElementOrders);
 
-        assertEquals(0, val.count(0));
         
-        assertEquals(1, val.count(1));            
-        assertEquals(9, val.count(2));
-        assertEquals(8, val.count(3));
-        assertEquals(6, val.count(4));
-        assertEquals(0, val.count(6));  
-        assertEquals(0, val.count(8));            
-        assertEquals(0, val.count(12));
-        assertEquals(0, val.count(24));
-
-        assertEquals(0, val.count(7));
-        assertEquals(0, val.count(9));
-        assertEquals(0, val.count(11));
+        int[] tally = new int[24];
+        for(Element g : group){
+            tally[val.get(g)] += 1;
+        }
+        
+        assertEquals(0, tally[0]);
+        
+        assertEquals(1, tally[1]);            
+        assertEquals(9, tally[2]);
+        assertEquals(8, tally[3]);
+        assertEquals(6, tally[4]);
     }
 }

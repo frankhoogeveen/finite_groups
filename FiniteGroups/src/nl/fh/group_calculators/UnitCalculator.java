@@ -34,15 +34,15 @@ public class UnitCalculator  implements Calculator<Group> {
     public  Element evaluate(Group group) throws EvaluationException {
         Multiplicator mult = (Multiplicator)(group.getProperty(GroupProperty.MultiplicationTable));
         
-        for(Element g : group){
+        for(Element u : group){
             boolean found = true;
             
-            for(Element h : group){
-                found &= ((mult.getProduct(g, h).equals(h)) && (mult.getProduct(h, g).equals(g)));
+            for(Element g : group){
+                found &= ((mult.getProduct(u, g).equals(g)) && (mult.getProduct(g, u).equals(g)));
             }
             
             if(found){
-                return g;
+                return u;
             }
         }
         

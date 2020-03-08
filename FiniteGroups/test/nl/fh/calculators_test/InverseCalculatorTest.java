@@ -17,19 +17,17 @@
 package nl.fh.calculators_test;
 
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
 import nl.fh.group_def_substitutions.StringElement;
 import nl.fh.group_def_substitutions.StringMultiplicator;
 import nl.fh.group_def_substitutions.StringSubstitution;
 import nl.fh.group.GroupProperty;
-import nl.fh.info_table.Cache;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntArray1dValue;
-import nl.fh.info_table_values.IntArray2dValue;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.GroupException;
+import nl.fh.group.Multiplicator;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -39,7 +37,7 @@ import org.junit.Test;
  */
 public class InverseCalculatorTest {
     @Test
-    public void Y21Test() throws EvaluationException{
+    public void Y21Test() throws EvaluationException, GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("x"));
         generators.add(new StringElement("y"));
@@ -51,22 +49,20 @@ public class InverseCalculatorTest {
         
         String name = "Y21";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
-        
-        Group g = new Group(definition);
-        Cache info =  g.getInfo();
+        Group group = new Group(name, generators, multiplication);
         
         
         
-        int[][] table = ((IntArray2dValue)info.getValue(GroupProperty.MultiplicationTable)).content();
-        int[] inv  = ((IntArray1dValue)info.getValue(GroupProperty.Inverses)).content();
-        int unit   = ((IntValue)info.getValue(GroupProperty.UnitElement)).content();
+        Multiplicator table = ((Multiplicator)group.getProperty(GroupProperty.MultiplicationTable));
+        Map<Element, Element> inv = ((Map<Element, Element>)group.getProperty(GroupProperty.Inverses));
+        Element unit = ((Element)group.getProperty(GroupProperty.UnitElement));
+        int order = ((int)group.getProperty(GroupProperty.Order));
+                
+        assertEquals(21, order);
         
-        assertEquals(21, table.length);
-        
-        for(int i = 0; i < 21; i++){
-            assertEquals(unit, table[i][inv[i]]);
-            assertEquals(unit, table[inv[i]][i]);
+        for(Element g : group){
+            assertEquals(unit, table.getProduct(g, inv.get(g)));
+            assertEquals(unit, table.getProduct(inv.get(g), g));
         }
     }
 }
