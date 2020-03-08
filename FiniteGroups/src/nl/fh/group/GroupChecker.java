@@ -19,6 +19,7 @@ package nl.fh.group;
 import java.util.Map;
 import java.util.Set;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.group_formatter.GroupFormatter;
 
 /**
  * Object to check a group against the basic definitions
@@ -30,6 +31,19 @@ import nl.fh.calculator.EvaluationException;
  * @author frank
  */
 public class GroupChecker {
+    private boolean verbose = true;
+    
+    public GroupChecker(){
+        this.verbose = false;
+    }
+    
+    /**
+     * 
+     * @param verbose If true, this checker will be verbose, when a test fails
+     */
+    public GroupChecker(boolean verbose){
+        this.verbose = verbose;
+    }
     
     public boolean isGroup(Group group) throws EvaluationException{
 
@@ -39,6 +53,11 @@ public class GroupChecker {
             checkInverses(group);
             checkAssociativity(group);
         } catch(EvaluationException e){
+            if(verbose){
+                System.out.println("+++ Checking group failed +++");
+                System.out.println(e.getMessage());
+                System.out.println((new GroupFormatter()).createReport(group));
+            }
             return false;
         }
         return true;
@@ -82,7 +101,7 @@ public class GroupChecker {
         Element u = (Element)group.getProperty(GroupProperty.UnitElement);
         
         for(Element h : set){
-            if(!table.get(g).get(h).equals(u) && table.get(h).get(g).equals(u)){
+            if(table.get(g).get(h).equals(u) && table.get(h).get(g).equals(u)){
                 return;
             }
         }
