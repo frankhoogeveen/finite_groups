@@ -26,6 +26,7 @@ import nl.fh.group.Multiplicator;
 import nl.fh.group.GroupProperty;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.GroupException;
+import nl.fh.group_definition_factory.GroupFactory;
 
 /**
  * Creates the direct product of several groups
@@ -33,8 +34,13 @@ import nl.fh.group.GroupException;
  * @author frank
  */
 public class GroupProduct {
-
+    private static final Group trivial = new GroupFactory().getCyclicGroup(1);
+    
     public static Group of(List<Group> factors) throws EvaluationException, GroupException {
+        if(factors.isEmpty()){
+            return trivial;
+        }
+        
         String name = productName(factors);
         
         Set<Element> generators = createGenerators(factors);
@@ -67,6 +73,7 @@ public class GroupProduct {
         Element[] unitElement = getUnitElementOfProduct(factors);
         
         Set<Element> result = new HashSet<Element>();
+        
         for(int i =0; i < factors.size(); i++){
             for(Element g : (Set<Element>)factors.get(i).getProperty(GroupProperty.Elements)){
                     Element[] newGen = unitElement.clone();

@@ -43,9 +43,16 @@ import org.junit.Test;
 public class GroupProductConstructorTest {
     
     @Test
-    
-    public void EmptyProductTest(){
-        assertTrue(false);
+    public void EmptyProductTest() throws EvaluationException, GroupException{
+        List<Group> groups = new ArrayList<Group>();
+        Group product = GroupProduct.of(groups);
+        
+        assertEquals(1, (int)product.getProperty(GroupProperty.Order));
+            
+        GroupChecker check = new GroupChecker();
+        assertTrue(check.isGroup(product));
+            
+        assertEquals("C1", product.getProperty(GroupProperty.Name));
     }
     
     @Test

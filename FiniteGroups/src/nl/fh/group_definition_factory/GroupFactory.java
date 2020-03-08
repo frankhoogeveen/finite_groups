@@ -51,7 +51,7 @@ public class GroupFactory {
      * @param n the order
      * @return the definition of the cyclic group of order n 
      */
-    public Group getCyclicGroup(int n) throws GroupException {
+    public Group getCyclicGroup(int n) {
         if(n < 1){
             String mess = "cannot not define cyclic group of order " + Integer.toString(n);
             LOGGER.log(Level.SEVERE, mess);
@@ -65,7 +65,15 @@ public class GroupFactory {
         
         String name = "C" + Integer.toString(n);
         
-        return new Group(name, generators, multiplication);
+                
+        Group group = null;
+        try {
+            group = new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create cyclic group", ex);
+            System.exit(-1);
+        }
+        return group;
         
     }
 

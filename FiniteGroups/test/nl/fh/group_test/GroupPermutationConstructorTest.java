@@ -51,7 +51,7 @@ public class GroupPermutationConstructorTest {
         try {
             assertEquals(24, (int)s4.getProperty(GroupProperty.Order));
             
-            GroupChecker check = new GroupChecker(true);
+            GroupChecker check = new GroupChecker(false);
             assertTrue(check.isGroup(s4));
         } catch (EvaluationException ex) {
             assertTrue(false);
@@ -73,7 +73,7 @@ public class GroupPermutationConstructorTest {
         try {
             assertEquals(12, (int)a4.getProperty(GroupProperty.Order));
             
-            GroupChecker check = new GroupChecker(true);
+            GroupChecker check = new GroupChecker(false);
             assertTrue(check.isGroup(a4));
         } catch (EvaluationException ex) {
             assertTrue(false);
