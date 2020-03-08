@@ -23,8 +23,6 @@ import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
-import nl.fh.info_table.Cache;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
@@ -33,7 +31,7 @@ import nl.fh.group_def_permutation.PermutationMultiplicator;
 import nl.fh.group.GroupProperty;
 import nl.fh.group.GroupChecker;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -51,8 +49,8 @@ public class GroupProductConstructorTest {
     }
     
     @Test
-    public void ProductTest(){
-        List<GroupDefinition> defs = new ArrayList<GroupDefinition>();
+    public void ProductTest() throws GroupException, EvaluationException{
+        List<Group> defs = new ArrayList<Group>();
         
         // create an instance of A4
         Set<Element> generators = new HashSet<Element>();
@@ -61,7 +59,7 @@ public class GroupProductConstructorTest {
         
         Multiplicator multiplication = new PermutationMultiplicator(4);
         
-        defs.add(new GroupDefinition("A4", generators, multiplication));
+        defs.add(new Group("A4", generators, multiplication));
         
         // create an instance of C7
         generators = new HashSet<Element>();
@@ -69,21 +67,19 @@ public class GroupProductConstructorTest {
         
         multiplication = new CyclicMultiplicator(7);
         
-        defs.add(new GroupDefinition("C7", generators, multiplication));
+        defs.add(new Group("C7", generators, multiplication));
         
         //define the product
-        GroupDefinition product = GroupProduct.of(defs);
+        Group product = GroupProduct.of(defs);
         
         // check the assertions
         try {
-            Group g = new Group(product);
-            Cache info =  g.getInfo();
-            assertEquals(7*12, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            assertEquals(7*12, (int)product.getProperty(GroupProperty.Order));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
+            assertTrue(check.isGroup(product));
             
-            assertEquals("A4xC7", product.getName());
+            assertEquals("A4xC7", product.getProperty(GroupProperty.Name));
             
         } catch (EvaluationException ex) {
             assertTrue(false);

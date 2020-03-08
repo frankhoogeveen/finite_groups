@@ -18,16 +18,16 @@ package nl.fh.group_test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.SubgroupDefinition;
 import nl.fh.group_definition_factory.GroupFactory;
 import nl.fh.group.GroupProperty;
 import nl.fh.group.GroupChecker;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.BooleanValue;
-import nl.fh.info_table_values.FamilyValue;
-import nl.fh.info_table_values.SubsetValue;
+import nl.fh.group.GroupException;
+import nl.fh.group.Multiplicator;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
@@ -38,52 +38,33 @@ import org.junit.Test;
 public class SubgroupTest {
     
     @Test
-    public void S4Test() throws EvaluationException{
+    public void S4Test() throws EvaluationException, GroupException{
         GroupFactory fac = new GroupFactory();
-        Group s4 = new Group(fac.getSymmetricGroup(4));
+        Group s4 = fac.getSymmetricGroup(4);
         
-        FamilyValue val = (FamilyValue)(s4.getInfo().getValue(GroupProperty.StronglyMinimalGeneratingSets));
-        boolean[][] content = val.content();
+        Set<Set<Element>> gen = (Set<Set<Element>>)(s4.getProperty(GroupProperty.StronglyMinimalGeneratingSets));
         
         GroupChecker checker = new GroupChecker();
-        for(int i = 0; i < content.length; i++){
-            List<Element> list = new ArrayList<Element>();
-            
-            for(int j = 0; j < content[i].length; j++){
-                if(content[i][j]){
-                    list.add(s4.getElements().get(j));
-                }
-            }
-            
-            Group sub = new Group(new SubgroupDefinition(s4.getDefinition(), list));
-            
-            assertTrue(checker.isGroup(sub.getInfo()));
-            
+        for(Set<Element> set : gen){
+            Group subGroup = new Group("subgroup", set, (Multiplicator) s4.getProperty(GroupProperty.MultiplicationTable));
+            assertEquals(24, (int)subGroup.getProperty(GroupProperty.Order));
+            assertTrue(checker.isGroup(subGroup));
         }
     }
     
     @Test
-    public void S5CenterTest() throws EvaluationException{
+    public void S5CenterTest() throws EvaluationException, GroupException{
         GroupFactory fac = new GroupFactory();
-        Group s5 = new Group(fac.getSymmetricGroup(5));
+        Group s5 = fac.getSymmetricGroup(5);
         
-        SubsetValue center = (SubsetValue) s5.getInfo().getValue(GroupProperty.Center);
-        boolean[] centerBoolean = center.content();
+        Set<Element> center = (Set<Element>) s5.getProperty(GroupProperty.Center);
         
-        List<Element> list = new ArrayList<Element>();
-        for(int i = 0; i < centerBoolean.length; i++){
-            if(centerBoolean[i]){
-                list.add(s5.getElements().get(i));
-            }
-        }
-        
-        Group sub =new Group( new SubgroupDefinition(s5.getDefinition(), list));
+        Group sub =new Group( "subgroup", center, (Multiplicator) s5.getProperty(GroupProperty.MultiplicationTable));
 
         GroupChecker checker = new GroupChecker();
-        assertTrue(checker.isGroup(sub.getInfo()));
-        
-        boolean isAbelean = ((BooleanValue)(sub.getInfo().getValue(GroupProperty.IsAbelean))).content();
-        assertTrue(isAbelean);
+        assertTrue(checker.isGroup(sub));
+
+        assertTrue((boolean)(sub.getProperty(GroupProperty.IsAbelean)));
     }
     
     

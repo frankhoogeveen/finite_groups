@@ -16,8 +16,6 @@
  */
 package nl.fh.group_test;
 
-import nl.fh.group.GroupDefinition;
-import nl.fh.info_table.Cache;
 import nl.fh.group_def_substitutions.StringSubstitution;
 import nl.fh.group.Element;
 import nl.fh.group_def_substitutions.StringElement;
@@ -28,7 +26,7 @@ import nl.fh.group.Group;
 import nl.fh.group.GroupProperty;
 import nl.fh.group.GroupChecker;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -46,7 +44,7 @@ public class GroupSubstitutionInconsistentTest {
      *  Instead of y.x-> x.y.y,, we take y.x-> x.y.y.y
      * 
      * From this relation we can prove
-     * y = y.x.x.x = x y.y.y .x.x = ... = x^3 y^6, thus y = y^6 
+     * y = y.x.x.x = x y.y.y .x.x = ... = x^3 y^27, thus y = y^6 
      * 
      * From this one can conclude y = unit. 
      * 
@@ -56,7 +54,7 @@ public class GroupSubstitutionInconsistentTest {
      * @throws EvaluationException 
      */
     @Test
-    public void PseudoY21Test() throws EvaluationException{
+    public void PseudoY21Test() throws EvaluationException, GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("x"));
         generators.add(new StringElement("y"));
@@ -68,16 +66,14 @@ public class GroupSubstitutionInconsistentTest {
         
         String name = "Y21";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        Group pseudo = new Group(name, generators, multiplication);
         
         try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(21, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            assertEquals(21, (int)pseudo.getProperty(GroupProperty.Order));
             
             GroupChecker check = new GroupChecker();
             
-            assertFalse(check.isGroup(info));
+            assertFalse(check.isGroup(pseudo));
         } catch (EvaluationException ex) {
             assertTrue(false);
         }

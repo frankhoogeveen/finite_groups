@@ -22,13 +22,11 @@ import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
-import nl.fh.info_table.Cache;
 import nl.fh.group.Multiplicator;
 import nl.fh.group.GroupProperty;
 import nl.fh.group.GroupChecker;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -40,7 +38,7 @@ import org.junit.Test;
 public class GroupCyclicConstructorTest {
     
     @Test
-    public void Cyclic11Test(){
+    public void Cyclic11Test() throws GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(CyclicElement.generatorOfOrder(11));
         
@@ -48,41 +46,38 @@ public class GroupCyclicConstructorTest {
         
         String name = "C11";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        Group c11 = new Group(name, generators, multiplication);
         
         try {
             
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(11, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            assertEquals(11, (int)c11.getProperty(GroupProperty.Order));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
+            assertTrue(check.isGroup(c11));
         } catch (EvaluationException ex) {
             assertTrue(false);
         } 
     }
     
     @Test
-    public void TrivialTest(){
+    public void TrivialTest() throws GroupException{
         Set<Element> generators = new HashSet<Element>();
-        generators.add(CyclicElement.generatorOfOrder(1));
+        generators.add(CyclicElement.generatorOfOrder(11));
         
-        Multiplicator multiplication = new CyclicMultiplicator(1);
+        Multiplicator multiplication = new CyclicMultiplicator(11);
         
-        String name = "C1";
+        String name = "C11";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        Group c1 = new Group(name, generators, multiplication);
         
         try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(1, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            
+            assertEquals(11, (int)c1.getProperty(GroupProperty.Order));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
+            assertTrue(check.isGroup(c1));
         } catch (EvaluationException ex) {
             assertTrue(false);
-        }
+        } 
     }
 }

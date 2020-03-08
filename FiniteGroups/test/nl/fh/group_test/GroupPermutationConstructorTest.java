@@ -22,13 +22,11 @@ import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
-import nl.fh.info_table.Cache;
 import nl.fh.group.Multiplicator;
 import nl.fh.group.GroupProperty;
 import nl.fh.group.GroupChecker;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -39,7 +37,7 @@ import org.junit.Test;
  */
 public class GroupPermutationConstructorTest {
     @Test
-    public void S4Test(){
+    public void S4Test() throws GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new PermutationElement(new int[]{1,0,2,3}));
         generators.add(new PermutationElement(new int[]{1,2,3,0}));
@@ -48,22 +46,20 @@ public class GroupPermutationConstructorTest {
         
         String name = "S4";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        Group s4 = new Group(name, generators, multiplication);
         
         try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(24, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            assertEquals(24, (int)s4.getProperty(GroupProperty.Order));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
+            assertTrue(check.isGroup(s4));
         } catch (EvaluationException ex) {
             assertTrue(false);
         }
     }
     
     @Test
-    public void A4Test(){
+    public void A4Test() throws GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new PermutationElement(new int[]{1,0,3,2}));
         generators.add(new PermutationElement(new int[]{0,2,3,1}));
@@ -72,15 +68,13 @@ public class GroupPermutationConstructorTest {
         
         String name = "A4";
         
-        GroupDefinition definition = new GroupDefinition(name, generators, multiplication);
+        Group a4 = new Group(name, generators, multiplication);
         
         try {
-            Group g = new Group(definition);
-            Cache info =  g.getInfo();
-            assertEquals(12, ((IntValue)info.getValue(GroupProperty.Order)).content());
+            assertEquals(12, (int)a4.getProperty(GroupProperty.Order));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
+            assertTrue(check.isGroup(a4));
         } catch (EvaluationException ex) {
             assertTrue(false);
         }

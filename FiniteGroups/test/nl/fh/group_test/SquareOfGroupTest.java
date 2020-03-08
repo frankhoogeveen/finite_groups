@@ -22,16 +22,14 @@ import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_product.GroupProduct;
 import nl.fh.group.GroupProperty;
 import nl.fh.group.GroupChecker;
-import nl.fh.info_table.Cache;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -44,7 +42,7 @@ import org.junit.Test;
 public class SquareOfGroupTest {
     
     @Test 
-    public void C3squaredTest(){
+    public void C3squaredTest() throws EvaluationException, GroupException{
 
         // create an instance of C3
         Set<Element> generators = new HashSet<Element>();
@@ -52,24 +50,23 @@ public class SquareOfGroupTest {
         
         Multiplicator multiplication = new CyclicMultiplicator(3);
         
-        GroupDefinition def = new GroupDefinition("C3", generators, multiplication);
+        Group def = new Group("C3", generators, multiplication);
         
         //define the product
-        List<GroupDefinition> defs = new ArrayList<GroupDefinition>();
+        List<Group> defs = new ArrayList<Group>();
         defs.add(def);
         defs.add(def);
-        GroupDefinition product = GroupProduct.of(defs);
+        Group product = GroupProduct.of(defs);
         
         // check the assertions
         try {
-            Group g = new Group(product);
-            Cache info =  g.getInfo();
-            assertEquals(3*3, ((IntValue)info.getValue(GroupProperty.Order)).content());
+
+            assertEquals(3*3, (int)product.getProperty(GroupProperty.Order));
             
             GroupChecker check = new GroupChecker();
-            assertTrue(check.isGroup(info));
+            assertTrue(check.isGroup(product));
             
-            assertEquals("C3xC3", product.getName());
+            assertEquals("C3xC3", (String)product.getProperty(GroupProperty.Name));
             
         } catch (EvaluationException ex) {
             assertTrue(false);

@@ -16,14 +16,14 @@
  */
 package nl.fh.calculators_test;
 
+import java.util.Set;
 import nl.fh.group.Group;
-import nl.fh.group.GroupDefinition;
 import nl.fh.group_def_product.GroupProduct;
 import nl.fh.group_definition_factory.GroupFactory;
 import nl.fh.group.GroupProperty;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.FamilyValue;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.Element;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -35,164 +35,102 @@ import org.junit.Test;
 public class StronglyMinimalGeneratingSetsCalculatorTest {
     private boolean verbose = false;
     
+    /**
+     *
+     * @throws EvaluationException
+     */
     @Test
-    public void S3Test() throws EvaluationException{
+    public void S3Test() throws EvaluationException, GroupException{
         GroupFactory fac = new GroupFactory();
-        Group s3 = new Group(fac.getSymmetricGroup(3));
+        Group s3 = fac.getSymmetricGroup(3);
         
-        FamilyValue val = (FamilyValue)(s3.getInfo().getValue(GroupProperty.StronglyMinimalGeneratingSets));
-        boolean[][] content = val.content();
-        int unit = ((IntValue)(s3.getInfo().getValue(GroupProperty.UnitElement))).content();
-        
-        if(verbose){
-            System.out.print(val.toString(s3));
-        }
+        Set<Set<Element>> gen = (Set<Set<Element>>)(s3.getProperty(GroupProperty.StronglyMinimalGeneratingSets));
+        Element unit = (Element)(s3.getProperty(GroupProperty.UnitElement));
 
-        // s3 has six elements, thus 6 over 2 = 15 pairs
+        // s4 has six elements, thus 6 over 2 = 15 pairs
         // the unit combined with anything else does not generate the entire group (-5)
         // the two elements of order three combined do not generate the group (-1)
         // leaves 15-5-1 = 9 pairs of generating elements
-        assertEquals(9, content.length);
-        for(int i = 0 ; i < content.length; i++){
-            
-            // count the number of elements
-            int count = 0;
-            for(int j = 0; j < content[i].length; j++){
-                if(content[i][j]){
-                    count++;
-                }
-            }
-            assertEquals(2, count);
+        assertEquals(9, gen.size());
+        for(Set<Element> set : gen){
+            assertEquals(2, set.size());
             
             // the unit element should not be in a set of generators
-            assertTrue(!content[i][unit]);
+            assertTrue(!set.contains(unit));
         }
     }
     
     
     
     @Test
-    public void S4Test() throws EvaluationException{
+    public void S4Test() throws EvaluationException, GroupException{
         GroupFactory fac = new GroupFactory();
-        Group s4 = new Group(fac.getSymmetricGroup(4));
+        Group s4 = fac.getSymmetricGroup(4);
         
-        FamilyValue val = (FamilyValue)(s4.getInfo().getValue(GroupProperty.StronglyMinimalGeneratingSets));
-        boolean[][] content = val.content();
-        int unit = ((IntValue)(s4.getInfo().getValue(GroupProperty.UnitElement))).content();
-        
-        if(verbose){
-            System.out.print(val.toString(s4));
-        }
+        Set<Set<Element>> gen = (Set<Set<Element>>)(s4.getProperty(GroupProperty.StronglyMinimalGeneratingSets));
+        Element unit = (Element)(s4.getProperty(GroupProperty.UnitElement));
 
-        assertEquals(108, content.length);
-        for(int i = 0 ; i < content.length; i++){
-            
-            // count the number of elements
-            int count = 0;
-            for(int j = 0; j < content[i].length; j++){
-                if(content[i][j]){
-                    count++;
-                }
-            }
-            assertEquals(2, count);
-            
-            // the unit element should not be in a set of generators
-            assertTrue(!content[i][unit]);
+        assertEquals(108, gen.size());
+        for(Set<Element> set : gen){
+            assertEquals(2, set.size());
+            assertTrue(!set.contains(unit));
         }
     }
     
     @Test
-    public void C6Test() throws EvaluationException{
+    public void C6Test() throws EvaluationException, GroupException{
         GroupFactory fac = new GroupFactory();
-        Group c6 = new Group(fac.getCyclicGroup(6));
+        Group c6 = fac.getCyclicGroup(6);
         
         /*
         <x>, <x^2, x^3>, <x^4, x^3> <x^5> are the four minimal sets of generators
         but <x> and <x^5> are the two strongly minimal sets
         */
         
-        FamilyValue val = (FamilyValue)(c6.getInfo().getValue(GroupProperty.StronglyMinimalGeneratingSets));
-        boolean[][] content = val.content();
+        Set<Set<Element>> gen = (Set<Set<Element>>)(c6.getProperty(GroupProperty.StronglyMinimalGeneratingSets));
+        Element unit = (Element)(c6.getProperty(GroupProperty.UnitElement));      
         
-        assertEquals(2, content.length);
-        
-        int n1 = 0;
-        int n2 = 0;
-        for(int i = 0; i < content.length; i++){
-            int count = 0;
-            for(int j = 0; j < content[i].length; j++){
-                if(content[i][j]){
-                    count += 1;
-                }
-            }
-            if(count == 1){
-                n1++;
-            }
-            if(count == 2){
-                n2++;
-            }
+        assertEquals(2, gen.size());
+        for(Set<Element> set : gen){
+            assertEquals(1, set.size());
+            assertTrue(!set.contains(unit));
         }
-        assertEquals(2, n1);
-        assertEquals(0, n2);        
+      
     }
     
     @Test
-    public void D3D4Test() throws EvaluationException{
+    public void D3D4Test() throws EvaluationException, GroupException{
         GroupFactory fac = new GroupFactory();
 
-        Group d3 = new Group(fac.getDihedralGroup(3));
-        Group d4 = new Group(fac.getDihedralGroup(4));
+        Group d3 = fac.getDihedralGroup(3);
+        Group d4 = fac.getDihedralGroup(4);
         
         
-        boolean[][] content3 = ((FamilyValue)(d3.getInfo().getValue(GroupProperty.StronglyMinimalGeneratingSets))).content();
-        boolean[][] content4 = ((FamilyValue)(d4.getInfo().getValue(GroupProperty.StronglyMinimalGeneratingSets))).content();
+        Set<Set<Element>> content3 = ((Set<Set<Element>>)(d3.getProperty(GroupProperty.StronglyMinimalGeneratingSets)));
+        Set<Set<Element>> content4 = ((Set<Set<Element>>)(d4.getProperty(GroupProperty.StronglyMinimalGeneratingSets)));
         
-        assertEquals(9, content3.length);
-        assertEquals(12, content4.length);
+        assertEquals(9, content3.size());
+        assertEquals(12, content4.size());
     }
     
     
     @Test
-    public void MoreThanTwoGeneratorsTest() throws EvaluationException{
+    public void MoreThanTwoGeneratorsTest() throws EvaluationException, GroupException{
         GroupFactory fac = new GroupFactory();
         
-        GroupDefinition[] factors = new GroupDefinition[2];
+        Group[] factors = new Group[2];
         factors[0] = fac.getDihedralGroup(3);
         factors[1] = fac.getDihedralGroup(4);
         
-        Group product = new Group(GroupProduct.of(factors));
+        Group product = GroupProduct.of(factors);
         
-        FamilyValue val = (FamilyValue)(product.getInfo().getValue(GroupProperty.StronglyMinimalGeneratingSets));
-        boolean[][] content = val.content();
+        Set<Set<Element>> gen = (Set<Set<Element>>)(product.getProperty(GroupProperty.StronglyMinimalGeneratingSets));
+        Element unit = (Element)(product.getProperty(GroupProperty.UnitElement));      
         
-        if(verbose){
-            System.out.print(val.toString(product));
+        assertEquals(5376, gen.size());
+        for(Set<Element> set : gen){
+            assertEquals(3, set.size());
+            assertTrue(!set.contains(unit));
         }
-        
-        assertEquals(5376, content.length);
-        
-        int nLess = 0;
-        int nThree = 0;
-        int nMore = 0;
-        for(int i = 0; i < content.length; i++){
-            int count = 0;
-            for(int j = 0; j < content[i].length; j++){
-                if(content[i][j]){
-                    count += 1;
-                }
-            }
-            if(count == 3){
-                nThree++;
-            }
-            if(count < 3){
-                nLess++;
-            }
-            if(count > 3){
-                nMore++;
-            }
-        }
-        assertEquals(0, nLess);
-        assertEquals(0, nMore);  
-        assertEquals(content.length, nThree);
     }
 }

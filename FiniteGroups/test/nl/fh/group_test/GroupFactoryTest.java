@@ -20,7 +20,7 @@ import nl.fh.group.Group;
 import nl.fh.group_definition_factory.GroupFactory;
 import nl.fh.group.GroupProperty;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.info_table_values.IntValue;
+import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -35,17 +35,17 @@ public class GroupFactoryTest {
     }
     
     @Test
-    public void CyclicTest() throws EvaluationException{
+    public void CyclicTest() throws EvaluationException, GroupException{
         GroupFactory fac = new GroupFactory();
-        Group c3 = new Group(fac.getCyclicGroup(3));
-        assertEquals(3, ((IntValue)c3.getInfo().getValue(GroupProperty.Order)).content());
+        Group c3 = fac.getCyclicGroup(3);
+        assertEquals(3, (int)c3.getProperty(GroupProperty.Order));
     }
     
-    public void AbeleanTest() throws EvaluationException{
+    public void AbeleanTest() throws EvaluationException, GroupException{
         GroupFactory fac = new GroupFactory();
-        Group c30 = new Group(fac.getAbeleanGroup(new int[]{2,3,5}));
+        Group c30 = fac.getAbeleanGroup(new int[]{2,3,5});
         
-        assertEquals(2*3*5, ((IntValue)c30.getInfo().getValue(GroupProperty.Order)).content());
+        assertEquals(2*3*5, (int)c30.getProperty(GroupProperty.Order));
     }
     
 }
