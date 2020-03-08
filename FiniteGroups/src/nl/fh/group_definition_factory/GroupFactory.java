@@ -49,7 +49,7 @@ public class GroupFactory {
      /**
      * 
      * @param n the order
-     * @return the definition of the cyclic group of order n 
+     * @return the result of the cyclic group of order n 
      */
     public Group getCyclicGroup(int n) {
         if(n < 1){
@@ -79,24 +79,31 @@ public class GroupFactory {
 
     /**
     * @param orders the orders of the cyclic factors
-    * @return the definition of the product of several cyclic groups
+    * @return the result of the product of several cyclic groups
     */
-    public Group getAbeleanGroup(int[] orders) throws GroupException, EvaluationException {
+    public Group getAbeleanGroup(int[] orders)  {
         List<Group> defs = new ArrayList<Group>();
         
         for(int i = 0; i < orders.length; i++){
             defs.add(getCyclicGroup(orders[i]));
         }
 
-        return GroupProduct.of(defs);
+       Group result = null;
+        try {
+            result =  GroupProduct.of(defs);
+        } catch (EvaluationException | GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create abelean group", ex);
+            System.exit(-1);
+        } 
+        return result;
     }
     
     /**
      * 
      * @param n
-     * @return the definition of the symmetric group of order n!
+     * @return the result of the symmetric group of order n!
      */
-    public Group getSymmetricGroup(int n) throws GroupException{
+    public Group getSymmetricGroup(int n) {
         if(n < 1){
             throw new IllegalArgumentException(" cannot define S_n for n < 1");
         }
@@ -119,9 +126,14 @@ public class GroupFactory {
         
         String name = "S"+Integer.toString(n);
         
-        Group definition = new Group(name, generators, multiplication);
-        
-        return definition;
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create symmetric group", ex);
+            System.exit(-1);
+        } 
+        return result;
     }
 
     /**
@@ -130,7 +142,7 @@ public class GroupFactory {
      * @return the Alternating group A_n 
      */
     
-    public Group getAlternatingGroup(int n) throws GroupException {
+    public Group getAlternatingGroup(int n){
         
         if( n != 4){
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -151,12 +163,17 @@ public class GroupFactory {
         
         String name = "A4";
         
-        Group definition = new Group(name, generators, multiplication);
-        
-        return definition;
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create alternating group", ex);
+            System.exit(-1);
+        } 
+        return result;
     }
 
-    public Group getDihedralGroup(int n) throws GroupException {
+    public Group getDihedralGroup(int n){
         if(n < 1){
             String mess = "cannot not define cyclic group of order 2*" + Integer.toString(n);
             LOGGER.log(Level.SEVERE, mess);
@@ -172,8 +189,14 @@ public class GroupFactory {
         multiplication.addSubstitution(new StringSubstitution("bb", ""));
          multiplication.addSubstitution(new StringSubstitution("ba", repeat("a", n-1) + "b"));      
         String name = "D" + Integer.toString(n);
-        
-        return new Group(name, generators, multiplication);
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create dihedral group", ex);
+            System.exit(-1);
+        } 
+        return result;
     }
 
     private String repeat(String a, int n) {
