@@ -16,8 +16,6 @@
  */
 package nl.fh.group_test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;

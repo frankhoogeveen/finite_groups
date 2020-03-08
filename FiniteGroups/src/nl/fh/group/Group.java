@@ -48,12 +48,18 @@ public class Group implements Iterable<Element> {
     public Group(String name, Collection<Element> generators, Multiplicator multiplication) throws GroupException {
        
         Set<Element> toBeAdded = new HashSet(generators);
-        GroupTable table = findGeneratedGroup(toBeAdded, multiplication);
-        
-        this.cache = new EnumMap<GroupProperty, Object>(GroupProperty.class);
-        this.cache.put(GroupProperty.Name, name);
-        this.cache.put(GroupProperty.Elements, table.keySet());
-        this.cache.put(GroupProperty.MultiplicationTable, table);
+        try{
+            Set<Element> elements = findGeneratedSet(toBeAdded, multiplication);
+            Multiplicator table = createMultiplicationTable(elements, multiplication);
+            
+            this.cache = new EnumMap<GroupProperty, Object>(GroupProperty.class);
+            this.cache.put(GroupProperty.Name, name);
+            this.cache.put(GroupProperty.Elements, elements);
+            this.cache.put(GroupProperty.MultiplicationTable, table);
+
+        } catch(EvaluationException e){
+            throw new GroupException("could not construct group " + name);
+        }
     }
 
 
@@ -85,8 +91,8 @@ public class Group implements Iterable<Element> {
         Multiplicator mult = (Multiplicator)this.getProperty(GroupProperty.MultiplicationTable);
         
         try {
-            return (Set<Element>) findGeneratedGroup(set, mult);
-        } catch (GroupException ex) {
+            return findGeneratedSet(set, mult);
+        } catch (EvaluationException ex) {
             String mess = "generatedFrom failed";
             Logger.getLogger(Group.class.getName()).log(Level.SEVERE, mess, ex);
             throw new EvaluationException(mess);
@@ -101,35 +107,26 @@ public class Group implements Iterable<Element> {
      * the group operation
      * @throws GroupException 
      */
-    private GroupTable findGeneratedGroup(Set<Element> set,  Multiplicator multiplication) throws GroupException {
-        GroupTable table = new GroupTable();
+    private Set<Element> findGeneratedSet(Set<Element> set,  Multiplicator multiplication) throws EvaluationException  {
         Set<Element> toBeAdded = new HashSet(set);
         Set<Element> currentTotal = new HashSet();
         
         while(!toBeAdded.isEmpty()){
-            Set<Element> nextToBeAdded = new HashSet<Element>();
-            
-            try{
-                for(Element g : toBeAdded){
-                    table.put(g, new HashMap<Element, Element>());
-                    for(Element h : currentTotal){
-                        Element gh = multiplication.getProduct(g, h);
-                        table.get(g).put(h, gh);
-                        nextToBeAdded.add(gh);
+        Set<Element> nextToBeAdded = new HashSet<Element>();
 
-                        Element hg = multiplication.getProduct(h, g);
-                        table.get(h).put(g, hg);
-                        nextToBeAdded.add(hg);
-                    }
+            for(Element g : toBeAdded){
+                for(Element h : currentTotal){
+                    Element gh = multiplication.getProduct(g, h);
+                    nextToBeAdded.add(gh);
 
-                    for(Element g2 : toBeAdded){
-                        Element g12 = multiplication.getProduct(g, g2);
-                        table.get(g).put(g2, g12);
-                        nextToBeAdded.add(g12);
-                    }
+                    Element hg = multiplication.getProduct(h, g);
+                    nextToBeAdded.add(hg);
                 }
-            } catch(EvaluationException e){
-                throw new GroupException(e.getMessage());
+
+                for(Element g2 : toBeAdded){
+                    Element g12 = multiplication.getProduct(g, g2);
+                    nextToBeAdded.add(g12);
+                }
             }
             
             currentTotal.addAll(toBeAdded);
@@ -137,7 +134,7 @@ public class Group implements Iterable<Element> {
             toBeAdded.removeAll(currentTotal);
         }
         
-        return table;
+        return currentTotal;
     }
     
     
@@ -150,5 +147,23 @@ public class Group implements Iterable<Element> {
             Logger.getLogger(Group.class.getName()).log(Level.SEVERE, mess, ex);
             throw new IllegalStateException(mess);
         }
+    }
+
+    /**
+     * 
+     * @param elements
+     * @param multiplication
+     * @return a multiplicator with all the products pre-calculated and stored in a table 
+     */
+    private Multiplicator createMultiplicationTable(Set<Element> elements, Multiplicator multiplication) throws EvaluationException {
+        GroupTable table = new GroupTable();
+        for(Element g : elements){
+            table.put(g, new HashMap<Element, Element>());
+            for(Element h : elements){
+                table.get(g).put(h, multiplication.getProduct(g, h));
+            }
+        }
+        
+        return table;
     }
 }

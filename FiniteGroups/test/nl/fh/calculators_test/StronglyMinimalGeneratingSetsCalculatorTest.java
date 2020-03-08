@@ -33,7 +33,6 @@ import org.junit.Test;
  * @author frank
  */
 public class StronglyMinimalGeneratingSetsCalculatorTest {
-    private boolean verbose = false;
     
     /**
      *
@@ -53,6 +52,7 @@ public class StronglyMinimalGeneratingSetsCalculatorTest {
         // leaves 15-5-1 = 9 pairs of generating elements
         assertEquals(9, gen.size());
         for(Set<Element> set : gen){
+            
             assertEquals(2, set.size());
             
             // the unit element should not be in a set of generators
@@ -106,8 +106,8 @@ public class StronglyMinimalGeneratingSetsCalculatorTest {
         Group d4 = fac.getDihedralGroup(4);
         
         
-        Set<Set<Element>> content3 = ((Set<Set<Element>>)(d3.getProperty(GroupProperty.StronglyMinimalGeneratingSets)));
-        Set<Set<Element>> content4 = ((Set<Set<Element>>)(d4.getProperty(GroupProperty.StronglyMinimalGeneratingSets)));
+        Set<Set<Element>> content3 = (Set<Set<Element>>)(d3.getProperty(GroupProperty.StronglyMinimalGeneratingSets));
+        Set<Set<Element>> content4 = (Set<Set<Element>>)(d4.getProperty(GroupProperty.StronglyMinimalGeneratingSets));
         
         assertEquals(9, content3.size());
         assertEquals(12, content4.size());

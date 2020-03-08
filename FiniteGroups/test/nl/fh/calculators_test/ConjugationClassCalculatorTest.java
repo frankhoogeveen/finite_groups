@@ -51,7 +51,8 @@ public class ConjugationClassCalculatorTest {
         Map<Element,Set<Element>> classes =  (Map<Element,Set<Element>>)group.getProperty(GroupProperty.ConjugationClassesMap);
         
         // check on the number of classes
-        assertEquals(5, classes.values().size());
+        Set<Set<Element>> setOfClasses = new HashSet(classes.values());
+        assertEquals(5, setOfClasses.size());
         
         // check that the conjugation classes form a partition
         // 1) check that they add up to the entire group
@@ -68,7 +69,7 @@ public class ConjugationClassCalculatorTest {
                 boolean same = classes.get(g).equals(classes.get(h));
                 
                 Set<Element> intersection = (new HashSet(classes.get(g)));
-                intersection.removeAll(classes.get(h));
+                intersection.retainAll(classes.get(h));
                 boolean disjoint = intersection.isEmpty();
                 
                 assertTrue(disjoint || same);
