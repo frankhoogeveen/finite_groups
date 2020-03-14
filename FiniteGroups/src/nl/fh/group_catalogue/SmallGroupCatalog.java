@@ -28,9 +28,6 @@ public class SmallGroupCatalog extends GroupCatalog {
     private static final Logger LOGGER = Logger.getLogger(SmallGroupCatalog.class.getSimpleName());
     private final GroupFactory factory;
     
-
-    
-    
     public SmallGroupCatalog(){
         super();
         this.factory = new GroupFactory();
@@ -54,6 +51,27 @@ public class SmallGroupCatalog extends GroupCatalog {
         /* order six */
         super.add(factory.getCyclicGroup(6));
         super.add(factory.getSymmetricGroup(3));
+        
+        /* order seven */
+        super.add(factory.getCyclicGroup(7));
+        
+        /* order eight */
+        super.add(factory.getCyclicGroup(8));
+        super.add(factory.getAbeleanGroup(new int[]{4,2}));
+        super.add(factory.getAbeleanGroup(new int[]{2,2,2}));
+        super.add(factory.getDihedralGroup(4));
+        super.add(factory.getDicyclicGroup(2));
+        
+        /* order nine */
+        super.add(factory.getCyclicGroup(9));
+        super.add(factory.getAbeleanGroup(new int[]{3,3}));
+        
+        /* order ten */
+        super.add(factory.getCyclicGroup(10));
+        super.add(factory.getDihedralGroup(5));      
+        
+        /* order eleven */
+        super.add(factory.getCyclicGroup(11));
          
     }
     

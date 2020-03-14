@@ -175,7 +175,7 @@ public class GroupFactory {
 
     public Group getDihedralGroup(int n){
         if(n < 1){
-            String mess = "cannot not define cyclic group of order 2*" + Integer.toString(n);
+            String mess = "cannot not define dihedral group of order 2*" + Integer.toString(n);
             LOGGER.log(Level.SEVERE, mess);
             throw new IllegalArgumentException(mess);
         }
@@ -205,6 +205,32 @@ public class GroupFactory {
             sb.append(a);
         }
         return sb.toString();
+    }
+
+    public Group getDicyclicGroup(int n) {
+        if(n < 1){
+            String mess = "cannot not define dicyclic group of order 4*" + Integer.toString(n);
+            LOGGER.log(Level.SEVERE, mess);
+            throw new IllegalArgumentException(mess);
+        }
+        
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("a"));
+        generators.add(new StringElement("b"));
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution(repeat("a",2*n), ""));
+        multiplication.addSubstitution(new StringSubstitution("bb", repeat("a",n)));
+         multiplication.addSubstitution(new StringSubstitution("ba", repeat("a", 2*n-1) + "b"));      
+        String name = "Q" + Integer.toString(n);
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create dicyclic group", ex);
+            System.exit(-1);
+        } 
+        return result;
     }
     
 }

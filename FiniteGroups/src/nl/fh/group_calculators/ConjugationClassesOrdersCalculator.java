@@ -16,6 +16,8 @@
  */
 package nl.fh.group_calculators;
 
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import nl.fh.calculator.Calculator;
@@ -35,8 +37,17 @@ class ConjugationClassesOrdersCalculator implements Calculator<Group> {
     }
 
     @Override
-    public Map<Set<Element>, Integer> evaluate(Group subject) throws EvaluationException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Map<Set<Element>, Integer> evaluate(Group group) throws EvaluationException {
+        Set<Set<Element>> conjClasses = (Set<Set<Element>>) group.getProperty(GroupProperty.ConjugationClassesSet);
+        Map<Element, Integer> orders = (Map<Element, Integer>) group.getProperty(GroupProperty.ElementOrders);
+        
+        Map<Set<Element>, Integer> result= new HashMap<Set<Element>, Integer>();
+        
+        for(Set<Element> cclass : conjClasses){
+            result.put(cclass, orders.get(cclass.iterator().next()));
+        }
+        
+        return result;
     }
     
 }
