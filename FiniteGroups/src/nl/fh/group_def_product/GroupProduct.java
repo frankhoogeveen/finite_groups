@@ -23,7 +23,7 @@ import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.Multiplicator;
-import nl.fh.group.GroupProperty;
+import nl.fh.group_calculators.GroupProperty;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.GroupException;
 import nl.fh.group_definition_factory.GroupFactory;

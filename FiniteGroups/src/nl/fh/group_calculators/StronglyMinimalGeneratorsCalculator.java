@@ -16,7 +16,6 @@
  */
 package nl.fh.group_calculators;
 
-import nl.fh.group.GroupProperty;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -31,7 +30,7 @@ import nl.fh.group.Multiplicator;
  * Calculates the  strongly minimal sets of generators. These are the sets that
  1) Generate the entire group
  2) Do not have a subset the generates the entire group
- 3) Are not larger than any other allElements of generators of the group
+ 3) Are not larger than any other set of of generators of the group
  
  Note that minimal sets of generators that comply with 1,2 but not 3 may have 
  different size, E.g. for C6, <1>, <5>,<2,3> and <3,4> are all minimal generating
@@ -42,11 +41,7 @@ import nl.fh.group.Multiplicator;
  * 
  * @author frank
  */
-public class StronglyMinimalGeneratorsCalculator implements Calculator<Group> {
-
-    public StronglyMinimalGeneratorsCalculator() {
-    }
-
+class StronglyMinimalGeneratorsCalculator implements Calculator<Group> {
 
     @Override
     public Set<Set<Element>> evaluate(Group group) throws EvaluationException {
@@ -106,6 +101,4 @@ public class StronglyMinimalGeneratorsCalculator implements Calculator<Group> {
         
         return result;
     }
-
-    
 }

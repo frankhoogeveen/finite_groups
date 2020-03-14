@@ -29,9 +29,9 @@ import nl.fh.group.Group;
  * 
  * @author frank
  */
-public class ConjugationClassesOrdersCalculator implements Calculator<Group> {
+class ConjugationClassesOrdersCalculator implements Calculator<Group> {
 
-    public ConjugationClassesOrdersCalculator() {
+    ConjugationClassesOrdersCalculator() {
     }
 
     @Override

@@ -18,10 +18,11 @@ package nl.fh.homomorphism;
 
 /**
  *
- *  Exception thrown when a homomorphism is defined in an incorrect way
- * 
  * @author frank
  */
 public class HomomorphismException extends Exception {
+
+    public HomomorphismException(String mess) {
+    }
     
 }

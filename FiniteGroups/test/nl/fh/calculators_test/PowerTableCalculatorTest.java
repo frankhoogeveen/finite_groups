@@ -16,7 +16,9 @@
  */
 package nl.fh.calculators_test;
 
-import nl.fh.group.GroupPowerTable;
+import nl.fh.group_calculators.GroupTable;
+import nl.fh.group_calculators.GroupProperty;
+import nl.fh.group_calculators.GroupPowerTable;
 import java.util.Map;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.*;
@@ -48,6 +50,24 @@ public class PowerTableCalculatorTest {
             for(int i = 0; i < 8; i++){
                 assertEquals(powers[i], powerTable.get(g).get(i));
             }
+        }
+    }
+    
+    @Test
+    public void D5Test() throws EvaluationException{
+        GroupFactory fac = new GroupFactory();
+        Group d5 = fac.getDihedralGroup(5);
+        
+        GroupTable table = (GroupTable) d5.getProperty(GroupProperty.MultiplicationTable);
+        GroupPowerTable powerTable = (GroupPowerTable)(Map<Element, Map<Integer, Element>> )d5.getProperty(GroupProperty.PowerTable);
+        Element unit = (Element) d5.getProperty(GroupProperty.UnitElement);
+        
+        for(Element g : d5){
+            assertEquals(unit, powerTable.power(g, 0));
+            assertEquals(g, powerTable.power(g, 1));
+            assertEquals(table.getProduct(g, g), powerTable.power(g,2));
+            assertEquals(unit, table.getProduct(g, powerTable.power(g, -1)));
+            assertEquals(g, powerTable.power(g, -19));
         }
     }
     

@@ -14,13 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group;
+package nl.fh.checker;
 
+import nl.fh.group_calculators.GroupProperty;
 import java.util.Map;
 import java.util.Set;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
+import nl.fh.group.Group;
+import nl.fh.group.Multiplicator;
 import nl.fh.group_formatter.GroupFormatter;
-import nl.fh.homomorphism.GroupMorphism;
+import nl.fh.homomorphism.GroupHomomorphism;
+import nl.fh.homomorphism.MorphismProperty;
 
 /**
  * Object to check a group against the basic definitions
@@ -79,17 +84,19 @@ public class GroupChecker {
      * @param morphism
      * @return true if the morphism is a homomorphism 
      */
-    public boolean isHomomorphism(GroupMorphism morphism) throws EvaluationException{
-        Group domain = morphism.getDomain();
+    public boolean isHomomorphism(GroupHomomorphism morphism) throws EvaluationException{
+        Group domain = (Group) morphism.getProperty(MorphismProperty.Domain);
         Multiplicator mDomain = (Multiplicator) domain.getProperty(GroupProperty.MultiplicationTable);
         
-        Group codomain = morphism.getCodomain();
+        Group codomain = (Group) morphism.getProperty(MorphismProperty.Codomain);
         Multiplicator mCodomain = (Multiplicator) codomain.getProperty(GroupProperty.MultiplicationTable);
+        
+        Map<Element, Element> map = (Map<Element, Element>) morphism.getProperty(MorphismProperty.Map);
         
         for(Element g1 : domain){
             for(Element g2 : domain){
-                Element x = morphism.applyTo(mDomain.getProduct(g1, g2));
-                Element y = mCodomain.getProduct(morphism.applyTo(g1), morphism.applyTo(g2));
+                Element x = map.get(mDomain.getProduct(g1, g2));
+                Element y = mCodomain.getProduct(map.get(g1), map.get(g2));
                 if(!x.equals(y)){
                     return false;
                 }

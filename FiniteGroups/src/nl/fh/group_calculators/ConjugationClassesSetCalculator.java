@@ -23,16 +23,15 @@ import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupProperty;
 
 /**
  * Calculate the set of conjugation classes
  * 
  * @author frank
  */
-public class ConjugationClassesSetCalculator implements Calculator<Group> {
+class ConjugationClassesSetCalculator implements Calculator<Group> {
 
-    public ConjugationClassesSetCalculator() {
+    ConjugationClassesSetCalculator() {
     }
 
     @Override

@@ -18,7 +18,6 @@ package nl.fh.group_calculators;
 
 import java.util.HashMap;
 import java.util.Map;
-import nl.fh.group.GroupProperty;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
@@ -30,13 +29,13 @@ import nl.fh.group.Multiplicator;
  * 
  * @author frank
  */
-public class ElementOrderCalculator implements Calculator<Group> {
+class ElementOrderCalculator implements Calculator<Group> {
     
     
     /**
      *
      */
-    public ElementOrderCalculator() {
+    ElementOrderCalculator() {
     }
 
     @Override

@@ -20,16 +20,12 @@ import java.util.HashMap;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.*;
-import nl.fh.group.GroupTable;
 
 /**
  *
  * @author frank
  */
-public class PowerTableCalculator implements Calculator<Group> {
-
-    public PowerTableCalculator() {
-    }
+class PowerTableCalculator implements Calculator<Group> {
 
     @Override
     public Object evaluate(Group group) throws EvaluationException {

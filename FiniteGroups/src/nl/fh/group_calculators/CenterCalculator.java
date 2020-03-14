@@ -16,12 +16,10 @@
  */
 package nl.fh.group_calculators;
 
-import nl.fh.group.GroupProperty;
 import java.util.HashSet;
 import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupTable;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 
@@ -32,9 +30,9 @@ import nl.fh.calculator.EvaluationException;
  * 
  * @author frank
  */
-public class CenterCalculator implements Calculator<Group> {
+class CenterCalculator implements Calculator<Group> {
 
-    public CenterCalculator() {
+    CenterCalculator() {
     }
 
     @Override

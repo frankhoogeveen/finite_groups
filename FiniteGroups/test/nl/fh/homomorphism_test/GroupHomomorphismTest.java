@@ -24,9 +24,9 @@ import java.util.Set;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupChecker;
+import nl.fh.checker.GroupChecker;
 import nl.fh.group.GroupException;
-import nl.fh.group.GroupProperty;
+import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.homomorphism.HomomorphismException;
@@ -56,13 +56,13 @@ public class GroupHomomorphismTest {
         Group c14 = new Group("c14", generators, new CyclicMultiplicator(14));
         
         /*
-         * map the generator of c7 to three times the generator of c14
+         * map the generator of c7 to an even number of times the generator of c14
          */
         Map<Element, Map<Integer,Element>> powerTable = 
                     (Map<Element, Map<Integer,Element>>) c14.getProperty(GroupProperty.PowerTable);
         
         Map<Element, Element> coreMap = new HashMap<Element, Element>();
-        coreMap.put(gen7, powerTable.get(gen14).get(3));
+        coreMap.put(gen7, powerTable.get(gen14).get(4));
         
         GroupHomomorphism m = new GroupHomomorphism(c7, c14, coreMap);
         /*

@@ -22,7 +22,6 @@ import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupProperty;
 import nl.fh.group.Multiplicator;
 
 /**
@@ -31,9 +30,9 @@ import nl.fh.group.Multiplicator;
  * 
  * @author frank
  */
-public class InverseCalculator implements Calculator<Group> {
+class InverseCalculator implements Calculator<Group> {
 
-    public InverseCalculator() {
+    InverseCalculator() {
     }
 
     @Override

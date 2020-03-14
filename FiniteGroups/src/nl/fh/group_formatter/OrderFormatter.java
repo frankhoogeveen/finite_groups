@@ -19,7 +19,7 @@ package nl.fh.group_formatter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.group.Group;
-import nl.fh.group.GroupProperty;
+import nl.fh.group_calculators.GroupProperty;
 import nl.fh.calculator.EvaluationException;
 
 /**

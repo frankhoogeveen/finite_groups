@@ -14,10 +14,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group;
+package nl.fh.group_calculators;
 
 import java.util.HashMap;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
+import nl.fh.group.Multiplicator;
 
 /**
  *

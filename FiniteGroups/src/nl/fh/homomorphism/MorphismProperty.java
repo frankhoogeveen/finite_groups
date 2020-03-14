@@ -14,30 +14,43 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_calculators;
+package nl.fh.homomorphism;
 
-import java.util.Set;
 import nl.fh.calculator.Calculator;
-import nl.fh.calculator.EvaluationException;
-import nl.fh.group.Element;
-import nl.fh.group.Group;
+import nl.fh.calculator.Property;
 
 /**
- *
- *  returns true if the group is abelean
+ * The enum list of all properties of Morphisms for which a calculator is
+ * defined.
  * 
  * 
  * @author frank
  */
-class IsAbeleanCalculator implements Calculator<Group> {
+public enum MorphismProperty implements Property {
 
-    IsAbeleanCalculator() {
+    // properties that are set when defining the group
+    Domain(null),
+    Codomain(null),
+    Map(null);     
+    
+    // properties that could be calculated at a later stage
+
+    private final Calculator calculator;
+
+    /**
+     * 
+     * @param calc the calculator
+     * 
+     * The caller should know what to do with the output of the calculator
+     * , in particular to what class to cast it,
+     * 
+     */
+    private MorphismProperty(Calculator<GroupHomomorphism> calc){
+        this.calculator = calc;
     }
 
     @Override
-    public Boolean evaluate(Group group) throws EvaluationException {
-        Set<Element> center = (Set<Element>)(group.getProperty(GroupProperty.Center));
-        int order = (int)(group.getProperty(GroupProperty.Order));
-        return (order == center.size());
+    public Calculator getCalculator() {
+        return this.calculator;
     }
 }

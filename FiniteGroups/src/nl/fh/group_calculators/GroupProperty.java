@@ -14,21 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group;
+package nl.fh.group_calculators;
 
-import nl.fh.group_calculators.PowerTableCalculator;
-import nl.fh.group_calculators.ConjugationClassesOrdersCalculator;
-import nl.fh.group_calculators.ConjugationClassesSetCalculator;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.Property;
-import nl.fh.group_calculators.CenterCalculator;
-import nl.fh.group_calculators.ConjugationClassesMapCalculator;
-import nl.fh.group_calculators.ElementOrderCalculator;
-import nl.fh.group_calculators.InverseCalculator;
-import nl.fh.group_calculators.IsAbeleanCalculator;
-import nl.fh.group_calculators.OrderCalculator;
-import nl.fh.group_calculators.StronglyMinimalGeneratorsCalculator;
-import nl.fh.group_calculators.UnitCalculator;
+import nl.fh.group.Group;
 
 /**
  *

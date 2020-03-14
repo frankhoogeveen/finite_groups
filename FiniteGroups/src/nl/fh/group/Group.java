@@ -16,12 +16,13 @@
  */
 package nl.fh.group;
 
+import nl.fh.calculator.PropertyCache;
+import nl.fh.group_calculators.GroupProperty;
+import nl.fh.group_calculators.GroupTable;
 import java.util.Collection;
-import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,10 +32,8 @@ import nl.fh.calculator.EvaluationException;
  *
  * @author frank
  */
-public class Group implements Iterable<Element> {
-    
-    private final Map<GroupProperty, Object> cache;
-    
+public class Group extends PropertyCache implements Iterable<Element> {
+
     /**
      * 
      * @param name
@@ -47,12 +46,13 @@ public class Group implements Iterable<Element> {
      */
     public Group(String name, Collection<Element> generators, Multiplicator multiplication) throws GroupException {
        
+        super();
+        
         Set<Element> toBeAdded = new HashSet(generators);
         try{
             Set<Element> elements = findGeneratedSet(toBeAdded, multiplication);
             Multiplicator table = createMultiplicationTable(elements, multiplication);
             
-            this.cache = new EnumMap<GroupProperty, Object>(GroupProperty.class);
             this.cache.put(GroupProperty.Name, name);
             this.cache.put(GroupProperty.Elements, elements);
             this.cache.put(GroupProperty.MultiplicationTable, table);
@@ -62,22 +62,6 @@ public class Group implements Iterable<Element> {
         }
     }
 
-    /**
-     * 
-     * @param property
-     * @return the value of the property for this group
-     * @throws nl.fh.calculator.EvaluationException 
-     * 
-     * 
-     * The method caches all results
-     * The calling code should know how to cast the resulting object
-     */
-    public Object getProperty(GroupProperty property) throws EvaluationException{
-        if(!cache.containsKey(property)){
-            cache.put(property, property.getCalculator().evaluate(this));
-        }
-        return cache.get(property);
-    }
     
     /**
      * 

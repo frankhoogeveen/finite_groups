@@ -21,7 +21,7 @@ import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.Multiplicator;
-import nl.fh.group.GroupProperty;
+import nl.fh.group_calculators.GroupProperty;
 
 /**
  * This class defines a multiplication on the direct product of groups,

@@ -16,7 +16,6 @@
  */
 package nl.fh.group_calculators;
 
-import nl.fh.group.GroupProperty;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.calculator.Calculator;
@@ -28,7 +27,7 @@ import nl.fh.group.Multiplicator;
  * 
  * @author frank
  */
-public class UnitCalculator  implements Calculator<Group> {
+class UnitCalculator  implements Calculator<Group> {
 
     @Override
     public  Element evaluate(Group group) throws EvaluationException {

@@ -24,7 +24,6 @@ import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.GroupProperty;
 import nl.fh.group.Multiplicator;
 
 /**
@@ -34,9 +33,9 @@ import nl.fh.group.Multiplicator;
  * 
  * @author frank
  */
-public class ConjugationClassesMapCalculator implements Calculator<Group> {
+class ConjugationClassesMapCalculator implements Calculator<Group> {
 
-    public ConjugationClassesMapCalculator() {
+    ConjugationClassesMapCalculator() {
     }
 
     @Override

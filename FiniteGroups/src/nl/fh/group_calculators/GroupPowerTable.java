@@ -16,22 +16,33 @@
  */
 package nl.fh.group_calculators;
 
-import java.util.Set;
-import nl.fh.group.Group;
-import nl.fh.calculator.Calculator;
-import nl.fh.calculator.EvaluationException;
+import java.util.HashMap;
+import java.util.Map;
 import nl.fh.group.Element;
-
 
 /**
  *
  * @author frank
  */
-class OrderCalculator implements Calculator<Group>{
-
-    @Override
-    public Integer evaluate(Group group) throws EvaluationException {
-        int result = ((Set<Element>)(group.getProperty(GroupProperty.Elements))).size();
-        return result;
+public class GroupPowerTable extends HashMap<Element, Map<Integer, Element>> {
+    private final int order;
+    
+    
+    public GroupPowerTable(int order){
+        this.order = order;
     }
+    
+    /**
+     * 
+     * @param g
+     * @param n integer, can be negative or zero
+     * @return g^n 
+     */
+    public Element power(Element g, int n){
+        int exp = n % this.order;
+        if(exp < 0){
+            exp += order;
+        }
+        return this.get(g).get(exp);
+    };
 }

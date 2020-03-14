@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group;
+package nl.fh.calculator;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,25 +23,29 @@ import java.util.Map;
  *
  * @author frank
  */
-public class GroupPowerTable extends HashMap<Element, Map<Integer, Element>> {
-    private final int order;
+public class PropertyCache<P extends Property> {
     
+    protected final Map<P, Object> cache;
     
-    public GroupPowerTable(int order){
-        this.order = order;
+    public PropertyCache(){
+        this.cache = new HashMap<P, Object>();
+    }
+
+    /**
+     *
+     * @param property
+     * @return the value of the property for this group
+     * @throws nl.fh.calculator.EvaluationException
+     *
+     *
+     * The method caches all results
+     * The calling code should know how to cast the resulting object
+     */
+    public Object getProperty(P property) throws EvaluationException {
+        if (!cache.containsKey(property)) {
+            cache.put(property, property.getCalculator().evaluate(this));
+        }
+        return cache.get(property);
     }
     
-    /**
-     * 
-     * @param g
-     * @param n integer, can be negative or zero
-     * @return g^n 
-     */
-    public Element power(Element g, int n){
-        int exp = n % this.order;
-        if(exp < 0){
-            exp += order;
-        }
-        return this.get(g).get(exp);
-    };
 }
