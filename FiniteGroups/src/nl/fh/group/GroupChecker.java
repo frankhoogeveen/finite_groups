@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.Set;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group_formatter.GroupFormatter;
+import nl.fh.homomorphism.GroupMorphism;
 
 /**
  * Object to check a group against the basic definitions
@@ -45,6 +46,16 @@ public class GroupChecker {
         this.verbose = verbose;
     }
     
+    /**
+     * 
+     * @param group the object to be tested
+     * @return true if group is well defined:
+     * - closed
+     * - existence of neutral element
+     * - existence of inverses for each element
+     * - associativity
+     * @throws EvaluationException if the group operation is not defined
+     */
     public boolean isGroup(Group group) throws EvaluationException{
 
         try{
@@ -63,6 +74,31 @@ public class GroupChecker {
         return true;
     }
 
+    /**
+     * 
+     * @param morphism
+     * @return true if the morphism is a homomorphism 
+     */
+    public boolean isHomomorphism(GroupMorphism morphism) throws EvaluationException{
+        Group domain = morphism.getDomain();
+        Multiplicator mDomain = (Multiplicator) domain.getProperty(GroupProperty.MultiplicationTable);
+        
+        Group codomain = morphism.getCodomain();
+        Multiplicator mCodomain = (Multiplicator) codomain.getProperty(GroupProperty.MultiplicationTable);
+        
+        for(Element g1 : domain){
+            for(Element g2 : domain){
+                Element x = morphism.applyTo(mDomain.getProduct(g1, g2));
+                Element y = mCodomain.getProduct(morphism.applyTo(g1), morphism.applyTo(g2));
+                if(!x.equals(y)){
+                    return false;
+                }
+            }
+        }
+        
+        return true;
+    }
+    
     private void checkClosed(Group group) throws EvaluationException {
         Map<Element, Map<Element,Element>> table = (Map<Element, Map<Element,Element>> )group.getProperty(GroupProperty.MultiplicationTable);
         Set<Element> set = (Set<Element>)group.getProperty(GroupProperty.Elements);

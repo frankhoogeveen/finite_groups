@@ -14,21 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.calculator;
+package nl.fh.homomorphism;
 
 /**
  *
+ *  Exception thrown when a homomorphism is defined in an incorrect way
+ * 
  * @author frank
- * @param <T> the type of object on which this calculator acts
  */
-public interface Calculator <T> {
-    
-    /**
-     * 
-     * @param subject of which a property will be calculated
-     * @return the output of this calculator
-     * @throws EvaluationException when the calculation does not succeed
-     */
-    public Object evaluate(T subject) throws EvaluationException;
+public class HomomorphismException extends Exception {
     
 }

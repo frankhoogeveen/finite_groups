@@ -62,8 +62,6 @@ public class Group implements Iterable<Element> {
         }
     }
 
-
-    
     /**
      * 
      * @param property
@@ -136,7 +134,6 @@ public class Group implements Iterable<Element> {
         
         return currentTotal;
     }
-    
     
     @Override
     public Iterator<Element> iterator() {

@@ -46,7 +46,7 @@ public class GroupProduct {
         Set<Element> generators = createGenerators(factors);
         Multiplicator<ProductElement> multiplication = new ProductMultiplicator(factors);
      
-        Group product = new Group(name, generators, multiplication );
+        Group product = new Group(name, generators, multiplication);
         return product;
     }
 

@@ -14,21 +14,34 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.calculator;
+package nl.fh.group;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
  * @author frank
- * @param <T> the type of object on which this calculator acts
  */
-public interface Calculator <T> {
+public class GroupPowerTable extends HashMap<Element, Map<Integer, Element>> {
+    private final int order;
+    
+    
+    public GroupPowerTable(int order){
+        this.order = order;
+    }
     
     /**
      * 
-     * @param subject of which a property will be calculated
-     * @return the output of this calculator
-     * @throws EvaluationException when the calculation does not succeed
+     * @param g
+     * @param n integer, can be negative or zero
+     * @return g^n 
      */
-    public Object evaluate(T subject) throws EvaluationException;
-    
+    public Element power(Element g, int n){
+        int exp = n % this.order;
+        if(exp < 0){
+            exp += order;
+        }
+        return this.get(g).get(exp);
+    };
 }

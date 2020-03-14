@@ -16,6 +16,7 @@
  */
 package nl.fh.group;
 
+import nl.fh.group_calculators.PowerTableCalculator;
 import nl.fh.group_calculators.ConjugationClassesOrdersCalculator;
 import nl.fh.group_calculators.ConjugationClassesSetCalculator;
 import nl.fh.calculator.Calculator;
@@ -50,7 +51,8 @@ public enum GroupProperty implements Property {
     ConjugationClassesMap(new ConjugationClassesMapCalculator()),
     ConjugationClassesSet(new ConjugationClassesSetCalculator()),
     StronglyMinimalGeneratingSets(new StronglyMinimalGeneratorsCalculator()), 
-    ConjugationsClassesOrders(new ConjugationClassesOrdersCalculator());
+    ConjugationsClassesOrders(new ConjugationClassesOrdersCalculator()),
+    PowerTable(new PowerTableCalculator());
 
     private final Calculator calculator;
     

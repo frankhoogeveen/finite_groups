@@ -18,18 +18,9 @@
 package nl.fh._test;
 
 
-import nl.fh.calculators_test.CenterCalculatorTest;
-import nl.fh.calculators_test.ConjugationClassCalculatorTest;
-import nl.fh.calculators_test.ElementOrderCalculatorTest;
-import nl.fh.calculators_test.InverseCalculatorTest;
-import nl.fh.calculators_test.StronglyMinimalGeneratingSetsCalculatorTest;
-import nl.fh.group_test.GroupCyclicConstructorTest;
-import nl.fh.group_test.GroupFactoryTest;
-import nl.fh.group_test.GroupPermutationConstructorTest;
-import nl.fh.group_test.GroupProductConstructorTest;
-import nl.fh.group_test.GroupSubstitutionConstructorTest;
-import nl.fh.group_test.GroupSubstitutionInconsistentTest;
-import nl.fh.group_test.SubgroupTest;
+import nl.fh.calculators_test.*;
+import nl.fh.group_test.*;
+import nl.fh.homomorphism_test.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -56,6 +47,8 @@ import org.junit.runners.Suite;
     GroupFactoryTest.class,
     StronglyMinimalGeneratingSetsCalculatorTest.class,
     SubgroupTest.class,
+    PowerTableCalculatorTest.class,
+    GroupHomomorphismTest.class
 })
 
 

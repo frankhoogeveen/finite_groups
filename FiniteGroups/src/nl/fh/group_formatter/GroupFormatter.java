@@ -43,7 +43,7 @@ public class GroupFormatter {
         this.list.add(new IsAbeleanFormatter());
         this.list.add(new CenterFormatter());
         this.list.add(new InversesFormatter());
-        // this.list.add(new ConjugationClassesFormatter());
+        this.list.add(new ConjugationClassesFormatter());
     }
     
     public String createReport(GroupCatalog catalog){
