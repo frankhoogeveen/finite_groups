@@ -14,10 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.homomorphism;
+package nl.fh.homomorphism_calculator;
 
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.Property;
+import nl.fh.homomorphism.GroupHomomorphism;
 
 /**
  * The enum list of all properties of Morphisms for which a calculator is
@@ -26,14 +27,19 @@ import nl.fh.calculator.Property;
  * 
  * @author frank
  */
-public enum MorphismProperty implements Property {
+public enum HomomorphismProperty implements Property {
 
-    // properties that are set when defining the group
+    // properties that are set when defining the homomorphism
     Domain(null),
     Codomain(null),
-    Map(null);     
+    Map(null),   
     
     // properties that could be calculated at a later stage
+    IsMono(new IsMonoCalculator()),
+    IsEpi(new IsEpiCalculator()),
+    IsEndo(new IsEndoCalculator()),
+    IsIso(new IsIsoCalculator()),
+    IsAuto(new IsAutoCalculator());
 
     private final Calculator calculator;
 
@@ -45,7 +51,7 @@ public enum MorphismProperty implements Property {
      * , in particular to what class to cast it,
      * 
      */
-    private MorphismProperty(Calculator<GroupHomomorphism> calc){
+    private HomomorphismProperty(Calculator<GroupHomomorphism> calc){
         this.calculator = calc;
     }
 

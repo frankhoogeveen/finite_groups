@@ -30,6 +30,8 @@ import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.homomorphism.HomomorphismException;
+import nl.fh.homomorphism_calculator.HomomorphismProperty;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
@@ -71,6 +73,42 @@ public class GroupHomomorphismTest {
         
         GroupChecker check = new GroupChecker();
         check.isHomomorphism(m);
+    }
+    
+    @Test
+    public void TypesOfMorphismsTest() throws GroupException, EvaluationException, HomomorphismException{
+                /*
+         * set up the cyclic group of order 7
+         */
+        Set<Element> generators = new HashSet<Element>();
+        Element gen7 = CyclicElement.generatorOfOrder(7);
+        generators.add(gen7);
+        Group c7 = new Group("c7", generators, new CyclicMultiplicator(7));
+        
+        /*
+         * set up the cyclic group of order 14
+         */
+        generators = new HashSet<Element>();
+        Element gen14 = CyclicElement.generatorOfOrder(14);
+        generators.add(gen14);
+        Group c14 = new Group("c14", generators, new CyclicMultiplicator(14));
+        
+        /*
+         * map the generator of c7 to an even number of times the generator of c14
+         */
+        Map<Element, Map<Integer,Element>> powerTable = 
+                    (Map<Element, Map<Integer,Element>>) c14.getProperty(GroupProperty.PowerTable);
+        
+        Map<Element, Element> coreMap = new HashMap<Element, Element>();
+        coreMap.put(gen7, powerTable.get(gen14).get(4));
+        
+        GroupHomomorphism m = new GroupHomomorphism(c7, c14, coreMap);
+        
+        assertTrue((boolean) m.getProperty(HomomorphismProperty.IsMono));
+        assertTrue(!(boolean) m.getProperty(HomomorphismProperty.IsEpi));
+        assertTrue(!(boolean) m.getProperty(HomomorphismProperty.IsIso));
+        assertTrue(!(boolean) m.getProperty(HomomorphismProperty.IsEndo));
+        assertTrue(!(boolean) m.getProperty(HomomorphismProperty.IsAuto));
     }
     
 }

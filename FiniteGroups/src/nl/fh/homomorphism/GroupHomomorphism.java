@@ -16,6 +16,7 @@
  */
 package nl.fh.homomorphism;
 
+import nl.fh.homomorphism_calculator.HomomorphismProperty;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -33,7 +34,7 @@ import nl.fh.group_calculators.GroupTable;
  *
  * @author frank
  */
-public class GroupHomomorphism extends PropertyCache<MorphismProperty>{
+public class GroupHomomorphism extends PropertyCache<HomomorphismProperty>{
     
     private Group domain;
     private Group codomain;
@@ -46,13 +47,13 @@ public class GroupHomomorphism extends PropertyCache<MorphismProperty>{
      */
     public GroupHomomorphism(Group domain, Group codomain, Map<Element, Element> coreMap) throws HomomorphismException {
         super();
-        this.cache.put(MorphismProperty.Domain, domain);
-        this.cache.put(MorphismProperty.Codomain, codomain);
+        this.cache.put(HomomorphismProperty.Domain, domain);
+        this.cache.put(HomomorphismProperty.Codomain, codomain);
         
         try {
             GroupTable table = (GroupTable) domain.getProperty(GroupProperty.MultiplicationTable);
             GroupTable cotable = (GroupTable) codomain.getProperty(GroupProperty.MultiplicationTable);
-            this.cache.put(MorphismProperty.Map, createFullMap(domain, codomain, coreMap));
+            this.cache.put(HomomorphismProperty.Map, createFullMap(domain, codomain, coreMap));
             
         } catch (EvaluationException ex) {
             String mess = "could not construct group homomorphism";

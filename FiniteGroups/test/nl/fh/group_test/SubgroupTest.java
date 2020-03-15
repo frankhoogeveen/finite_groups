@@ -57,7 +57,7 @@ public class SubgroupTest {
         
         Set<Element> center = (Set<Element>) s5.getProperty(GroupProperty.Center);
         
-        Group sub =new Group( "subgroup", center, (Multiplicator) s5.getProperty(GroupProperty.MultiplicationTable));
+        Group sub =new Group("subgroup", center, (Multiplicator) s5.getProperty(GroupProperty.MultiplicationTable));
 
         GroupChecker checker = new GroupChecker();
         assertTrue(checker.isGroup(sub));

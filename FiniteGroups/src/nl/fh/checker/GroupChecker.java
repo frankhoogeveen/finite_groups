@@ -25,7 +25,7 @@ import nl.fh.group.Group;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_formatter.GroupFormatter;
 import nl.fh.homomorphism.GroupHomomorphism;
-import nl.fh.homomorphism.MorphismProperty;
+import nl.fh.homomorphism_calculator.HomomorphismProperty;
 
 /**
  * Object to check a group against the basic definitions
@@ -85,13 +85,13 @@ public class GroupChecker {
      * @return true if the morphism is a homomorphism 
      */
     public boolean isHomomorphism(GroupHomomorphism morphism) throws EvaluationException{
-        Group domain = (Group) morphism.getProperty(MorphismProperty.Domain);
+        Group domain = (Group) morphism.getProperty(HomomorphismProperty.Domain);
         Multiplicator mDomain = (Multiplicator) domain.getProperty(GroupProperty.MultiplicationTable);
         
-        Group codomain = (Group) morphism.getProperty(MorphismProperty.Codomain);
+        Group codomain = (Group) morphism.getProperty(HomomorphismProperty.Codomain);
         Multiplicator mCodomain = (Multiplicator) codomain.getProperty(GroupProperty.MultiplicationTable);
         
-        Map<Element, Element> map = (Map<Element, Element>) morphism.getProperty(MorphismProperty.Map);
+        Map<Element, Element> map = (Map<Element, Element>) morphism.getProperty(HomomorphismProperty.Map);
         
         for(Element g1 : domain){
             for(Element g2 : domain){
