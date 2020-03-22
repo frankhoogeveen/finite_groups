@@ -44,6 +44,7 @@ public class GroupFormatter {
         this.list.add(new CenterFormatter());
         this.list.add(new InversesFormatter());
         this.list.add(new ConjugationClassesFormatter());
+        this.list.add(new InnerAutomorphismFormatter());
     }
     
     public String createReport(GroupCatalog catalog){

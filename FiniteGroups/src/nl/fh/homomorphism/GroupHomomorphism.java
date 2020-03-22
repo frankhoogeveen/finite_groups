@@ -31,6 +31,8 @@ import nl.fh.group.Group;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_calculators.GroupTable;
+import nl.fh.group_def_automorphism.Automorphism;
+import nl.fh.group_def_automorphism.AutomorphismMultiplicator;
 
 /**
  *
@@ -89,7 +91,50 @@ public class GroupHomomorphism extends PropertyCache<HomomorphismProperty>{
         }
         return result;
     }
-
+    
+    /**
+     * 
+     * @param morph
+     * @return the composition of morph followed by this
+     */
+    public GroupHomomorphism after(GroupHomomorphism morph) throws EvaluationException{
+        Group codomain1 = (Group) morph.getProperty(HomomorphismProperty.Codomain);
+        Group domain1 = (Group) morph.getProperty(HomomorphismProperty.Domain);
+        Group codomain2 = (Group) this.getProperty(HomomorphismProperty.Codomain);
+        Group domain2 = (Group) this.getProperty(HomomorphismProperty.Domain);
+            
+        //make sure the domains of the two automorphisms match
+        if(!codomain1.equals(domain2)){
+            throw new EvaluationException("cannot multiply automorphisms with different domains");
+        }
+        
+        Map<Element, Element> map1 = (Map<Element, Element>)morph.getProperty(HomomorphismProperty.Map);
+        Map<Element, Element> map2 = (Map<Element, Element>)this.getProperty(HomomorphismProperty.Map);   
+        
+        // calculate the composite map
+        Map<Element, Element> productMap = new HashMap<Element, Element>();
+        for(Element g : domain1){
+            productMap.put(g, map2.get(map1.get(g)));
+        }
+        
+        try {
+            return new GroupHomomorphism(domain1, codomain2, productMap);
+        } catch (HomomorphismException ex) {
+            String mess = "could not multiply homomorphisms";
+            Logger.getLogger(AutomorphismMultiplicator.class.getName()).log(Level.SEVERE, mess, ex);
+            throw new EvaluationException(mess);
+        }
+    }
+    
+    /**
+     * 
+     * @param morph
+     * @return the composition of this followed by morph
+     */
+    public GroupHomomorphism before(GroupHomomorphism morph) throws EvaluationException{
+        return morph.after(this);
+    }
+    
     /**
      * 
      * @param domain

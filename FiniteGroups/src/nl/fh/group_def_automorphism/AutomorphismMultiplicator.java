@@ -16,7 +16,6 @@
  */
 package nl.fh.group_def_automorphism;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,32 +34,17 @@ public class AutomorphismMultiplicator implements Multiplicator<Automorphism> {
 
     @Override
     public Automorphism getProduct(Automorphism aut1, Automorphism aut2) throws EvaluationException {
-        Group domain1 = (Group) aut1.getProperty(HomomorphismProperty.Domain);
-        Group domain2 = (Group) aut2.getProperty(HomomorphismProperty.Domain);
-        
-        Map<Element, Element> map1 = (Map<Element, Element>)aut1.getProperty(HomomorphismProperty.Map);
-        Map<Element, Element> map2 = (Map<Element, Element>)aut2.getProperty(HomomorphismProperty.Map);       
-        
-        //make sure the domains of the two automorphisms match
-        if(!domain1.equals(domain2)){
-            throw new EvaluationException("cannot multiply automorphisms with different domains");
-        }
-        
-        
-        // calculate the composite map
-        Map<Element, Element> productMap = new HashMap<Element, Element>();
-        for(Element g : domain1){
-            productMap.put(g, map2.get(map1.get(g)));
-        }
-        
+        Group group = (Group)aut1.getProperty(HomomorphismProperty.Domain);
+        Map<Element, Element> map = (Map<Element, Element>) aut1.after(aut2).getProperty(HomomorphismProperty.Map);
+        Automorphism result;
         try {
-            return new Automorphism(domain1, productMap);
+            result = new Automorphism(group, map);
         } catch (HomomorphismException ex) {
-            String mess = "could not multiply automorphisms";
+            String mess = "could not get product of automorphisms";
             Logger.getLogger(AutomorphismMultiplicator.class.getName()).log(Level.SEVERE, mess, ex);
             throw new EvaluationException(mess);
         }
-        
+        return result;
     }
     
 }

@@ -72,7 +72,13 @@ public class SmallGroupCatalog extends GroupCatalog {
         
         /* order eleven */
         super.add(factory.getCyclicGroup(11));
-         
+        
+        /* order twelve */
+        super.add(factory.getCyclicGroup(12));
+        super.add(factory.getAbeleanGroup(new int[]{3,2,2}));
+        super.add(factory.getDihedralGroup(6));
+        super.add(factory.getDicyclicGroup(3));
+        super.add(factory.getAlternatingGroup(4));
     }
     
     /**

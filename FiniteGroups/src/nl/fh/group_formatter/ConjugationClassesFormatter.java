@@ -68,9 +68,9 @@ public class ConjugationClassesFormatter implements ItemFormatter {
         sb.append(conjClass.size());
         sb.append(" elements of order ");
         sb.append(order);
-        sb.append("\n     ");
+        sb.append("\n");
         for(Element c : conjClass){
-            sb.append(" ");
+            sb.append("  ");
             sb.append(c.toString());
             sb.append("\n");
         }
