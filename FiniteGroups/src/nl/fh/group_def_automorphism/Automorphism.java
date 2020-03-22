@@ -33,6 +33,14 @@ import nl.fh.homomorphism_calculator.HomomorphismProperty;
  */
 public class Automorphism extends GroupHomomorphism implements Element{
     
+    /**
+     * 
+     * @param group
+     * @param coreMap map from a set of generators of group to group
+     * @throws HomomorphismException when the coreMap cannot be extended consistently
+     * to an automorphism.
+     * This Automorphism restricted to the keySet of coreMap is the coreMap.
+     */
     public Automorphism(Group group, Map<Element, Element> coreMap) throws HomomorphismException {
         super(group, group, coreMap);
         
@@ -40,7 +48,7 @@ public class Automorphism extends GroupHomomorphism implements Element{
             // check whether the defined group is truly an automorphism
             if(!(boolean) this.getProperty(HomomorphismProperty.IsAuto)){
                 String mess = "isAutomorphism not consistent";
-                Logger.getLogger(Automorphism.class.getName()).log(Level.SEVERE, mess);
+                // Logger.getLogger(Automorphism.class.getName()).log(Level.SEVERE, mess);
                 throw new HomomorphismException(mess);
             }
         } catch (EvaluationException ex) {

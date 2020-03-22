@@ -31,8 +31,6 @@ import nl.fh.group.Group;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_calculators.GroupTable;
-import nl.fh.group_def_automorphism.Automorphism;
-import nl.fh.group_def_automorphism.AutomorphismMultiplicator;
 
 /**
  *
@@ -121,7 +119,7 @@ public class GroupHomomorphism extends PropertyCache<HomomorphismProperty>{
             return new GroupHomomorphism(domain1, codomain2, productMap);
         } catch (HomomorphismException ex) {
             String mess = "could not multiply homomorphisms";
-            Logger.getLogger(AutomorphismMultiplicator.class.getName()).log(Level.SEVERE, mess, ex);
+            Logger.getLogger(GroupHomomorphism.class.getName()).log(Level.SEVERE, mess, ex);
             throw new EvaluationException(mess);
         }
     }

@@ -37,8 +37,11 @@ import nl.fh.homomorphism_calculator.HomomorphismProperty;
  * @author frank
  */
 public class GroupChecker {
-    private boolean verbose = true;
+    private boolean verbose = false;
     
+    /**
+     * create a non-verbose GroupChecker
+     */
     public GroupChecker(){
         this.verbose = false;
     }
@@ -63,6 +66,7 @@ public class GroupChecker {
      */
     public boolean isGroup(Group group) throws EvaluationException{
 
+        boolean result = true;
         try{
             checkClosed(group);
             checkNeutralElement(group);

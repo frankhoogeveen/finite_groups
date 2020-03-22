@@ -26,7 +26,7 @@ import nl.fh.group_calculators.GroupProperty;
  *
  * @author frank
  */
-public class InnerAutomorphismFormatter implements ItemFormatter {
+public class InnerAutomorphismGroupFormatter implements ItemFormatter {
 
     @Override
     public StringBuilder format(Group g) {
@@ -38,10 +38,11 @@ public class InnerAutomorphismFormatter implements ItemFormatter {
             
             sb.append("Order of inner automorphism group: ");
             sb.append(order);
+            sb.append("\n");
                             
         } catch (EvaluationException ex) {
             String mess = "could not format inner automorphisms";
-            Logger.getLogger(InnerAutomorphismFormatter.class.getName()).log(Level.SEVERE, mess, ex);
+            Logger.getLogger(InnerAutomorphismGroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
             sb.append(mess);
         }
         

@@ -49,7 +49,8 @@ import org.junit.runners.Suite;
     SubgroupTest.class,
     PowerTableCalculatorTest.class,
     GroupHomomorphismTest.class,
-    InnerAutomorphismTest.class
+    InnerAutomorphismTest.class,
+    AutomorphismTest.class
 })
 
 

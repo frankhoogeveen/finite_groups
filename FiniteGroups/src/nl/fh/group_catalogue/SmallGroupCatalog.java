@@ -79,6 +79,9 @@ public class SmallGroupCatalog extends GroupCatalog {
         super.add(factory.getDihedralGroup(6));
         super.add(factory.getDicyclicGroup(3));
         super.add(factory.getAlternatingGroup(4));
+        
+        /* order thirteen */
+        super.add(factory.getCyclicGroup(13));
     }
     
     /**

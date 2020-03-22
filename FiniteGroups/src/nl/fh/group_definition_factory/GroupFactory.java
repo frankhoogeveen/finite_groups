@@ -38,7 +38,8 @@ import nl.fh.group_def_substitutions.StringMultiplicator;
 import nl.fh.group_def_substitutions.StringSubstitution;
 
 /**
- * Factory object for groups
+ * Factory object for groups. The concern of this class is to generate
+ * families of groups, such as all cyclic groups, all GL(n, F),.....
  * 
  * @author frank
  */
