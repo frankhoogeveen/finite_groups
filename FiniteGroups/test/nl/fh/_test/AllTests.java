@@ -48,7 +48,8 @@ import org.junit.runners.Suite;
     StronglyMinimalGeneratingSetsCalculatorTest.class,
     SubgroupTest.class,
     PowerTableCalculatorTest.class,
-    GroupHomomorphismTest.class
+    GroupHomomorphismTest.class,
+    InnerAutomorphismTest.class
 })
 
 

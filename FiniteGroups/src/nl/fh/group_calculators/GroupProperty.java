@@ -42,7 +42,8 @@ public enum GroupProperty implements Property {
     ConjugationClassesSet(new ConjugationClassesSetCalculator()),
     StronglyMinimalGeneratingSets(new StronglyMinimalGeneratorsCalculator()), 
     ConjugationsClassesOrders(new ConjugationClassesOrdersCalculator()),
-    PowerTable(new PowerTableCalculator());
+    PowerTable(new PowerTableCalculator()),
+    InnerAutomorphismGroup(new InnerAutomorphismCalculator());
 
     private final Calculator calculator;
     

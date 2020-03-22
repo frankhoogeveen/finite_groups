@@ -174,7 +174,7 @@ public class GroupFactory {
     }
 
     public Group getDihedralGroup(int n){
-        if(n < 1){
+        if(n < 2){
             String mess = "cannot not define dihedral group of order 2*" + Integer.toString(n);
             LOGGER.log(Level.SEVERE, mess);
             throw new IllegalArgumentException(mess);

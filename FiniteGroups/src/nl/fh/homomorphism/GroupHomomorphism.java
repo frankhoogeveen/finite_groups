@@ -16,8 +16,10 @@
  */
 package nl.fh.homomorphism;
 
+import java.util.Collection;
 import nl.fh.homomorphism_calculator.HomomorphismProperty;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
@@ -35,9 +37,6 @@ import nl.fh.group_calculators.GroupTable;
  * @author frank
  */
 public class GroupHomomorphism extends PropertyCache<HomomorphismProperty>{
-    
-    private Group domain;
-    private Group codomain;
 
     /**
      * 
@@ -60,6 +59,35 @@ public class GroupHomomorphism extends PropertyCache<HomomorphismProperty>{
             Logger.getLogger(GroupHomomorphism.class.getName()).log(Level.SEVERE, mess, ex);
             throw new HomomorphismException(mess);
         }
+    }
+    
+    /**
+     * 
+     * @param g an element of the domain
+     * @return the element of the codomain to which g is mapped
+     */
+    public Element applyTo(Element g) throws EvaluationException{
+        Map<Element, Element> map = (Map<Element, Element>)this.getProperty(HomomorphismProperty.Map);
+        if(!map.containsKey(g)){
+            throw new EvaluationException("cannot map: " + g.toString());
+        }
+        return map.get(g);
+    }
+    
+    /**
+     * 
+     * @param coll
+     * @return the image of the collection under the map, as a set
+     * 
+     * I.e. order is lost(for lists) and multiplicity is lost(for multisets)
+     * @throws EvaluationException 
+     */
+    public Set<Element> applyTo(Collection<Element> coll) throws EvaluationException{
+        Set<Element> result = new HashSet<Element>();
+        for(Element g : coll){
+            result.add(this.applyTo(g));
+        }
+        return result;
     }
 
     /**
@@ -118,5 +146,75 @@ public class GroupHomomorphism extends PropertyCache<HomomorphismProperty>{
                 }
             }
         }
+    }
+    
+    @Override
+    public int hashCode() {
+        try {
+            int hash = 7;
+            hash = 43 * hash + this.getProperty(HomomorphismProperty.Domain).hashCode();
+            hash = 59 * hash + this.getProperty(HomomorphismProperty.Codomain).hashCode();
+            hash = 61 * hash + this.getProperty(HomomorphismProperty.Map).hashCode();
+            return hash;
+        } catch (EvaluationException ex) {
+            String mess = "cannot calculate hashCode() of GroupHomomorphism";
+            Logger.getLogger(GroupHomomorphism.class.getName()).log(Level.SEVERE, mess, ex);
+            throw new IllegalArgumentException(mess);
+        }
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final GroupHomomorphism other = (GroupHomomorphism) obj;
+        
+        try {
+            if (!this.getProperty(HomomorphismProperty.Domain).equals(other.getProperty(HomomorphismProperty.Domain))) {
+                return false;
+            }
+            if (!this.getProperty(HomomorphismProperty.Codomain).equals(other.getProperty(HomomorphismProperty.Codomain))) {
+                return false;
+            }
+            if (!this.getProperty(HomomorphismProperty.Map).equals(other.getProperty(HomomorphismProperty.Map))) {
+                return false;
+            }
+        } catch (EvaluationException ex) {
+            return false;
+        }
+
+        return true;
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        try {
+
+            sb.append(this.getProperty(HomomorphismProperty.Domain).toString());
+            sb.append("=>");
+            sb.append(this.getProperty(HomomorphismProperty.Codomain).toString());
+            sb.append(": ");
+            Map<Element, Element> map = (Map<Element, Element>) this.getProperty(HomomorphismProperty.Map);
+            for(Element x : map.keySet()){
+                sb.append(x.toString());
+                sb.append("->");
+                sb.append(map.get(x).toString());
+                sb.append(" ");
+            }
+
+        } catch (EvaluationException ex) {
+            String mess = "could not toString a GroupHomomorphism";
+            Logger.getLogger(GroupHomomorphism.class.getName()).log(Level.SEVERE, mess, ex);
+            return mess;
+        }
+        return sb.toString();
     }
 }

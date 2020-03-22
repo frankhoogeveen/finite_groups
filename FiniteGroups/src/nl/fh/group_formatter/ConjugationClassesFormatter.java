@@ -72,6 +72,7 @@ public class ConjugationClassesFormatter implements ItemFormatter {
         for(Element c : conjClass){
             sb.append(" ");
             sb.append(c.toString());
+            sb.append("\n");
         }
         sb.append("\n\n");
     }

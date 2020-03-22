@@ -48,8 +48,8 @@ public class Group extends PropertyCache implements Iterable<Element> {
        
         super();
         
-        Set<Element> toBeAdded = new HashSet(generators);
         try{
+            Set<Element> toBeAdded = new HashSet(generators);
             Set<Element> elements = findGeneratedSet(toBeAdded, multiplication);
             Multiplicator table = createMultiplicationTable(elements, multiplication);
             
@@ -147,4 +147,15 @@ public class Group extends PropertyCache implements Iterable<Element> {
         
         return table;
     }
+    
+    @Override
+    public String toString(){
+        try {
+            return (String) this.getProperty(GroupProperty.Name);
+        } catch (EvaluationException ex) {
+            String mess = "could not find group name";
+            Logger.getLogger(Group.class.getName()).log(Level.SEVERE, mess, ex);
+            return mess;
+        }
+   }
 }
