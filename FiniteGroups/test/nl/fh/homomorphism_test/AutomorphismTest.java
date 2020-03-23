@@ -86,15 +86,4 @@ public class AutomorphismTest {
         int aut_order = (int) aut.getProperty(GroupProperty.Order);
         assertEquals(24, aut_order); 
     }
-    
-    @Test
-    public void S6Test() throws EvaluationException{
-        GroupFactory fac = new GroupFactory();
-        Group group = fac.getSymmetricGroup(6);
-        
-        Group aut = (Group) group.getProperty(GroupProperty.AutomorphismGroup);
-        
-        int aut_order = (int) aut.getProperty(GroupProperty.Order);
-        assertEquals(720, aut_order); 
-    }
 }

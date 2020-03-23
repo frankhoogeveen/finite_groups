@@ -24,7 +24,6 @@ import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group.Multiplicator;
 
 /**
  *  Calculate a map from the elements to the conjugation class 
@@ -35,26 +34,16 @@ import nl.fh.group.Multiplicator;
  */
 class ConjugationClassesMapCalculator implements Calculator<Group> {
 
-    ConjugationClassesMapCalculator() {
-    }
 
     @Override
     public Map<Element, Set<Element>> evaluate(Group group) throws EvaluationException {
-         Multiplicator mult = (Multiplicator)group.getProperty(GroupProperty.MultiplicationTable);
-         Map<Element, Element> inv = (Map<Element, Element>)group.getProperty(GroupProperty.Inverses);
+        Map<Element, Map<Element, Element>> map = (Map<Element, Map<Element, Element>>)group.getProperty(GroupProperty.ConjugationMap);
+        
+        Map<Element, Set<Element>> result = new HashMap<Element, Set<Element>>();
+        for(Element g : map.keySet()){
+            result.put(g, new HashSet(map.get(g).values()));
+        } 
          
-         Map<Element, Set<Element>> result = new HashMap<Element, Set<Element>>();
-         
-         for(Element g : group){
-             Set<Element> conjClass = new HashSet<Element>();
-             for(Element h : group){
-                 Element conj = mult.getProduct(mult.getProduct(h, g), inv.get(h));
-                 conjClass.add(conj);
-             }
-             
-             result.put(g, conjClass);
-         }
-         
-         return result;
+        return result;
     }
 }

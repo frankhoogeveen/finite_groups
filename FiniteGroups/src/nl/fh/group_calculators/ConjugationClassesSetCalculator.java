@@ -25,7 +25,7 @@ import nl.fh.group.Element;
 import nl.fh.group.Group;
 
 /**
- * Calculate the set of conjugation classes
+ * Calculate the set of conjugation classes as a Set<Set<Element>>
  * 
  * @author frank
  */

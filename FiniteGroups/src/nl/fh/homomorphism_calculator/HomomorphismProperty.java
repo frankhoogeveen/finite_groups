@@ -39,7 +39,9 @@ public enum HomomorphismProperty implements Property {
     IsEpi(new IsEpiCalculator()),
     IsEndo(new IsEndoCalculator()),
     IsIso(new IsIsoCalculator()),
-    IsAuto(new IsAutoCalculator());
+    IsAuto(new IsAutoCalculator()),
+    IsEmbedding(new IsEmbeddingCalculator()),
+    IsNormal(new IsNormalCalculator());
 
     private final Calculator calculator;
 

@@ -23,10 +23,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.homomorphism.GroupHomomorphism;
+import nl.fh.homomorphism.HomomorphismException;
 
 /**
  *
@@ -158,4 +161,27 @@ public class Group extends PropertyCache implements Iterable<Element> {
             return mess;
         }
    }
+
+    /**
+     * 
+     * @param subgroup
+     * @return a group homomorphism that embeds the subgroup in this group
+     * @throws HomomorphismException
+     * @throws EvaluationException 
+     */
+    public GroupHomomorphism embed(Group subgroup) throws HomomorphismException, EvaluationException {
+        Set<Element> elementsSubgroup = (Set<Element>) subgroup.getProperty(GroupProperty.Elements);
+        Set<Element> elementsGroup = (Set<Element>) this.getProperty(GroupProperty.Elements); 
+        
+        if(!elementsGroup.containsAll(elementsSubgroup)){
+            throw new HomomorphismException("cannot embed something that is not a subset");
+        }
+        
+        Map<Element, Element> identityMap = new HashMap<Element, Element>();
+        for(Element g : elementsSubgroup){
+            identityMap.put(g,g);
+        }
+        
+        return new GroupHomomorphism(subgroup, this, identityMap);
+    }
 }

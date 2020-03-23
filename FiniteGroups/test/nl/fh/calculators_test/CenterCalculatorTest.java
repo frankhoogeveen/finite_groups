@@ -32,6 +32,9 @@ import nl.fh.group_def_substitutions.StringSubstitution;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.GroupException;
+import nl.fh.group_definition_factory.GroupFactory;
+import nl.fh.homomorphism.GroupHomomorphism;
+import nl.fh.homomorphism_calculator.HomomorphismProperty;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -93,7 +96,7 @@ public class CenterCalculatorTest {
         assertTrue(!abelean);
     }
     
-        @Test
+    @Test
     public void D4Test() throws EvaluationException, GroupException{
         Set<Element> generators = new HashSet<Element>();
         generators.add(new StringElement("a"));
@@ -115,6 +118,4 @@ public class CenterCalculatorTest {
         boolean abelean = ((boolean)group.getProperty(GroupProperty.IsAbelean));
         assertTrue(!abelean);
     }
-    
-    
 }

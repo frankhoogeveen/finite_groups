@@ -23,30 +23,35 @@ import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
+import nl.fh.group.Multiplicator;
 
 /**
- * Object to calculate a map that assigns the order to each conjugation class
+ *
+ *  Calculator that pre-calculates all conjugations
  * 
+ *  When the calculator returns map, then
+ * 
+ *  map.get(g).get(h) =  h.g.h^(-1)
  * 
  * @author frank
  */
-class ConjugationClassesOrdersCalculator implements Calculator<Group> {
-
-    ConjugationClassesOrdersCalculator() {
-    }
+public class ConjugationMapCalculator implements Calculator<Group> {
 
     @Override
-    public Map<Set<Element>, Integer> evaluate(Group group) throws EvaluationException {
-        Set<Set<Element>> conjClasses = (Set<Set<Element>>) group.getProperty(GroupProperty.ConjugationClassesSet);
-        Map<Element, Integer> orders = (Map<Element, Integer>) group.getProperty(GroupProperty.ElementOrders);
+    public Map<Element, Map<Element,Element>> evaluate(Group group) throws EvaluationException {
+        Set<Element> set = (Set<Element>) group.getProperty(GroupProperty.Elements);
+        Multiplicator table = (Multiplicator) group.getProperty(GroupProperty.MultiplicationTable);
+        Map<Element, Element> inv = (Map<Element,Element>) group.getProperty(GroupProperty.Inverses);
         
-        Map<Set<Element>, Integer> result= new HashMap<Set<Element>, Integer>();
-        
-        for(Set<Element> cclass : conjClasses){
-            result.put(cclass, orders.get(cclass.iterator().next()));
+        Map<Element, Map<Element,Element>> map = new HashMap<Element, Map<Element, Element>>();
+        for(Element g : set){
+            map.put(g, new HashMap<Element, Element>());
+            for(Element h : set){
+                Element conj = table.getProduct(h, table.getProduct(g, inv.get(h)));
+                map.get(g).put(h, conj);
+            }
         }
         
-        return result;
+        return map;
     }
-    
 }

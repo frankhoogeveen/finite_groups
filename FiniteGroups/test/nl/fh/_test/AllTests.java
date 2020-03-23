@@ -50,7 +50,8 @@ import org.junit.runners.Suite;
     PowerTableCalculatorTest.class,
     GroupHomomorphismTest.class,
     InnerAutomorphismTest.class,
-    AutomorphismTest.class
+    AutomorphismTest.class,
+    EmbeddingTest.class
 })
 
 
