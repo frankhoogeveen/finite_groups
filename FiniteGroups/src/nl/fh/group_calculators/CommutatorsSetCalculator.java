@@ -16,40 +16,22 @@
  */
 package nl.fh.group_calculators;
 
-import java.util.HashSet;
-import java.util.Set;
-import nl.fh.group.Element;
-import nl.fh.group.Group;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Group;
 
 /**
- *  Calculates the center of the group
- * 
- *  Evaluates groups to objects of type Set<Element>
- * 
+ *
  * @author frank
  */
-class CenterCalculator implements Calculator<Group> {
+public class CommutatorsSetCalculator implements Calculator<Group> {
 
-    CenterCalculator() {
+    public CommutatorsSetCalculator() {
     }
 
     @Override
-    public Set<Element> evaluate(Group group) throws EvaluationException {
-        GroupTable table = (GroupTable)group.getProperty(GroupProperty.MultiplicationTable);
-        
-        Set<Element> result = new HashSet<Element>();
-        for(Element z : group){
-            boolean commutes = true;
-            for(Element g : group){
-                commutes &= (table.getProduct(z, g).equals(table.getProduct(g, z)));
-            }
-            if(commutes){
-                result.add(z);
-            }
-        }
-        return result;
-    }    
-
+    public Object evaluate(Group subject) throws EvaluationException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }

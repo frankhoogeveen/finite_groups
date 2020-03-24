@@ -64,7 +64,7 @@ public class CenterCalculatorTest {
 
         assertEquals(3*3, (int)product.getProperty(GroupProperty.Order));
 
-        Set<Element> center = ((Set<Element>)product.getProperty(GroupProperty.Center));
+        Set<Element> center = ((Set<Element>)product.getProperty(GroupProperty.CenterSet));
         assertEquals(9, center.size());
         
         boolean abelean = ((boolean)product.getProperty(GroupProperty.IsAbelean));
@@ -89,7 +89,7 @@ public class CenterCalculatorTest {
         
         assertEquals(21, (int)group.getProperty(GroupProperty.Order));
         
-        Set<Element> center = ((Set<Element>)group.getProperty(GroupProperty.Center));
+        Set<Element> center = ((Set<Element>)group.getProperty(GroupProperty.CenterSet));
         assertEquals(1, center.size());
         
         boolean abelean = ((boolean)group.getProperty(GroupProperty.IsAbelean));
@@ -112,7 +112,7 @@ public class CenterCalculatorTest {
         
         assertEquals(8, (int)group.getProperty(GroupProperty.Order));
 
-        Set<Element> center = ((Set<Element>)group.getProperty(GroupProperty.Center));
+        Set<Element> center = ((Set<Element>)group.getProperty(GroupProperty.CenterSet));
         assertEquals(2, center.size());
         
         boolean abelean = ((boolean)group.getProperty(GroupProperty.IsAbelean));

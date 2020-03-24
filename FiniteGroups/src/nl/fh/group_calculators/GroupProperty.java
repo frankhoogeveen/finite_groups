@@ -36,17 +36,29 @@ public enum GroupProperty implements Property {
     UnitElement(new UnitCalculator()),
     ElementOrders(new ElementOrderCalculator()),
     Inverses(new InverseCalculator()),
-    Center(new CenterCalculator()),
-    CenterEmbedding(new EmbeddingCalculator("Z", Center)),
-    Squares(new SquaresCalculator()),
-    SquaresEmbedding(new EmbeddingCalculator("Sq", Squares)),
+    PowerTable(new PowerTableCalculator()),
+    
+    CenterSet(new CenterSetCalculator()),
+    CenterGroup(new GroupFromSetCalculator("Z", CenterSet)),
+    CenterEmbedding(new EmbeddingCalculator(CenterGroup)),
+    
+    SquaresSet(new SquaresSetCalculator()),
+    SquaresGroup(new GroupFromSetCalculator("Sq",CenterSet)),
+    SquaresEmbedding(new EmbeddingCalculator(SquaresGroup)),
+    
+    CommutatorsSet(new CommutatorsSetCalculator()),
+    CommutatorsGroup(new GroupFromSetCalculator("Comm", CommutatorsSet)),
+    CommutatorsEmbedding(new EmbeddingCalculator(CommutatorsGroup)),
+    
     IsAbelean(new IsAbeleanCalculator()),
+    
     ConjugationClassesMap(new ConjugationClassesMapCalculator()),
     ConjugationMap(new ConjugationMapCalculator()),
     ConjugationClassesSet(new ConjugationClassesSetCalculator()),
-    StronglyMinimalGeneratingSets(new StronglyMinimalGeneratorsCalculator()), 
     ConjugationsClassesOrders(new ConjugationClassesOrdersCalculator()),
-    PowerTable(new PowerTableCalculator()),
+    
+    StronglyMinimalGeneratingSets(new StronglyMinimalGeneratorsCalculator()), 
+
     InnerAutomorphismGroup(new InnerAutomorphismCalculator()),
     AutomorphismGroup(new AutomorphismCalculator());
     

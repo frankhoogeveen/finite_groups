@@ -38,7 +38,7 @@ public class CenterFormatter implements ItemFormatter {
         StringBuilder sb = new StringBuilder();
         
         try {   
-            Set<Element> center = ((Set<Element>)g.getProperty(GroupProperty.Center));
+            Set<Element> center = ((Set<Element>)g.getProperty(GroupProperty.CenterSet));
             
             sb.append("center size: ");
             sb.append(center.size());

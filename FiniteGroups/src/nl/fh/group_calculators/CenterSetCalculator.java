@@ -16,28 +16,40 @@
  */
 package nl.fh.group_calculators;
 
+import java.util.HashSet;
 import java.util.Set;
-import nl.fh.calculator.Calculator;
-import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
+import nl.fh.calculator.Calculator;
+import nl.fh.calculator.EvaluationException;
 
 /**
- *
- *  returns true if the group is abelean
+ *  Calculates the center of the group
  * 
+ *  Evaluates groups to objects of type Set<Element>
  * 
  * @author frank
  */
-class IsAbeleanCalculator implements Calculator<Group> {
+class CenterSetCalculator implements Calculator<Group> {
 
-    IsAbeleanCalculator() {
+    CenterSetCalculator() {
     }
 
     @Override
-    public Boolean evaluate(Group group) throws EvaluationException {
-        Set<Element> center = (Set<Element>)(group.getProperty(GroupProperty.CenterSet));
-        int order = (int)(group.getProperty(GroupProperty.Order));
-        return (order == center.size());
-    }
+    public Set<Element> evaluate(Group group) throws EvaluationException {
+        GroupTable table = (GroupTable)group.getProperty(GroupProperty.MultiplicationTable);
+        
+        Set<Element> result = new HashSet<Element>();
+        for(Element z : group){
+            boolean commutes = true;
+            for(Element g : group){
+                commutes &= (table.getProduct(z, g).equals(table.getProduct(g, z)));
+            }
+            if(commutes){
+                result.add(z);
+            }
+        }
+        return result;
+    }    
+
 }

@@ -41,7 +41,7 @@ public class SquaresTest {
         GroupFactory fac = new GroupFactory();
         Group q = fac.getDicyclicGroup(2);
         
-        Set<Element> squares = (Set<Element>) q.getProperty(GroupProperty.Squares);
+        Set<Element> squares = (Set<Element>) q.getProperty(GroupProperty.SquaresSet);
         assertEquals(2, squares.size());
         
         GroupHomomorphism sq = (GroupHomomorphism) q.getProperty(GroupProperty.SquaresEmbedding);
@@ -55,7 +55,7 @@ public class SquaresTest {
         GroupFactory fac = new GroupFactory();
         Group a4 = fac.getAlternatingGroup(4);
         
-        Set<Element> squares = (Set<Element>) a4.getProperty(GroupProperty.Squares);
+        Set<Element> squares = (Set<Element>) a4.getProperty(GroupProperty.SquaresSet);
         assertEquals(9, squares.size());
         
         GroupHomomorphism sq = (GroupHomomorphism) a4.getProperty(GroupProperty.SquaresEmbedding);

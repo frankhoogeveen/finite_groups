@@ -55,7 +55,7 @@ public class SubgroupTest {
         GroupFactory fac = new GroupFactory();
         Group s5 = fac.getSymmetricGroup(5);
         
-        Set<Element> center = (Set<Element>) s5.getProperty(GroupProperty.Center);
+        Set<Element> center = (Set<Element>) s5.getProperty(GroupProperty.CenterSet);
         
         Group sub =new Group("subgroup", center, (Multiplicator) s5.getProperty(GroupProperty.MultiplicationTable));
 

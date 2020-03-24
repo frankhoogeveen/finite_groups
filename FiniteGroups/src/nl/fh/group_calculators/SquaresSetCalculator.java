@@ -29,7 +29,7 @@ import nl.fh.group.Group;
  * 
  * @author frank
  */
-public class SquaresCalculator implements Calculator<Group> {
+public class SquaresSetCalculator implements Calculator<Group> {
     private static final Integer TWO = 2;
 
     @Override
