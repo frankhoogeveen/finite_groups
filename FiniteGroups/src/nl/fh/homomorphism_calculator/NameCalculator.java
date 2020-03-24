@@ -14,36 +14,30 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_calculators;
+package nl.fh.homomorphism_calculator;
 
-import java.util.HashMap;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.group.*;
+import nl.fh.group.Group;
+import nl.fh.group_calculators.GroupProperty;
+import nl.fh.homomorphism.GroupHomomorphism;
 
 /**
- *
+ * composes a name for the morphism out the names of the tow groups involved
+ * 
  * @author frank
  */
-class PowerTableCalculator implements Calculator<Group> {
+public class NameCalculator implements Calculator<GroupHomomorphism> {
 
     @Override
-    public GroupPowerTable evaluate(Group group) throws EvaluationException {
-        int order = (int) group.getProperty(GroupProperty.Order);
-        Element unit = (Element) group.getProperty(GroupProperty.UnitElement);
-        GroupTable table = (GroupTable) group.getProperty(GroupProperty.MultiplicationTable);
+    public String evaluate(GroupHomomorphism morph) throws EvaluationException {
+        Group domain = (Group) morph.getProperty(HomomorphismProperty.Domain);
+        String domainName = (String)domain.getProperty(GroupProperty.Name);
         
-        GroupPowerTable powers = new GroupPowerTable(order);
+        Group codomain = (Group) morph.getProperty(HomomorphismProperty.Codomain);
+        String codomainName = (String)codomain.getProperty(GroupProperty.Name);
         
-        for(Element g : group){
-            powers.put(g, new HashMap<Integer, Element>());
-            powers.get(g).put(0, unit);
-            for(int i = 1; i < order; i++){
-               powers.get(g).put(i, table.getProduct(g, powers.get(g).get(i-1)));
-            }
-        }
-        
-        return powers;
+        return domainName + "->" + codomainName;
     }
     
 }

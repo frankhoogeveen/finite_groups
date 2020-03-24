@@ -51,7 +51,9 @@ import org.junit.runners.Suite;
     GroupHomomorphismTest.class,
     InnerAutomorphismTest.class,
     AutomorphismTest.class,
-    EmbeddingTest.class
+    EmbeddingTest.class,
+    SquaresTest.class,
+    KernelTest.class
 })
 
 

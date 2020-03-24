@@ -35,13 +35,19 @@ public enum HomomorphismProperty implements Property {
     Map(null),   
     
     // properties that could be calculated at a later stage
+    Name(new NameCalculator()),
+    
     IsMono(new IsMonoCalculator()),
     IsEpi(new IsEpiCalculator()),
     IsEndo(new IsEndoCalculator()),
     IsIso(new IsIsoCalculator()),
     IsAuto(new IsAutoCalculator()),
     IsEmbedding(new IsEmbeddingCalculator()),
-    IsNormal(new IsNormalCalculator());
+    IsNormal(new IsNormalCalculator()),
+    
+    KernelSet(new KernelSetCalculator()),
+    KernelGroup(new KernelGroupCalculator()),
+    KernelEmbedding(new KernelEmbeddingCalculator());
 
     private final Calculator calculator;
 

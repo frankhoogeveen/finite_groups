@@ -33,6 +33,7 @@ public class StringElement implements Element {
         this.characters = s;
     }
     
+    @Override
     public String toString(){
         if(this.characters.equals("")){
             return "1";

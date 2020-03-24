@@ -16,34 +16,32 @@
  */
 package nl.fh.group_calculators;
 
-import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.group.*;
+import nl.fh.group.Element;
+import nl.fh.group.Group;
 
 /**
  *
+ * return the set of squares
+ * 
  * @author frank
  */
-class PowerTableCalculator implements Calculator<Group> {
+public class SquaresCalculator implements Calculator<Group> {
+    private static final Integer TWO = 2;
 
     @Override
-    public GroupPowerTable evaluate(Group group) throws EvaluationException {
-        int order = (int) group.getProperty(GroupProperty.Order);
-        Element unit = (Element) group.getProperty(GroupProperty.UnitElement);
-        GroupTable table = (GroupTable) group.getProperty(GroupProperty.MultiplicationTable);
+    public Set<Element> evaluate(Group group) throws EvaluationException {
+        GroupPowerTable table = (GroupPowerTable) group.getProperty(GroupProperty.PowerTable);
+        Set<Element> result = new HashSet<Element>();
         
-        GroupPowerTable powers = new GroupPowerTable(order);
-        
-        for(Element g : group){
-            powers.put(g, new HashMap<Integer, Element>());
-            powers.get(g).put(0, unit);
-            for(int i = 1; i < order; i++){
-               powers.get(g).put(i, table.getProduct(g, powers.get(g).get(i-1)));
-            }
+        for(Element g : table.keySet()){
+            result.add(table.get(g).get(TWO));
         }
         
-        return powers;
+        return result;
     }
     
 }

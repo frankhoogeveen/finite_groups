@@ -27,9 +27,6 @@ public class PermutationElement implements Element{
 
     int[] permutation;
 
-    public PermutationElement() {
-    }
-
     /**
      *
      * @param perm a permutation 

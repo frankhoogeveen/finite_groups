@@ -38,6 +38,8 @@ public enum GroupProperty implements Property {
     Inverses(new InverseCalculator()),
     Center(new CenterCalculator()),
     CenterEmbedding(new EmbeddingCalculator("Z", Center)),
+    Squares(new SquaresCalculator()),
+    SquaresEmbedding(new EmbeddingCalculator("Sq", Squares)),
     IsAbelean(new IsAbeleanCalculator()),
     ConjugationClassesMap(new ConjugationClassesMapCalculator()),
     ConjugationMap(new ConjugationMapCalculator()),
@@ -47,6 +49,7 @@ public enum GroupProperty implements Property {
     PowerTable(new PowerTableCalculator()),
     InnerAutomorphismGroup(new InnerAutomorphismCalculator()),
     AutomorphismGroup(new AutomorphismCalculator());
+    
     private final Calculator calculator;
     
     /**
