@@ -16,34 +16,40 @@
  */
 package nl.fh.group_calculators;
 
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
+import nl.fh.group.Multiplicator;
 
 /**
- *
- *  calculates a set that contains all the commutators g.h.g^(-1).h^(-1)
+ *  Calculator that pre-calculates all commutators
+ * 
+ *  When the calculator returns map, then
+ * 
+ *  map.get(g).get(h) =  g.h.g^(-1).h^(-1)
  * 
  * @author frank
  */
-public class CommutatorsSetCalculator implements Calculator<Group> {
+public class CommutatorsMapCalculator implements Calculator<Group> {
 
     @Override
-    public Set<Element> evaluate(Group group) throws EvaluationException {
-        Map<Element,Map<Element,Element>> commutators = (Map<Element,Map<Element,Element>>)group.getProperty(GroupProperty.CommutatorsMap);
-        Map<Element, Map<Element,Element>> conjMap = (Map<Element, Map<Element,Element>>)group.getProperty(GroupProperty.ConjugationMap);
-        Map<Element, Element> inv = (Map<Element, Element>)group.getProperty(GroupProperty.Inverses);
+    public Map<Element, Map<Element, Element>> evaluate(Group group) throws EvaluationException {
+        Map<Element, Map<Element, Element>> map = (Map<Element, Map<Element, Element>>)group.getProperty(GroupProperty.ConjugationMap);
+        Multiplicator table = (Multiplicator) group.getProperty(GroupProperty.MultiplicationTable);
+        Map<Element, Element> inv = (Map<Element,Element>) group.getProperty(GroupProperty.Inverses);
         
-        Set<Element> result = new HashSet<Element>();
+        Map<Element, Map<Element, Element>> result = new HashMap<Element, Map<Element, Element>>();
         for(Element g : group){
+            result.put(g, new HashMap<Element,Element>());
             for(Element h : group){
-                result.add(commutators.get(g).get(h));
+                Element comm = table.getProduct(map.get(h).get(g), inv.get(h));
+                result.get(g).put(h,comm);
             }
         }
+        
         return result;
     }
 }

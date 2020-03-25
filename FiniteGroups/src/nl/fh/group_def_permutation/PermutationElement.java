@@ -36,6 +36,22 @@ public class PermutationElement implements Element{
         this.permutation = perm;        
     }
     
+    /**
+     * 
+     * @return the sign of a permutation
+     */
+    public int sign(){
+        int s = +1;
+        for(int i = 0; i < permutation.length; i++){
+            for(int j = i+1; j < permutation.length; j++){
+                if(permutation[i] < permutation[j]){
+                    s = -s;
+                }
+            }
+        }
+        return s;
+    }
+    
     private void checkPermutation(int[] perm) {
         for(int i = 0; i < perm.length; i++){
             if((perm[i] < 0) || perm[i] >= perm.length){

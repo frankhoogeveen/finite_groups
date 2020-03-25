@@ -21,6 +21,9 @@ package nl.fh._test;
 import nl.fh.calculators_test.*;
 import nl.fh.group_test.*;
 import nl.fh.homomorphism_test.*;
+import nl.fh.subgroups.CenterTest;
+import nl.fh.subgroups.DerivedGroupTest;
+import nl.fh.subgroups.SquaresTest;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -53,7 +56,9 @@ import org.junit.runners.Suite;
     AutomorphismTest.class,
     EmbeddingTest.class,
     SquaresTest.class,
-    KernelTest.class
+    KernelTest.class,
+    DerivedGroupTest.class,
+    CenterTest.class
 })
 
 

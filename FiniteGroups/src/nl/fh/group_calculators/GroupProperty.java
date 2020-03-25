@@ -46,6 +46,7 @@ public enum GroupProperty implements Property {
     SquaresGroup(new GroupFromSetCalculator("Sq",SquaresSet)),
     SquaresEmbedding(new EmbeddingCalculator(SquaresGroup)),
     
+    CommutatorsMap(new CommutatorsMapCalculator()),
     CommutatorsSet(new CommutatorsSetCalculator()),
     CommutatorsGroup(new GroupFromSetCalculator("Comm", CommutatorsSet)),
     CommutatorsEmbedding(new EmbeddingCalculator(CommutatorsGroup)),

@@ -27,6 +27,7 @@ import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupException;
 import nl.fh.group.Multiplicator;
+import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_catalogue.SmallGroupCatalog;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
@@ -142,35 +143,29 @@ public class GroupFactory {
      * @param n
      * @return the Alternating group A_n 
      */
-    
     public Group getAlternatingGroup(int n){
         
-        if( n != 4){
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Group Sn = getSymmetricGroup(n);
+        
+        Set<Element> set = new HashSet<Element>();
+        for(Element g : Sn){
+            PermutationElement pg = (PermutationElement) g;
+            if(pg.sign() > 0){
+                set.add(g);
+            }
         }
         
-        Set<Element> generators = new HashSet<Element>();
-        generators.add(new StringElement("a"));
-        generators.add(new StringElement("b"));
-        generators.add(new StringElement("c"));        
-        
-        StringMultiplicator multiplication = new StringMultiplicator();
-        multiplication.addSubstitution(new StringSubstitution("aa", ""));
-        multiplication.addSubstitution(new StringSubstitution("bb", ""));
-        multiplication.addSubstitution(new StringSubstitution("ccc", ""));
-        multiplication.addSubstitution(new StringSubstitution("ba", "ab"));
-        multiplication.addSubstitution(new StringSubstitution("ca", "bc"));
-        multiplication.addSubstitution(new StringSubstitution("cb", "abc"));
-        
-        String name = "A4";
+        String name = "A"+Integer.toString(n);
         
         Group result = null;
         try {
-            result =  new Group(name, generators, multiplication);
-        } catch (GroupException ex) {
+            Multiplicator multiplication = (Multiplicator)Sn.getProperty(GroupProperty.MultiplicationTable);
+            result =  new Group(name, set, multiplication);
+        } catch (EvaluationException | GroupException ex) {
             Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create alternating group", ex);
             System.exit(-1);
-        } 
+        }
+        
         return result;
     }
 
