@@ -34,6 +34,7 @@ public class SquaresSetCalculator implements Calculator<Group> {
 
     @Override
     public Set<Element> evaluate(Group group) throws EvaluationException {
+
         GroupPowerTable table = (GroupPowerTable) group.getProperty(GroupProperty.PowerTable);
         Set<Element> result = new HashSet<Element>();
         

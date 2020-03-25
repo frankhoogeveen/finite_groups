@@ -46,7 +46,7 @@ public class EmbeddingCalculator implements Calculator<Group> {
 
     @Override
     public GroupHomomorphism evaluate(Group group) throws EvaluationException {
-        
+
         // retrieve the subgroup to be embedded
         Group subgroup = (Group) group.getProperty(property);
         

@@ -38,16 +38,17 @@ public class GroupFromSetCalculator implements Calculator<Group>{
 
     /**
      * 
-     * @param z the prefix applied to the name of the original group
+     * @param prefix the prefix applied to the name of the original group
      * @param property 
      */
-    GroupFromSetCalculator(String z, GroupProperty property) {
-        this.prefix = z;
+    public GroupFromSetCalculator(String prefix, GroupProperty property) {
+        this.prefix = prefix;
         this.property = property;
     }
 
     @Override
     public Group evaluate(Group group) throws EvaluationException {
+
         // retrieve the set of elements that generates the subgroup to be embedded
         Set<Element> set = (Set<Element>) group.getProperty(property);
         

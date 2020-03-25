@@ -17,10 +17,14 @@
 package nl.fh.homomorphism_test;
 
 import java.util.Set;
+import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
+import nl.fh.group_calculators.EmbeddingCalculator;
+import nl.fh.group_calculators.GroupFromSetCalculator;
 import nl.fh.group_calculators.GroupProperty;
+import nl.fh.group_calculators.SquaresSetCalculator;
 import nl.fh.group_definition_factory.GroupFactory;
 import nl.fh.homomorphism.GroupHomomorphism;
 import nl.fh.homomorphism_calculator.HomomorphismProperty;
@@ -33,8 +37,6 @@ import org.junit.Test;
  * @author frank
  */
 public class SquaresTest {
-    
-    
     
     @Test
     public void QsquaredTest() throws EvaluationException{
@@ -69,4 +71,29 @@ public class SquaresTest {
         assertEquals(12, order);
      }
     
+    
+    @Test
+    public void A4quaredTestExplicit() throws EvaluationException{
+        GroupFactory fac = new GroupFactory();
+        Group a4 = fac.getAlternatingGroup(4);
+        
+        // check the set
+        Calculator calc = new SquaresSetCalculator();
+        Set<Element> squares2 = (Set<Element>) calc.evaluate(a4);
+        assertEquals(9, squares2.size());
+        
+        //check the group
+        calc = new GroupFromSetCalculator("Sq", GroupProperty.SquaresSet);
+        Group squaresGroup = (Group) calc.evaluate(a4);
+        int order = (int) a4.getProperty(GroupProperty.Order);
+        assertEquals(12, order);
+        
+        //check the embedding
+        calc = new EmbeddingCalculator(GroupProperty.SquaresGroup);
+        GroupHomomorphism morph = (GroupHomomorphism) calc.evaluate(a4);
+        
+        Group domain = (Group) morph.getProperty(HomomorphismProperty.Domain);
+        order = (int) domain.getProperty(GroupProperty.Order);
+        assertEquals(12, order);
+     }
 }

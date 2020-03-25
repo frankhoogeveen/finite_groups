@@ -43,7 +43,7 @@ public enum GroupProperty implements Property {
     CenterEmbedding(new EmbeddingCalculator(CenterGroup)),
     
     SquaresSet(new SquaresSetCalculator()),
-    SquaresGroup(new GroupFromSetCalculator("Sq",CenterSet)),
+    SquaresGroup(new GroupFromSetCalculator("Sq",SquaresSet)),
     SquaresEmbedding(new EmbeddingCalculator(SquaresGroup)),
     
     CommutatorsSet(new CommutatorsSetCalculator()),
