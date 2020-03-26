@@ -49,6 +49,10 @@ public enum HomomorphismProperty implements Property {
     KernelGroup(new KernelGroupCalculator()),
     KernelEmbedding(new KernelEmbeddingCalculator()),
     
+    ImageSet(new ImageSetCalculator()),
+    ImageGroup(new ImageGroupCalculator()),
+    ImageEmbedding(new ImageEmbeddingCalculator()),
+    
     FactorGroup(new FactorGroupCalculator()),
     FactorHomomorphism(new FactorHomomorphismCalculator());
 

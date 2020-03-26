@@ -26,17 +26,25 @@ import nl.fh.group.Group;
  */
 public enum GroupProperty implements Property {
 
-    // properties that are set when defining the group
+    // properties that are set when defining the group have a null calculator
+    // properties that can be calculated later, need a non-null calculator
+    
     Name(null),
-    Elements(null),
     MultiplicationTable(null),     
     
-    // properties that could be calculated at a later stage
     Order(new OrderCalculator()),
-    UnitElement(new UnitCalculator()),
     ElementOrders(new ElementOrderCalculator()),
     Inverses(new InverseCalculator()),
     PowerTable(new PowerTableCalculator()),
+    
+    UnitElement(new UnitCalculator()),
+    UnitSet(new UnitSetCalculator()),
+    UnitGroup(new GroupFromSetCalculator("unit", UnitSet)),
+    UnitEmbedding(new EmbeddingCalculator(UnitGroup)),
+    
+    Elements(null),
+    Self(new SelfCalculator()),
+    SelfEmbedding(new EmbeddingCalculator(Self)),
     
     CenterSet(new CenterSetCalculator()),
     CenterGroup(new GroupFromSetCalculator("Z", CenterSet)),
@@ -60,7 +68,10 @@ public enum GroupProperty implements Property {
     
     StronglyMinimalGeneratingSets(new StronglyMinimalGeneratorsCalculator()), 
 
-    InnerAutomorphismGroup(new InnerAutomorphismCalculator()),
+    InnerAutomorphismSet(new InnerAutomorphismSetCalculator()),
+    InnerAutomorphismGroup(new InnerAutomorphismGroupCalculator()),
+    InnerAutomorphismEmbedding(new InnerAutomorphismEmbeddingCalculator()),
+    
     AutomorphismGroup(new AutomorphismCalculator());
     
     private final Calculator calculator;

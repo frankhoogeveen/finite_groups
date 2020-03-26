@@ -66,7 +66,7 @@ public class FactorHomomorphismCalculator implements Calculator<GroupHomomorphis
 
         //actually define the quotient
         try {
-            Group factorGroup = new Group(nameFactor, cosets, new CosetMultiplicator(factorMap));
+            Group factorGroup = new Group(nameFactor, cosets, new CosetMultiplicator(multG, factorMap));
             GroupHomomorphism quotient = new GroupHomomorphism(groupG, factorGroup, factorMap);
             return quotient;
         } catch (GroupException | HomomorphismException ex) {

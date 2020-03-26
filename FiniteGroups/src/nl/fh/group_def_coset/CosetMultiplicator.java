@@ -27,19 +27,32 @@ import nl.fh.group.Multiplicator;
  */
 public class CosetMultiplicator implements Multiplicator {
 
+    // the multiplicator of the original group in which the cosets live
+    private final Multiplicator multiplicator;
+    
+    // maps each element of a group to the coset around that element
+    private final Map<Element, Element> factorMap;
+
+
     /**
      * 
      * @param factorMap maps
      */
-    public CosetMultiplicator(Map<Element, Element> factorMap) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public CosetMultiplicator(Multiplicator multiplicator, Map<Element, Element> factorMap) {
+         this.factorMap = factorMap;
+         this.multiplicator = multiplicator;
     }
 
     @Override
     public Element getProduct(Element factor1, Element factor2) throws EvaluationException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        CosetElement coset1 = (CosetElement) factor1;
+        CosetElement coset2 = (CosetElement) factor2;
+        
+        Element g1 = coset1.getRepresentative();
+        Element g2 = coset2.getRepresentative();
+                
+        Element product = this.multiplicator.getProduct(g1, g2);
+        return this.factorMap.get(product);
     }
-    
-    
     
 }

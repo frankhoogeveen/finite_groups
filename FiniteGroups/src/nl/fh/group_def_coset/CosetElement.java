@@ -58,6 +58,14 @@ public class CosetElement implements Element {
         
     }
     
+    /**
+     * 
+     * @return a representative element of the coset
+     */
+    public Element getRepresentative(){
+        return this.representative;
+    }
+    
     @Override
     public String toString(){
         return representative.toString() + this.postFix;

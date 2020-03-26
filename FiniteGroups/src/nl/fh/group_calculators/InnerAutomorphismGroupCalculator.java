@@ -38,7 +38,7 @@ import nl.fh.homomorphism.HomomorphismException;
  * 
  * @author frank
  */
-class InnerAutomorphismCalculator implements Calculator<Group> {
+class InnerAutomorphismGroupCalculator implements Calculator<Group> {
 
     @Override
     public Group evaluate(Group group) throws EvaluationException {
@@ -57,7 +57,7 @@ class InnerAutomorphismCalculator implements Calculator<Group> {
                 inner.add(new Automorphism(group, map));
             } catch (HomomorphismException ex) {
                 String mess = "could not create inner automorphism";
-                Logger.getLogger(InnerAutomorphismCalculator.class.getName()).log(Level.SEVERE, mess, ex);
+                Logger.getLogger(InnerAutomorphismGroupCalculator.class.getName()).log(Level.SEVERE, mess, ex);
                 throw new EvaluationException(mess);
             }
         }
@@ -69,7 +69,7 @@ class InnerAutomorphismCalculator implements Calculator<Group> {
             return new Group(name, inner, mult);
         } catch (GroupException ex) {
             String mess = "could not create inner automorphism group";
-            Logger.getLogger(InnerAutomorphismCalculator.class.getName()).log(Level.SEVERE, mess, ex);
+            Logger.getLogger(InnerAutomorphismGroupCalculator.class.getName()).log(Level.SEVERE, mess, ex);
             throw new EvaluationException(mess);
         }
     }

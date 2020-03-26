@@ -56,9 +56,11 @@ import org.junit.runners.Suite;
     AutomorphismTest.class,
     EmbeddingTest.class,
     SquaresTest.class,
+    SquareOfGroupTest.class,
     KernelTest.class,
     DerivedGroupTest.class,
-    CenterTest.class
+    CenterTest.class,
+    FactorGroupTest.class
 })
 
 
