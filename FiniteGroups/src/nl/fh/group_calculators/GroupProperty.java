@@ -68,11 +68,12 @@ public enum GroupProperty implements Property {
     
     StronglyMinimalGeneratingSets(new StronglyMinimalGeneratorsCalculator()), 
 
-    InnerAutomorphismSet(new InnerAutomorphismSetCalculator()),
+    InnerAutomorphismMap(new InnerAutomorphismMapCalculator()),
     InnerAutomorphismGroup(new InnerAutomorphismGroupCalculator()),
     InnerAutomorphismEmbedding(new InnerAutomorphismEmbeddingCalculator()),
     
-    AutomorphismGroup(new AutomorphismCalculator());
+    AutomorphismGroup(new AutomorphismCalculator()),
+    OuterAutomorphismGroup(new OuterAutomorphismGroupCalculator());
     
     private final Calculator calculator;
     

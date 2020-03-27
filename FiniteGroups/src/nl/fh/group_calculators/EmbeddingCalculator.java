@@ -50,7 +50,6 @@ public class EmbeddingCalculator implements Calculator<Group> {
         // retrieve the subgroup to be embedded
         Group subgroup = (Group) group.getProperty(property);
         
-        
         try {
             return group.embed(subgroup);
         } catch (HomomorphismException ex) {

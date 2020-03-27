@@ -31,7 +31,9 @@ import nl.fh.group.Multiplicator;
  * 
  *  When the calculator returns map, then
  * 
- *  map.get(g).get(h) =  h.g.h^(-1)
+ *  map.get(g).get(h) =  g.h.g^(-1)
+ * 
+ * It therefore maps G -> Inn(G), by mapping g-> conjugation by g.
  * 
  * @author frank
  */
@@ -47,7 +49,7 @@ public class ConjugationMapCalculator implements Calculator<Group> {
         for(Element g : set){
             map.put(g, new HashMap<Element, Element>());
             for(Element h : set){
-                Element conj = table.getProduct(h, table.getProduct(g, inv.get(h)));
+                Element conj = table.getProduct(g, table.getProduct(h, inv.get(g)));
                 map.get(g).put(h, conj);
             }
         }

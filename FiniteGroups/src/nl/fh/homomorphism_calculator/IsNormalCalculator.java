@@ -52,7 +52,7 @@ public class IsNormalCalculator implements Calculator<GroupHomomorphism> {
         for(Element h : codomain){
             for(Element g : domain){
                 // h.g.h^(-1) should be in the subset(=domain of the embedding)
-                if(!domainSet.contains(conjMap.get(g).get(h))){
+                if(!domainSet.contains(conjMap.get(h).get(g))){
                     return false;
                 }
             }

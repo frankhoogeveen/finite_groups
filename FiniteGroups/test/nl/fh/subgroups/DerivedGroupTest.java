@@ -134,9 +134,9 @@ public class DerivedGroupTest {
         
         for(Element g : group){
             for(Element h : group){
-                Element hg = table.getProduct(h, g);
-                Element h_inv = inv.get(h);
-                Element conj = table.getProduct(hg, h_inv);
+                Element gh = table.getProduct(g, h);
+                Element g_inv = inv.get(g);
+                Element conj = table.getProduct(gh, g_inv);
                 
                 assertTrue(conj.equals(map.get(g).get(h)));
             }

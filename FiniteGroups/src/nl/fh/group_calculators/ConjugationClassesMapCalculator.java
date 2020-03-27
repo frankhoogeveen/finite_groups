@@ -27,13 +27,12 @@ import nl.fh.group.Group;
 
 /**
  *  Calculate a map from the elements to the conjugation class 
- *  of that element.
+ *  of that element, considered as set
  * 
  * 
  * @author frank
  */
 class ConjugationClassesMapCalculator implements Calculator<Group> {
-
 
     @Override
     public Map<Element, Set<Element>> evaluate(Group group) throws EvaluationException {
@@ -41,7 +40,10 @@ class ConjugationClassesMapCalculator implements Calculator<Group> {
         
         Map<Element, Set<Element>> result = new HashMap<Element, Set<Element>>();
         for(Element g : map.keySet()){
-            result.put(g, new HashSet(map.get(g).values()));
+            result.put(g, new HashSet());
+            for(Element h : map.keySet()){
+                result.get(g).add(map.get(h).get(g));
+            }
         } 
          
         return result;

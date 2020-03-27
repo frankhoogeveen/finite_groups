@@ -23,6 +23,7 @@ import nl.fh.group_test.*;
 import nl.fh.homomorphism_test.*;
 import nl.fh.subgroups.CenterTest;
 import nl.fh.subgroups.DerivedGroupTest;
+import nl.fh.subgroups.FactorGroupTest;
 import nl.fh.subgroups.SquaresTest;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -60,7 +61,8 @@ import org.junit.runners.Suite;
     KernelTest.class,
     DerivedGroupTest.class,
     CenterTest.class,
-    FactorGroupTest.class
+    FactorGroupTest.class,
+    OuterAutomorphismTest.class
 })
 
 

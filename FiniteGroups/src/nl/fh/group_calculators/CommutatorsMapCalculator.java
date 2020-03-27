@@ -45,7 +45,7 @@ public class CommutatorsMapCalculator implements Calculator<Group> {
         for(Element g : group){
             result.put(g, new HashMap<Element,Element>());
             for(Element h : group){
-                Element comm = table.getProduct(map.get(h).get(g), inv.get(h));
+                Element comm = table.getProduct(map.get(g).get(h), inv.get(h));
                 result.get(g).put(h,comm);
             }
         }

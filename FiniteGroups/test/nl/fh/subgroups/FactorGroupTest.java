@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh._test;
+package nl.fh.subgroups;
 
 import nl.fh.calculator.EvaluationException;
 import nl.fh.checker.GroupChecker;
@@ -172,7 +172,9 @@ public class FactorGroupTest {
         
         GroupHomomorphism quotient = (GroupHomomorphism) inn.getProperty(HomomorphismProperty.FactorHomomorphism);
         Group out = (Group) quotient.getProperty(HomomorphismProperty.Codomain);
+        int order = (int) out.getProperty(GroupProperty.Order);
         
-        assertTrue(false);
+        assertEquals(2, order);
+        
     }
 }

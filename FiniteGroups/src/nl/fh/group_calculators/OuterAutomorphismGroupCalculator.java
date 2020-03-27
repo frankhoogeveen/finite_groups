@@ -19,19 +19,21 @@ package nl.fh.group_calculators;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
+import nl.fh.homomorphism.GroupHomomorphism;
+import nl.fh.homomorphism_calculator.HomomorphismProperty;
 
 /**
  *
  * @author frank
  */
-public class InnerAutomorphismSetCalculator implements Calculator<Group> {
+public class OuterAutomorphismGroupCalculator implements Calculator<Group> {
 
-    public InnerAutomorphismSetCalculator() {
+    public OuterAutomorphismGroupCalculator() {
     }
 
     @Override
-    public Object evaluate(Group subject) throws EvaluationException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Group evaluate(Group group) throws EvaluationException {
+        GroupHomomorphism morp = (GroupHomomorphism) group.getProperty(GroupProperty.InnerAutomorphismEmbedding);
+        return (Group) morp.getProperty(HomomorphismProperty.FactorGroup);
     }
-    
 }

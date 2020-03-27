@@ -31,6 +31,12 @@ public class GroupTable extends HashMap<Element, HashMap<Element, Element>> impl
 
     @Override
     public Element getProduct(Element factor1, Element factor2) throws EvaluationException {
+        //TODO remove
+        if(this.get(factor1) == null){
+            System.out.println(" null found in getProduct");
+        }
+        
+        
         return this.get(factor1).get(factor2);
     }
 }

@@ -50,10 +50,7 @@ public class GroupHomomorphism extends PropertyCache<HomomorphismProperty>{
         this.cache.put(HomomorphismProperty.Codomain, codomain);
         
         try {
-            GroupTable table = (GroupTable) domain.getProperty(GroupProperty.MultiplicationTable);
-            GroupTable cotable = (GroupTable) codomain.getProperty(GroupProperty.MultiplicationTable);
             this.cache.put(HomomorphismProperty.Map, createFullMap(domain, codomain, coreMap));
-            
         } catch (EvaluationException ex) {
             String mess = "could not construct group homomorphism";
             Logger.getLogger(GroupHomomorphism.class.getName()).log(Level.SEVERE, mess, ex);
