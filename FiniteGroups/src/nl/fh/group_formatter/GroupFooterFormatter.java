@@ -14,29 +14,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_calculators;
+package nl.fh.group_formatter;
 
-import java.util.HashSet;
-import java.util.Set;
-import nl.fh.calculator.Calculator;
-import nl.fh.calculator.EvaluationException;
-import nl.fh.group.Element;
 import nl.fh.group.Group;
 
 /**
- * returns a set that contains the unit element of the group
+ *
  * @author frank
  */
-public class UnitSetCalculator implements Calculator<Group> {
-
+public class GroupFooterFormatter implements ItemFormatter {
+    private final int PAGE_WIDTH = 80;
+    
     @Override
-    public Set<Element> evaluate(Group group) throws EvaluationException {
-        Element unit = (Element) group.getProperty(GroupProperty.UnitElement);
+    public StringBuilder format(Group g) {
+        StringBuilder sb = new StringBuilder();
         
-        Set<Element> set = new HashSet<Element>();
-        set.add(unit);
-        
-        return set;
+        sb.append("\n");
+        for(int i = 0; i < PAGE_WIDTH; i++){
+            sb.append("-");
+        }
+        sb.append("\n");
+
+        return sb;
     }
     
 }

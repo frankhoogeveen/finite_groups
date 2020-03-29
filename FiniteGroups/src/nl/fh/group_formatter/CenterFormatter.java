@@ -23,6 +23,7 @@ import nl.fh.group.Group;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
+import nl.fh.group_classifier.GroupClassifier;
 
 /**
  *
@@ -35,13 +36,16 @@ public class CenterFormatter implements ItemFormatter {
 
     @Override
     public StringBuilder format(Group g) {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(); 
         
         try {   
-            Set<Element> center = ((Set<Element>)g.getProperty(GroupProperty.CenterSet));
+            Group center = (Group)g.getProperty(GroupProperty.CenterGroup);
+            int order = (int) center.getProperty(GroupProperty.Order);
             
             sb.append("center size: ");
-            sb.append(center.size());
+            sb.append(order);
+            sb.append("  identified as:");
+            sb.append(GroupClassifier.getInstance().identify(center));            
             sb.append("\n");
             sb.append("   ");
             for(Element z : center){

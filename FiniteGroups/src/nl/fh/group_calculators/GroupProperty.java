@@ -58,13 +58,15 @@ public enum GroupProperty implements Property {
     CommutatorsSet(new CommutatorsSetCalculator()),
     CommutatorsGroup(new GroupFromSetCalculator("Comm", CommutatorsSet)),
     CommutatorsEmbedding(new EmbeddingCalculator(CommutatorsGroup)),
+    Abelianization(new AbelizanizationCalculator()),
     
     IsAbelean(new IsAbeleanCalculator()),
     
     ConjugationClassesMap(new ConjugationClassesMapCalculator()),
     ConjugationMap(new ConjugationMapCalculator()),
     ConjugationClassesSet(new ConjugationClassesSetCalculator()),
-    ConjugationsClassesOrders(new ConjugationClassesOrdersCalculator()),
+    ConjugationClassesOrders(new ConjugationClassesOrdersCalculator()),
+    ConjugationProfile(new ConjugationClassesProfileCalculator()),
     
     StronglyMinimalGeneratingSets(new StronglyMinimalGeneratorsCalculator()), 
 

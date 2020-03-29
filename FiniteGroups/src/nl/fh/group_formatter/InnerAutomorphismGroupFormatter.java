@@ -21,6 +21,7 @@ import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
 import nl.fh.group_calculators.GroupProperty;
+import nl.fh.group_classifier.GroupClassifier;
 
 /**
  *
@@ -38,6 +39,8 @@ public class InnerAutomorphismGroupFormatter implements ItemFormatter {
             
             sb.append("Order of inner automorphism group: ");
             sb.append(order);
+            sb.append("   classified as: ");
+            sb.append(GroupClassifier.getInstance().identify(inn));
             sb.append("\n");
                             
         } catch (EvaluationException ex) {

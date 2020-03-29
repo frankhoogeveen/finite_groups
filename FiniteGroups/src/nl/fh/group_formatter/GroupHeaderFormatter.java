@@ -26,32 +26,27 @@ import nl.fh.group_calculators.GroupProperty;
  *
  * @author frank
  */
-public class AutomorphismGroupFormatter implements ItemFormatter {
-
+public class GroupHeaderFormatter implements ItemFormatter {
+    private final int PAGE_WIDTH = 80;
+    
     @Override
     public StringBuilder format(Group g) {
         StringBuilder sb = new StringBuilder();
         
-        if(FormatRules.isExpensive(g)){
-            sb.append("Outer automorphism group not calculated\n");
-            return sb;
+        sb.append("\n");
+        for(int i = 0; i < PAGE_WIDTH; i++){
+            sb.append("=");
         }
+        sb.append("\n");
         
         try {
-            Group aut = (Group) g.getProperty(GroupProperty.AutomorphismGroup);
-            int order = (int) aut.getProperty(GroupProperty.Order);
-            
-            sb.append("Order of automorphism group: ");
-            sb.append(order);
-            sb.append("\n");
-                            
+            sb.append(g.getProperty(GroupProperty.Name));
         } catch (EvaluationException ex) {
-            String mess = "could not format automorphisms";
-            Logger.getLogger(InnerAutomorphismGroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
+            String mess = "*** unknown name ***";
             sb.append(mess);
+            Logger.getLogger(GroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
         }
-        
+        sb.append("\n");
         return sb;
-    }    
-    
+    }
 }

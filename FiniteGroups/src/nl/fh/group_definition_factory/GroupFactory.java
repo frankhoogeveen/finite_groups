@@ -37,6 +37,7 @@ import nl.fh.group_def_product.GroupProduct;
 import nl.fh.group_def_substitutions.StringElement;
 import nl.fh.group_def_substitutions.StringMultiplicator;
 import nl.fh.group_def_substitutions.StringSubstitution;
+import nl.fh.number.IntNumber;
 
 /**
  * Factory object for groups. The concern of this class is to generate
@@ -46,6 +47,8 @@ import nl.fh.group_def_substitutions.StringSubstitution;
  */
 public class GroupFactory {
     private static final Logger LOGGER = Logger.getLogger(SmallGroupCatalog.class.getSimpleName());
+    
+    
     
     
      /**
@@ -217,7 +220,8 @@ public class GroupFactory {
         StringMultiplicator multiplication = new StringMultiplicator();
         multiplication.addSubstitution(new StringSubstitution(repeat("a",2*n), ""));
         multiplication.addSubstitution(new StringSubstitution("bb", repeat("a",n)));
-         multiplication.addSubstitution(new StringSubstitution("ba", repeat("a", 2*n-1) + "b"));      
+        multiplication.addSubstitution(new StringSubstitution("ba", repeat("a", 2*n-1) + "b"));
+        
         String name = "Q" + Integer.toString(n);
         Group result = null;
         try {
@@ -228,5 +232,163 @@ public class GroupFactory {
         } 
         return result;
     }
+    
+    public Group getSemiDihedralGroup(int n){
+        if(n < 2){
+            String mess = "cannot not define SemiDihedral group: " + Integer.toString(n);
+            LOGGER.log(Level.SEVERE, mess);
+            throw new IllegalArgumentException(mess);
+        }
+        
+        int expR = (1 << (n-1));   // 2** (n-1)
+        int expComm = (1 << (n-2)) -1;
+        
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("r"));
+        generators.add(new StringElement("s"));
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution(repeat("s",2), ""));
+        multiplication.addSubstitution(new StringSubstitution(repeat("r", expR), ""));
+        multiplication.addSubstitution(new StringSubstitution("sr", repeat("r", expComm) + "s"));
+        
+        String name = "SD" + Integer.toString(n);
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create SemiDihedral group", ex);
+            System.exit(-1);
+        } 
+        return result;
+    }
+    
+    public Group getModular2Group(int n){
+        if(n < 2){
+            String mess = "cannot not define SemiDihedral group: " + Integer.toString(n);
+            LOGGER.log(Level.SEVERE, mess);
+            throw new IllegalArgumentException(mess);
+        }
+        
+        int expR = (1 << (n-1));   // 2** (n-1)
+        int expComm = (1 << (n-2)) + 1;
+        
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("r"));
+        generators.add(new StringElement("s"));
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution(repeat("s",2), ""));
+        multiplication.addSubstitution(new StringSubstitution(repeat("r", expR), ""));
+        multiplication.addSubstitution(new StringSubstitution("sr", repeat("r", expComm) + "s"));
+        
+        String name = "M" + Integer.toString(n);
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create Modular2Group", ex);
+            System.exit(-1);
+        } 
+        return result;
+    }
+    
+  /**
+   * 
+   * @param n
+   * @param m
+   * @param p
+   * @return the group with relations
+   *  a^n = b^m = 1 b.a = a^p * b
+   * 
+   * Note that p^m = 1 mod n has to be true for the group to be well defined
+   */  
+        public Group getMetacyclicGroup(int n, int m , int p) {
+        if(n < 1){
+            String mess = "cannot not define dicyclic group of order 4*" + Integer.toString(n);
+            LOGGER.log(Level.SEVERE, mess);
+            throw new IllegalArgumentException(mess);
+        }
+        
+        int pow = IntNumber.power(p, m) - 1;
+        if((pow % n) != 0){
+            throw new IllegalArgumentException("condition for arguments of getMetaCyclicGroup not met");
+        }
+        
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("a"));
+        generators.add(new StringElement("b"));
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution(repeat("a",n), ""));
+        multiplication.addSubstitution(new StringSubstitution(repeat("b",m), ""));
+
+        multiplication.addSubstitution(new StringSubstitution("ba", repeat("a", p) + "b"));
+        
+        String name = "MC(" + Integer.toString(n) + "," + Integer.toString(m) + "," + Integer.toString(p) + ")";
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create metacyclic group", ex);
+            System.exit(-1);
+        } 
+        return result;
+    }
+        
+    public Group getGroup16_1(){
+        
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("a"));
+        generators.add(new StringElement("b"));
+        generators.add(new StringElement("c"));        
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution(repeat("a",4), ""));
+        multiplication.addSubstitution(new StringSubstitution(repeat("b",2), ""));
+        multiplication.addSubstitution(new StringSubstitution(repeat("c",2), ""));  
+        
+        multiplication.addSubstitution(new StringSubstitution("ba", "ab"));
+        multiplication.addSubstitution(new StringSubstitution("ca", "abc"));
+        multiplication.addSubstitution(new StringSubstitution("cb", "bc"));
+        
+        
+        String name = "G16_1";
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create group", ex);
+            System.exit(-1);
+        } 
+        return result;
+    }
+    
+    public Group getGroup16_2(){
+        
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("a"));
+        generators.add(new StringElement("b"));
+        generators.add(new StringElement("c"));        
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution(repeat("a",4), ""));
+        multiplication.addSubstitution(new StringSubstitution(repeat("b",2), ""));
+        multiplication.addSubstitution(new StringSubstitution(repeat("c",2), "aa"));  
+        
+        multiplication.addSubstitution(new StringSubstitution("ba", "aaab"));
+        multiplication.addSubstitution(new StringSubstitution("ca", "ac"));
+        multiplication.addSubstitution(new StringSubstitution("cb", "bc"));
+        
+        String name = "G16_2";
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create group", ex);
+            System.exit(-1);
+        } 
+        return result;
+    }    
     
 }

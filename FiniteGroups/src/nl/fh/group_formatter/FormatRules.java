@@ -16,8 +16,6 @@
  */
 package nl.fh.group_formatter;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
 import nl.fh.group_calculators.GroupProperty;
@@ -26,32 +24,20 @@ import nl.fh.group_calculators.GroupProperty;
  *
  * @author frank
  */
-public class AutomorphismGroupFormatter implements ItemFormatter {
-
-    @Override
-    public StringBuilder format(Group g) {
-        StringBuilder sb = new StringBuilder();
-        
-        if(FormatRules.isExpensive(g)){
-            sb.append("Outer automorphism group not calculated\n");
-            return sb;
-        }
-        
-        try {
-            Group aut = (Group) g.getProperty(GroupProperty.AutomorphismGroup);
-            int order = (int) aut.getProperty(GroupProperty.Order);
-            
-            sb.append("Order of automorphism group: ");
-            sb.append(order);
-            sb.append("\n");
-                            
-        } catch (EvaluationException ex) {
-            String mess = "could not format automorphisms";
-            Logger.getLogger(InnerAutomorphismGroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
-            sb.append(mess);
-        }
-        
-        return sb;
-    }    
+public class FormatRules {
     
+    /**
+     * 
+     * @return true if a format operation is expensive
+     */
+    static boolean isExpensive(Group g){
+        try {
+            boolean isAbelean = (boolean) g.getProperty(GroupProperty.IsAbelean);
+            int order = (int) g.getProperty(GroupProperty.Order);
+            
+            return isAbelean && (order > 15);
+        } catch (EvaluationException ex) {
+            return true;
+        }
+    }
 }

@@ -14,29 +14,35 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_calculators;
-
-import java.util.HashSet;
-import java.util.Set;
-import nl.fh.calculator.Calculator;
-import nl.fh.calculator.EvaluationException;
-import nl.fh.group.Element;
-import nl.fh.group.Group;
+package nl.fh.number;
 
 /**
- * returns a set that contains the unit element of the group
+ * Class that contains some methods to deal with (small) integers
+ * 
+ * 
  * @author frank
  */
-public class UnitSetCalculator implements Calculator<Group> {
-
-    @Override
-    public Set<Element> evaluate(Group group) throws EvaluationException {
-        Element unit = (Element) group.getProperty(GroupProperty.UnitElement);
-        
-        Set<Element> set = new HashSet<Element>();
-        set.add(unit);
-        
-        return set;
-    }
+public class IntNumber {
     
+    /**
+     * 
+     * @param a
+     * @param b
+     * @return a^b  a raised to the b-th power 
+     */
+    public static int power(int a, int b) {
+        if(b < 0 ){
+            throw new IllegalArgumentException("integer to negative power");
+        }
+        
+        int result = 1;
+        while (b > 0) {
+            if ((b & 1) == 1) {
+                result *= a;        
+            }
+            b >>= 1;
+            a *= a; 
+        }
+        return result;
+    }
 }

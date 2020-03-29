@@ -48,4 +48,13 @@ public class GroupFactoryTest {
         assertEquals(2*3*5, (int)c30.getProperty(GroupProperty.Order));
     }
     
+    public void G16FactoryTest() throws EvaluationException{
+        GroupFactory fac = new GroupFactory();
+        Group g16_1 = fac.getGroup16_1();
+        Group g16_2 = fac.getGroup16_2();
+        
+        assertEquals(16, (int)g16_1.getProperty(GroupProperty.Order));
+        assertEquals(16, (int)g16_2.getProperty(GroupProperty.Order));        
+    }
+    
 }

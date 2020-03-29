@@ -18,11 +18,7 @@ package nl.fh.group_formatter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
-import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_catalogue.GroupCatalog;
 
 /**
@@ -33,26 +29,38 @@ import nl.fh.group_catalogue.GroupCatalog;
  */
 public class GroupFormatter {
 
-    private final int PAGE_WIDTH = 80;
     private final List<ItemFormatter> list;
     
-
     public GroupFormatter(){
         this.list = new ArrayList<ItemFormatter>();
+        this.list.add(new GroupHeaderFormatter());
         this.list.add(new OrderFormatter());
         this.list.add(new IsAbeleanFormatter());
         this.list.add(new CenterFormatter());
         this.list.add(new InversesFormatter());
         this.list.add(new ConjugationClassesFormatter());
+        this.list.add(new DerivedGroupFormatter());
+        this.list.add(new AbeleanizationFormatter());
         this.list.add(new InnerAutomorphismGroupFormatter());
         this.list.add(new AutomorphismGroupFormatter());
+        this.list.add(new OuterAutomorphismGroupFormatter());
+        this.list.add(new GroupFooterFormatter());
+    }
+    
+    public StringBuilder createReport(Group g){
+        
+        StringBuilder sb = new StringBuilder();
+        for(ItemFormatter item : this.list){
+            sb.append(item.format(g));
+        }
+        return sb;
     }
     
     public String createReport(GroupCatalog catalog){
         StringBuilder sb = new StringBuilder();
         sb.append(reportHeader(catalog));
         
-        for(Group g : catalog.getList()){
+        for(Group g : catalog){
             sb.append(createReport(g));
         }
         
@@ -65,7 +73,7 @@ public class GroupFormatter {
         sb.append("*** ");
         sb.append(catalog.getClass().getSimpleName());
         sb.append(" [");
-        sb.append(Integer.toString(catalog.getList().size()));
+        sb.append(Integer.toString(catalog.size()));
         sb.append(" items] ***");
         sb.append("\n");
         
@@ -77,58 +85,10 @@ public class GroupFormatter {
         sb.append("--- end of  ");
         sb.append(catalog.getClass().getSimpleName());
         sb.append(" [");
-        sb.append(Integer.toString(catalog.getList().size()));
+        sb.append(Integer.toString(catalog.size()));
         sb.append(" items] ---");
         sb.append("\n");
         
         return sb;
-    }
-    
-    
-    public StringBuilder createReport(Group g){
-        
-        StringBuilder sb = new StringBuilder();
-        sb.append(groupHeader(g));
-        
-        for(ItemFormatter item : this.list){
-            sb.append(item.format(g));
-        }
-        
-        sb.append(groupFooter(g));
-        return sb;
-    }
-
-    private StringBuilder groupHeader(Group g) {
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append("\n");
-        for(int i = 0; i < PAGE_WIDTH; i++){
-            sb.append("=");
-        }
-        sb.append("\n");
-        
-        try {
-            sb.append(g.getProperty(GroupProperty.Name));
-        } catch (EvaluationException ex) {
-            String mess = "*** unknown name ***";
-            sb.append(mess);
-            Logger.getLogger(GroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
-        }
-        sb.append("\n");
-        return sb;
-    }
-
-    private StringBuilder groupFooter(Group g) {
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append("\n");
-        for(int i = 0; i < PAGE_WIDTH; i++){
-            sb.append("-");
-        }
-        sb.append("\n");
-
-        return sb;
-    }
-    
-    
+    }    
 }

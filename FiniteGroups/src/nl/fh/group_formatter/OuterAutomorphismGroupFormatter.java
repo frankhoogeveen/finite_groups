@@ -26,7 +26,7 @@ import nl.fh.group_calculators.GroupProperty;
  *
  * @author frank
  */
-public class AutomorphismGroupFormatter implements ItemFormatter {
+public class OuterAutomorphismGroupFormatter implements ItemFormatter {
 
     @Override
     public StringBuilder format(Group g) {
@@ -38,15 +38,15 @@ public class AutomorphismGroupFormatter implements ItemFormatter {
         }
         
         try {
-            Group aut = (Group) g.getProperty(GroupProperty.AutomorphismGroup);
+            Group aut = (Group) g.getProperty(GroupProperty.OuterAutomorphismGroup);
             int order = (int) aut.getProperty(GroupProperty.Order);
             
-            sb.append("Order of automorphism group: ");
+            sb.append("Order of outer automorphism group: ");
             sb.append(order);
             sb.append("\n");
                             
         } catch (EvaluationException ex) {
-            String mess = "could not format automorphisms";
+            String mess = "could not format outer automorphisms";
             Logger.getLogger(InnerAutomorphismGroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
             sb.append(mess);
         }

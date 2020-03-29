@@ -25,7 +25,8 @@ import nl.fh.homomorphism.GroupHomomorphism;
 import nl.fh.homomorphism.HomomorphismException;
 
 /**
- * Calculates the embedding of the center of a group into that group
+ * Calculates the embedding of the center of a group into that group.
+ * Given f: G->H , this calculator returns ker(f) -> G
  * 
  * 
  * @author frank

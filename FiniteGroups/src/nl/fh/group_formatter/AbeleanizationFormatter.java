@@ -21,37 +21,35 @@ import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
 import nl.fh.group_calculators.GroupProperty;
+import nl.fh.group_classifier.GroupClassifier;
 
 /**
  *
  * @author frank
  */
-public class AutomorphismGroupFormatter implements ItemFormatter {
+public class AbeleanizationFormatter implements ItemFormatter {
 
     @Override
     public StringBuilder format(Group g) {
+        
         StringBuilder sb = new StringBuilder();
         
-        if(FormatRules.isExpensive(g)){
-            sb.append("Outer automorphism group not calculated\n");
-            return sb;
-        }
-        
         try {
-            Group aut = (Group) g.getProperty(GroupProperty.AutomorphismGroup);
-            int order = (int) aut.getProperty(GroupProperty.Order);
+            Group ab = (Group) g.getProperty(GroupProperty.Abelianization);
+            int order = (int)ab.getProperty(GroupProperty.Order);
             
-            sb.append("Order of automorphism group: ");
+            sb.append("order of ab(G): ");
             sb.append(order);
+            sb.append("  identified as:");
+            sb.append(GroupClassifier.getInstance().identify(ab));
             sb.append("\n");
-                            
+            
         } catch (EvaluationException ex) {
-            String mess = "could not format automorphisms";
-            Logger.getLogger(InnerAutomorphismGroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
+            String mess = "could not evaluate abeleanization group";
+            Logger.getLogger(DerivedGroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
             sb.append(mess);
         }
-        
         return sb;
-    }    
+    }
     
 }

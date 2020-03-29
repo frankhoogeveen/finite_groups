@@ -16,27 +16,27 @@
  */
 package nl.fh.group_calculators;
 
-import java.util.HashSet;
-import java.util.Set;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.group.Element;
 import nl.fh.group.Group;
+import nl.fh.homomorphism.GroupHomomorphism;
+import nl.fh.homomorphism_calculator.HomomorphismProperty;
 
 /**
- * returns a set that contains the unit element of the group
+ *
+ * return Ab(G) = G/[G,G]
+ * 
  * @author frank
  */
-public class UnitSetCalculator implements Calculator<Group> {
+public class AbelizanizationCalculator implements Calculator<Group> {
+
+    public AbelizanizationCalculator() {
+    }
 
     @Override
-    public Set<Element> evaluate(Group group) throws EvaluationException {
-        Element unit = (Element) group.getProperty(GroupProperty.UnitElement);
-        
-        Set<Element> set = new HashSet<Element>();
-        set.add(unit);
-        
-        return set;
+    public Group evaluate(Group group) throws EvaluationException {
+        GroupHomomorphism morph = (GroupHomomorphism) group.getProperty(GroupProperty.CommutatorsEmbedding);
+        return (Group) morph.getProperty(HomomorphismProperty.FactorGroup);
     }
     
 }

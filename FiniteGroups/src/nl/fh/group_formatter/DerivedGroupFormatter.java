@@ -21,37 +21,35 @@ import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
 import nl.fh.group_calculators.GroupProperty;
+import nl.fh.group_classifier.GroupClassifier;
 
 /**
  *
  * @author frank
  */
-public class AutomorphismGroupFormatter implements ItemFormatter {
+public class DerivedGroupFormatter implements ItemFormatter {
 
     @Override
     public StringBuilder format(Group g) {
+        
         StringBuilder sb = new StringBuilder();
         
-        if(FormatRules.isExpensive(g)){
-            sb.append("Outer automorphism group not calculated\n");
-            return sb;
-        }
-        
         try {
-            Group aut = (Group) g.getProperty(GroupProperty.AutomorphismGroup);
-            int order = (int) aut.getProperty(GroupProperty.Order);
+            Group der = (Group) g.getProperty(GroupProperty.CommutatorsGroup);
+            int order = (int)der.getProperty(GroupProperty.Order);
             
-            sb.append("Order of automorphism group: ");
+            sb.append("order of der(G): ");
             sb.append(order);
+            sb.append("  identified as:");
+            sb.append(GroupClassifier.getInstance().identify(der));
             sb.append("\n");
-                            
+            
         } catch (EvaluationException ex) {
-            String mess = "could not format automorphisms";
-            Logger.getLogger(InnerAutomorphismGroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
+            String mess = "could not evaluate derived group";
+            Logger.getLogger(DerivedGroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
             sb.append(mess);
         }
-        
         return sb;
-    }    
+    }
     
 }

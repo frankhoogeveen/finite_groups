@@ -40,10 +40,11 @@ public class ConjugationClassesFormatter implements ItemFormatter {
         StringBuilder sb = new StringBuilder();
         try { 
             Set<Set<Element>> conj = (Set<Set<Element>>) g.getProperty(GroupProperty.ConjugationClassesSet);
-            Map<Set<Element>, Integer> conjOrder = (Map<Set<Element>, Integer>) g.getProperty(GroupProperty.ConjugationsClassesOrders);
+            Map<Set<Element>, Integer> conjOrder = (Map<Set<Element>, Integer>) g.getProperty(GroupProperty.ConjugationClassesOrders);
+            Map<Integer, Map<Integer, Integer>> profile = ( Map<Integer, Map<Integer, Integer>>)g.getProperty(GroupProperty.ConjugationProfile);
             
-            totalNumberOfClasses(sb, conj);
-            
+            reportTotalNumberOfClasses(sb, conj);
+            reportProfile(sb, profile);
             for(Set<Element> conjClass : conj){
                 reportConjugationClass(sb, g, conjClass, conjOrder.get(conjClass));
             }
@@ -57,10 +58,26 @@ public class ConjugationClassesFormatter implements ItemFormatter {
         return sb;
     }
     
-    private void totalNumberOfClasses(StringBuilder sb, Set<Set<Element>> conj){
+    private void reportTotalNumberOfClasses(StringBuilder sb, Set<Set<Element>> conj){
         sb.append("\nTotal number of conjugation classes: ");
         sb.append(conj.size());
         sb.append("\n");
+    }
+    
+    private void reportProfile(StringBuilder sb, Map<Integer, Map<Integer, Integer>> profile){
+        sb.append("number of conjugation class by size and order of the elements:\n");
+        for(int order : profile.keySet()){
+            for(int size : profile.get(order).keySet()){
+                sb.append("order: ");
+                sb.append(order);
+                sb.append("  size: ");
+                sb.append(size);
+                sb.append(" count: ");
+                sb.append(profile.get(order).get(size));
+                sb.append("\n");
+            }
+            sb.append("\n");
+        }
     }
 
     private void reportConjugationClass(StringBuilder sb, Group g, Set<Element> conjClass, int order) throws EvaluationException {        

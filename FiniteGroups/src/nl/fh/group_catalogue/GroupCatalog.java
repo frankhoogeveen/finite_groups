@@ -17,8 +17,8 @@
 package nl.fh.group_catalogue;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Logger;
 import nl.fh.group.Group;
 
 /**
@@ -27,8 +27,7 @@ import nl.fh.group.Group;
  * 
  * @author frank
  */
-public class GroupCatalog {
-    private static final Logger LOGGER = Logger.getLogger(GroupCatalog.class.getSimpleName());
+public class GroupCatalog implements Iterable<Group> {
     private final List<Group> list;
     
     public GroupCatalog(){
@@ -45,7 +44,16 @@ public class GroupCatalog {
         this.list.add(group);
     }
 
-    public List<Group> getList() {
-        return list;
+    @Override
+    public Iterator<Group> iterator() {
+        return list.iterator();
+    }
+
+    /**
+     * 
+     * @return the number of groups in the catalog
+     */
+    public int size() {
+        return this.list.size();
     }
 }
