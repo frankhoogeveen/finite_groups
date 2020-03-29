@@ -16,6 +16,9 @@
  */
 package nl.fh.number;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Class that contains some methods to deal with (small) integers
  * 
@@ -44,5 +47,71 @@ public class IntNumber {
             a *= a; 
         }
         return result;
+    }
+    
+    /**
+     * Euclid's algorithm to calculate the Greatest Common Divisor of two numbers
+     * @param a
+     * @param b
+     * @return the greatest common divisor of a and b
+     */
+    public static int gcd(int a, int b){
+        if((a < 0)||(b<0)){
+            throw new IllegalArgumentException("gcd applies to positive numbers");
+        }
+        
+        if(b==0){ return a;}
+        return gcd(b, a%b);
+    }
+    
+    /**
+     * The least common multiple of two numbers
+     */
+    public static int lcm(int a, int b){
+        if((a < 0)||(b<0)){
+            throw new IllegalArgumentException("lcm applies to positive numbers");
+        }
+        
+        if((a==0)||(b==0)){ return 0;}
+        
+        return ((a*b)/gcd(a,b));
+    }
+
+    /**
+     * 
+     * @param n an integer with prime factorization p1^k1 p2^k2...
+     * @return a map that sends pi->ki
+     * 
+     * The resulting map only has entries for the prime numbers where the exponent
+     * is positive.
+     */
+    public static Map<Integer, Integer> factorize(int n) {
+        if( n < 1){
+            throw new IllegalArgumentException("cannot factorize number < 1");
+        }
+        
+        Map<Integer, Integer> result = new HashMap<Integer, Integer>();
+        int currentPrime = 2;
+        
+        recursivelyFactorize(n, currentPrime, result);
+        return result;
+        
+    }
+
+    private static void recursivelyFactorize(int n, int p, Map<Integer, Integer> result) {
+        if(n ==1){
+            return;
+        }
+        
+        if((n%p)==0){
+            if(!result.containsKey(p)){
+                result.put(p, 0);
+            }
+            result.put(p, result.get(p)+1);
+            recursivelyFactorize(n/p, p, result);
+            
+        } else {
+          recursivelyFactorize(n, Prime.after(p), result);
+        }
     }
 }

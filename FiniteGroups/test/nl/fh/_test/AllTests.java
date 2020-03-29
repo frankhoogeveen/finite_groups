@@ -17,16 +17,12 @@
 
 package nl.fh._test;
 
-
 import nl.fh.calculators_test.*;
 import nl.fh.classifier_test.ClassifierTest;
 import nl.fh.group_test.*;
 import nl.fh.homomorphism_test.*;
-import nl.fh.subgroups.AbeleanizationTest;
-import nl.fh.subgroups.CenterTest;
-import nl.fh.subgroups.DerivedGroupTest;
-import nl.fh.subgroups.FactorGroupTest;
-import nl.fh.subgroups.SquaresTest;
+import nl.fh.numbers_test.*;
+import nl.fh.subgroups_test.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -66,7 +62,9 @@ import org.junit.runners.Suite;
     FactorGroupTest.class,
     OuterAutomorphismTest.class,
     AbeleanizationTest.class,
-    ClassifierTest.class
+    ClassifierTest.class,
+    PrimesTest.class,
+    PrimeFactorsTest.class
 })
 
 
