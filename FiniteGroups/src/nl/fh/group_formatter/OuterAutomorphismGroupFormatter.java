@@ -28,6 +28,9 @@ import nl.fh.group_calculators.GroupProperty;
  */
 public class OuterAutomorphismGroupFormatter implements ItemFormatter {
 
+    OuterAutomorphismGroupFormatter(GroupFormatter overall) {
+    }
+
     @Override
     public StringBuilder format(Group g) {
         StringBuilder sb = new StringBuilder();

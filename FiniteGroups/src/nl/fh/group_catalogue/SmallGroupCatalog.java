@@ -166,7 +166,10 @@ public class SmallGroupCatalog extends GroupCatalog {
         
         Group g16_2 = factory.getGroup16_2();
         super.add(g16_2);
-
+        
+        /* order seventeen */
+        Group c17 = factory.getCyclicGroup(17);
+        super.add(c17);
     }
     
     /**

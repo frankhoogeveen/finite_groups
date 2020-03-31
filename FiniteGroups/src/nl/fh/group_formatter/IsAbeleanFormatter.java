@@ -28,7 +28,7 @@ import nl.fh.group_calculators.GroupProperty;
  */
 public class IsAbeleanFormatter implements ItemFormatter {
 
-    public IsAbeleanFormatter() {
+    IsAbeleanFormatter(GroupFormatter overall) {
     }
 
     @Override

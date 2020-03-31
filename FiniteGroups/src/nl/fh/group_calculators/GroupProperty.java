@@ -46,6 +46,8 @@ public enum GroupProperty implements Property {
     Self(new SelfCalculator()),
     SelfEmbedding(new EmbeddingCalculator(Self)),
     
+    SubgroupSets(new SubgroupSetsCalculator()),
+    
     CenterSet(new CenterSetCalculator()),
     CenterGroup(new GroupFromSetCalculator("Z", CenterSet)),
     CenterEmbedding(new EmbeddingCalculator(CenterGroup)),

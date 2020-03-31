@@ -36,8 +36,6 @@ import org.junit.Test;
  * trivial (C1 as kernel and C1/C1)
  * derived
  * 
- * TODO
- * 
  * @author frank
  */
 public class FactorGroupTest {

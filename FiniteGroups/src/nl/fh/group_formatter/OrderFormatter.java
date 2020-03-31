@@ -29,8 +29,8 @@ import nl.fh.calculator.EvaluationException;
  * @author frank
  */
 public class OrderFormatter implements ItemFormatter {
-
-    public OrderFormatter() {
+    
+    OrderFormatter(GroupFormatter overall) {
     }
 
     @Override

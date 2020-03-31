@@ -37,7 +37,7 @@ import nl.fh.group.Multiplicator;
  * sets, but only <1> and <5> are strongly minimal.
  
  The trivial implementation is not the most efficient, but gives 
- readable code. 
+ (hopefully) readable code. 
  * 
  * @author frank
  */

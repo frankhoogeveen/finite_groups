@@ -16,43 +16,39 @@
  */
 package nl.fh.group_formatter;
 
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group_calculators.GroupProperty;
-import nl.fh.group_classifier.GroupClassifier;
 
 /**
  *
  * @author frank
  */
-public class DerivedGroupFormatter implements ItemFormatter {
+public class SubgroupFormatter implements ItemFormatter {
 
-    DerivedGroupFormatter(GroupFormatter overall) {
-        
+    SubgroupFormatter(GroupFormatter overall) {
     }
 
     @Override
     public StringBuilder format(Group g) {
-        
         StringBuilder sb = new StringBuilder();
         
         try {
-            Group der = (Group) g.getProperty(GroupProperty.CommutatorsGroup);
-            int order = (int)der.getProperty(GroupProperty.Order);
+            Set<Set<Element>> subGroups = (Set<Set<Element>>) g.getProperty(GroupProperty.SubgroupSets);
             
-            sb.append("Order of der(G): ");
-            sb.append(order);
-            sb.append("  identified as:");
-            sb.append(GroupClassifier.getInstance().identify(der));
+            sb.append("number of subgroups: ");
+            sb.append(subGroups.size());
             sb.append("\n");
             
         } catch (EvaluationException ex) {
-            String mess = "could not evaluate derived group";
-            Logger.getLogger(DerivedGroupFormatter.class.getName()).log(Level.SEVERE, mess, ex);
-            sb.append(mess);
+            String mess = "could not calculate subgroups";
+            Logger.getLogger(SubgroupFormatter.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
         return sb;
     }
     

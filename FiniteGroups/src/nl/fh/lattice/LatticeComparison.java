@@ -14,24 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_calculators;
-
-import java.util.HashMap;
-import nl.fh.calculator.EvaluationException;
-import nl.fh.group.Element;
-import nl.fh.group.Multiplicator;
+package nl.fh.lattice;
 
 /**
  *
- * Implements group multiplication by table look-up
+ *  The outcome of a comparison between two items in a lattice
  * 
  * @author frank
  */
-public class GroupTable extends HashMap<Element, HashMap<Element, Element>> implements Multiplicator<Element>{
-
-    @Override
-    public Element getProduct(Element factor1, Element factor2) throws EvaluationException {
-        
-        return this.get(factor1).get(factor2);
-    }
+public enum LatticeComparison {
+    Greater,
+    Smaller,
+    Equal,
+    Unrelated
 }

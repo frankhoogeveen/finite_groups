@@ -29,6 +29,9 @@ import nl.fh.group_classifier.GroupClassifier;
  */
 public class AbeleanizationFormatter implements ItemFormatter {
 
+    AbeleanizationFormatter(GroupFormatter overall) {
+    }
+
     @Override
     public StringBuilder format(Group g) {
         
@@ -38,7 +41,7 @@ public class AbeleanizationFormatter implements ItemFormatter {
             Group ab = (Group) g.getProperty(GroupProperty.Abelianization);
             int order = (int)ab.getProperty(GroupProperty.Order);
             
-            sb.append("order of ab(G): ");
+            sb.append("Order of ab(G): ");
             sb.append(order);
             sb.append("  identified as:");
             sb.append(GroupClassifier.getInstance().identify(ab));

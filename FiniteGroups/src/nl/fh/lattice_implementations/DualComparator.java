@@ -14,24 +14,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_calculators;
+package nl.fh.lattice_implementations;
 
-import java.util.HashMap;
-import nl.fh.calculator.EvaluationException;
-import nl.fh.group.Element;
-import nl.fh.group.Multiplicator;
+import nl.fh.lattice.LatticeComparator;
+import nl.fh.lattice.LatticeComparison;
 
 /**
- *
- * Implements group multiplication by table look-up
+ *  
+ * Turns any LatticeComparator into its dual.
  * 
  * @author frank
  */
-public class GroupTable extends HashMap<Element, HashMap<Element, Element>> implements Multiplicator<Element>{
+public class DualComparator<T> implements LatticeComparator<T>{
 
-    @Override
-    public Element getProduct(Element factor1, Element factor2) throws EvaluationException {
-        
-        return this.get(factor1).get(factor2);
+    private final LatticeComparator comparator;
+
+    /**
+     * 
+     * @param comparator of which this is the dual 
+     */
+    public DualComparator(LatticeComparator comparator){
+        this.comparator = comparator;
     }
+    
+    @Override
+    public LatticeComparison compare(T t1, T t2) {
+        return this.comparator.compare(t2, t1);
+    }
+    
 }

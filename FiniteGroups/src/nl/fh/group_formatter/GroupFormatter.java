@@ -30,21 +30,23 @@ import nl.fh.group_catalogue.GroupCatalog;
 public class GroupFormatter {
 
     private final List<ItemFormatter> list;
+    private boolean verbose = false;
     
     public GroupFormatter(){
         this.list = new ArrayList<ItemFormatter>();
-        this.list.add(new GroupHeaderFormatter());
-        this.list.add(new OrderFormatter());
-        this.list.add(new IsAbeleanFormatter());
-        this.list.add(new CenterFormatter());
-        this.list.add(new InversesFormatter());
-        this.list.add(new ConjugationClassesFormatter());
-        this.list.add(new DerivedGroupFormatter());
-        this.list.add(new AbeleanizationFormatter());
-        this.list.add(new InnerAutomorphismGroupFormatter());
-        this.list.add(new AutomorphismGroupFormatter());
-        this.list.add(new OuterAutomorphismGroupFormatter());
-        this.list.add(new GroupFooterFormatter());
+        this.list.add(new GroupHeaderFormatter(this));
+        this.list.add(new OrderFormatter(this));
+        this.list.add(new IsAbeleanFormatter(this));
+        this.list.add(new CenterFormatter(this));
+        this.list.add(new InversesFormatter(this));
+        this.list.add(new ConjugationClassesFormatter(this));
+        this.list.add(new DerivedGroupFormatter(this));
+        this.list.add(new AbeleanizationFormatter(this));
+        this.list.add(new InnerAutomorphismGroupFormatter(this));
+        this.list.add(new AutomorphismGroupFormatter(this));
+        this.list.add(new OuterAutomorphismGroupFormatter(this));
+        this.list.add(new SubgroupFormatter(this));
+        this.list.add(new GroupFooterFormatter(this));
     }
     
     public StringBuilder createReport(Group g){
@@ -66,6 +68,10 @@ public class GroupFormatter {
         
         sb.append(reportFooter(catalog));
         return sb.toString();
+    }
+
+    public boolean isVerbose() {
+        return verbose;
     }
     
     private StringBuilder reportHeader(GroupCatalog catalog){

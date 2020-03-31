@@ -23,15 +23,23 @@ import nl.fh.group.Group;
  * @author frank
  */
 public class GroupFooterFormatter implements ItemFormatter {
+    
     private final int PAGE_WIDTH = 80;
+    private final GroupFormatter overall;
+
+    GroupFooterFormatter(GroupFormatter overall) {
+        this.overall = overall;
+    }
     
     @Override
     public StringBuilder format(Group g) {
         StringBuilder sb = new StringBuilder();
         
-        sb.append("\n");
-        for(int i = 0; i < PAGE_WIDTH; i++){
-            sb.append("-");
+        if(this.overall.isVerbose()){
+            sb.append("\n");
+            for(int i = 0; i < PAGE_WIDTH; i++){
+                sb.append("-");
+            }
         }
         sb.append("\n");
 

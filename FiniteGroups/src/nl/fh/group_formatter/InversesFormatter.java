@@ -30,27 +30,32 @@ import nl.fh.group_calculators.GroupProperty;
  */
 public class InversesFormatter implements ItemFormatter {
 
-    public InversesFormatter() {
+    private GroupFormatter overall;
+    
+    InversesFormatter(GroupFormatter overall) {
+        this.overall = overall;
     }
 
     @Override
     public StringBuilder format(Group group) {
         StringBuilder sb = new StringBuilder();
-        try {
-           sb.append("Inverses: \n");
-           
-           Map<Element, Element> inv = (Map<Element, Element>) group.getProperty(GroupProperty.Inverses);
-           for(Element g : inv.keySet()){
-               sb.append(g);
-               sb.append(" ^(-1) = ");
-               sb.append(inv.get(g));
-               sb.append("\n");
-           } 
-            
-        } catch (EvaluationException ex) {
-            String mess = "failed to calculate inverses";
-            sb.append(mess);
-            Logger.getLogger(InversesFormatter.class.getName()).log(Level.SEVERE, mess, ex);
+        if(this.overall.isVerbose()){
+            try {
+               sb.append("Inverses: \n");
+
+               Map<Element, Element> inv = (Map<Element, Element>) group.getProperty(GroupProperty.Inverses);
+               for(Element g : inv.keySet()){
+                   sb.append(g);
+                   sb.append(" ^(-1) = ");
+                   sb.append(inv.get(g));
+                   sb.append("\n");
+               } 
+
+            } catch (EvaluationException ex) {
+                String mess = "failed to calculate inverses";
+                sb.append(mess);
+                Logger.getLogger(InversesFormatter.class.getName()).log(Level.SEVERE, mess, ex);
+            }
         }
         return sb;
     }

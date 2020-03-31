@@ -31,7 +31,10 @@ import nl.fh.group.Element;
  */
 public class ConjugationClassesFormatter implements ItemFormatter {
 
-    public ConjugationClassesFormatter() {
+    private final GroupFormatter overall;
+
+    ConjugationClassesFormatter(GroupFormatter overall) {
+        this.overall = overall;
     }
 
     @Override
@@ -45,8 +48,11 @@ public class ConjugationClassesFormatter implements ItemFormatter {
             
             reportTotalNumberOfClasses(sb, conj);
             reportProfile(sb, profile);
-            for(Set<Element> conjClass : conj){
-                reportConjugationClass(sb, g, conjClass, conjOrder.get(conjClass));
+            
+            if(this.overall.isVerbose()){
+                for(Set<Element> conjClass : conj){
+                    reportConjugationClass(sb, g, conjClass, conjOrder.get(conjClass));
+                }
             }
                 
         } catch (EvaluationException ex) {
@@ -76,8 +82,8 @@ public class ConjugationClassesFormatter implements ItemFormatter {
                 sb.append(profile.get(order).get(size));
                 sb.append("\n");
             }
-            sb.append("\n");
         }
+        sb.append("\n");
     }
 
     private void reportConjugationClass(StringBuilder sb, Group g, Set<Element> conjClass, int order) throws EvaluationException {        

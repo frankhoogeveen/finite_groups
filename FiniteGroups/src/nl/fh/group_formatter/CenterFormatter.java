@@ -16,7 +16,6 @@
  */
 package nl.fh.group_formatter;
 
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.group.Group;
@@ -31,7 +30,10 @@ import nl.fh.group_classifier.GroupClassifier;
  */
 public class CenterFormatter implements ItemFormatter {
 
-    public CenterFormatter() {
+    private final GroupFormatter overall;
+
+    CenterFormatter(GroupFormatter overall) {
+        this.overall = overall;
     }
 
     @Override
@@ -48,12 +50,15 @@ public class CenterFormatter implements ItemFormatter {
             sb.append(GroupClassifier.getInstance().identify(center));            
             sb.append("\n");
             sb.append("   ");
-            for(Element z : center){
-                sb.append(z.toString());
-                sb.append(" ");
+            
+            if(this.overall.isVerbose()){
+                for(Element z : center){
+                    sb.append(z.toString());
+                    sb.append(" ");
+                }
+                sb.append("\n");
             }
-            sb.append("\n");
-                   
+
         } catch (EvaluationException ex) {
             String mess = "cannot retrieve the center";
             Logger.getLogger(CenterFormatter.class.getName()).log(Level.SEVERE, mess, ex);

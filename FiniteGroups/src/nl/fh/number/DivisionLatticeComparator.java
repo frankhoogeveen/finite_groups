@@ -14,24 +14,40 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_calculators;
+package nl.fh.number;
 
-import java.util.HashMap;
-import nl.fh.calculator.EvaluationException;
-import nl.fh.group.Element;
-import nl.fh.group.Multiplicator;
+import nl.fh.lattice.LatticeComparator;
+import nl.fh.lattice.LatticeComparison;
 
 /**
  *
- * Implements group multiplication by table look-up
+ *  Comparator on the division lattice of the integers
+ * 
+ *  t1 < t2 iff t1 divides t2
  * 
  * @author frank
  */
-public class GroupTable extends HashMap<Element, HashMap<Element, Element>> implements Multiplicator<Element>{
+public class DivisionLatticeComparator implements LatticeComparator<Integer> {
 
     @Override
-    public Element getProduct(Element factor1, Element factor2) throws EvaluationException {
+    public LatticeComparison compare(Integer t1, Integer t2) {
+        if((t1 < 1)||(t2 < 1)){
+            throw new IllegalArgumentException();
+        }
         
-        return this.get(factor1).get(factor2);
+        if(t1.equals(t2)){
+            return LatticeComparison.Equal;
+        }
+        
+        if(t1 % t2 == 0){
+            return LatticeComparison.Greater;
+        }
+        
+         if(t2 % t1 == 0){
+            return LatticeComparison.Smaller;
+        }
+         
+        return LatticeComparison.Unrelated;
     }
+    
 }

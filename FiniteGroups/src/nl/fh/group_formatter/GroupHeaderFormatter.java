@@ -28,6 +28,10 @@ import nl.fh.group_calculators.GroupProperty;
  */
 public class GroupHeaderFormatter implements ItemFormatter {
     private final int PAGE_WIDTH = 80;
+
+    GroupHeaderFormatter(GroupFormatter aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     @Override
     public StringBuilder format(Group g) {

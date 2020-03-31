@@ -72,7 +72,8 @@ public class GroupClassifier {
             case 13 : return "C13";
             case 14 : return classify14(group);
             case 15 : return "C15";
-            case 16 : return classify16(group);   
+            case 16 : return classify16(group);
+            case 17 : return "C17";
             
             default : return UNKNOWN;
         }
@@ -184,13 +185,17 @@ public class GroupClassifier {
         if(getCount(4, 4, profile) == 1){ return "SD4";}  
         if(getCount(4, 2, profile) == 4){ return "G16_1";}
         if(getCount(4, 2, profile) == 3){ return "G16_2";}
+        if(getCount(4, 2, profile) == 6){ return classifySubcase16(group);}
 
+        return ERROR;
+    } 
+
+    private String classifySubcase16(Group group) throws EvaluationException {
         Group ab = (Group) group.getProperty(GroupProperty.Abelianization);
         switch(identify(ab)){
             case "C2xC2xC2" : return "Q2xC2";
             case "C4xC2"    : return "MC(4,4,3)";
         }
-
         return ERROR;
-    } 
+    }
 }

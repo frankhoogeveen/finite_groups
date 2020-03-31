@@ -49,5 +49,4 @@ public class PrimeFactorsTest {
         assertEquals((int)1, (int)factorization.get(3));
         assertEquals((int)1, (int)factorization.get(191));
     }
-    
 }
