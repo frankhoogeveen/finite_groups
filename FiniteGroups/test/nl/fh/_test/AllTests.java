@@ -21,7 +21,7 @@ import nl.fh.calculators_test.*;
 import nl.fh.classifier_test.ClassifierTest;
 import nl.fh.group_test.*;
 import nl.fh.homomorphism_test.*;
-import nl.fh.lattice.LatticeTest;
+import nl.fh.lattice_test.LatticeTest;
 import nl.fh.numbers_test.*;
 import nl.fh.subgroups_test.*;
 import org.junit.After;

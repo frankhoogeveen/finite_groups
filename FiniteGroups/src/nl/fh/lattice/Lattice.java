@@ -26,7 +26,7 @@ import java.util.Set;
  * 
  * @author frank
  */
-public interface Lattice<T> {
+public interface Lattice<T> extends LatticeComparator<T> {
     
     /**
      * 

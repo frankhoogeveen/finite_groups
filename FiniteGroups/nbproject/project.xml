@@ -23,8 +23,12 @@
             <word>enum</word>
             <word>Erathostenes</word>
             <word>Euclid's</word>
+            <word>https</word>
             <word>multiplicator</word>
             <word>multisets</word>
+            <word>org</word>
+            <word>wiki</word>
+            <word>wikipedia</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

@@ -30,6 +30,7 @@ import nl.fh.lattice.LatticeComparison;
  * This implementation is not optimized for time, neither for space efficiency.
  * 
  * @author frank
+ * @param <T>
  */
 public class ConcreteLattice<T> implements Lattice<T> {
 
@@ -61,27 +62,28 @@ public class ConcreteLattice<T> implements Lattice<T> {
     }
     
     @Override
+    public LatticeComparison compare(T t1, T t2) {
+        return this.comparator.compare(t1, t2);
+    }
+    
+    @Override
     public boolean belowEqual(T t1, T t2) {
-        LatticeComparison comp = this.comparator.compare(t1, t2);
-        return (comp == LatticeComparison.Equal) || (comp == LatticeComparison.Smaller);
+        return LatticeComparison.belowEqual(this.comparator.compare(t1, t2));
     }
 
     @Override
     public boolean below(T t1, T t2) {
-        LatticeComparison comp = this.comparator.compare(t1, t2);
-        return (comp == LatticeComparison.Smaller);
+        return LatticeComparison.below(this.comparator.compare(t1, t2));
     }
 
     @Override
     public boolean aboveEqual(T t1, T t2) {
-        LatticeComparison comp = this.comparator.compare(t1, t2);
-        return (comp == LatticeComparison.Equal) || (comp == LatticeComparison.Greater);
+        return LatticeComparison.aboveEqual(this.comparator.compare(t1, t2));
     }
 
     @Override
     public boolean above(T t1, T t2) {
-        LatticeComparison comp = this.comparator.compare(t1, t2);
-        return (comp == LatticeComparison.Greater);
+        return LatticeComparison.aboveEqual(this.comparator.compare(t1, t2));
     }
 
     @Override

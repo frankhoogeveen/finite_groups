@@ -26,5 +26,59 @@ public enum LatticeComparison {
     Greater,
     Smaller,
     Equal,
-    Unrelated
+    Unrelated;
+    
+    /**
+     *
+     * @param comparison
+     * @return
+     */
+    public static boolean above(LatticeComparison comparison){
+        if(comparison.equals(Greater)){
+            return true;
+        } 
+        return false;
+    }
+    
+    /**
+     *
+     * @param comparison
+     * @return
+     */
+    public static boolean aboveEqual(LatticeComparison comparison){
+        if(comparison.equals(Greater)){
+            return true;
+        } 
+        if(comparison.equals(Equal)){
+            return true;
+        } 
+        return false;
+    }
+    
+        /**
+     *
+     * @param comparison
+     * @return
+     */
+    public static boolean below(LatticeComparison comparison){
+        if(comparison.equals(Smaller)){
+            return true;
+        } 
+        return false;
+    }
+    
+    /**
+     *
+     * @param comparison
+     * @return
+     */
+    public static boolean belowEqual(LatticeComparison comparison){
+        if(comparison.equals(Smaller)){
+            return true;
+        } 
+        if(comparison.equals(Equal)){
+            return true;
+        } 
+        return false;
+    }
 }

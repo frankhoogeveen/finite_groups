@@ -14,43 +14,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_formatter;
+package nl.fh.group_calculators;
 
+import nl.fh.lattice_implementations.LatticeTables;
+import nl.fh.lattice_implementations.SetComparator;
 import java.util.Set;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
-import nl.fh.group_calculators.GroupProperty;
 import nl.fh.lattice.Lattice;
+import nl.fh.lattice.LatticeComparator;
 
 /**
- *
+ * Return the subgroup lattice of a group as a lattice of sets
+ * 
  * @author frank
  */
-public class SubgroupFormatter implements ItemFormatter {
-
-    SubgroupFormatter(GroupFormatter overall) {
-    }
+public class SubgroupSetLatticeCalculator implements Calculator<Group> {
 
     @Override
-    public StringBuilder format(Group g) {
-        StringBuilder sb = new StringBuilder();
+    public Lattice<Set<Element>> evaluate(Group group) throws EvaluationException {
         
-        try {
-            Lattice<Set<Element>> subgroupLattice = (Lattice<Set<Element>>) g.getProperty(GroupProperty.SubgroupSetLattice);
-           
-            sb.append("number of subgroups: ");
-            sb.append(subgroupLattice.size());
-            sb.append("\n");
-            
-        } catch (EvaluationException ex) {
-            String mess = "could not calculate subgroup lattice";
-            Logger.getLogger(SubgroupFormatter.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       
-        return sb;
+        Set<Set<Element>> sets = (Set<Set<Element>>) group.getProperty(GroupProperty.SubgroupSets);
+        LatticeComparator comp = SetComparator.getInstance();
+        
+        return new LatticeTables<Set<Element>>(sets, comp);
     }
-    
 }
