@@ -60,7 +60,7 @@ public class SubgroupSetsCalculator implements Calculator<Group> {
                 if(!set.contains(g)){
                     Set<Element> expanded = new HashSet(set);
                     expanded.add(g);
-                    expanded = group.generateFrom(expanded);
+                    expanded = group.generateSubset(expanded);
                     next.add(expanded);
                 }
             }

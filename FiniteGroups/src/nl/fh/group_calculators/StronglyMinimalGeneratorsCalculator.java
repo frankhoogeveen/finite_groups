@@ -93,7 +93,7 @@ class StronglyMinimalGeneratorsCalculator implements Calculator<Group> {
                 
                 Set<Element> value = new HashSet<Element>(map.get(set));
                 value.add(c);
-                value = group.generateFrom(value);
+                value = group.generateSubset(value);
                 
                 result.put(key, value);
             }

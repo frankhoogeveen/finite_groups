@@ -16,9 +16,11 @@
  */
 package nl.fh.lattice_test;
 
+import java.util.HashMap;
 import nl.fh.number.DivisionLatticeComparator;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import nl.fh.lattice.Lattice;
 import nl.fh.lattice.LatticeComparator;
@@ -26,6 +28,7 @@ import nl.fh.lattice.LatticeComparison;
 import nl.fh.lattice_implementations.ConcreteLattice;
 import nl.fh.lattice_implementations.DualComparator;
 import nl.fh.lattice_implementations.LatticeTables;
+import nl.fh.lattice_implementations.MappedLattice;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -182,4 +185,74 @@ public class LatticeTest {
         }
     }
 
+            
+    @Test
+    public void IntegerMappedLatticeTest(){
+        // pack all divisors of 60 in a set
+        Set<Integer> set = new HashSet<Integer>();
+        set.add(5);
+        set.add(10);
+        set.add(20);
+        set.add(12);
+        set.add(3);
+        set.add(6);
+        set.add(2);
+        set.add(4);
+        set.add(1);
+        set.add(15);
+        set.add(60);
+        set.add(30);
+        
+        LatticeComparator<Integer> comp = new DivisionLatticeComparator();
+        Lattice<Integer> inner = new ConcreteLattice(set, comp);
+        
+        Map<String, Integer> map = new HashMap<String, Integer>();
+        for(Integer n : set){
+            map.put(Integer.toString(n), n);
+        }
+        
+        Lattice<String> lattice = new MappedLattice(inner, map);
+        
+        assertEquals(12, lattice.size());
+        assertEquals("1", lattice.bottom());
+        assertEquals("60", lattice.top());
+        
+        assertTrue(lattice.below("2", "12"));
+        assertTrue(lattice.belowEqual("6","6"));
+        assertTrue(lattice.above("15", "3"));
+        assertTrue(lattice.aboveEqual("6","6"));
+        
+        assertTrue(lattice.covers("6", "12"));
+        assertFalse(lattice.covers("3","12"));
+        
+        assertEquals("2", lattice.meet("6", "10"));
+        assertEquals("1", lattice.meet("3", "10"));
+        
+        assertEquals("30", lattice.join("10", "6"));
+        assertEquals("60", lattice.join("5", "12"));
+        
+        assertTrue(lattice.covers("4", "12"));
+        
+        Set<String> expected = new HashSet<String>();
+        expected.add("6");
+        expected.add("4");
+        assertEquals(expected, lattice.coveredSet("12"));
+        
+        expected = new HashSet<String>();
+        expected.add("12");
+        expected.add("30");
+        assertEquals(expected, lattice.coveringSet("6"));
+        
+        List<String> list = lattice.sort();
+        
+        for(int i = 0; i< list.size(); i++){
+            for(int j = i+1; j < list.size(); j++){
+                String ni = list.get(i);
+                String nj = list.get(j);
+                
+                LatticeComparison c = lattice.compare(ni, nj);
+                assertTrue(c.equals(LatticeComparison.Unrelated)||c.equals(LatticeComparison.Greater));
+            }
+        }
+    }
 }
