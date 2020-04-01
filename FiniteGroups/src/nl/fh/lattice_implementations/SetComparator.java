@@ -16,16 +16,44 @@
  */
 package nl.fh.lattice_implementations;
 
+import java.util.Set;
 import nl.fh.lattice.LatticeComparator;
+import nl.fh.lattice.LatticeComparison;
 
 /**
- *
+ * Comparator on the Lattice of Sets with the inclusion relation
+ * 
+ * 
  * @author frank
  */
-public class SetComparator {
+public class SetComparator implements LatticeComparator<Set<Object>> {
+    private static SetComparator instance = null;
 
-    public static LatticeComparator getInstance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private SetComparator(){
+        
     }
     
+    public static SetComparator getInstance() {
+        if(instance == null){
+            instance = new SetComparator();
+        }
+        return instance;
+    }
+
+    @Override
+    public LatticeComparison compare(Set<Object> t1, Set<Object> t2) {
+        if(t1.equals(t2)){
+            return LatticeComparison.Equal;
+        }
+        
+        if(t1.containsAll(t2)){
+            return LatticeComparison.Greater;
+        }
+        
+        if(t2.containsAll(t1)){
+            return LatticeComparison.Smaller;
+        }
+        
+        return LatticeComparison.Unrelated;
+    }
 }

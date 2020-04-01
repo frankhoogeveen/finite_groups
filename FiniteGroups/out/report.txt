@@ -5,8 +5,7 @@ C1
 Order: 1
 Is abelean: true
 center size: 1  identified as:C1
-   0mod1 
-
+   
 Total number of conjugation classes: 1
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -17,6 +16,8 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 1
 Order of outer automorphism group: 1
 number of subgroups: 1
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -24,8 +25,7 @@ C2
 Order: 2
 Is abelean: true
 center size: 2  identified as:C2
-   0mod2 1mod2 
-
+   
 Total number of conjugation classes: 2
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -37,6 +37,9 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 1
 Order of outer automorphism group: 1
 number of subgroups: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -44,8 +47,7 @@ C3
 Order: 3
 Is abelean: true
 center size: 3  identified as:C3
-   0mod3 1mod3 2mod3 
-
+   
 Total number of conjugation classes: 3
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -57,6 +59,9 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 2
 Order of outer automorphism group: 2
 number of subgroups: 2
+  subgroup of size: 3
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -64,8 +69,7 @@ C4
 Order: 4
 Is abelean: true
 center size: 4  identified as:C4
-   0mod4 1mod4 2mod4 3mod4 
-
+   
 Total number of conjugation classes: 4
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -78,6 +82,10 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 2
 Order of outer automorphism group: 2
 number of subgroups: 3
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -85,8 +93,7 @@ C2xC2
 Order: 4
 Is abelean: true
 center size: 4  identified as:C2xC2
-   (0mod2 ,1mod2) (0mod2 ,0mod2) (1mod2 ,1mod2) (1mod2 ,0mod2) 
-
+   
 Total number of conjugation classes: 4
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -98,6 +105,12 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 6
 Order of outer automorphism group: 6
 number of subgroups: 5
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -105,8 +118,7 @@ C5
 Order: 5
 Is abelean: true
 center size: 5  identified as:C5
-   0mod5 1mod5 2mod5 3mod5 4mod5 
-
+   
 Total number of conjugation classes: 5
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -118,6 +130,9 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 4
 Order of outer automorphism group: 4
 number of subgroups: 2
+  subgroup of size: 5
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -125,8 +140,7 @@ C6
 Order: 6
 Is abelean: true
 center size: 6  identified as:C6
-   0mod6 1mod6 2mod6 3mod6 4mod6 5mod6 
-
+   
 Total number of conjugation classes: 6
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -140,6 +154,11 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 2
 Order of outer automorphism group: 2
 number of subgroups: 4
+  subgroup of size: 6
+  subgroup of size: 3
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -147,8 +166,7 @@ S3
 Order: 6
 Is abelean: false
 center size: 1  identified as:C1
-   [0, 1, 2] 
-
+   
 Total number of conjugation classes: 3
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -161,6 +179,13 @@ Order of inner automorphism group: 6   classified as: S3
 Order of automorphism group: 6
 Order of outer automorphism group: 1
 number of subgroups: 6
+  subgroup of size: 6
+  subgroup of size: 3
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -168,8 +193,7 @@ C7
 Order: 7
 Is abelean: true
 center size: 7  identified as:C7
-   4mod7 5mod7 6mod7 0mod7 1mod7 2mod7 3mod7 
-
+   
 Total number of conjugation classes: 7
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -181,6 +205,9 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 6
 Order of outer automorphism group: 6
 number of subgroups: 2
+  subgroup of size: 7
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -188,8 +215,7 @@ C8
 Order: 8
 Is abelean: true
 center size: 8  identified as:C8
-   0mod8 1mod8 2mod8 3mod8 4mod8 5mod8 6mod8 7mod8 
-
+   
 Total number of conjugation classes: 8
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -203,6 +229,11 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 4
 Order of outer automorphism group: 4
 number of subgroups: 4
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -210,8 +241,7 @@ C4xC2
 Order: 8
 Is abelean: true
 center size: 8  identified as:C4xC2
-   (0mod4 ,0mod2) (1mod4 ,1mod2) (0mod4 ,1mod2) (3mod4 ,0mod2) (2mod4 ,0mod2) (3mod4 ,1mod2) (1mod4 ,0mod2) (2mod4 ,1mod2) 
-
+   
 Total number of conjugation classes: 8
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -224,6 +254,15 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 8
 Order of outer automorphism group: 8
 number of subgroups: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -231,8 +270,7 @@ C2xC2xC2
 Order: 8
 Is abelean: true
 center size: 8  identified as:C2xC2xC2
-   (1mod2 ,0mod2 ,1mod2) (1mod2 ,0mod2 ,0mod2) (0mod2 ,0mod2 ,1mod2) (1mod2 ,1mod2 ,1mod2) (0mod2 ,0mod2 ,0mod2) (1mod2 ,1mod2 ,0mod2) (0mod2 ,1mod2 ,1mod2) (0mod2 ,1mod2 ,0mod2) 
-
+   
 Total number of conjugation classes: 8
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -244,6 +282,23 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 168
 Order of outer automorphism group: 168
 number of subgroups: 16
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -251,8 +306,7 @@ D4
 Order: 8
 Is abelean: false
 center size: 2  identified as:C2
-   aa 1 
-
+   
 Total number of conjugation classes: 5
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -266,6 +320,17 @@ Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 8
 Order of outer automorphism group: 2
 number of subgroups: 10
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -273,8 +338,7 @@ Q2
 Order: 8
 Is abelean: false
 center size: 2  identified as:C2
-   aa 1 
-
+   
 Total number of conjugation classes: 5
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -287,6 +351,13 @@ Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 24
 Order of outer automorphism group: 6
 number of subgroups: 6
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -294,8 +365,7 @@ C9
 Order: 9
 Is abelean: true
 center size: 9  identified as:C9
-   0mod9 1mod9 2mod9 3mod9 4mod9 5mod9 6mod9 7mod9 8mod9 
-
+   
 Total number of conjugation classes: 9
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -308,6 +378,10 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 6
 Order of outer automorphism group: 6
 number of subgroups: 3
+  subgroup of size: 9
+  subgroup of size: 3
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -315,8 +389,7 @@ C3xC3
 Order: 9
 Is abelean: true
 center size: 9  identified as:C3xC3
-   (2mod3 ,0mod3) (1mod3 ,0mod3) (2mod3 ,1mod3) (0mod3 ,0mod3) (2mod3 ,2mod3) (1mod3 ,1mod3) (0mod3 ,1mod3) (1mod3 ,2mod3) (0mod3 ,2mod3) 
-
+   
 Total number of conjugation classes: 9
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -328,6 +401,13 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 48
 Order of outer automorphism group: 48
 number of subgroups: 6
+  subgroup of size: 9
+  subgroup of size: 3
+  subgroup of size: 3
+  subgroup of size: 3
+  subgroup of size: 3
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -335,8 +415,7 @@ C10
 Order: 10
 Is abelean: true
 center size: 10  identified as:C10
-   3mod10 4mod10 5mod10 6mod10 7mod10 8mod10 9mod10 0mod10 1mod10 2mod10 
-
+   
 Total number of conjugation classes: 10
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -350,6 +429,11 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 4
 Order of outer automorphism group: 4
 number of subgroups: 4
+  subgroup of size: 10
+  subgroup of size: 2
+  subgroup of size: 5
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -357,8 +441,7 @@ D5
 Order: 10
 Is abelean: false
 center size: 1  identified as:C1
-   1 
-
+   
 Total number of conjugation classes: 4
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -371,6 +454,15 @@ Order of inner automorphism group: 10   classified as: D5
 Order of automorphism group: 20
 Order of outer automorphism group: 2
 number of subgroups: 8
+  subgroup of size: 10
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 5
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -378,8 +470,7 @@ C11
 Order: 11
 Is abelean: true
 center size: 11  identified as:C11
-   8mod11 9mod11 10mod11 0mod11 1mod11 2mod11 3mod11 4mod11 5mod11 6mod11 7mod11 
-
+   
 Total number of conjugation classes: 11
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -391,6 +482,9 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 10
 Order of outer automorphism group: 10
 number of subgroups: 2
+  subgroup of size: 11
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -398,8 +492,7 @@ C12
 Order: 12
 Is abelean: true
 center size: 12  identified as:C12
-   0mod12 1mod12 2mod12 3mod12 4mod12 5mod12 6mod12 7mod12 8mod12 9mod12 10mod12 11mod12 
-
+   
 Total number of conjugation classes: 12
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -415,6 +508,13 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 4
 Order of outer automorphism group: 4
 number of subgroups: 6
+  subgroup of size: 12
+  subgroup of size: 6
+  subgroup of size: 3
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -422,8 +522,7 @@ C3xC2xC2
 Order: 12
 Is abelean: true
 center size: 12  identified as:C3xC2xC2
-   (0mod3 ,0mod2 ,0mod2) (1mod3 ,1mod2 ,0mod2) (0mod3 ,1mod2 ,1mod2) (1mod3 ,0mod2 ,0mod2) (0mod3 ,0mod2 ,1mod2) (2mod3 ,1mod2 ,0mod2) (1mod3 ,1mod2 ,1mod2) (2mod3 ,0mod2 ,0mod2) (1mod3 ,0mod2 ,1mod2) (2mod3 ,1mod2 ,1mod2) (2mod3 ,0mod2 ,1mod2) (0mod3 ,1mod2 ,0mod2) 
-
+   
 Total number of conjugation classes: 12
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -437,6 +536,17 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 12
 Order of outer automorphism group: 12
 number of subgroups: 10
+  subgroup of size: 12
+  subgroup of size: 6
+  subgroup of size: 6
+  subgroup of size: 4
+  subgroup of size: 6
+  subgroup of size: 3
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -444,8 +554,7 @@ D6
 Order: 12
 Is abelean: false
 center size: 2  identified as:C2
-   1 aaa 
-
+   
 Total number of conjugation classes: 6
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -460,6 +569,23 @@ Order of inner automorphism group: 6   classified as: S3
 Order of automorphism group: 12
 Order of outer automorphism group: 2
 number of subgroups: 16
+  subgroup of size: 12
+  subgroup of size: 4
+  subgroup of size: 6
+  subgroup of size: 6
+  subgroup of size: 6
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 3
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -467,8 +593,7 @@ Q3
 Order: 12
 Is abelean: false
 center size: 2  identified as:C2
-   1 aaa 
-
+   
 Total number of conjugation classes: 6
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -483,6 +608,15 @@ Order of inner automorphism group: 6   classified as: S3
 Order of automorphism group: 12
 Order of outer automorphism group: 2
 number of subgroups: 8
+  subgroup of size: 12
+  subgroup of size: 4
+  subgroup of size: 6
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 3
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -490,8 +624,7 @@ A4
 Order: 12
 Is abelean: false
 center size: 1  identified as:C1
-   [0, 1, 2, 3] 
-
+   
 Total number of conjugation classes: 4
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -504,6 +637,17 @@ Order of inner automorphism group: 12   classified as: A4
 Order of automorphism group: 24
 Order of outer automorphism group: 2
 number of subgroups: 10
+  subgroup of size: 12
+  subgroup of size: 3
+  subgroup of size: 3
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 3
+  subgroup of size: 2
+  subgroup of size: 3
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -511,8 +655,7 @@ C13
 Order: 13
 Is abelean: true
 center size: 13  identified as:C13
-   0mod13 1mod13 2mod13 3mod13 4mod13 5mod13 6mod13 7mod13 8mod13 9mod13 10mod13 11mod13 12mod13 
-
+   
 Total number of conjugation classes: 13
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -524,6 +667,9 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 12
 Order of outer automorphism group: 12
 number of subgroups: 2
+  subgroup of size: 13
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -531,8 +677,7 @@ C14
 Order: 14
 Is abelean: true
 center size: 14  identified as:C14
-   0mod14 1mod14 2mod14 3mod14 4mod14 5mod14 6mod14 7mod14 8mod14 9mod14 10mod14 11mod14 12mod14 13mod14 
-
+   
 Total number of conjugation classes: 14
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -546,6 +691,11 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 6
 Order of outer automorphism group: 6
 number of subgroups: 4
+  subgroup of size: 14
+  subgroup of size: 2
+  subgroup of size: 7
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -553,8 +703,7 @@ D7
 Order: 14
 Is abelean: false
 center size: 1  identified as:C1
-   1 
-
+   
 Total number of conjugation classes: 5
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -567,6 +716,17 @@ Order of inner automorphism group: 14   classified as: D7
 Order of automorphism group: 42
 Order of outer automorphism group: 3
 number of subgroups: 10
+  subgroup of size: 14
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 7
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -574,8 +734,7 @@ C15
 Order: 15
 Is abelean: true
 center size: 15  identified as:C15
-   0mod15 1mod15 2mod15 3mod15 4mod15 5mod15 6mod15 7mod15 8mod15 9mod15 10mod15 11mod15 12mod15 13mod15 14mod15 
-
+   
 Total number of conjugation classes: 15
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -589,6 +748,11 @@ Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 8
 Order of outer automorphism group: 8
 number of subgroups: 4
+  subgroup of size: 15
+  subgroup of size: 5
+  subgroup of size: 3
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -596,8 +760,7 @@ C16
 Order: 16
 Is abelean: true
 center size: 16  identified as:C16
-   1mod16 2mod16 3mod16 4mod16 5mod16 6mod16 7mod16 8mod16 9mod16 10mod16 11mod16 12mod16 13mod16 14mod16 15mod16 0mod16 
-
+   
 Total number of conjugation classes: 16
 number of conjugation class by size and order of the elements:
 order: 16  size: 1 count: 8
@@ -612,6 +775,12 @@ Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
 Outer automorphism group not calculated
 number of subgroups: 5
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -619,8 +788,7 @@ C8xC2
 Order: 16
 Is abelean: true
 center size: 16  identified as:C8xC2
-   (0mod8 ,0mod2) (1mod8 ,1mod2) (0mod8 ,1mod2) (4mod8 ,0mod2) (5mod8 ,1mod2) (3mod8 ,0mod2) (4mod8 ,1mod2) (2mod8 ,0mod2) (3mod8 ,1mod2) (1mod8 ,0mod2) (2mod8 ,1mod2) (7mod8 ,0mod2) (6mod8 ,0mod2) (7mod8 ,1mod2) (5mod8 ,0mod2) (6mod8 ,1mod2) 
-
+   
 Total number of conjugation classes: 16
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -634,6 +802,18 @@ Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
 Outer automorphism group not calculated
 number of subgroups: 11
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -641,8 +821,7 @@ C4xC4
 Order: 16
 Is abelean: true
 center size: 16  identified as:C4xC4
-   (0mod4 ,2mod4) (1mod4 ,3mod4) (0mod4 ,3mod4) (2mod4 ,0mod4) (3mod4 ,1mod4) (1mod4 ,0mod4) (2mod4 ,1mod4) (3mod4 ,2mod4) (0mod4 ,0mod4) (2mod4 ,2mod4) (1mod4 ,1mod4) (3mod4 ,3mod4) (0mod4 ,1mod4) (2mod4 ,3mod4) (1mod4 ,2mod4) (3mod4 ,0mod4) 
-
+   
 Total number of conjugation classes: 16
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -655,6 +834,22 @@ Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
 Outer automorphism group not calculated
 number of subgroups: 15
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -662,8 +857,7 @@ C4xC2xC2
 Order: 16
 Is abelean: true
 center size: 16  identified as:C4xC2xC2
-   (0mod4 ,0mod2 ,0mod2) (1mod4 ,1mod2 ,0mod2) (0mod4 ,1mod2 ,1mod2) (0mod4 ,1mod2 ,0mod2) (2mod4 ,0mod2 ,0mod2) (3mod4 ,1mod2 ,0mod2) (1mod4 ,0mod2 ,1mod2) (2mod4 ,1mod2 ,1mod2) (1mod4 ,0mod2 ,0mod2) (0mod4 ,0mod2 ,1mod2) (2mod4 ,1mod2 ,0mod2) (1mod4 ,1mod2 ,1mod2) (3mod4 ,0mod2 ,1mod2) (3mod4 ,0mod2 ,0mod2) (2mod4 ,0mod2 ,1mod2) (3mod4 ,1mod2 ,1mod2) 
-
+   
 Total number of conjugation classes: 16
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -676,6 +870,34 @@ Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
 Outer automorphism group not calculated
 number of subgroups: 27
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -683,8 +905,7 @@ C2xC2xC2xC2
 Order: 16
 Is abelean: true
 center size: 16  identified as:C2xC2xC2xC2
-   (0mod2 ,1mod2 ,0mod2 ,0mod2) (0mod2 ,0mod2 ,0mod2 ,1mod2) (1mod2 ,1mod2 ,0mod2 ,1mod2) (0mod2 ,1mod2 ,1mod2 ,1mod2) (0mod2 ,0mod2 ,0mod2 ,0mod2) (1mod2 ,1mod2 ,0mod2 ,0mod2) (0mod2 ,1mod2 ,1mod2 ,0mod2) (1mod2 ,0mod2 ,0mod2 ,1mod2) (0mod2 ,0mod2 ,1mod2 ,1mod2) (1mod2 ,1mod2 ,1mod2 ,1mod2) (1mod2 ,0mod2 ,0mod2 ,0mod2) (0mod2 ,0mod2 ,1mod2 ,0mod2) (1mod2 ,1mod2 ,1mod2 ,0mod2) (1mod2 ,0mod2 ,1mod2 ,1mod2) (1mod2 ,0mod2 ,1mod2 ,0mod2) (0mod2 ,1mod2 ,0mod2 ,1mod2) 
-
+   
 Total number of conjugation classes: 16
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -696,6 +917,74 @@ Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
 Outer automorphism group not calculated
 number of subgroups: 67
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -703,8 +992,7 @@ D4xC2
 Order: 16
 Is abelean: false
 center size: 4  identified as:C2xC2
-   (1 ,0mod2) (aa ,1mod2) (aa ,0mod2) (1 ,1mod2) 
-
+   
 Total number of conjugation classes: 10
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -718,6 +1006,42 @@ Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 64
 Order of outer automorphism group: 16
 number of subgroups: 35
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -725,8 +1049,7 @@ Q2xC2
 Order: 16
 Is abelean: false
 center size: 4  identified as:C2xC2
-   (1 ,0mod2) (aa ,1mod2) (aa ,0mod2) (1 ,1mod2) 
-
+   
 Total number of conjugation classes: 10
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -739,6 +1062,26 @@ Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 192
 Order of outer automorphism group: 48
 number of subgroups: 19
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -746,8 +1089,7 @@ D8
 Order: 16
 Is abelean: false
 center size: 2  identified as:C2
-   aaaa 1 
-
+   
 Total number of conjugation classes: 7
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -762,6 +1104,26 @@ Order of inner automorphism group: 8   classified as: D4
 Order of automorphism group: 32
 Order of outer automorphism group: 4
 number of subgroups: 19
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 8
+  subgroup of size: 2
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -769,8 +1131,7 @@ Q4
 Order: 16
 Is abelean: false
 center size: 2  identified as:C2
-   aaaa 1 
-
+   
 Total number of conjugation classes: 7
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -785,6 +1146,18 @@ Order of inner automorphism group: 8   classified as: D4
 Order of automorphism group: 32
 Order of outer automorphism group: 4
 number of subgroups: 11
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -792,8 +1165,7 @@ M4
 Order: 16
 Is abelean: false
 center size: 4  identified as:C4
-   rrrr rrrrrr 1 rr 
-
+   
 Total number of conjugation classes: 10
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -809,6 +1181,18 @@ Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 16
 Order of outer automorphism group: 4
 number of subgroups: 11
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -816,8 +1200,7 @@ SD4
 Order: 16
 Is abelean: false
 center size: 2  identified as:C2
-   rrrr 1 
-
+   
 Total number of conjugation classes: 7
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -833,6 +1216,22 @@ Order of inner automorphism group: 8   classified as: D4
 Order of automorphism group: 16
 Order of outer automorphism group: 2
 number of subgroups: 15
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -840,8 +1239,7 @@ MC(4,4,3)
 Order: 16
 Is abelean: false
 center size: 4  identified as:C2xC2
-   aabb aa bb 1 
-
+   
 Total number of conjugation classes: 10
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -854,6 +1252,22 @@ Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 32
 Order of outer automorphism group: 8
 number of subgroups: 15
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -861,8 +1275,7 @@ G16_1
 Order: 16
 Is abelean: false
 center size: 4  identified as:C2xC2
-   1 aa aab b 
-
+   
 Total number of conjugation classes: 10
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -876,6 +1289,30 @@ Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 32
 Order of outer automorphism group: 8
 number of subgroups: 23
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -883,8 +1320,7 @@ G16_2
 Order: 16
 Is abelean: false
 center size: 4  identified as:C4
-   c aac aa 1 
-
+   
 Total number of conjugation classes: 10
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
@@ -899,6 +1335,30 @@ Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 48
 Order of outer automorphism group: 12
 number of subgroups: 23
+  subgroup of size: 16
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 8
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 4
+  subgroup of size: 4
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 2
+  subgroup of size: 1
+
 
 
 ================================================================================
@@ -906,8 +1366,7 @@ C17
 Order: 17
 Is abelean: true
 center size: 17  identified as:C17
-   6mod17 7mod17 8mod17 9mod17 10mod17 11mod17 12mod17 13mod17 14mod17 15mod17 16mod17 0mod17 1mod17 2mod17 3mod17 4mod17 5mod17 
-
+   
 Total number of conjugation classes: 17
 number of conjugation class by size and order of the elements:
 order: 17  size: 1 count: 16
@@ -919,5 +1378,8 @@ Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
 Outer automorphism group not calculated
 number of subgroups: 2
+  subgroup of size: 17
+  subgroup of size: 1
+
 
 --- end of  SmallGroupCatalog [43 items] ---

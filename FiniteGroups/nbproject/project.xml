@@ -20,6 +20,7 @@
             <word>automorphisms</word>
             <word>co</word>
             <word>cosets</word>
+            <word>der</word>
             <word>enum</word>
             <word>Erathostenes</word>
             <word>Euclid's</word>
@@ -27,6 +28,7 @@
             <word>multiplicator</word>
             <word>multisets</word>
             <word>org</word>
+            <word>SmallGroupCatalog</word>
             <word>wiki</word>
             <word>wikipedia</word>
         </spellchecker-wordlist>

@@ -44,6 +44,7 @@ public enum HomomorphismProperty implements Property {
     IsAuto(new IsAutoCalculator()),
     IsEmbedding(new IsEmbeddingCalculator()),
     IsNormal(new IsNormalCalculator()),
+    IsSylow(new IsSylowCalculator()),
     
     KernelSet(new KernelSetCalculator()),
     KernelGroup(new KernelGroupCalculator()),

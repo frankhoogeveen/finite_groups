@@ -16,6 +16,7 @@
  */
 package nl.fh.group_formatter;
 
+import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,10 +40,20 @@ public class SubgroupFormatter implements ItemFormatter {
         StringBuilder sb = new StringBuilder();
         
         try {
-            Lattice<Set<Element>> subgroupLattice = (Lattice<Set<Element>>) g.getProperty(GroupProperty.SubgroupSetLattice);
+            Lattice<Set<Element>> subgroupSetLattice = (Lattice<Set<Element>>) g.getProperty(GroupProperty.SubgroupSetLattice);
            
-            sb.append("number of subgroups: ");
-            sb.append(subgroupLattice.size());
+            sb.append("\nnumber of subgroups: ");
+            sb.append(subgroupSetLattice.size());
+            sb.append("\n");
+            
+            List<Set<Element>> list = subgroupSetLattice.sort();
+            
+            for(Set<Element> set : list){
+                sb.append("  subgroup of size: ");
+                sb.append(set.size());
+                sb.append("\n");
+            }
+            
             sb.append("\n");
             
         } catch (EvaluationException ex) {

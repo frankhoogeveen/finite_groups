@@ -29,8 +29,8 @@ import nl.fh.group_classifier.GroupClassifier;
  */
 public class InnerAutomorphismGroupFormatter implements ItemFormatter {
 
-    InnerAutomorphismGroupFormatter(GroupFormatter aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    InnerAutomorphismGroupFormatter(GroupFormatter overall) {
+       
     }
 
     @Override
