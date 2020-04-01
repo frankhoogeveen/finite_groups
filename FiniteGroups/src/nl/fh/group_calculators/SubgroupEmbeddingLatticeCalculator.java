@@ -16,9 +16,17 @@
  */
 package nl.fh.group_calculators;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
+import nl.fh.homomorphism.GroupHomomorphism;
+import nl.fh.homomorphism.HomomorphismException;
+import nl.fh.lattice.Lattice;
+import nl.fh.lattice_implementations.MappedLattice;
 
 /**
  *
@@ -26,12 +34,22 @@ import nl.fh.group.Group;
  */
 public class SubgroupEmbeddingLatticeCalculator implements Calculator<Group> {
 
-    public SubgroupEmbeddingLatticeCalculator() {
-    }
-
     @Override
-    public Object evaluate(Group subject) throws EvaluationException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Lattice<GroupHomomorphism> evaluate(Group group) throws EvaluationException {
+        Lattice<Group> subgroups = (Lattice<Group>) group.getProperty(GroupProperty.SubgroupLattice);
+        
+        Map<GroupHomomorphism,Group> map = new HashMap<GroupHomomorphism,Group>();
+        for(Group subgroup : subgroups.sort()){
+            try {
+                map.put(group.embed(subgroup),subgroup);
+            } catch (HomomorphismException|EvaluationException ex) {
+                String mess = "could not generate embedding";
+                Logger.getLogger(SubgroupLatticeCalculator.class.getName()).log(Level.SEVERE, mess, ex);
+                throw new EvaluationException(mess);
+            }
+        }
+        
+        return new MappedLattice<GroupHomomorphism,Group>(subgroups, map);
     }
     
 }

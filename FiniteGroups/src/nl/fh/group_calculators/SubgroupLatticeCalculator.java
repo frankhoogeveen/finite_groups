@@ -16,9 +16,18 @@
  */
 package nl.fh.group_calculators;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.group.Element;
 import nl.fh.group.Group;
+import nl.fh.group.GroupException;
+import nl.fh.lattice.Lattice;
+import nl.fh.lattice_implementations.MappedLattice;
 
 /**
  *
@@ -30,8 +39,20 @@ public class SubgroupLatticeCalculator implements Calculator<Group> {
     }
 
     @Override
-    public Object evaluate(Group subject) throws EvaluationException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Lattice<Group> evaluate(Group group) throws EvaluationException {
+        Lattice<Set<Element>> sets = (Lattice<Set<Element>>) group.getProperty(GroupProperty.SubgroupSets);
+        
+        Map<Group,Set<Element>> map = new HashMap<Group,Set<Element>>();
+        for(Set<Element> set : sets.sort()){
+            try {
+                map.put(group.generateSubgroup(set),set);
+            } catch (GroupException ex) {
+                String mess = "could not generate subgroup";
+                Logger.getLogger(SubgroupLatticeCalculator.class.getName()).log(Level.SEVERE, mess, ex);
+                throw new EvaluationException(mess);
+            }
+        }
+        
+        return new MappedLattice<Group,Set<Element>>(sets, map);
     }
-    
 }

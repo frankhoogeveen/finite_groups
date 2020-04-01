@@ -35,8 +35,7 @@ import nl.fh.homomorphism.HomomorphismException;
  *
  * @author frank
  */
-public class Group extends PropertyCache<GroupProperty> 
-          implements Iterable<Element>{
+public class Group extends PropertyCache<GroupProperty> implements Iterable<Element>{
 
     /**
      * 
