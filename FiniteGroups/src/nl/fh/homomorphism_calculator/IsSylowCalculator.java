@@ -56,6 +56,11 @@ public class IsSylowCalculator implements Calculator<GroupHomomorphism> {
             return false;
         }
         
+        if(primeDecomposition.isEmpty()){
+            // to catch the case of a group with one element
+            return false;
+        }
+
         int p = primeDecomposition.keySet().iterator().next();
         
         Map<Integer, Integer> primeDecompositionCo = IntNumber.factorize(nCodomain);        

@@ -31,6 +31,7 @@
             <word>SmallGroupCatalog</word>
             <word>wiki</word>
             <word>wikipedia</word>
+            <word>xC</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

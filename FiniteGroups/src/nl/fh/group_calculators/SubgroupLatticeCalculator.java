@@ -40,7 +40,7 @@ public class SubgroupLatticeCalculator implements Calculator<Group> {
 
     @Override
     public Lattice<Group> evaluate(Group group) throws EvaluationException {
-        Lattice<Set<Element>> sets = (Lattice<Set<Element>>) group.getProperty(GroupProperty.SubgroupSets);
+        Lattice<Set<Element>> sets = (Lattice<Set<Element>>) group.getProperty(GroupProperty.SubgroupSetLattice);
         
         Map<Group,Set<Element>> map = new HashMap<Group,Set<Element>>();
         for(Set<Element> set : sets.sort()){

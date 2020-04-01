@@ -39,8 +39,6 @@ public class ConcreteLattice<T> implements Lattice<T> {
     private final DualComparator dualComparator;
 
     
-    //TODO implement tests
-    
     /**
      * 
      * @param set elements of the lattice
