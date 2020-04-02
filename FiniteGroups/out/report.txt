@@ -18,10 +18,8 @@ Order of outer automorphism group: 1
 
 number of subgroups: 1
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 
 
 
@@ -44,15 +42,13 @@ Order of outer automorphism group: 1
 
 number of subgroups: 2
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 
 
 
@@ -75,15 +71,13 @@ Order of outer automorphism group: 2
 
 number of subgroups: 2
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C3
-    is Sylow: false
 
 
 
@@ -107,20 +101,16 @@ Order of outer automorphism group: 2
 
 number of subgroups: 3
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 
 
 
@@ -143,30 +133,24 @@ Order of outer automorphism group: 6
 
 number of subgroups: 5
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 
 
 
@@ -189,15 +173,13 @@ Order of outer automorphism group: 4
 
 number of subgroups: 2
 ----subgroup of order: 5 identified as C5
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C5
-    is Sylow: false
 
 
 
@@ -222,25 +204,21 @@ Order of outer automorphism group: 2
 
 number of subgroups: 4
 ----subgroup of order: 6 identified as C6
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C2
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C3
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C6
-    is Sylow: false
 
 
 
@@ -264,32 +242,28 @@ Order of outer automorphism group: 1
 
 number of subgroups: 6
 ----subgroup of order: 6 identified as S3
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C2
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: S3
-    is Sylow: false
 
 
 
@@ -312,15 +286,13 @@ Order of outer automorphism group: 6
 
 number of subgroups: 2
 ----subgroup of order: 7 identified as C7
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C7
-    is Sylow: false
 
 
 
@@ -345,25 +317,19 @@ Order of outer automorphism group: 4
 
 number of subgroups: 4
 ----subgroup of order: 8 identified as C8
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C8
-    is Sylow: false
 
 
 
@@ -387,45 +353,33 @@ Order of outer automorphism group: 8
 
 number of subgroups: 8
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 
 
 
@@ -448,85 +402,61 @@ Order of outer automorphism group: 168
 
 number of subgroups: 16
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 
 
 
@@ -551,51 +481,35 @@ Order of outer automorphism group: 2
 
 number of subgroups: 10
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4
-    is Sylow: false
 
 
 
@@ -619,35 +533,27 @@ Order of outer automorphism group: 6
 
 number of subgroups: 6
 ----subgroup of order: 8 identified as Q2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: Q2
-    is Sylow: false
 
 
 
@@ -671,20 +577,16 @@ Order of outer automorphism group: 6
 
 number of subgroups: 3
 ----subgroup of order: 9 identified as C9
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C3
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C9
-    is Sylow: false
 
 
 
@@ -707,35 +609,28 @@ Order of outer automorphism group: 48
 
 number of subgroups: 6
 ----subgroup of order: 9 identified as C3xC3
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C3
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C3
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C3
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C3
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C3xC3
-    is Sylow: false
 
 
 
@@ -760,25 +655,21 @@ Order of outer automorphism group: 4
 
 number of subgroups: 4
 ----subgroup of order: 10 identified as C10
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C5
-    is Sylow: true
 ----subgroup of order: 5 identified as C5
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C2
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C10
-    is Sylow: false
 
 
 
@@ -802,40 +693,36 @@ Order of outer automorphism group: 2
 
 number of subgroups: 8
 ----subgroup of order: 10 identified as D5
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 5 identified as C5
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C2
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D5
-    is Sylow: false
 
 
 
@@ -858,15 +745,13 @@ Order of outer automorphism group: 10
 
 number of subgroups: 2
 ----subgroup of order: 11 identified as C11
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C11
-    is Sylow: false
 
 
 
@@ -893,35 +778,27 @@ Order of outer automorphism group: 4
 
 number of subgroups: 6
 ----subgroup of order: 12 identified as C12
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 6 identified as C6
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C4
-    is Sylow: true
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C3
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C6
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C12
-    is Sylow: false
 
 
 
@@ -946,55 +823,41 @@ Order of outer automorphism group: 12
 
 number of subgroups: 10
 ----subgroup of order: 12 identified as C3xC2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 6 identified as C6
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 6 identified as C6
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C3
-    is Sylow: true
 ----subgroup of order: 6 identified as C6
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C6
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C6
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C6
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C3xC2xC2
-    is Sylow: false
 
 
 
@@ -1020,76 +883,54 @@ Order of outer automorphism group: 2
 
 number of subgroups: 16
 ----subgroup of order: 12 identified as D6
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 6 identified as C6
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 6 identified as S3
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 6 identified as S3
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: S3
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D6
-    is Sylow: false
 
 
 
@@ -1115,42 +956,34 @@ Order of outer automorphism group: 2
 
 number of subgroups: 8
 ----subgroup of order: 12 identified as Q3
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 6 identified as C6
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C4
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: S3
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: Q3
-    is Sylow: false
 
 
 
@@ -1174,48 +1007,38 @@ Order of outer automorphism group: 2
 
 number of subgroups: 10
 ----subgroup of order: 12 identified as A4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C3
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: A4
-    is Sylow: false
 
 
 
@@ -1238,15 +1061,13 @@ Order of outer automorphism group: 12
 
 number of subgroups: 2
 ----subgroup of order: 13 identified as C13
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C13
-    is Sylow: false
 
 
 
@@ -1271,25 +1092,21 @@ Order of outer automorphism group: 6
 
 number of subgroups: 4
 ----subgroup of order: 14 identified as C14
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C7
-    is Sylow: true
 ----subgroup of order: 7 identified as C7
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C2
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C14
-    is Sylow: false
 
 
 
@@ -1313,48 +1130,44 @@ Order of outer automorphism group: 3
 
 number of subgroups: 10
 ----subgroup of order: 14 identified as D7
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 7 identified as C7
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C2
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: false
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D7
-    is Sylow: false
 
 
 
@@ -1379,25 +1192,21 @@ Order of outer automorphism group: 8
 
 number of subgroups: 4
 ----subgroup of order: 15 identified as C15
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C1
-    is Sylow: false
 ----subgroup of order: 5 identified as C5
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C3
-    is Sylow: true
 ----subgroup of order: 3 identified as C3
-    is maximal subgroup: true
+    is maximal subgroup
+    is Sylow
     is normal: true
     quotient is identified as: C5
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C15
-    is Sylow: false
 
 
 
@@ -1423,30 +1232,22 @@ Outer automorphism group not calculated
 
 number of subgroups: 5
 ----subgroup of order: 16 identified as C16
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C8
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C8
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C16
-    is Sylow: false
 
 
 
@@ -1471,60 +1272,42 @@ Outer automorphism group not calculated
 
 number of subgroups: 11
 ----subgroup of order: 16 identified as C8xC2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C8
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C8
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C8
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C8
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C8xC2
-    is Sylow: false
 
 
 
@@ -1548,80 +1331,54 @@ Outer automorphism group not calculated
 
 number of subgroups: 15
 ----subgroup of order: 16 identified as C4xC4
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC4
-    is Sylow: false
 
 
 
@@ -1645,140 +1402,94 @@ Outer automorphism group not calculated
 
 number of subgroups: 27
 ----subgroup of order: 16 identified as C4xC2xC2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2xC2
-    is Sylow: false
 
 
 
@@ -1801,340 +1512,222 @@ Outer automorphism group not calculated
 
 number of subgroups: 67
 ----subgroup of order: 16 identified as C2xC2xC2xC2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2xC2
-    is Sylow: false
 
 
 
@@ -2159,164 +1752,102 @@ Order of outer automorphism group: 16
 
 number of subgroups: 35
 ----subgroup of order: 16 identified as D4xC2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4xC2
-    is Sylow: false
 
 
 
@@ -2340,100 +1871,70 @@ Order of outer automorphism group: 48
 
 number of subgroups: 19
 ----subgroup of order: 16 identified as Q2xC2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as Q2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as Q2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as Q2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as Q2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: Q2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: Q2
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: Q2xC2
-    is Sylow: false
 
 
 
@@ -2459,88 +1960,54 @@ Order of outer automorphism group: 4
 
 number of subgroups: 19
 ----subgroup of order: 16 identified as D8
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C8
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D8
-    is Sylow: false
 
 
 
@@ -2566,56 +2033,38 @@ Order of outer automorphism group: 4
 
 number of subgroups: 11
 ----subgroup of order: 16 identified as Q4
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as Q2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as Q2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C8
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: Q4
-    is Sylow: false
 
 
 
@@ -2642,58 +2091,40 @@ Order of outer automorphism group: 4
 
 number of subgroups: 11
 ----subgroup of order: 16 identified as M4
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C8
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 8 identified as C8
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: M4
-    is Sylow: false
 
 
 
@@ -2720,72 +2151,46 @@ Order of outer automorphism group: 2
 
 number of subgroups: 15
 ----subgroup of order: 16 identified as SD4
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as Q2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 8 identified as C8
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: SD4
-    is Sylow: false
 
 
 
@@ -2809,76 +2214,50 @@ Order of outer automorphism group: 8
 
 number of subgroups: 15
 ----subgroup of order: 16 identified as MC(4,4,3)
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: Q2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: MC(4,4,3)
-    is Sylow: false
 
 
 
@@ -2903,108 +2282,66 @@ Order of outer automorphism group: 8
 
 number of subgroups: 23
 ----subgroup of order: 16 identified as G16_1
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C2xC2xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C4xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: D4
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: G16_1
-    is Sylow: false
 
 
 
@@ -3030,114 +2367,76 @@ Order of outer automorphism group: 12
 
 number of subgroups: 23
 ----subgroup of order: 16 identified as G16_2
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as C4xC2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 8 identified as Q2
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 8 identified as D4
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 4 identified as C4
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 4 identified as C2xC2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: C2xC2xC2
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 2 identified as C2
-    is maximal subgroup: false
     is normal: false
-    is Sylow: false
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: false
     is normal: true
     quotient is identified as: G16_2
-    is Sylow: false
 
 
 
@@ -3160,15 +2459,13 @@ Outer automorphism group not calculated
 
 number of subgroups: 2
 ----subgroup of order: 17 identified as C17
-    is maximal subgroup: false
+    is Sylow
     is normal: true
     quotient is identified as: C1
-    is Sylow: true
 ----subgroup of order: 1 identified as C1
-    is maximal subgroup: true
+    is maximal subgroup
     is normal: true
     quotient is identified as: C17
-    is Sylow: false
 
 
 --- end of  SmallGroupCatalog [43 items] ---

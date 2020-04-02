@@ -197,6 +197,24 @@ public class GroupFactory {
         } 
         return result;
     }
+    
+    public Group getGeneralizedDihedral(Group g){
+        try {
+            boolean abelean = (boolean) g.getProperty(GroupProperty.IsAbelean);
+            if(!abelean){
+                throw new IllegalArgumentException("cannot created generalized Dihedral out of non-abelean group");
+            }
+         // TODO wait for semidirect product...   
+            
+            
+        } catch (EvaluationException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create generalized dihedral group", ex);
+            System.exit(-1);
+        }
+        
+        System.exit(-1);
+        return null;
+    }
 
     private String repeat(String a, int n) {
         StringBuilder sb = new StringBuilder();

@@ -81,11 +81,17 @@ public class SubgroupFormatter implements ItemFormatter {
         sb.append(name);
         sb.append("\n");
         
-        sb.append(indent);
-        sb.append("is maximal subgroup: ");
-        sb.append(isMaximal);
-        sb.append("\n");
+        if(isMaximal){
+            sb.append(indent);
+            sb.append("is maximal subgroup");
+            sb.append("\n");
+        }
         
+        if(isSylow){
+            sb.append(indent);
+            sb.append("is Sylow");
+            sb.append("\n");
+        }
         
         sb.append(indent);
         sb.append("is normal: ");
@@ -102,10 +108,7 @@ public class SubgroupFormatter implements ItemFormatter {
             sb.append("\n");
         }
         
-        sb.append(indent);
-        sb.append("is Sylow: ");
-        sb.append(isSylow);
-        sb.append("\n");
+
         
     }
 }
