@@ -200,16 +200,12 @@ public class GroupFactory {
     
     public Group getGeneralizedDihedral(Group g){
         try {
-            boolean abelean = (boolean) g.getProperty(GroupProperty.IsAbelean);
-            if(!abelean){
-                throw new IllegalArgumentException("cannot created generalized Dihedral out of non-abelean group");
-            }
-         // TODO wait for semidirect product...   
-            
+            Group dih = (Group) g.getProperty(GroupProperty.DihedralGroup);
+            return dih; 
             
         } catch (EvaluationException ex) {
-            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create generalized dihedral group", ex);
-            System.exit(-1);
+            String mess = "could not create generalized dihedral group";
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, mess, ex);
         }
         
         System.exit(-1);

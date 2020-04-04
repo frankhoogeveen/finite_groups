@@ -14,8 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.semidirect;
+package nl.fh.semidirect_test;
 
+import nl.fh.group_calculators.DihedralCalculator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -26,15 +27,18 @@ import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupException;
 import nl.fh.group.Multiplicator;
+import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_classifier.GroupClassifier;
 import nl.fh.group_def_automorphism.Automorphism;
 import nl.fh.group_def_automorphism.AutomorphismMultiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_semidirect_product.GroupSemiDirectProduct;
+import nl.fh.group_calculators.HolomorphCalculator;
 import nl.fh.group_definition_factory.GroupFactory;
 import nl.fh.homomorphism.GroupHomomorphism;
 import nl.fh.homomorphism.HomomorphismException;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
@@ -102,4 +106,42 @@ public class SemiDirectProductTest {
         String name = GroupClassifier.getInstance().identify(semi);
         assertEquals("S3", name);
     }
+    
+    @Test
+    public void DihedralTest() throws EvaluationException, HomomorphismException, GroupException{
+        GroupFactory fac = new GroupFactory();
+        Group c4 = fac.getCyclicGroup(4);
+        
+        Group dih = (Group) c4.getProperty(GroupProperty.DihedralGroup);
+        
+        // the dihedral of c4 is d4
+        int order = (int) dih.getProperty(GroupProperty.Order);
+        assertEquals(order, 8);
+        
+        boolean isAbelean = (boolean) dih.getProperty(GroupProperty.IsAbelean);
+        assertFalse(isAbelean);
+        
+        String name = GroupClassifier.getInstance().identify(dih);
+        assertEquals("D4", name);
+    }
+    
+    @Test
+    public void HolomorphTest() throws EvaluationException, HomomorphismException, GroupException{
+        GroupFactory fac = new GroupFactory();
+        Group q2 = fac.getDicyclicGroup(2);
+        
+        Group hol = (Group) q2.getProperty(GroupProperty.HolomorphGroup);
+        
+        // the dihedral of c4 is d4
+        int order = (int) hol.getProperty(GroupProperty.Order);
+        assertEquals(order, 8*24);
+        
+        boolean isAbelean = (boolean) hol.getProperty(GroupProperty.IsAbelean);
+        assertFalse(isAbelean);
+        
+        GroupChecker checker = new GroupChecker();
+        assertTrue(checker.isGroup(hol));
+        
+    }
+    
 }

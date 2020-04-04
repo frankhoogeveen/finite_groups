@@ -91,7 +91,8 @@ public class SmallGroupCatalog extends GroupCatalog {
         Group c9 = factory.getCyclicGroup(9);
         super.add(c9);
         
-        super.add(GroupProduct.of(new Group[]{c3, c3}));
+        Group c3xc3 = GroupProduct.of(new Group[]{c3, c3});
+        super.add(c3xc3);
         
         /* order ten */
         Group c10 = factory.getCyclicGroup(10);
@@ -170,6 +171,25 @@ public class SmallGroupCatalog extends GroupCatalog {
         /* order seventeen */
         Group c17 = factory.getCyclicGroup(17);
         super.add(c17);
+        
+        /* order eightteen */
+        Group c18 = factory.getCyclicGroup(18);
+        super.add(c18);
+
+        super.add(GroupProduct.of(new Group[]{c3, c3, c2})); 
+        
+        super.add(GroupProduct.of(new Group[]{c3, s3})); 
+        
+        Group d9 = factory.getDihedralGroup(9);
+        super.add(d9);
+        
+        Group dihc3xc3 = factory.getGeneralizedDihedral(c3xc3);
+        super.add(dihc3xc3);
+        
+        /* order nineteen */
+        Group c19 = factory.getCyclicGroup(19);
+        super.add(c19);       
+        
     }
     
     /**

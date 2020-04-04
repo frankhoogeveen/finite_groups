@@ -74,6 +74,9 @@ public class GroupClassifier {
             case 15 : return "C15";
             case 16 : return classify16(group);
             case 17 : return "C17";
+            case 18 : return classify18(group);        
+            case 19 : return "C19";
+                        
             
             default : return UNKNOWN;
         }
@@ -196,6 +199,18 @@ public class GroupClassifier {
             case "C2xC2xC2" : return "Q2xC2";
             case "C4xC2"    : return "MC(4,4,3)";
         }
+        return ERROR;
+    }
+
+    private String classify18(Group group) throws EvaluationException {
+        Map<Integer, Map<Integer, Integer>> profile = ( Map<Integer, Map<Integer, Integer>>)group.getProperty(GroupProperty.ConjugationProfile);
+        
+        if(getCount(18, 1, profile) == 6){ return "C18";}
+        if(getCount(9, 2, profile) == 3){ return "D9";}
+        if(getCount(6, 1, profile) == 8){ return "C3xC3xC2";}
+        if(getCount(6, 3, profile) == 2){ return "C3xS3";}
+        if(getCount(3, 2, profile) == 4){ return "C2⋊C3xC3";}  
+
         return ERROR;
     }
 }

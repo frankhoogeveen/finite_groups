@@ -23,7 +23,7 @@ import nl.fh.group_test.*;
 import nl.fh.homomorphism_test.*;
 import nl.fh.lattice_test.LatticeTest;
 import nl.fh.numbers_test.*;
-import nl.fh.semidirect.SemiDirectProductTest;
+import nl.fh.semidirect_test.SemiDirectProductTest;
 import nl.fh.subgroups_test.*;
 import org.junit.After;
 import org.junit.AfterClass;

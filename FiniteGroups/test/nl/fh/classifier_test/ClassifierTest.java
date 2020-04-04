@@ -38,6 +38,7 @@ public class ClassifierTest {
         
         GroupCatalog cat = new SmallGroupCatalog();
         for(Group g : cat){
+            // System.out.println(g.toString());
             String groupName = (String) g.getProperty(GroupProperty.Name);
             String classified = classifier.identify(g);
             

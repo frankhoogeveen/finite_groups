@@ -1,4 +1,4 @@
-*** SmallGroupCatalog [43 items] ***
+*** SmallGroupCatalog [49 items] ***
 
 ================================================================================
 C1
@@ -2468,4 +2468,394 @@ number of subgroups: 2
     quotient is identified as: C17
 
 
---- end of  SmallGroupCatalog [43 items] ---
+
+================================================================================
+C18
+Order: 18
+Is abelean: true
+center size: 18  identified as:unidentified
+   
+Total number of conjugation classes: 18
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 18  size: 1 count: 6
+order: 2  size: 1 count: 1
+order: 3  size: 1 count: 2
+order: 6  size: 1 count: 2
+order: 9  size: 1 count: 6
+
+Order of der(G): 1  identified as:C1
+Order of ab(G): 18  identified as:unidentified
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+number of subgroups: 6
+----subgroup of order: 18 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 9 identified as C9
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: true
+    quotient is identified as: C9
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C3xC3xC2
+Order: 18
+Is abelean: true
+center size: 18  identified as:unidentified
+   
+Total number of conjugation classes: 18
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 1
+order: 3  size: 1 count: 8
+order: 6  size: 1 count: 8
+
+Order of der(G): 1  identified as:C1
+Order of ab(G): 18  identified as:unidentified
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+number of subgroups: 12
+----subgroup of order: 18 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 9 identified as C3xC3
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: true
+    quotient is identified as: C3xC3
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C3xS3
+Order: 18
+Is abelean: false
+center size: 3  identified as:C3
+   
+Total number of conjugation classes: 9
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 3 count: 1
+order: 3  size: 1 count: 2
+order: 3  size: 2 count: 3
+order: 6  size: 3 count: 2
+
+Order of der(G): 3  identified as:C3
+Order of ab(G): 6  identified as:C6
+Order of inner automorphism group: 6   classified as: S3
+Order of automorphism group: 12
+Order of outer automorphism group: 2
+
+number of subgroups: 14
+----subgroup of order: 18 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 9 identified as C3xC3
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 3 identified as C3
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+D9
+Order: 18
+Is abelean: false
+center size: 1  identified as:C1
+   
+Total number of conjugation classes: 6
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 9 count: 1
+order: 3  size: 2 count: 1
+order: 9  size: 2 count: 3
+
+Order of der(G): 9  identified as:C9
+Order of ab(G): 2  identified as:C2
+Order of inner automorphism group: 18   classified as: unidentified
+Order of automorphism group: 54
+Order of outer automorphism group: 3
+
+number of subgroups: 16
+----subgroup of order: 18 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 9 identified as C9
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C2⋊C3xC3
+Order: 18
+Is abelean: false
+center size: 1  identified as:C1
+   
+Total number of conjugation classes: 6
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 9 count: 1
+order: 3  size: 2 count: 4
+
+Order of der(G): 9  identified as:C3xC3
+Order of ab(G): 2  identified as:C2
+Order of inner automorphism group: 18   classified as: unidentified
+Order of automorphism group: 432
+Order of outer automorphism group: 24
+
+number of subgroups: 28
+----subgroup of order: 18 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 9 identified as C3xC3
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is Sylow
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C19
+Order: 19
+Is abelean: true
+center size: 19  identified as:C19
+   
+Total number of conjugation classes: 19
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 19  size: 1 count: 18
+
+Order of der(G): 1  identified as:C1
+Order of ab(G): 19  identified as:C19
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+number of subgroups: 2
+----subgroup of order: 19 identified as C19
+    is Sylow
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 1 identified as C1
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C19
+
+
+--- end of  SmallGroupCatalog [49 items] ---
