@@ -49,27 +49,27 @@ public class GroupSemiDirectProduct{
      */
     public static Group of(Group H, Group N, GroupHomomorphism HinAutN) throws EvaluationException, GroupException{
 
-        Set<Element> elements = createElements(N, H);
-        String name = composeName(N, H);
+        Set<Element> elements = createElements(H, N);
+        String name = composeName(H, N);
         Multiplicator mult = new SemiDirectProductMultiplicator(N, H, HinAutN);
         
         return new Group(name, elements, mult);
     }
 
-    private static String composeName(Group N, Group H) throws EvaluationException {
+    private static String composeName(Group H, Group N) throws EvaluationException {
         String nameN = (String) N.getProperty(GroupProperty.Name);
         String nameH = (String) H.getProperty(GroupProperty.Name);
         String name = nameH + RIGHT_NORMAL_SEMIDIRECT_PRODUCT + nameN;
         return name;
     }
 
-    private static Set<Element> createElements(Group N, Group H) throws EvaluationException {
+    private static Set<Element> createElements(Group H, Group N) throws EvaluationException {
         Set<Element> nSet = (Set<Element>) N.getProperty(GroupProperty.Elements);
         Set<Element> hSet = (Set<Element>) H.getProperty(GroupProperty.Elements);
         Set<Element> elements = new HashSet<Element>();
         for(Element n : nSet){
             for(Element h : hSet){
-                elements.add(new SemiDirectProductElement(n,h));
+                elements.add(new SemiDirectProductElement(h,n));
             }
         }
         return elements;

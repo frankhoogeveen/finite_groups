@@ -64,6 +64,6 @@ public class SemiDirectProductMultiplicator implements Multiplicator<SemiDirectP
         Element h12 = this.multH.getProduct(h1, h2);
         Element n12 = this.multN.getProduct(n1,phi.applyTo(n2));
         
-        return new SemiDirectProductElement(n12, h12);
+        return new SemiDirectProductElement(h12, n12);
     }
 }

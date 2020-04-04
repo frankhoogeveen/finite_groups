@@ -80,7 +80,10 @@ public enum GroupProperty implements Property {
     InnerAutomorphismEmbedding(new InnerAutomorphismEmbeddingCalculator()),
     
     AutomorphismGroup(new AutomorphismCalculator()),
-    OuterAutomorphismGroup(new OuterAutomorphismGroupCalculator());
+    OuterAutomorphismGroup(new OuterAutomorphismGroupCalculator()),
+    
+    DihedralGroup(new DihedralCalculator()),
+    HolomorphGroup(new HolomorphCalculator());
     
     private final Calculator calculator;
     

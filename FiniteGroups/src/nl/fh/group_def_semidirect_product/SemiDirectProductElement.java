@@ -25,17 +25,18 @@ import nl.fh.group.Element;
  */
 public class SemiDirectProductElement implements Element{
 
-    final Element elementN;
     final Element elementH;
+    final Element elementN;
+
     
-    public SemiDirectProductElement(Element elementN, Element elementH){
+    public SemiDirectProductElement(Element elementH, Element elementN){
         this.elementN = elementN;
         this.elementH = elementH;
     }
     
     @Override
     public String toString(){
-        return "(" + elementN.toString() + "," + elementH.toString() + ")";
+        return "(" + elementH.toString() + "," + elementN.toString() + ")";
     }
 
     @Override
