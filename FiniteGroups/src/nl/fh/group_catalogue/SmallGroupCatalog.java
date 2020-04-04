@@ -45,12 +45,10 @@ public class SmallGroupCatalog extends GroupCatalog {
         super.add(c1);
 
         /* order two */
-        /* order one */
         Group c2 = factory.getCyclicGroup(2);
         super.add(c2);
         
         /*order three */
-        /* order one */
         Group c3 = factory.getCyclicGroup(3);
         super.add(c3);
         
@@ -188,7 +186,22 @@ public class SmallGroupCatalog extends GroupCatalog {
         
         /* order nineteen */
         Group c19 = factory.getCyclicGroup(19);
-        super.add(c19);       
+        super.add(c19);    
+        
+        /* order twenty */
+        Group c20 = factory.getCyclicGroup(20);
+        super.add(c20);   
+        
+        super.add(GroupProduct.of(new Group[]{c10, c2})); 
+        
+        Group d10 = factory.getDihedralGroup(10);
+        super.add(d10);
+        
+        Group q5 = factory.getDicyclicGroup(5);
+        super.add(q5);
+        
+        Group mc542 = factory.getMetacyclicGroup(5,4,2);
+        super.add(mc542);
         
     }
     
