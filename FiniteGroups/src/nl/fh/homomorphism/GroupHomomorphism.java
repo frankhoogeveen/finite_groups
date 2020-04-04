@@ -30,7 +30,6 @@ import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_calculators.GroupProperty;
-import nl.fh.group_calculators.GroupTable;
 
 /**
  *
@@ -43,6 +42,11 @@ public class GroupHomomorphism extends PropertyCache<HomomorphismProperty>{
      * @param domain
      * @param codomain
      * @param coreMap this map is extended to a full map.
+     * @throws HomomorphismException  is the coreMap is not consistent with group operations.
+     * 
+     * The coreMap should at least map a set of generators of the domain. 
+     * Not every map is consistent with the group operations.
+
      */
     public GroupHomomorphism(Group domain, Group codomain, Map<Element, Element> coreMap) throws HomomorphismException {
         super();

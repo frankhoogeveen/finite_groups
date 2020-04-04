@@ -57,6 +57,46 @@ public class CyclicElement implements Element {
         return result;
     }
     
+    /**
+     * 
+     * @param order
+     * @return the zero element mod order 
+     */
+    public static Element unitOfOrder(int order){
+                if(order < 1){
+            throw new IllegalArgumentException();
+        }
+        
+        CyclicElement result = new CyclicElement();
+        result.number = 0;
+        result.order = order;
+        
+        return result;
+    }
+    
+        /**
+     * 
+     * @param k
+     * @param order
+     * @return the k-th element mod order 
+     */
+    public static Element create(int k, int order){
+        if(order < 1){
+            throw new IllegalArgumentException();
+        }
+        
+        CyclicElement result = new CyclicElement();
+        
+        result.number = k % order;
+        if(result.number < 0){
+            result.number += order;
+        }
+        
+        result.order = order;
+        
+        return result;
+    }
+    
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();

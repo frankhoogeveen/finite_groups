@@ -16,8 +16,6 @@
  */
 package nl.fh.group_def_semidirect_product;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
@@ -33,7 +31,8 @@ import nl.fh.homomorphism.GroupHomomorphism;
 public class SemiDirectProductMultiplicator implements Multiplicator<SemiDirectProductElement>{
     
     private final GroupHomomorphism HtoAutN;
-    private final Multiplicator mult;
+    private final Multiplicator<Element> multN;
+    private final Multiplicator<Element> multH;
 
     /**
      * Multiplicator for the semi direct product.
@@ -44,19 +43,10 @@ public class SemiDirectProductMultiplicator implements Multiplicator<SemiDirectP
      * @param G the group containing N (as normal) and H
      * @param HtoAutN the map H -> Aut(N)
      */
-    public SemiDirectProductMultiplicator(Group G, GroupHomomorphism HtoAutN){
+    public SemiDirectProductMultiplicator(Group N, Group H, GroupHomomorphism HtoAutN) throws EvaluationException{
         
-        Multiplicator mult = null;
-        
-        try {
-            mult = (Multiplicator) G.getProperty(GroupProperty.MultiplicationTable);
-        } catch (EvaluationException ex) {
-            String mess = "could not find multiplication table";
-            Logger.getLogger(SemiDirectProductMultiplicator.class.getName()).log(Level.SEVERE, mess, ex);
-            System.exit(-1);
-        }
-        
-        this.mult = mult;
+        this.multN = (Multiplicator<Element>) N.getProperty(GroupProperty.MultiplicationTable);
+        this.multH = (Multiplicator<Element>) H.getProperty(GroupProperty.MultiplicationTable);
         this.HtoAutN = HtoAutN;
     }
     
@@ -71,8 +61,8 @@ public class SemiDirectProductMultiplicator implements Multiplicator<SemiDirectP
         
         Automorphism phi = (Automorphism) HtoAutN.applyTo(h1);
         
-        Element h12 = this.mult.getProduct(h1, h2);
-        Element n12 = this.mult.getProduct(n1,phi.applyTo(n2));
+        Element h12 = this.multH.getProduct(h1, h2);
+        Element n12 = this.multN.getProduct(n1,phi.applyTo(n2));
         
         return new SemiDirectProductElement(n12, h12);
     }

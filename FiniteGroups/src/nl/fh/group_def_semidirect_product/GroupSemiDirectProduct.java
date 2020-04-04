@@ -16,7 +16,6 @@
  */
 package nl.fh.group_def_semidirect_product;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import nl.fh.calculator.EvaluationException;
@@ -26,7 +25,6 @@ import nl.fh.group.GroupException;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.homomorphism.GroupHomomorphism;
-import nl.fh.homomorphism_calculator.HomomorphismProperty;
 
 /**
  * 
@@ -36,7 +34,7 @@ import nl.fh.homomorphism_calculator.HomomorphismProperty;
  */
 public class GroupSemiDirectProduct{
 
-    private static String LEFT_NORMAL_SEMIDIRECT_PRODUCT = "\u22c9";
+    private static String RIGHT_NORMAL_SEMIDIRECT_PRODUCT = "\u22ca";
     
     /**
      * Returns the semi direct product of N and H under phi
@@ -44,26 +42,16 @@ public class GroupSemiDirectProduct{
      * (n1, h1) (n2, h2) -> (n1.phi(h1)(n2), h1.h2)
      * 
      * 
-     * @param NinG  the embedding of the normal factor
-     * @param HinG  the embedding of the quotient
+     * @param N   the normal factor
+     * @param H   the quotient
      * @param HinAutN the embedding of the quotient in the automorphisms of N
      * @return
      */
-    public static Group of(GroupHomomorphism NinG, GroupHomomorphism HinG, GroupHomomorphism HinAutN) throws EvaluationException, GroupException{
-        
-        Group G = (Group) NinG.getProperty(HomomorphismProperty.Codomain);
-        Group G1 = (Group) HinG.getProperty(HomomorphismProperty.Codomain);
-        
-        if(!G.equals(G1)){
-            throw new IllegalArgumentException("the group need to be the same for both factors of a semidirect product");
-        }
-        
-        Group N = (Group) NinG.getProperty(HomomorphismProperty.Domain);
-        Group H = (Group) HinG.getProperty(HomomorphismProperty.Domain);
+    public static Group of(Group H, Group N, GroupHomomorphism HinAutN) throws EvaluationException, GroupException{
 
         Set<Element> elements = createElements(N, H);
         String name = composeName(N, H);
-        Multiplicator mult = new SemiDirectProductMultiplicator(G, HinAutN);
+        Multiplicator mult = new SemiDirectProductMultiplicator(N, H, HinAutN);
         
         return new Group(name, elements, mult);
     }
@@ -71,7 +59,7 @@ public class GroupSemiDirectProduct{
     private static String composeName(Group N, Group H) throws EvaluationException {
         String nameN = (String) N.getProperty(GroupProperty.Name);
         String nameH = (String) H.getProperty(GroupProperty.Name);
-        String name = nameN + LEFT_NORMAL_SEMIDIRECT_PRODUCT + nameH;
+        String name = nameH + RIGHT_NORMAL_SEMIDIRECT_PRODUCT + nameN;
         return name;
     }
 

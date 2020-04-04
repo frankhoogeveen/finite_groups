@@ -16,6 +16,7 @@
  */
 package nl.fh.group_def_semidirect_product;
 
+import java.util.Objects;
 import nl.fh.group.Element;
 
 /**
@@ -30,5 +31,39 @@ public class SemiDirectProductElement implements Element{
     public SemiDirectProductElement(Element elementN, Element elementH){
         this.elementN = elementN;
         this.elementH = elementH;
+    }
+    
+    @Override
+    public String toString(){
+        return "(" + elementN.toString() + "," + elementH.toString() + ")";
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 41 * hash + Objects.hashCode(this.elementN);
+        hash = 41 * hash + Objects.hashCode(this.elementH);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final SemiDirectProductElement other = (SemiDirectProductElement) obj;
+        if (!Objects.equals(this.elementN, other.elementN)) {
+            return false;
+        }
+        if (!Objects.equals(this.elementH, other.elementH)) {
+            return false;
+        }
+        return true;
     }
 }
