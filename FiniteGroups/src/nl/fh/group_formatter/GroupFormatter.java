@@ -40,6 +40,7 @@ public class GroupFormatter {
         this.list.add(new CenterFormatter(this));
         this.list.add(new InversesFormatter(this));
         this.list.add(new ConjugationClassesFormatter(this));
+        this.list.add(new SylowNumbersFormatter(this));
         this.list.add(new DerivedGroupFormatter(this));
         this.list.add(new AbeleanizationFormatter(this));
         this.list.add(new InnerAutomorphismGroupFormatter(this));

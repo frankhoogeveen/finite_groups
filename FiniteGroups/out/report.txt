@@ -2,13 +2,17 @@
 
 ================================================================================
 C1
-Order: 1
+Order: 1  =1
+exponent: 
 Is abelean: true
 center size: 1  identified as:C1
    
 Total number of conjugation classes: 1
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
+
+Sylow Numbers:
+none
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 1  identified as:C1
@@ -25,7 +29,8 @@ number of subgroups: 1
 
 ================================================================================
 C2
-Order: 2
+Order: 2  =2
+exponent: 
 Is abelean: true
 center size: 2  identified as:C2
    
@@ -33,6 +38,9 @@ Total number of conjugation classes: 2
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 2  identified as:C2
@@ -54,7 +62,8 @@ number of subgroups: 2
 
 ================================================================================
 C3
-Order: 3
+Order: 3  =3
+exponent: 
 Is abelean: true
 center size: 3  identified as:C3
    
@@ -62,6 +71,9 @@ Total number of conjugation classes: 3
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 3  size: 1 count: 2
+
+Sylow Numbers:
+    n_3 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 3  identified as:C3
@@ -83,7 +95,8 @@ number of subgroups: 2
 
 ================================================================================
 C4
-Order: 4
+Order: 4  =2^2
+exponent: 
 Is abelean: true
 center size: 4  identified as:C4
    
@@ -92,6 +105,9 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
 order: 4  size: 1 count: 2
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 4  identified as:C4
@@ -116,7 +132,8 @@ number of subgroups: 3
 
 ================================================================================
 C2xC2
-Order: 4
+Order: 4  =2^2
+exponent: 
 Is abelean: true
 center size: 4  identified as:C2xC2
    
@@ -124,6 +141,9 @@ Total number of conjugation classes: 4
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 3
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 4  identified as:C2xC2
@@ -156,7 +176,8 @@ number of subgroups: 5
 
 ================================================================================
 C5
-Order: 5
+Order: 5  =5
+exponent: 
 Is abelean: true
 center size: 5  identified as:C5
    
@@ -164,6 +185,9 @@ Total number of conjugation classes: 5
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 5  size: 1 count: 4
+
+Sylow Numbers:
+    n_5 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 5  identified as:C5
@@ -185,7 +209,8 @@ number of subgroups: 2
 
 ================================================================================
 C6
-Order: 6
+Order: 6  =2*3
+exponent: 
 Is abelean: true
 center size: 6  identified as:C6
    
@@ -195,6 +220,10 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
 order: 3  size: 1 count: 2
 order: 6  size: 1 count: 2
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 6  identified as:C6
@@ -224,7 +253,8 @@ number of subgroups: 4
 
 ================================================================================
 S3
-Order: 6
+Order: 6  =2*3
+exponent: 
 Is abelean: false
 center size: 1  identified as:C1
    
@@ -233,6 +263,10 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 3 count: 1
 order: 3  size: 2 count: 1
+
+Sylow Numbers:
+    n_2 = 3
+    n_3 = 1
 
 Order of der(G): 3  identified as:C3
 Order of ab(G): 2  identified as:C2
@@ -269,7 +303,8 @@ number of subgroups: 6
 
 ================================================================================
 C7
-Order: 7
+Order: 7  =7
+exponent: 
 Is abelean: true
 center size: 7  identified as:C7
    
@@ -277,6 +312,9 @@ Total number of conjugation classes: 7
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 7  size: 1 count: 6
+
+Sylow Numbers:
+    n_7 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 7  identified as:C7
@@ -298,7 +336,8 @@ number of subgroups: 2
 
 ================================================================================
 C8
-Order: 8
+Order: 8  =2^3
+exponent: 
 Is abelean: true
 center size: 8  identified as:C8
    
@@ -308,6 +347,9 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
 order: 4  size: 1 count: 2
 order: 8  size: 1 count: 4
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 8  identified as:C8
@@ -335,7 +377,8 @@ number of subgroups: 4
 
 ================================================================================
 C4xC2
-Order: 8
+Order: 8  =2^3
+exponent: 
 Is abelean: true
 center size: 8  identified as:C4xC2
    
@@ -344,6 +387,9 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 3
 order: 4  size: 1 count: 4
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 8  identified as:C4xC2
@@ -385,7 +431,8 @@ number of subgroups: 8
 
 ================================================================================
 C2xC2xC2
-Order: 8
+Order: 8  =2^3
+exponent: 
 Is abelean: true
 center size: 8  identified as:C2xC2xC2
    
@@ -393,6 +440,9 @@ Total number of conjugation classes: 8
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 7
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 8  identified as:C2xC2xC2
@@ -462,7 +512,8 @@ number of subgroups: 16
 
 ================================================================================
 D4
-Order: 8
+Order: 8  =2^3
+exponent: 
 Is abelean: false
 center size: 2  identified as:C2
    
@@ -472,6 +523,9 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
 order: 2  size: 2 count: 2
 order: 4  size: 2 count: 1
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 2  identified as:C2
 Order of ab(G): 4  identified as:C2xC2
@@ -515,7 +569,8 @@ number of subgroups: 10
 
 ================================================================================
 Q2
-Order: 8
+Order: 8  =2^3
+exponent: 
 Is abelean: false
 center size: 2  identified as:C2
    
@@ -524,6 +579,9 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
 order: 4  size: 2 count: 3
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 2  identified as:C2
 Order of ab(G): 4  identified as:C2xC2
@@ -559,7 +617,8 @@ number of subgroups: 6
 
 ================================================================================
 C9
-Order: 9
+Order: 9  =3^2
+exponent: 
 Is abelean: true
 center size: 9  identified as:C9
    
@@ -568,6 +627,9 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 3  size: 1 count: 2
 order: 9  size: 1 count: 6
+
+Sylow Numbers:
+    n_3 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 9  identified as:C9
@@ -592,7 +654,8 @@ number of subgroups: 3
 
 ================================================================================
 C3xC3
-Order: 9
+Order: 9  =3^2
+exponent: 
 Is abelean: true
 center size: 9  identified as:C3xC3
    
@@ -600,6 +663,9 @@ Total number of conjugation classes: 9
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 3  size: 1 count: 8
+
+Sylow Numbers:
+    n_3 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 9  identified as:C3xC3
@@ -636,7 +702,8 @@ number of subgroups: 6
 
 ================================================================================
 C10
-Order: 10
+Order: 10  =2*5
+exponent: 
 Is abelean: true
 center size: 10  identified as:C10
    
@@ -646,6 +713,10 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
 order: 5  size: 1 count: 4
 order: 10  size: 1 count: 4
+
+Sylow Numbers:
+    n_2 = 1
+    n_5 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 10  identified as:C10
@@ -675,7 +746,8 @@ number of subgroups: 4
 
 ================================================================================
 D5
-Order: 10
+Order: 10  =2*5
+exponent: 
 Is abelean: false
 center size: 1  identified as:C1
    
@@ -684,6 +756,10 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 5 count: 1
 order: 5  size: 2 count: 2
+
+Sylow Numbers:
+    n_2 = 5
+    n_5 = 1
 
 Order of der(G): 5  identified as:C5
 Order of ab(G): 2  identified as:C2
@@ -728,7 +804,8 @@ number of subgroups: 8
 
 ================================================================================
 C11
-Order: 11
+Order: 11  =11
+exponent: 
 Is abelean: true
 center size: 11  identified as:C11
    
@@ -736,6 +813,9 @@ Total number of conjugation classes: 11
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 11  size: 1 count: 10
+
+Sylow Numbers:
+    n_11 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 11  identified as:C11
@@ -757,7 +837,8 @@ number of subgroups: 2
 
 ================================================================================
 C12
-Order: 12
+Order: 12  =2^2*3
+exponent: 
 Is abelean: true
 center size: 12  identified as:C12
    
@@ -769,6 +850,10 @@ order: 3  size: 1 count: 2
 order: 4  size: 1 count: 2
 order: 6  size: 1 count: 2
 order: 12  size: 1 count: 4
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 12  identified as:C12
@@ -804,7 +889,8 @@ number of subgroups: 6
 
 ================================================================================
 C3xC2xC2
-Order: 12
+Order: 12  =2^2*3
+exponent: 
 Is abelean: true
 center size: 12  identified as:C3xC2xC2
    
@@ -814,6 +900,10 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 3
 order: 3  size: 1 count: 2
 order: 6  size: 1 count: 6
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 12  identified as:C3xC2xC2
@@ -863,7 +953,8 @@ number of subgroups: 10
 
 ================================================================================
 D6
-Order: 12
+Order: 12  =2^2*3
+exponent: 
 Is abelean: false
 center size: 2  identified as:C2
    
@@ -874,6 +965,10 @@ order: 2  size: 1 count: 1
 order: 2  size: 3 count: 2
 order: 3  size: 2 count: 1
 order: 6  size: 2 count: 1
+
+Sylow Numbers:
+    n_2 = 3
+    n_3 = 1
 
 Order of der(G): 3  identified as:C3
 Order of ab(G): 4  identified as:C2xC2
@@ -936,7 +1031,8 @@ number of subgroups: 16
 
 ================================================================================
 Q3
-Order: 12
+Order: 12  =2^2*3
+exponent: 
 Is abelean: false
 center size: 2  identified as:C2
    
@@ -947,6 +1043,10 @@ order: 2  size: 1 count: 1
 order: 3  size: 2 count: 1
 order: 4  size: 3 count: 2
 order: 6  size: 2 count: 1
+
+Sylow Numbers:
+    n_2 = 3
+    n_3 = 1
 
 Order of der(G): 3  identified as:C3
 Order of ab(G): 4  identified as:C4
@@ -989,7 +1089,8 @@ number of subgroups: 8
 
 ================================================================================
 A4
-Order: 12
+Order: 12  =2^2*3
+exponent: 
 Is abelean: false
 center size: 1  identified as:C1
    
@@ -998,6 +1099,10 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 3 count: 1
 order: 3  size: 4 count: 2
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 4
 
 Order of der(G): 4  identified as:C2xC2
 Order of ab(G): 3  identified as:C3
@@ -1044,7 +1149,8 @@ number of subgroups: 10
 
 ================================================================================
 C13
-Order: 13
+Order: 13  =13
+exponent: 
 Is abelean: true
 center size: 13  identified as:C13
    
@@ -1052,6 +1158,9 @@ Total number of conjugation classes: 13
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 13  size: 1 count: 12
+
+Sylow Numbers:
+    n_13 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 13  identified as:C13
@@ -1073,7 +1182,8 @@ number of subgroups: 2
 
 ================================================================================
 C14
-Order: 14
+Order: 14  =2*7
+exponent: 
 Is abelean: true
 center size: 14  identified as:C14
    
@@ -1083,6 +1193,10 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
 order: 7  size: 1 count: 6
 order: 14  size: 1 count: 6
+
+Sylow Numbers:
+    n_2 = 1
+    n_7 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 14  identified as:C14
@@ -1112,7 +1226,8 @@ number of subgroups: 4
 
 ================================================================================
 D7
-Order: 14
+Order: 14  =2*7
+exponent: 
 Is abelean: false
 center size: 1  identified as:C1
    
@@ -1121,6 +1236,10 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 7 count: 1
 order: 7  size: 2 count: 3
+
+Sylow Numbers:
+    n_2 = 7
+    n_7 = 1
 
 Order of der(G): 7  identified as:C7
 Order of ab(G): 2  identified as:C2
@@ -1173,7 +1292,8 @@ number of subgroups: 10
 
 ================================================================================
 C15
-Order: 15
+Order: 15  =3*5
+exponent: 
 Is abelean: true
 center size: 15  identified as:C15
    
@@ -1183,6 +1303,10 @@ order: 1  size: 1 count: 1
 order: 3  size: 1 count: 2
 order: 5  size: 1 count: 4
 order: 15  size: 1 count: 8
+
+Sylow Numbers:
+    n_3 = 1
+    n_5 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 15  identified as:C15
@@ -1212,7 +1336,8 @@ number of subgroups: 4
 
 ================================================================================
 C16
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: true
 center size: 16  identified as:C16
    
@@ -1223,6 +1348,9 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
 order: 4  size: 1 count: 2
 order: 8  size: 1 count: 4
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C16
@@ -1253,7 +1381,8 @@ number of subgroups: 5
 
 ================================================================================
 C8xC2
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: true
 center size: 16  identified as:C8xC2
    
@@ -1263,6 +1392,9 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 3
 order: 4  size: 1 count: 4
 order: 8  size: 1 count: 8
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C8xC2
@@ -1313,7 +1445,8 @@ number of subgroups: 11
 
 ================================================================================
 C4xC4
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: true
 center size: 16  identified as:C4xC4
    
@@ -1322,6 +1455,9 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 3
 order: 4  size: 1 count: 12
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C4xC4
@@ -1384,7 +1520,8 @@ number of subgroups: 15
 
 ================================================================================
 C4xC2xC2
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: true
 center size: 16  identified as:C4xC2xC2
    
@@ -1393,6 +1530,9 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 7
 order: 4  size: 1 count: 8
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C4xC2xC2
@@ -1495,7 +1635,8 @@ number of subgroups: 27
 
 ================================================================================
 C2xC2xC2xC2
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: true
 center size: 16  identified as:C2xC2xC2xC2
    
@@ -1503,6 +1644,9 @@ Total number of conjugation classes: 16
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 15
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C2xC2xC2xC2
@@ -1733,7 +1877,8 @@ number of subgroups: 67
 
 ================================================================================
 D4xC2
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: false
 center size: 4  identified as:C2xC2
    
@@ -1743,6 +1888,9 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 3
 order: 2  size: 2 count: 4
 order: 4  size: 2 count: 2
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C2xC2xC2
@@ -1853,7 +2001,8 @@ number of subgroups: 35
 
 ================================================================================
 Q2xC2
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: false
 center size: 4  identified as:C2xC2
    
@@ -1862,6 +2011,9 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 3
 order: 4  size: 2 count: 6
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C2xC2xC2
@@ -1940,7 +2092,8 @@ number of subgroups: 19
 
 ================================================================================
 D8
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: false
 center size: 2  identified as:C2
    
@@ -1951,6 +2104,9 @@ order: 2  size: 1 count: 1
 order: 2  size: 4 count: 2
 order: 4  size: 2 count: 1
 order: 8  size: 2 count: 2
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 4  identified as:C4
 Order of ab(G): 4  identified as:C2xC2
@@ -2013,7 +2169,8 @@ number of subgroups: 19
 
 ================================================================================
 Q4
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: false
 center size: 2  identified as:C2
    
@@ -2024,6 +2181,9 @@ order: 2  size: 1 count: 1
 order: 4  size: 2 count: 1
 order: 4  size: 4 count: 2
 order: 8  size: 2 count: 2
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 4  identified as:C4
 Order of ab(G): 4  identified as:C2xC2
@@ -2070,7 +2230,8 @@ number of subgroups: 11
 
 ================================================================================
 M4
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: false
 center size: 4  identified as:C4
    
@@ -2082,6 +2243,9 @@ order: 2  size: 2 count: 1
 order: 4  size: 1 count: 2
 order: 4  size: 2 count: 1
 order: 8  size: 2 count: 4
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C4xC2
@@ -2130,7 +2294,8 @@ number of subgroups: 11
 
 ================================================================================
 SD4
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: false
 center size: 2  identified as:C2
    
@@ -2142,6 +2307,9 @@ order: 2  size: 4 count: 1
 order: 4  size: 2 count: 1
 order: 4  size: 4 count: 1
 order: 8  size: 2 count: 2
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 4  identified as:C4
 Order of ab(G): 4  identified as:C2xC2
@@ -2196,7 +2364,8 @@ number of subgroups: 15
 
 ================================================================================
 MC(4,4,3)
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: false
 center size: 4  identified as:C2xC2
    
@@ -2205,6 +2374,9 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 1 count: 3
 order: 4  size: 2 count: 6
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C4xC2
@@ -2263,7 +2435,8 @@ number of subgroups: 15
 
 ================================================================================
 G16_1
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: false
 center size: 4  identified as:C2xC2
    
@@ -2273,6 +2446,9 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 3
 order: 2  size: 2 count: 2
 order: 4  size: 2 count: 4
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C4xC2
@@ -2347,7 +2523,8 @@ number of subgroups: 23
 
 ================================================================================
 G16_2
-Order: 16
+Order: 16  =2^4
+exponent: 
 Is abelean: false
 center size: 4  identified as:C4
    
@@ -2358,6 +2535,9 @@ order: 2  size: 1 count: 1
 order: 2  size: 2 count: 3
 order: 4  size: 1 count: 2
 order: 4  size: 2 count: 3
+
+Sylow Numbers:
+    n_2 = 1
 
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C2xC2xC2
@@ -2442,7 +2622,8 @@ number of subgroups: 23
 
 ================================================================================
 C17
-Order: 17
+Order: 17  =17
+exponent: 
 Is abelean: true
 center size: 17  identified as:C17
    
@@ -2450,6 +2631,9 @@ Total number of conjugation classes: 17
 number of conjugation class by size and order of the elements:
 order: 17  size: 1 count: 16
 order: 1  size: 1 count: 1
+
+Sylow Numbers:
+    n_17 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 17  identified as:C17
@@ -2471,7 +2655,8 @@ number of subgroups: 2
 
 ================================================================================
 C18
-Order: 18
+Order: 18  =2*3^2
+exponent: 
 Is abelean: true
 center size: 18  identified as:C18
    
@@ -2483,6 +2668,10 @@ order: 2  size: 1 count: 1
 order: 3  size: 1 count: 2
 order: 6  size: 1 count: 2
 order: 9  size: 1 count: 6
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 18  identified as:C18
@@ -2518,7 +2707,8 @@ number of subgroups: 6
 
 ================================================================================
 C3xC3xC2
-Order: 18
+Order: 18  =2*3^2
+exponent: 
 Is abelean: true
 center size: 18  identified as:C3xC3xC2
    
@@ -2528,6 +2718,10 @@ order: 1  size: 1 count: 1
 order: 2  size: 1 count: 1
 order: 3  size: 1 count: 8
 order: 6  size: 1 count: 8
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 18  identified as:C3xC3xC2
@@ -2584,7 +2778,8 @@ number of subgroups: 12
 
 ================================================================================
 C3xS3
-Order: 18
+Order: 18  =2*3^2
+exponent: 
 Is abelean: false
 center size: 3  identified as:C3
    
@@ -2595,6 +2790,10 @@ order: 2  size: 3 count: 1
 order: 3  size: 1 count: 2
 order: 3  size: 2 count: 3
 order: 6  size: 3 count: 2
+
+Sylow Numbers:
+    n_2 = 3
+    n_3 = 1
 
 Order of der(G): 3  identified as:C3
 Order of ab(G): 6  identified as:C6
@@ -2651,7 +2850,8 @@ number of subgroups: 14
 
 ================================================================================
 D9
-Order: 18
+Order: 18  =2*3^2
+exponent: 
 Is abelean: false
 center size: 1  identified as:C1
    
@@ -2661,6 +2861,10 @@ order: 1  size: 1 count: 1
 order: 2  size: 9 count: 1
 order: 3  size: 2 count: 1
 order: 9  size: 2 count: 3
+
+Sylow Numbers:
+    n_2 = 9
+    n_3 = 1
 
 Order of der(G): 9  identified as:C9
 Order of ab(G): 2  identified as:C2
@@ -2724,7 +2928,8 @@ number of subgroups: 16
 
 ================================================================================
 C2⋊C3xC3
-Order: 18
+Order: 18  =2*3^2
+exponent: 
 Is abelean: false
 center size: 1  identified as:C1
    
@@ -2733,6 +2938,10 @@ number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 2  size: 9 count: 1
 order: 3  size: 2 count: 4
+
+Sylow Numbers:
+    n_2 = 9
+    n_3 = 1
 
 Order of der(G): 9  identified as:C3xC3
 Order of ab(G): 2  identified as:C2
@@ -2832,7 +3041,8 @@ number of subgroups: 28
 
 ================================================================================
 C19
-Order: 19
+Order: 19  =19
+exponent: 
 Is abelean: true
 center size: 19  identified as:C19
    
@@ -2840,6 +3050,9 @@ Total number of conjugation classes: 19
 number of conjugation class by size and order of the elements:
 order: 1  size: 1 count: 1
 order: 19  size: 1 count: 18
+
+Sylow Numbers:
+    n_19 = 1
 
 Order of der(G): 1  identified as:C1
 Order of ab(G): 19  identified as:C19
@@ -2861,9 +3074,10 @@ number of subgroups: 2
 
 ================================================================================
 C20
-Order: 20
+Order: 20  =2^2*5
+exponent: 
 Is abelean: true
-center size: 20  identified as:unidentified
+center size: 20  identified as:C20
    
 Total number of conjugation classes: 20
 number of conjugation class by size and order of the elements:
@@ -2874,14 +3088,18 @@ order: 4  size: 1 count: 2
 order: 5  size: 1 count: 4
 order: 10  size: 1 count: 4
 
+Sylow Numbers:
+    n_2 = 1
+    n_5 = 1
+
 Order of der(G): 1  identified as:C1
-Order of ab(G): 20  identified as:unidentified
+Order of ab(G): 20  identified as:C20
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
 Outer automorphism group not calculated
 
 number of subgroups: 6
-----subgroup of order: 20 identified as unidentified
+----subgroup of order: 20 identified as C20
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 10 identified as C10
@@ -2902,15 +3120,16 @@ number of subgroups: 6
     quotient is identified as: C10
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: unidentified
+    quotient is identified as: C20
 
 
 
 ================================================================================
 C10xC2
-Order: 20
+Order: 20  =2^2*5
+exponent: 
 Is abelean: true
-center size: 20  identified as:unidentified
+center size: 20  identified as:C10xC2
    
 Total number of conjugation classes: 20
 number of conjugation class by size and order of the elements:
@@ -2919,14 +3138,18 @@ order: 2  size: 1 count: 3
 order: 5  size: 1 count: 4
 order: 10  size: 1 count: 12
 
+Sylow Numbers:
+    n_2 = 1
+    n_5 = 1
+
 Order of der(G): 1  identified as:C1
-Order of ab(G): 20  identified as:unidentified
+Order of ab(G): 20  identified as:C10xC2
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
 Outer automorphism group not calculated
 
 number of subgroups: 10
-----subgroup of order: 20 identified as unidentified
+----subgroup of order: 20 identified as C10xC2
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 10 identified as C10
@@ -2961,13 +3184,14 @@ number of subgroups: 10
     quotient is identified as: C10
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: unidentified
+    quotient is identified as: C10xC2
 
 
 
 ================================================================================
 D10
-Order: 20
+Order: 20  =2^2*5
+exponent: 
 Is abelean: false
 center size: 2  identified as:C2
    
@@ -2979,6 +3203,10 @@ order: 2  size: 5 count: 2
 order: 5  size: 2 count: 2
 order: 10  size: 2 count: 2
 
+Sylow Numbers:
+    n_2 = 5
+    n_5 = 1
+
 Order of der(G): 5  identified as:C5
 Order of ab(G): 4  identified as:C2xC2
 Order of inner automorphism group: 10   classified as: D5
@@ -2986,7 +3214,7 @@ Order of automorphism group: 40
 Order of outer automorphism group: 4
 
 number of subgroups: 22
-----subgroup of order: 20 identified as unidentified
+----subgroup of order: 20 identified as D10
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 4 identified as C2xC2
@@ -3050,13 +3278,14 @@ number of subgroups: 22
     is normal: false
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: unidentified
+    quotient is identified as: D10
 
 
 
 ================================================================================
 Q5
-Order: 20
+Order: 20  =2^2*5
+exponent: 
 Is abelean: false
 center size: 2  identified as:C2
    
@@ -3068,6 +3297,10 @@ order: 4  size: 5 count: 2
 order: 5  size: 2 count: 2
 order: 10  size: 2 count: 2
 
+Sylow Numbers:
+    n_2 = 5
+    n_5 = 1
+
 Order of der(G): 5  identified as:C5
 Order of ab(G): 4  identified as:C4
 Order of inner automorphism group: 10   classified as: D5
@@ -3075,7 +3308,7 @@ Order of automorphism group: 40
 Order of outer automorphism group: 4
 
 number of subgroups: 10
-----subgroup of order: 20 identified as unidentified
+----subgroup of order: 20 identified as Q5
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 4 identified as C4
@@ -3111,13 +3344,14 @@ number of subgroups: 10
     quotient is identified as: C4
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: unidentified
+    quotient is identified as: Q5
 
 
 
 ================================================================================
 MC(5,4,2)
-Order: 20
+Order: 20  =2^2*5
+exponent: 
 Is abelean: false
 center size: 1  identified as:C1
    
@@ -3128,14 +3362,18 @@ order: 2  size: 5 count: 1
 order: 4  size: 5 count: 2
 order: 5  size: 4 count: 1
 
+Sylow Numbers:
+    n_2 = 5
+    n_5 = 1
+
 Order of der(G): 5  identified as:C5
 Order of ab(G): 4  identified as:C4
-Order of inner automorphism group: 20   classified as: unidentified
+Order of inner automorphism group: 20   classified as: MC(5,4,2)
 Order of automorphism group: 20
 Order of outer automorphism group: 1
 
 number of subgroups: 14
-----subgroup of order: 20 identified as unidentified
+----subgroup of order: 20 identified as MC(5,4,2)
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 4 identified as C4
@@ -3178,7 +3416,7 @@ number of subgroups: 14
     is normal: false
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: unidentified
+    quotient is identified as: MC(5,4,2)
 
 
 --- end of  SmallGroupCatalog [54 items] ---

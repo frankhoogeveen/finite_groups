@@ -17,14 +17,32 @@
 
 package nl.fh._test;
 
-import nl.fh.calculators_test.*;
-import nl.fh.classifier_test.ClassifierTest;
-import nl.fh.group_test.*;
-import nl.fh.homomorphism_test.*;
-import nl.fh.lattice_test.LatticeTest;
-import nl.fh.numbers_test.*;
-import nl.fh.semidirect_test.SemiDirectProductTest;
-import nl.fh.subgroups_test.*;
+import nl.fh.classifier.ClassifierTest;
+import nl.fh.group.GroupFactoryTest;
+import nl.fh.group.GroupPermutationConstructorTest;
+import nl.fh.group.SquareOfGroupTest;
+import nl.fh.group.SubgroupTest;
+import nl.fh.group_calculators.CenterCalculatorTest;
+import nl.fh.group_calculators.ConjugationClassCalculatorTest;
+import nl.fh.group_calculators.ElementOrderCalculatorTest;
+import nl.fh.group_calculators.InverseCalculatorTest;
+import nl.fh.group_calculators.PowerTableCalculatorTest;
+import nl.fh.group_calculators.StronglyMinimalGeneratingSetsCalculatorTest;
+import nl.fh.group_def_cyclic.GroupCyclicConstructorTest;
+import nl.fh.group_def_product.GroupProductConstructorTest;
+import nl.fh.group_formatter.FactorizationFormattingTest;
+import nl.fh.lattice.LatticeTest;
+import nl.fh.group_def_semidirect.*;
+import nl.fh.group_def_substitutions.*;
+import nl.fh.homomorphism.AutomorphismTest;
+import nl.fh.homomorphism.EmbeddingTest;
+import nl.fh.homomorphism.GroupHomomorphismTest;
+import nl.fh.homomorphism.InnerAutomorphismTest;
+import nl.fh.homomorphism.KernelTest;
+import nl.fh.homomorphism.OuterAutomorphismTest;
+import nl.fh.number.PrimeFactorsTest;
+import nl.fh.number.PrimesTest;
+import nl.fh.subgroups.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -69,7 +87,8 @@ import org.junit.runners.Suite;
     PrimeFactorsTest.class,
     AllSubgroupsTest.class,
     LatticeTest.class,
-    SemiDirectProductTest.class
+    SemiDirectProductTest.class,
+    FactorizationFormattingTest.class
 })
 
 

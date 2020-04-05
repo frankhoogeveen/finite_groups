@@ -16,11 +16,16 @@
  */
 package nl.fh.group_formatter;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.group.Group;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.number.IntNumber;
 
 /**
  *
@@ -37,10 +42,19 @@ public class OrderFormatter implements ItemFormatter {
     public StringBuilder format(Group g) {
         
         StringBuilder sb = new StringBuilder();
-        sb.append("Order: ");
+
         try {
+            sb.append("Order: ");
             int order = (int) g.getProperty(GroupProperty.Order);
             sb.append(order);
+            sb.append("  =");
+            
+            sb.append(factorizationString(order));
+            sb.append("\n");
+            
+            sb.append("exponent: ");
+            int exp = (int) g.getProperty(GroupProperty.Exponent);
+            
         } catch (EvaluationException ex) {
             String mess = "cannot retrieve order";
             Logger.getLogger(OrderFormatter.class.getName()).log(Level.SEVERE, mess, ex);
@@ -49,5 +63,27 @@ public class OrderFormatter implements ItemFormatter {
         sb.append("\n");
         return sb;
     }
-    
+
+    String factorizationString(int n) {
+        if(n==1){ return "1";}
+        
+        Map<Integer, Integer> map = IntNumber.factorize(n);
+        List<Integer> primes = new ArrayList<Integer>(map.keySet());
+        // Collections.sort(primes);
+        
+        StringBuilder sb  = new StringBuilder();
+        String prefix = "";
+        for(Integer p : primes){
+            sb.append(prefix);
+            prefix = "*";
+            
+            sb.append(p);
+            int exp = map.get(p);
+            if(exp > 1){
+                sb.append("^");
+                sb.append(exp);
+            }
+        }
+        return sb.toString();
+    }    
 }

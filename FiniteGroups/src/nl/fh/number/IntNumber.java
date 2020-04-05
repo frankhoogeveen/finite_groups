@@ -76,6 +76,17 @@ public class IntNumber {
         
         return ((a*b)/gcd(a,b));
     }
+    
+     /**
+     * 
+     * @param n
+     * @return true if n is a power of a prime 
+     * 
+     * returns false for n=1, or n having >1 prime factor.
+     */
+    public static boolean isPrimePower(int n){
+        return factorize(n).keySet().size() == 1;
+    }
 
     /**
      * 
@@ -96,17 +107,8 @@ public class IntNumber {
         recursivelyFactorize(n, currentPrime, result);
         return result;
     }
+    
 
-    /**
-     * 
-     * @param n
-     * @return true if n is a power of a prime 
-     * 
-     * returns false for n=1, or n having >1 prime factor.
-     */
-    public static boolean isPrimePower(int n){
-        return factorize(n).keySet().size() == 1;
-    }
 
     private static void recursivelyFactorize(int n, int p, Map<Integer, Integer> result) {
         if(n ==1){

@@ -34,8 +34,10 @@ public enum GroupProperty implements Property {
     
     Order(new OrderCalculator()),
     ElementOrders(new ElementOrderCalculator()),
+    Exponent(new ExponentCalculator()),
     Inverses(new InverseCalculator()),
     PowerTable(new PowerTableCalculator()),
+    SylowMap(new SylowMapCalculator()),
     
     UnitElement(new UnitCalculator()),
     UnitSet(new UnitSetCalculator()),
