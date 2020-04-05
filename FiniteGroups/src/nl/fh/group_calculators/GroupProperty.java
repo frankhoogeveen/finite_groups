@@ -67,6 +67,10 @@ public enum GroupProperty implements Property {
     CommutatorsEmbedding(new EmbeddingCalculator(CommutatorsGroup)),
     Abelianization(new AbelizanizationCalculator()),
     
+    FrattiniSet(new FrattiniSetCalculator()),
+    FrattiniGroup(new GroupFromSetCalculator("Phi", FrattiniSet)),
+    FrattiniEmbedding(new EmbeddingCalculator(FrattiniGroup)),
+    
     IsAbelean(new IsAbeleanCalculator()),
     
     ConjugationClassesMap(new ConjugationClassesMapCalculator()),

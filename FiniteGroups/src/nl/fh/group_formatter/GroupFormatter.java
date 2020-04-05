@@ -38,14 +38,16 @@ public class GroupFormatter {
         this.list.add(new OrderFormatter(this));
         this.list.add(new IsAbeleanFormatter(this));
         this.list.add(new CenterFormatter(this));
-        this.list.add(new InversesFormatter(this));
-        this.list.add(new ConjugationClassesFormatter(this));
-        this.list.add(new SylowNumbersFormatter(this));
         this.list.add(new DerivedGroupFormatter(this));
         this.list.add(new AbeleanizationFormatter(this));
+        this.list.add(new FrattiniFormatter(this));
         this.list.add(new InnerAutomorphismGroupFormatter(this));
         this.list.add(new AutomorphismGroupFormatter(this));
         this.list.add(new OuterAutomorphismGroupFormatter(this));
+        this.list.add(new InversesFormatter(this));
+        this.list.add(new ConjugationClassesFormatter(this));
+        this.list.add(new SylowNumbersFormatter(this));
+
         this.list.add(new SubgroupFormatter(this));
         this.list.add(new GroupFooterFormatter(this));
     }

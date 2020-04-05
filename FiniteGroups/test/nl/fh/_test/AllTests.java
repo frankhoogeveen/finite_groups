@@ -25,6 +25,7 @@ import nl.fh.group.SubgroupTest;
 import nl.fh.group_calculators.CenterCalculatorTest;
 import nl.fh.group_calculators.ConjugationClassCalculatorTest;
 import nl.fh.group_calculators.ElementOrderCalculatorTest;
+import nl.fh.group_calculators.FrattiniTest;
 import nl.fh.group_calculators.InverseCalculatorTest;
 import nl.fh.group_calculators.PowerTableCalculatorTest;
 import nl.fh.group_calculators.StronglyMinimalGeneratingSetsCalculatorTest;
@@ -88,7 +89,8 @@ import org.junit.runners.Suite;
     AllSubgroupsTest.class,
     LatticeTest.class,
     SemiDirectProductTest.class,
-    FactorizationFormattingTest.class
+    FactorizationFormattingTest.class,
+    FrattiniTest.class
 })
 
 
