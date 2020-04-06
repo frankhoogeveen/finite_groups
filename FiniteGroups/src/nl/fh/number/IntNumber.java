@@ -108,8 +108,6 @@ public class IntNumber {
         return result;
     }
     
-
-
     private static void recursivelyFactorize(int n, int p, Map<Integer, Integer> result) {
         if(n ==1){
             return;

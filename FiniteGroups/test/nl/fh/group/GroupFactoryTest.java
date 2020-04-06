@@ -16,11 +16,9 @@
  */
 package nl.fh.group;
 
-import nl.fh.group.Group;
 import nl.fh.group_definition_factory.GroupFactory;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.calculator.EvaluationException;
-import nl.fh.group.GroupException;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 

@@ -18,6 +18,7 @@
 package nl.fh._test;
 
 import nl.fh.classifier.ClassifierTest;
+import nl.fh.field.PolynomialTest;
 import nl.fh.group.GroupFactoryTest;
 import nl.fh.group.GroupPermutationConstructorTest;
 import nl.fh.group.SquareOfGroupTest;
@@ -90,7 +91,8 @@ import org.junit.runners.Suite;
     LatticeTest.class,
     SemiDirectProductTest.class,
     FactorizationFormattingTest.class,
-    FrattiniTest.class
+    FrattiniTest.class,
+    PolynomialTest.class
 })
 
 

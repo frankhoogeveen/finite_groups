@@ -19,7 +19,8 @@ package nl.fh.number;
 import java.util.ArrayList;
 
 /**
- *
+ * The Sieve of Eratosthenes 
+ * 
  * @author frank
  */
 public class Prime {
