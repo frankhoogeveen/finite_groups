@@ -76,7 +76,10 @@ public class GroupClassifier {
             case 17 : return "C17";
             case 18 : return classify18(group);        
             case 19 : return "C19";
-            case 20 : return classify20(group);                       
+            case 20 : return classify20(group);
+            case 21 : return classify21(group);  
+            case 22 : return classify22(group);  
+            case 23 : return "C23";
             
             default : return UNKNOWN;
         }
@@ -224,4 +227,22 @@ public class GroupClassifier {
 
         return "Q5";
     }    
+
+    private String classify21(Group group) throws EvaluationException {
+        Map<Integer, Map<Integer, Integer>> profile = ( Map<Integer, Map<Integer, Integer>>)group.getProperty(GroupProperty.ConjugationProfile);
+        
+        if(getCount(21, 1, profile) == 12){ return "C21";}
+        if(getCount(7, 3, profile) == 2){ return "MC(7,3,2)";}
+        
+        return ERROR;
+    }
+
+    private String classify22(Group group) throws EvaluationException {
+        Map<Integer, Map<Integer, Integer>> profile = ( Map<Integer, Map<Integer, Integer>>)group.getProperty(GroupProperty.ConjugationProfile);
+        
+        if(getCount(22, 1, profile) == 10){ return "C22";}
+        if(getCount(11, 2, profile) == 5){ return "D11";}
+                
+        return ERROR;
+    }
 }

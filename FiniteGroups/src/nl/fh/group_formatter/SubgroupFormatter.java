@@ -43,7 +43,7 @@ public class SubgroupFormatter implements ItemFormatter {
         try {
             Lattice<GroupHomomorphism> subgroupLattice = (Lattice<GroupHomomorphism>) g.getProperty(GroupProperty.SubgroupEmbeddingLattice);
            
-            sb.append("\nnumber of subgroups: ");
+            sb.append("number of subgroups: ");
             sb.append(subgroupLattice.size());
             sb.append("\n");
             
@@ -107,8 +107,5 @@ public class SubgroupFormatter implements ItemFormatter {
             sb.append(factorName);
             sb.append("\n");
         }
-        
-
-        
     }
 }

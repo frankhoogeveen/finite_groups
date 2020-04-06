@@ -43,12 +43,16 @@ public class FrattiniFormatter implements ItemFormatter {
         try {
             Set<Element> frattiniSet = (Set<Element>) g.getProperty(GroupProperty.FrattiniSet);
             Group frattini = (Group) g.getProperty(GroupProperty.FrattiniGroup);
+            int order = (int) frattini.getProperty(GroupProperty.Order);
+            
             GroupHomomorphism frattiniMorph = (GroupHomomorphism) g.getProperty(GroupProperty.FrattiniEmbedding);
             Group frattiniQuotient = (Group) frattiniMorph.getProperty(HomomorphismProperty.FactorGroup);
             
             GroupClassifier classify = new GroupClassifier();
             
-            sb.append("Frattini subgroup Phi(G): ");
+            sb.append("Order of Phi(G): ");
+            sb.append(order);
+            sb.append(" identified as:");
             sb.append(classify.identify(frattini));
             sb.append("   G/Phi(G): ");
             sb.append(classify.identify(frattiniQuotient));

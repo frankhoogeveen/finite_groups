@@ -54,6 +54,7 @@ public class OrderFormatter implements ItemFormatter {
             
             sb.append("exponent: ");
             int exp = (int) g.getProperty(GroupProperty.Exponent);
+            sb.append(exp);
             
         } catch (EvaluationException ex) {
             String mess = "cannot retrieve order";

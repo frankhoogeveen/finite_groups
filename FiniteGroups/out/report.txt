@@ -1,14 +1,14 @@
-*** SmallGroupCatalog [54 items] ***
+*** SmallGroupCatalog [59 items] ***
 
 ================================================================================
 C1
 Order: 1  =1
-exponent: 
+exponent: 1
 Is abelean: true
-center size: 1  identified as:C1
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 1  identified as:C1
+Order of der(G): 1  identified as:C1
 Order of ab(G): 1  identified as:C1
-Frattini subgroup Phi(G): C1   G/Phi(G): C1
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C1
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 1
@@ -21,7 +21,6 @@ order: 1  size: 1 count: 1
 Sylow Numbers:
 none
 
-
 number of subgroups: 1
 ----subgroup of order: 1 identified as C1
     is normal: true
@@ -32,12 +31,12 @@ number of subgroups: 1
 ================================================================================
 C2
 Order: 2  =2
-exponent: 
+exponent: 2
 Is abelean: true
-center size: 2  identified as:C2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 2  identified as:C2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 2  identified as:C2
-Frattini subgroup Phi(G): C1   G/Phi(G): C2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C2
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 1
@@ -50,7 +49,6 @@ order: 2  size: 1 count: 1
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 2
 ----subgroup of order: 2 identified as C2
@@ -67,12 +65,12 @@ number of subgroups: 2
 ================================================================================
 C3
 Order: 3  =3
-exponent: 
+exponent: 3
 Is abelean: true
-center size: 3  identified as:C3
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 3  identified as:C3
+Order of der(G): 1  identified as:C1
 Order of ab(G): 3  identified as:C3
-Frattini subgroup Phi(G): C1   G/Phi(G): C3
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C3
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 2
@@ -85,7 +83,6 @@ order: 3  size: 1 count: 2
 
 Sylow Numbers:
     n_3 = 1
-
 
 number of subgroups: 2
 ----subgroup of order: 3 identified as C3
@@ -102,12 +99,12 @@ number of subgroups: 2
 ================================================================================
 C4
 Order: 4  =2^2
-exponent: 
+exponent: 4
 Is abelean: true
-center size: 4  identified as:C4
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 4  identified as:C4
+Order of der(G): 1  identified as:C1
 Order of ab(G): 4  identified as:C4
-Frattini subgroup Phi(G): C2   G/Phi(G): C2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C2
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 2
@@ -121,7 +118,6 @@ order: 4  size: 1 count: 2
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 3
 ----subgroup of order: 4 identified as C4
@@ -141,12 +137,12 @@ number of subgroups: 3
 ================================================================================
 C2xC2
 Order: 4  =2^2
-exponent: 
+exponent: 2
 Is abelean: true
-center size: 4  identified as:C2xC2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 4  identified as:C2xC2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 4  identified as:C2xC2
-Frattini subgroup Phi(G): C1   G/Phi(G): C2xC2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 6
@@ -159,7 +155,6 @@ order: 2  size: 1 count: 3
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 5
 ----subgroup of order: 4 identified as C2xC2
@@ -187,12 +182,12 @@ number of subgroups: 5
 ================================================================================
 C5
 Order: 5  =5
-exponent: 
+exponent: 5
 Is abelean: true
-center size: 5  identified as:C5
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 5  identified as:C5
+Order of der(G): 1  identified as:C1
 Order of ab(G): 5  identified as:C5
-Frattini subgroup Phi(G): C1   G/Phi(G): C5
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C5
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 4
@@ -205,7 +200,6 @@ order: 5  size: 1 count: 4
 
 Sylow Numbers:
     n_5 = 1
-
 
 number of subgroups: 2
 ----subgroup of order: 5 identified as C5
@@ -222,12 +216,12 @@ number of subgroups: 2
 ================================================================================
 C6
 Order: 6  =2*3
-exponent: 
+exponent: 6
 Is abelean: true
-center size: 6  identified as:C6
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 6  identified as:C6
+Order of der(G): 1  identified as:C1
 Order of ab(G): 6  identified as:C6
-Frattini subgroup Phi(G): C1   G/Phi(G): C6
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C6
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 2
@@ -243,7 +237,6 @@ order: 6  size: 1 count: 2
 Sylow Numbers:
     n_2 = 1
     n_3 = 1
-
 
 number of subgroups: 4
 ----subgroup of order: 6 identified as C6
@@ -268,12 +261,12 @@ number of subgroups: 4
 ================================================================================
 S3
 Order: 6  =2*3
-exponent: 
+exponent: 6
 Is abelean: false
-center size: 1  identified as:C1
-   Order of der(G): 3  identified as:C3
+Order of Z(G): 1  identified as:C1
+Order of der(G): 3  identified as:C3
 Order of ab(G): 2  identified as:C2
-Frattini subgroup Phi(G): C1   G/Phi(G): S3
+Order of Phi(G): 1 identified as:C1   G/Phi(G): S3
 
 Order of inner automorphism group: 6   classified as: S3
 Order of automorphism group: 6
@@ -288,7 +281,6 @@ order: 3  size: 2 count: 1
 Sylow Numbers:
     n_2 = 3
     n_3 = 1
-
 
 number of subgroups: 6
 ----subgroup of order: 6 identified as S3
@@ -320,12 +312,12 @@ number of subgroups: 6
 ================================================================================
 C7
 Order: 7  =7
-exponent: 
+exponent: 7
 Is abelean: true
-center size: 7  identified as:C7
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 7  identified as:C7
+Order of der(G): 1  identified as:C1
 Order of ab(G): 7  identified as:C7
-Frattini subgroup Phi(G): C1   G/Phi(G): C7
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C7
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 6
@@ -338,7 +330,6 @@ order: 7  size: 1 count: 6
 
 Sylow Numbers:
     n_7 = 1
-
 
 number of subgroups: 2
 ----subgroup of order: 7 identified as C7
@@ -355,12 +346,12 @@ number of subgroups: 2
 ================================================================================
 C8
 Order: 8  =2^3
-exponent: 
+exponent: 8
 Is abelean: true
-center size: 8  identified as:C8
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 8  identified as:C8
+Order of der(G): 1  identified as:C1
 Order of ab(G): 8  identified as:C8
-Frattini subgroup Phi(G): C4   G/Phi(G): C2
+Order of Phi(G): 4 identified as:C4   G/Phi(G): C2
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 4
@@ -375,7 +366,6 @@ order: 8  size: 1 count: 4
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 4
 ----subgroup of order: 8 identified as C8
@@ -398,12 +388,12 @@ number of subgroups: 4
 ================================================================================
 C4xC2
 Order: 8  =2^3
-exponent: 
+exponent: 4
 Is abelean: true
-center size: 8  identified as:C4xC2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 8  identified as:C4xC2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 8  identified as:C4xC2
-Frattini subgroup Phi(G): C2   G/Phi(G): C2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 8
@@ -417,7 +407,6 @@ order: 4  size: 1 count: 4
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 8
 ----subgroup of order: 8 identified as C4xC2
@@ -454,12 +443,12 @@ number of subgroups: 8
 ================================================================================
 C2xC2xC2
 Order: 8  =2^3
-exponent: 
+exponent: 2
 Is abelean: true
-center size: 8  identified as:C2xC2xC2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 8  identified as:C2xC2xC2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 8  identified as:C2xC2xC2
-Frattini subgroup Phi(G): C1   G/Phi(G): C2xC2xC2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C2xC2xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 168
@@ -472,7 +461,6 @@ order: 2  size: 1 count: 7
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 16
 ----subgroup of order: 8 identified as C2xC2xC2
@@ -537,12 +525,12 @@ number of subgroups: 16
 ================================================================================
 D4
 Order: 8  =2^3
-exponent: 
+exponent: 4
 Is abelean: false
-center size: 2  identified as:C2
-   Order of der(G): 2  identified as:C2
+Order of Z(G): 2  identified as:C2
+Order of der(G): 2  identified as:C2
 Order of ab(G): 4  identified as:C2xC2
-Frattini subgroup Phi(G): C2   G/Phi(G): C2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 8
@@ -557,7 +545,6 @@ order: 4  size: 2 count: 1
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 10
 ----subgroup of order: 8 identified as D4
@@ -596,12 +583,12 @@ number of subgroups: 10
 ================================================================================
 Q2
 Order: 8  =2^3
-exponent: 
+exponent: 4
 Is abelean: false
-center size: 2  identified as:C2
-   Order of der(G): 2  identified as:C2
+Order of Z(G): 2  identified as:C2
+Order of der(G): 2  identified as:C2
 Order of ab(G): 4  identified as:C2xC2
-Frattini subgroup Phi(G): C2   G/Phi(G): C2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 24
@@ -615,7 +602,6 @@ order: 4  size: 2 count: 3
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 6
 ----subgroup of order: 8 identified as Q2
@@ -646,12 +632,12 @@ number of subgroups: 6
 ================================================================================
 C9
 Order: 9  =3^2
-exponent: 
+exponent: 9
 Is abelean: true
-center size: 9  identified as:C9
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 9  identified as:C9
+Order of der(G): 1  identified as:C1
 Order of ab(G): 9  identified as:C9
-Frattini subgroup Phi(G): C3   G/Phi(G): C3
+Order of Phi(G): 3 identified as:C3   G/Phi(G): C3
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 6
@@ -665,7 +651,6 @@ order: 9  size: 1 count: 6
 
 Sylow Numbers:
     n_3 = 1
-
 
 number of subgroups: 3
 ----subgroup of order: 9 identified as C9
@@ -685,12 +670,12 @@ number of subgroups: 3
 ================================================================================
 C3xC3
 Order: 9  =3^2
-exponent: 
+exponent: 3
 Is abelean: true
-center size: 9  identified as:C3xC3
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 9  identified as:C3xC3
+Order of der(G): 1  identified as:C1
 Order of ab(G): 9  identified as:C3xC3
-Frattini subgroup Phi(G): C1   G/Phi(G): C3xC3
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C3xC3
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 48
@@ -703,7 +688,6 @@ order: 3  size: 1 count: 8
 
 Sylow Numbers:
     n_3 = 1
-
 
 number of subgroups: 6
 ----subgroup of order: 9 identified as C3xC3
@@ -735,12 +719,12 @@ number of subgroups: 6
 ================================================================================
 C10
 Order: 10  =2*5
-exponent: 
+exponent: 10
 Is abelean: true
-center size: 10  identified as:C10
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 10  identified as:C10
+Order of der(G): 1  identified as:C1
 Order of ab(G): 10  identified as:C10
-Frattini subgroup Phi(G): C1   G/Phi(G): C10
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C10
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 4
@@ -756,7 +740,6 @@ order: 10  size: 1 count: 4
 Sylow Numbers:
     n_2 = 1
     n_5 = 1
-
 
 number of subgroups: 4
 ----subgroup of order: 10 identified as C10
@@ -781,12 +764,12 @@ number of subgroups: 4
 ================================================================================
 D5
 Order: 10  =2*5
-exponent: 
+exponent: 10
 Is abelean: false
-center size: 1  identified as:C1
-   Order of der(G): 5  identified as:C5
+Order of Z(G): 1  identified as:C1
+Order of der(G): 5  identified as:C5
 Order of ab(G): 2  identified as:C2
-Frattini subgroup Phi(G): C1   G/Phi(G): D5
+Order of Phi(G): 1 identified as:C1   G/Phi(G): D5
 
 Order of inner automorphism group: 10   classified as: D5
 Order of automorphism group: 20
@@ -801,7 +784,6 @@ order: 5  size: 2 count: 2
 Sylow Numbers:
     n_2 = 5
     n_5 = 1
-
 
 number of subgroups: 8
 ----subgroup of order: 10 identified as D5
@@ -841,12 +823,12 @@ number of subgroups: 8
 ================================================================================
 C11
 Order: 11  =11
-exponent: 
+exponent: 11
 Is abelean: true
-center size: 11  identified as:C11
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 11  identified as:C11
+Order of der(G): 1  identified as:C1
 Order of ab(G): 11  identified as:C11
-Frattini subgroup Phi(G): C1   G/Phi(G): C11
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C11
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 10
@@ -859,7 +841,6 @@ order: 11  size: 1 count: 10
 
 Sylow Numbers:
     n_11 = 1
-
 
 number of subgroups: 2
 ----subgroup of order: 11 identified as C11
@@ -876,12 +857,12 @@ number of subgroups: 2
 ================================================================================
 C12
 Order: 12  =2^2*3
-exponent: 
+exponent: 12
 Is abelean: true
-center size: 12  identified as:C12
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 12  identified as:C12
+Order of der(G): 1  identified as:C1
 Order of ab(G): 12  identified as:C12
-Frattini subgroup Phi(G): C2   G/Phi(G): C6
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C6
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 4
@@ -899,7 +880,6 @@ order: 12  size: 1 count: 4
 Sylow Numbers:
     n_2 = 1
     n_3 = 1
-
 
 number of subgroups: 6
 ----subgroup of order: 12 identified as C12
@@ -930,12 +910,12 @@ number of subgroups: 6
 ================================================================================
 C3xC2xC2
 Order: 12  =2^2*3
-exponent: 
+exponent: 6
 Is abelean: true
-center size: 12  identified as:C3xC2xC2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 12  identified as:C3xC2xC2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 12  identified as:C3xC2xC2
-Frattini subgroup Phi(G): C1   G/Phi(G): C3xC2xC2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C3xC2xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 12
@@ -951,7 +931,6 @@ order: 6  size: 1 count: 6
 Sylow Numbers:
     n_2 = 1
     n_3 = 1
-
 
 number of subgroups: 10
 ----subgroup of order: 12 identified as C3xC2xC2
@@ -996,12 +975,12 @@ number of subgroups: 10
 ================================================================================
 D6
 Order: 12  =2^2*3
-exponent: 
+exponent: 6
 Is abelean: false
-center size: 2  identified as:C2
-   Order of der(G): 3  identified as:C3
+Order of Z(G): 2  identified as:C2
+Order of der(G): 3  identified as:C3
 Order of ab(G): 4  identified as:C2xC2
-Frattini subgroup Phi(G): C1   G/Phi(G): D6
+Order of Phi(G): 1 identified as:C1   G/Phi(G): D6
 
 Order of inner automorphism group: 6   classified as: S3
 Order of automorphism group: 12
@@ -1018,7 +997,6 @@ order: 6  size: 2 count: 1
 Sylow Numbers:
     n_2 = 3
     n_3 = 1
-
 
 number of subgroups: 16
 ----subgroup of order: 12 identified as D6
@@ -1076,12 +1054,12 @@ number of subgroups: 16
 ================================================================================
 Q3
 Order: 12  =2^2*3
-exponent: 
+exponent: 12
 Is abelean: false
-center size: 2  identified as:C2
-   Order of der(G): 3  identified as:C3
+Order of Z(G): 2  identified as:C2
+Order of der(G): 3  identified as:C3
 Order of ab(G): 4  identified as:C4
-Frattini subgroup Phi(G): C2   G/Phi(G): S3
+Order of Phi(G): 2 identified as:C2   G/Phi(G): S3
 
 Order of inner automorphism group: 6   classified as: S3
 Order of automorphism group: 12
@@ -1098,7 +1076,6 @@ order: 6  size: 2 count: 1
 Sylow Numbers:
     n_2 = 3
     n_3 = 1
-
 
 number of subgroups: 8
 ----subgroup of order: 12 identified as Q3
@@ -1136,12 +1113,12 @@ number of subgroups: 8
 ================================================================================
 A4
 Order: 12  =2^2*3
-exponent: 
+exponent: 6
 Is abelean: false
-center size: 1  identified as:C1
-   Order of der(G): 4  identified as:C2xC2
+Order of Z(G): 1  identified as:C1
+Order of der(G): 4  identified as:C2xC2
 Order of ab(G): 3  identified as:C3
-Frattini subgroup Phi(G): C1   G/Phi(G): A4
+Order of Phi(G): 1 identified as:C1   G/Phi(G): A4
 
 Order of inner automorphism group: 12   classified as: A4
 Order of automorphism group: 24
@@ -1156,7 +1133,6 @@ order: 3  size: 4 count: 2
 Sylow Numbers:
     n_2 = 1
     n_3 = 4
-
 
 number of subgroups: 10
 ----subgroup of order: 12 identified as A4
@@ -1198,12 +1174,12 @@ number of subgroups: 10
 ================================================================================
 C13
 Order: 13  =13
-exponent: 
+exponent: 13
 Is abelean: true
-center size: 13  identified as:C13
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 13  identified as:C13
+Order of der(G): 1  identified as:C1
 Order of ab(G): 13  identified as:C13
-Frattini subgroup Phi(G): C1   G/Phi(G): C13
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C13
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 12
@@ -1216,7 +1192,6 @@ order: 13  size: 1 count: 12
 
 Sylow Numbers:
     n_13 = 1
-
 
 number of subgroups: 2
 ----subgroup of order: 13 identified as C13
@@ -1233,12 +1208,12 @@ number of subgroups: 2
 ================================================================================
 C14
 Order: 14  =2*7
-exponent: 
+exponent: 14
 Is abelean: true
-center size: 14  identified as:C14
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 14  identified as:C14
+Order of der(G): 1  identified as:C1
 Order of ab(G): 14  identified as:C14
-Frattini subgroup Phi(G): C1   G/Phi(G): C14
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C14
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 6
@@ -1254,7 +1229,6 @@ order: 14  size: 1 count: 6
 Sylow Numbers:
     n_2 = 1
     n_7 = 1
-
 
 number of subgroups: 4
 ----subgroup of order: 14 identified as C14
@@ -1279,12 +1253,12 @@ number of subgroups: 4
 ================================================================================
 D7
 Order: 14  =2*7
-exponent: 
+exponent: 14
 Is abelean: false
-center size: 1  identified as:C1
-   Order of der(G): 7  identified as:C7
+Order of Z(G): 1  identified as:C1
+Order of der(G): 7  identified as:C7
 Order of ab(G): 2  identified as:C2
-Frattini subgroup Phi(G): C1   G/Phi(G): D7
+Order of Phi(G): 1 identified as:C1   G/Phi(G): D7
 
 Order of inner automorphism group: 14   classified as: D7
 Order of automorphism group: 42
@@ -1299,7 +1273,6 @@ order: 7  size: 2 count: 3
 Sylow Numbers:
     n_2 = 7
     n_7 = 1
-
 
 number of subgroups: 10
 ----subgroup of order: 14 identified as D7
@@ -1347,12 +1320,12 @@ number of subgroups: 10
 ================================================================================
 C15
 Order: 15  =3*5
-exponent: 
+exponent: 15
 Is abelean: true
-center size: 15  identified as:C15
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 15  identified as:C15
+Order of der(G): 1  identified as:C1
 Order of ab(G): 15  identified as:C15
-Frattini subgroup Phi(G): C1   G/Phi(G): C15
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C15
 
 Order of inner automorphism group: 1   classified as: C1
 Order of automorphism group: 8
@@ -1368,7 +1341,6 @@ order: 15  size: 1 count: 8
 Sylow Numbers:
     n_3 = 1
     n_5 = 1
-
 
 number of subgroups: 4
 ----subgroup of order: 15 identified as C15
@@ -1393,12 +1365,12 @@ number of subgroups: 4
 ================================================================================
 C16
 Order: 16  =2^4
-exponent: 
+exponent: 16
 Is abelean: true
-center size: 16  identified as:C16
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 16  identified as:C16
+Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C16
-Frattini subgroup Phi(G): C8   G/Phi(G): C2
+Order of Phi(G): 8 identified as:C8   G/Phi(G): C2
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -1414,7 +1386,6 @@ order: 8  size: 1 count: 4
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 5
 ----subgroup of order: 16 identified as C16
@@ -1440,12 +1411,12 @@ number of subgroups: 5
 ================================================================================
 C8xC2
 Order: 16  =2^4
-exponent: 
+exponent: 8
 Is abelean: true
-center size: 16  identified as:C8xC2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 16  identified as:C8xC2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C8xC2
-Frattini subgroup Phi(G): C4   G/Phi(G): C2xC2
+Order of Phi(G): 4 identified as:C4   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -1460,7 +1431,6 @@ order: 8  size: 1 count: 8
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 11
 ----subgroup of order: 16 identified as C8xC2
@@ -1506,12 +1476,12 @@ number of subgroups: 11
 ================================================================================
 C4xC4
 Order: 16  =2^4
-exponent: 
+exponent: 4
 Is abelean: true
-center size: 16  identified as:C4xC4
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 16  identified as:C4xC4
+Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C4xC4
-Frattini subgroup Phi(G): C2xC2   G/Phi(G): C2xC2
+Order of Phi(G): 4 identified as:C2xC2   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -1525,7 +1495,6 @@ order: 4  size: 1 count: 12
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 15
 ----subgroup of order: 16 identified as C4xC4
@@ -1583,12 +1552,12 @@ number of subgroups: 15
 ================================================================================
 C4xC2xC2
 Order: 16  =2^4
-exponent: 
+exponent: 4
 Is abelean: true
-center size: 16  identified as:C4xC2xC2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 16  identified as:C4xC2xC2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C4xC2xC2
-Frattini subgroup Phi(G): C2   G/Phi(G): C2xC2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C2xC2xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -1602,7 +1571,6 @@ order: 4  size: 1 count: 8
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 27
 ----subgroup of order: 16 identified as C4xC2xC2
@@ -1700,12 +1668,12 @@ number of subgroups: 27
 ================================================================================
 C2xC2xC2xC2
 Order: 16  =2^4
-exponent: 
+exponent: 2
 Is abelean: true
-center size: 16  identified as:C2xC2xC2xC2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 16  identified as:C2xC2xC2xC2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C2xC2xC2xC2
-Frattini subgroup Phi(G): C1   G/Phi(G): C2xC2xC2xC2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C2xC2xC2xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -1718,7 +1686,6 @@ order: 2  size: 1 count: 15
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 67
 ----subgroup of order: 16 identified as C2xC2xC2xC2
@@ -1944,12 +1911,12 @@ number of subgroups: 67
 ================================================================================
 D4xC2
 Order: 16  =2^4
-exponent: 
+exponent: 4
 Is abelean: false
-center size: 4  identified as:C2xC2
-   Order of der(G): 2  identified as:C2
+Order of Z(G): 4  identified as:C2xC2
+Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C2xC2xC2
-Frattini subgroup Phi(G): C2   G/Phi(G): C2xC2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C2xC2xC2
 
 Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 64
@@ -1964,7 +1931,6 @@ order: 4  size: 2 count: 2
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 35
 ----subgroup of order: 16 identified as D4xC2
@@ -2070,12 +2036,12 @@ number of subgroups: 35
 ================================================================================
 Q2xC2
 Order: 16  =2^4
-exponent: 
+exponent: 4
 Is abelean: false
-center size: 4  identified as:C2xC2
-   Order of der(G): 2  identified as:C2
+Order of Z(G): 4  identified as:C2xC2
+Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C2xC2xC2
-Frattini subgroup Phi(G): C2   G/Phi(G): C2xC2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C2xC2xC2
 
 Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 192
@@ -2089,7 +2055,6 @@ order: 4  size: 2 count: 6
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 19
 ----subgroup of order: 16 identified as Q2xC2
@@ -2163,12 +2128,12 @@ number of subgroups: 19
 ================================================================================
 D8
 Order: 16  =2^4
-exponent: 
+exponent: 8
 Is abelean: false
-center size: 2  identified as:C2
-   Order of der(G): 4  identified as:C4
+Order of Z(G): 2  identified as:C2
+Order of der(G): 4  identified as:C4
 Order of ab(G): 4  identified as:C2xC2
-Frattini subgroup Phi(G): C4   G/Phi(G): C2xC2
+Order of Phi(G): 4 identified as:C4   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 8   classified as: D4
 Order of automorphism group: 32
@@ -2184,7 +2149,6 @@ order: 8  size: 2 count: 2
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 19
 ----subgroup of order: 16 identified as D8
@@ -2242,12 +2206,12 @@ number of subgroups: 19
 ================================================================================
 Q4
 Order: 16  =2^4
-exponent: 
+exponent: 8
 Is abelean: false
-center size: 2  identified as:C2
-   Order of der(G): 4  identified as:C4
+Order of Z(G): 2  identified as:C2
+Order of der(G): 4  identified as:C4
 Order of ab(G): 4  identified as:C2xC2
-Frattini subgroup Phi(G): C4   G/Phi(G): C2xC2
+Order of Phi(G): 4 identified as:C4   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 8   classified as: D4
 Order of automorphism group: 32
@@ -2263,7 +2227,6 @@ order: 8  size: 2 count: 2
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 11
 ----subgroup of order: 16 identified as Q4
@@ -2305,12 +2268,12 @@ number of subgroups: 11
 ================================================================================
 M4
 Order: 16  =2^4
-exponent: 
+exponent: 8
 Is abelean: false
-center size: 4  identified as:C4
-   Order of der(G): 2  identified as:C2
+Order of Z(G): 4  identified as:C4
+Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C4xC2
-Frattini subgroup Phi(G): C4   G/Phi(G): C2xC2
+Order of Phi(G): 4 identified as:C4   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 16
@@ -2327,7 +2290,6 @@ order: 8  size: 2 count: 4
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 11
 ----subgroup of order: 16 identified as M4
@@ -2371,12 +2333,12 @@ number of subgroups: 11
 ================================================================================
 SD4
 Order: 16  =2^4
-exponent: 
+exponent: 8
 Is abelean: false
-center size: 2  identified as:C2
-   Order of der(G): 4  identified as:C4
+Order of Z(G): 2  identified as:C2
+Order of der(G): 4  identified as:C4
 Order of ab(G): 4  identified as:C2xC2
-Frattini subgroup Phi(G): C4   G/Phi(G): C2xC2
+Order of Phi(G): 4 identified as:C4   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 8   classified as: D4
 Order of automorphism group: 16
@@ -2393,7 +2355,6 @@ order: 8  size: 2 count: 2
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 15
 ----subgroup of order: 16 identified as SD4
@@ -2443,12 +2404,12 @@ number of subgroups: 15
 ================================================================================
 MC(4,4,3)
 Order: 16  =2^4
-exponent: 
+exponent: 4
 Is abelean: false
-center size: 4  identified as:C2xC2
-   Order of der(G): 2  identified as:C2
+Order of Z(G): 4  identified as:C2xC2
+Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C4xC2
-Frattini subgroup Phi(G): C2xC2   G/Phi(G): C2xC2
+Order of Phi(G): 4 identified as:C2xC2   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 32
@@ -2462,7 +2423,6 @@ order: 4  size: 2 count: 6
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 15
 ----subgroup of order: 16 identified as MC(4,4,3)
@@ -2516,12 +2476,12 @@ number of subgroups: 15
 ================================================================================
 G16_1
 Order: 16  =2^4
-exponent: 
+exponent: 4
 Is abelean: false
-center size: 4  identified as:C2xC2
-   Order of der(G): 2  identified as:C2
+Order of Z(G): 4  identified as:C2xC2
+Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C4xC2
-Frattini subgroup Phi(G): C2xC2   G/Phi(G): C2xC2
+Order of Phi(G): 4 identified as:C2xC2   G/Phi(G): C2xC2
 
 Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 32
@@ -2536,7 +2496,6 @@ order: 4  size: 2 count: 4
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 23
 ----subgroup of order: 16 identified as G16_1
@@ -2606,12 +2565,12 @@ number of subgroups: 23
 ================================================================================
 G16_2
 Order: 16  =2^4
-exponent: 
+exponent: 4
 Is abelean: false
-center size: 4  identified as:C4
-   Order of der(G): 2  identified as:C2
+Order of Z(G): 4  identified as:C4
+Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C2xC2xC2
-Frattini subgroup Phi(G): C2   G/Phi(G): C2xC2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C2xC2xC2
 
 Order of inner automorphism group: 4   classified as: C2xC2
 Order of automorphism group: 48
@@ -2627,7 +2586,6 @@ order: 4  size: 2 count: 3
 
 Sylow Numbers:
     n_2 = 1
-
 
 number of subgroups: 23
 ----subgroup of order: 16 identified as G16_2
@@ -2707,12 +2665,12 @@ number of subgroups: 23
 ================================================================================
 C17
 Order: 17  =17
-exponent: 
+exponent: 17
 Is abelean: true
-center size: 17  identified as:C17
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 17  identified as:C17
+Order of der(G): 1  identified as:C1
 Order of ab(G): 17  identified as:C17
-Frattini subgroup Phi(G): C1   G/Phi(G): C17
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C17
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -2725,7 +2683,6 @@ order: 1  size: 1 count: 1
 
 Sylow Numbers:
     n_17 = 1
-
 
 number of subgroups: 2
 ----subgroup of order: 17 identified as C17
@@ -2742,12 +2699,12 @@ number of subgroups: 2
 ================================================================================
 C18
 Order: 18  =2*3^2
-exponent: 
+exponent: 18
 Is abelean: true
-center size: 18  identified as:C18
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 18  identified as:C18
+Order of der(G): 1  identified as:C1
 Order of ab(G): 18  identified as:C18
-Frattini subgroup Phi(G): C3   G/Phi(G): C6
+Order of Phi(G): 3 identified as:C3   G/Phi(G): C6
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -2765,7 +2722,6 @@ order: 9  size: 1 count: 6
 Sylow Numbers:
     n_2 = 1
     n_3 = 1
-
 
 number of subgroups: 6
 ----subgroup of order: 18 identified as C18
@@ -2796,12 +2752,12 @@ number of subgroups: 6
 ================================================================================
 C3xC3xC2
 Order: 18  =2*3^2
-exponent: 
+exponent: 6
 Is abelean: true
-center size: 18  identified as:C3xC3xC2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 18  identified as:C3xC3xC2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 18  identified as:C3xC3xC2
-Frattini subgroup Phi(G): C1   G/Phi(G): C3xC3xC2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C3xC3xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -2817,7 +2773,6 @@ order: 6  size: 1 count: 8
 Sylow Numbers:
     n_2 = 1
     n_3 = 1
-
 
 number of subgroups: 12
 ----subgroup of order: 18 identified as C3xC3xC2
@@ -2869,12 +2824,12 @@ number of subgroups: 12
 ================================================================================
 C3xS3
 Order: 18  =2*3^2
-exponent: 
+exponent: 6
 Is abelean: false
-center size: 3  identified as:C3
-   Order of der(G): 3  identified as:C3
+Order of Z(G): 3  identified as:C3
+Order of der(G): 3  identified as:C3
 Order of ab(G): 6  identified as:C6
-Frattini subgroup Phi(G): C1   G/Phi(G): C3xS3
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C3xS3
 
 Order of inner automorphism group: 6   classified as: S3
 Order of automorphism group: 12
@@ -2891,7 +2846,6 @@ order: 6  size: 3 count: 2
 Sylow Numbers:
     n_2 = 3
     n_3 = 1
-
 
 number of subgroups: 14
 ----subgroup of order: 18 identified as C3xS3
@@ -2943,12 +2897,12 @@ number of subgroups: 14
 ================================================================================
 D9
 Order: 18  =2*3^2
-exponent: 
+exponent: 18
 Is abelean: false
-center size: 1  identified as:C1
-   Order of der(G): 9  identified as:C9
+Order of Z(G): 1  identified as:C1
+Order of der(G): 9  identified as:C9
 Order of ab(G): 2  identified as:C2
-Frattini subgroup Phi(G): C3   G/Phi(G): S3
+Order of Phi(G): 3 identified as:C3   G/Phi(G): S3
 
 Order of inner automorphism group: 18   classified as: D9
 Order of automorphism group: 54
@@ -2964,7 +2918,6 @@ order: 9  size: 2 count: 3
 Sylow Numbers:
     n_2 = 9
     n_3 = 1
-
 
 number of subgroups: 16
 ----subgroup of order: 18 identified as D9
@@ -3023,12 +2976,12 @@ number of subgroups: 16
 ================================================================================
 C2⋊C3xC3
 Order: 18  =2*3^2
-exponent: 
+exponent: 6
 Is abelean: false
-center size: 1  identified as:C1
-   Order of der(G): 9  identified as:C3xC3
+Order of Z(G): 1  identified as:C1
+Order of der(G): 9  identified as:C3xC3
 Order of ab(G): 2  identified as:C2
-Frattini subgroup Phi(G): C1   G/Phi(G): C2⋊C3xC3
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C2⋊C3xC3
 
 Order of inner automorphism group: 18   classified as: C2⋊C3xC3
 Order of automorphism group: 432
@@ -3043,7 +2996,6 @@ order: 3  size: 2 count: 4
 Sylow Numbers:
     n_2 = 9
     n_3 = 1
-
 
 number of subgroups: 28
 ----subgroup of order: 18 identified as C2⋊C3xC3
@@ -3138,12 +3090,12 @@ number of subgroups: 28
 ================================================================================
 C19
 Order: 19  =19
-exponent: 
+exponent: 19
 Is abelean: true
-center size: 19  identified as:C19
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 19  identified as:C19
+Order of der(G): 1  identified as:C1
 Order of ab(G): 19  identified as:C19
-Frattini subgroup Phi(G): C1   G/Phi(G): C19
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C19
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -3156,7 +3108,6 @@ order: 19  size: 1 count: 18
 
 Sylow Numbers:
     n_19 = 1
-
 
 number of subgroups: 2
 ----subgroup of order: 19 identified as C19
@@ -3173,12 +3124,12 @@ number of subgroups: 2
 ================================================================================
 C20
 Order: 20  =2^2*5
-exponent: 
+exponent: 20
 Is abelean: true
-center size: 20  identified as:C20
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 20  identified as:C20
+Order of der(G): 1  identified as:C1
 Order of ab(G): 20  identified as:C20
-Frattini subgroup Phi(G): C2   G/Phi(G): C10
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C10
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -3196,7 +3147,6 @@ order: 10  size: 1 count: 4
 Sylow Numbers:
     n_2 = 1
     n_5 = 1
-
 
 number of subgroups: 6
 ----subgroup of order: 20 identified as C20
@@ -3227,12 +3177,12 @@ number of subgroups: 6
 ================================================================================
 C10xC2
 Order: 20  =2^2*5
-exponent: 
+exponent: 10
 Is abelean: true
-center size: 20  identified as:C10xC2
-   Order of der(G): 1  identified as:C1
+Order of Z(G): 20  identified as:C10xC2
+Order of der(G): 1  identified as:C1
 Order of ab(G): 20  identified as:C10xC2
-Frattini subgroup Phi(G): C1   G/Phi(G): C10xC2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C10xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -3248,7 +3198,6 @@ order: 10  size: 1 count: 12
 Sylow Numbers:
     n_2 = 1
     n_5 = 1
-
 
 number of subgroups: 10
 ----subgroup of order: 20 identified as C10xC2
@@ -3293,12 +3242,12 @@ number of subgroups: 10
 ================================================================================
 D10
 Order: 20  =2^2*5
-exponent: 
+exponent: 10
 Is abelean: false
-center size: 2  identified as:C2
-   Order of der(G): 5  identified as:C5
+Order of Z(G): 2  identified as:C2
+Order of der(G): 5  identified as:C5
 Order of ab(G): 4  identified as:C2xC2
-Frattini subgroup Phi(G): C1   G/Phi(G): D10
+Order of Phi(G): 1 identified as:C1   G/Phi(G): D10
 
 Order of inner automorphism group: 10   classified as: D5
 Order of automorphism group: 40
@@ -3315,7 +3264,6 @@ order: 10  size: 2 count: 2
 Sylow Numbers:
     n_2 = 5
     n_5 = 1
-
 
 number of subgroups: 22
 ----subgroup of order: 20 identified as D10
@@ -3389,12 +3337,12 @@ number of subgroups: 22
 ================================================================================
 Q5
 Order: 20  =2^2*5
-exponent: 
+exponent: 20
 Is abelean: false
-center size: 2  identified as:C2
-   Order of der(G): 5  identified as:C5
+Order of Z(G): 2  identified as:C2
+Order of der(G): 5  identified as:C5
 Order of ab(G): 4  identified as:C4
-Frattini subgroup Phi(G): C2   G/Phi(G): D5
+Order of Phi(G): 2 identified as:C2   G/Phi(G): D5
 
 Order of inner automorphism group: 10   classified as: D5
 Order of automorphism group: 40
@@ -3411,7 +3359,6 @@ order: 10  size: 2 count: 2
 Sylow Numbers:
     n_2 = 5
     n_5 = 1
-
 
 number of subgroups: 10
 ----subgroup of order: 20 identified as Q5
@@ -3457,12 +3404,12 @@ number of subgroups: 10
 ================================================================================
 MC(5,4,2)
 Order: 20  =2^2*5
-exponent: 
+exponent: 20
 Is abelean: false
-center size: 1  identified as:C1
-   Order of der(G): 5  identified as:C5
+Order of Z(G): 1  identified as:C1
+Order of der(G): 5  identified as:C5
 Order of ab(G): 4  identified as:C4
-Frattini subgroup Phi(G): C1   G/Phi(G): MC(5,4,2)
+Order of Phi(G): 1 identified as:C1   G/Phi(G): MC(5,4,2)
 
 Order of inner automorphism group: 20   classified as: MC(5,4,2)
 Order of automorphism group: 20
@@ -3478,7 +3425,6 @@ order: 5  size: 4 count: 1
 Sylow Numbers:
     n_2 = 5
     n_5 = 1
-
 
 number of subgroups: 14
 ----subgroup of order: 20 identified as MC(5,4,2)
@@ -3527,4 +3473,278 @@ number of subgroups: 14
     quotient is identified as: MC(5,4,2)
 
 
---- end of  SmallGroupCatalog [54 items] ---
+
+================================================================================
+C21
+Order: 21  =3*7
+exponent: 21
+Is abelean: true
+Order of Z(G): 21  identified as:error
+Order of der(G): 1  identified as:C1
+Order of ab(G): 21  identified as:error
+Order of Phi(G): 1 identified as:C1   G/Phi(G): error
+
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+Total number of conjugation classes: 21
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 3  size: 1 count: 2
+order: 21  size: 1 count: 12
+order: 7  size: 1 count: 6
+
+Sylow Numbers:
+    n_3 = 1
+    n_7 = 1
+
+number of subgroups: 4
+----subgroup of order: 21 identified as error
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 7 identified as C7
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 3 identified as C3
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C7
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: error
+
+
+
+================================================================================
+MC(7,3,2)
+Order: 21  =3*7
+exponent: 21
+Is abelean: false
+Order of Z(G): 1  identified as:C1
+Order of der(G): 7  identified as:C7
+Order of ab(G): 3  identified as:C3
+Order of Phi(G): 1 identified as:C1   G/Phi(G): error
+
+Order of inner automorphism group: 21   classified as: error
+Order of automorphism group: 42
+Order of outer automorphism group: 2
+
+Total number of conjugation classes: 5
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 3  size: 7 count: 2
+order: 7  size: 3 count: 2
+
+Sylow Numbers:
+    n_3 = 7
+    n_7 = 1
+
+number of subgroups: 10
+----subgroup of order: 21 identified as error
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 3 identified as C3
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 7 identified as C7
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 3 identified as C3
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: error
+
+
+
+================================================================================
+C22
+Order: 22  =2*11
+exponent: 22
+Is abelean: true
+Order of Z(G): 22  identified as:error
+Order of der(G): 1  identified as:C1
+Order of ab(G): 22  identified as:error
+Order of Phi(G): 1 identified as:C1   G/Phi(G): error
+
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+Total number of conjugation classes: 22
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 1
+order: 22  size: 1 count: 10
+order: 11  size: 1 count: 10
+
+Sylow Numbers:
+    n_2 = 1
+    n_11 = 1
+
+number of subgroups: 4
+----subgroup of order: 22 identified as error
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 11 identified as C11
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C11
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: error
+
+
+
+================================================================================
+D11
+Order: 22  =2*11
+exponent: 22
+Is abelean: false
+Order of Z(G): 1  identified as:C1
+Order of der(G): 11  identified as:C11
+Order of ab(G): 2  identified as:C2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): error
+
+Order of inner automorphism group: 22   classified as: error
+Order of automorphism group: 110
+Order of outer automorphism group: 5
+
+Total number of conjugation classes: 7
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 11 count: 1
+order: 11  size: 2 count: 5
+
+Sylow Numbers:
+    n_2 = 11
+    n_11 = 1
+
+number of subgroups: 14
+----subgroup of order: 22 identified as error
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 11 identified as C11
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: error
+
+
+
+================================================================================
+C23
+Order: 23  =23
+exponent: 23
+Is abelean: true
+Order of Z(G): 23  identified as:C23
+Order of der(G): 1  identified as:C1
+Order of ab(G): 23  identified as:C23
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C23
+
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+Total number of conjugation classes: 23
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 23  size: 1 count: 22
+
+Sylow Numbers:
+    n_23 = 1
+
+number of subgroups: 2
+----subgroup of order: 23 identified as C23
+    is Sylow
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 1 identified as C1
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C23
+
+
+--- end of  SmallGroupCatalog [59 items] ---

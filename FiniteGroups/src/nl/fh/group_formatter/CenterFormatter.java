@@ -44,12 +44,11 @@ public class CenterFormatter implements ItemFormatter {
             Group center = (Group)g.getProperty(GroupProperty.CenterGroup);
             int order = (int) center.getProperty(GroupProperty.Order);
             
-            sb.append("center size: ");
+            sb.append("Order of Z(G): ");
             sb.append(order);
             sb.append("  identified as:");
             sb.append(GroupClassifier.getInstance().identify(center));            
             sb.append("\n");
-            sb.append("   ");
             
             if(this.overall.isVerbose()){
                 for(Element z : center){

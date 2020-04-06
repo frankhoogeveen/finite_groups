@@ -203,42 +203,23 @@ public class SmallGroupCatalog extends GroupCatalog {
         Group mc542 = factory.getMetacyclicGroup(5,4,2);
         super.add(mc542);
         
-    }
-    
-    /**
-     * main method that prints the entire catalog
-     * @param args 
-     */
-    public static void main(String[] args){
-  
-        GroupCatalog cat = null;
-        try {
-            cat = new SmallGroupCatalog();
-        } catch (EvaluationException | GroupException ex) {
-            System.out.println("could not create SmallGroupCatalog");
-            System.exit(-1);
-        }
+        /* order twenty one */
+        Group c21 = factory.getCyclicGroup(21);
+        super.add(c21);
         
-        GroupFormatter format = new GroupFormatter();
-        String report = format.createReport(cat);
-        String fileName = "./out/report.txt";
+        Group mc732 = factory.getMetacyclicGroup(7,3,2);
+        super.add(mc732);
         
-        BufferedWriter writer = null;
-        try {
-            writer = new BufferedWriter(new FileWriter(fileName));
-            writer.write(report);
-            writer.close();
-        } catch (IOException ex) {
-            Logger.getLogger(SmallGroupCatalog.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                writer.close();
-            } catch (IOException ex) {
-                Logger.getLogger(SmallGroupCatalog.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
+        /* order twenty two */
+        Group c22 = factory.getCyclicGroup(22);
+        super.add(c22);
         
+        Group d11 = factory.getDihedralGroup(11);
+        super.add(d11);
         
-        System.out.println("done writing: " + fileName );
+        /* order twenty three */
+        Group c23 = factory.getCyclicGroup(23);
+        super.add(c23);
+        
     }
 }
