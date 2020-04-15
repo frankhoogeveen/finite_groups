@@ -80,6 +80,7 @@ public class GroupClassifier {
             case 21 : return classify21(group);  
             case 22 : return classify22(group);  
             case 23 : return "C23";
+            case 24 : return classify24(group);
             
             default : return UNKNOWN;
         }
@@ -244,5 +245,46 @@ public class GroupClassifier {
         if(getCount(11, 2, profile) == 5){ return "D11";}
                 
         return ERROR;
+    }
+
+    private String classify24(Group group) throws EvaluationException {
+        Map<Integer, Map<Integer, Integer>> profile = ( Map<Integer, Map<Integer, Integer>>)group.getProperty(GroupProperty.ConjugationProfile);
+        
+        if(getCount(24, 1, profile) ==  8){ return "C24";}
+        if(getCount(12, 1, profile) ==  8){ return "C4xC3xC2";}        
+        if(getCount( 6, 1, profile) == 14){ return "C3xC2xC2xC2";}      
+        if(getCount( 2, 3, profile) ==  4){ return "C2xD6";}
+        if(getCount( 4, 3, profile) ==  4){ return "C2xQ3";}
+        if(getCount( 2, 2, profile) ==  2){ return "C3xD4";}    
+        if(getCount(12, 2, profile) ==  6){ return "C3xQ2";}    
+        if(getCount( 4, 3, profile) ==  2){ return "C4xS3";}   
+        if(getCount( 3, 8, profile) ==  1){ return "S4";}  
+        if(getCount( 8, 3, profile) ==  4){ return "MC(3,8,2)";} 
+        
+        if(profileSize(profile) == 5){
+            if(getCount( 2, 3, profile) ==  2){ return "C2xA4";}   
+            if(getCount( 4, 6, profile) ==  1){ return "SL(2,F_3)";}                 
+        }
+        
+        if(profileSize(profile) == 7){
+        if(getCount( 2, 6, profile) ==  2){ return "D12";}    
+        if(getCount( 6, 2, profile) ==  3){ return "G24_1";}   
+        if(getCount( 4, 6, profile) ==  2){ return "Q6";}              
+        }
+        
+        return ERROR;
+    }
+
+    /**
+     * 
+     * @param profile
+     * @return the number of combinations of order, size and count that exists in profile 
+     */
+    private int profileSize(Map<Integer, Map<Integer, Integer>> profile) {
+        int result = 0;
+        for(Integer order : profile.keySet()){
+            result += profile.get(order).keySet().size();
+        }
+        return result;
     }
 }

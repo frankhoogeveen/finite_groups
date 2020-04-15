@@ -34,7 +34,6 @@ import nl.fh.group_calculators.GroupProperty;
 import nl.fh.catalogue.SmallGroupCatalog;
 import nl.fh.field.FieldElement;
 import nl.fh.field_calculators.FieldProperty;
-import nl.fh.field.Polynomial;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_permutation.PermutationElement;

@@ -243,15 +243,15 @@ public class SmallGroupCatalog extends GroupCatalog {
         super.add(d12);
         
         Group q6 = factory.getDicyclicGroup(6);
+        super.add(q6);
         
         Group sl23 = factory.getSL(2,3);
+        super.add(sl23);
         
         Group mc382 = factory.getMetacyclicGroup(3,8,2);
         super.add(mc382);
         
         Group g24 = factory.getGroup24_1();
         super.add(g24);
-        
-        
     }
 }

@@ -147,7 +147,7 @@ public class MatrixElement implements Element {
                 for(int j = 0; j < size; j++){
                     m[i][j] = zero;
                     for(int k = 0; k < size; k++){
-                        m[i][j] = sum.get(m[i][j]).get(prod.get(this.matrix[i][k]).get(this.matrix[k][j]));
+                        m[i][j] = sum.get(m[i][j]).get(prod.get(this.matrix[i][k]).get(other.matrix[k][j]));
                     }
                 }
             }
