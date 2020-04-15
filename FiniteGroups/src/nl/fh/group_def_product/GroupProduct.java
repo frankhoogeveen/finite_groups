@@ -26,7 +26,7 @@ import nl.fh.group.Multiplicator;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.GroupException;
-import nl.fh.group_definition_factory.GroupFactory;
+import nl.fh.factory.GroupFactory;
 
 /**
  * Creates the direct product of several groups

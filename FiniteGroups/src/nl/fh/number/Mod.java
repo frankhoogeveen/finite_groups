@@ -28,44 +28,56 @@ public class Mod {
      * @param b
      * @return the inverse of a mod b. I.e. an x such that a.x = 1 mod b 
      * 
-     * Throws Illegal Argument Exception if x does not exist
+     * Throws Illegal Argument Exception if x does not exist,
+     * this happens when gcd(a,b) > 1
+     * 
+     * The algorithm used is https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Description
      */
     public static int inverse(int a, int b){
-        int x=1, y=1; 
-        int gcd = gcdExtended(a, b, x, y);
-        if(gcd != 1){
-            throw new IllegalArgumentException("cannot invert number in Mod");
+        
+        if( b < 1){
+            throw new IllegalArgumentException("Modulo a non positive number");
         }
         
-        return x;
+        if(a % b == 0){
+            throw new IllegalArgumentException("Inverse of zero does not exists");
+        }
+        
+        
+        int r0 = a;
+        int s0 = 1;
+        int t0 = 0;
+        
+        int r1 = b;
+        int s1 = 0;
+        int t1 = 1;
+        
+        while(r1 != 0){
+            int r2 = r0 % r1;
+            int q = (r0 - r2)/ r1;
+            int s2 = s0 - q * s1;
+            int t2 = t0 - q * t1;
+            
+            r0 = r1;
+            r1 = r2;
+            
+            s0 = s1;
+            s1 = s2;
+            
+            t0 = t1;
+            t1 = t2;
+        }
+        
+        int gcd = r0;
+        if(gcd != 1){
+            throw new IllegalArgumentException(" gcd not one");
+        }
+        
+        s0 = s0 % b;
+        if(s0 < 0){
+            s0 += b;
+        }
+        
+        return s0;
     }
-    
-    /**
-     * 
-     * @param a
-     * @param b
-     * @param x
-     * @param y
-     * @return 
-     */
-    private static int gcdExtended(int a, int b, int x, int y) 
-    { 
-        // Base Case 
-        if (a == 0) 
-        { 
-            x = 0; 
-            y = 1; 
-            return b; 
-        } 
-  
-        int x1=1, y1=1; // To store results of recursive call 
-        int gcd = gcdExtended(b%a, a, x1, y1); 
-  
-        // Update x and y using results of recursive 
-        // call 
-        x = y1 - (b/a) * x1; 
-        y = x1; 
-  
-        return gcd; 
-    } 
 }

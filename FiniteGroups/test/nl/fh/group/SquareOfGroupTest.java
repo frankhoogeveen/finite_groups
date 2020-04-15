@@ -16,6 +16,7 @@
  */
 package nl.fh.group;
 
+import nl.fh.group_calculators.GroupProperty;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -26,7 +27,6 @@ import nl.fh.group.Multiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_product.GroupProduct;
-import nl.fh.group_calculators.GroupProperty;
 import nl.fh.checker.GroupChecker;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.GroupException;

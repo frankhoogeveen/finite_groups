@@ -17,12 +17,11 @@
 package nl.fh.group_calculators;
 
 import nl.fh.group_calculators.GroupTable;
-import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_calculators.GroupPowerTable;
 import java.util.Map;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.*;
-import nl.fh.group_definition_factory.GroupFactory;
+import nl.fh.factory.GroupFactory;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 

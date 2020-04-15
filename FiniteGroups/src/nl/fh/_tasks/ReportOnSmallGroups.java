@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh._driver;
+package nl.fh._tasks;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -23,15 +23,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.GroupException;
-import nl.fh.group_catalogue.GroupCatalog;
-import nl.fh.group_catalogue.SmallGroupCatalog;
+import nl.fh.catalogue.GroupCatalog;
+import nl.fh.catalogue.SmallGroupCatalog;
 import nl.fh.group_formatter.GroupFormatter;
 
 /**
  *
  * @author frank
  */
-public class Driver {
+public class ReportOnSmallGroups {
     /**
      * main method that prints the entire catalog
      * @param args 

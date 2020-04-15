@@ -30,9 +30,6 @@ import nl.fh.lattice.Lattice;
  */
 public class FrattiniSetCalculator implements Calculator<Group> {
 
-    public FrattiniSetCalculator() {
-    }
-
     @Override
     public Set<Element>  evaluate(Group group) throws EvaluationException {
         Lattice<Set<Element>> lattice = (Lattice<Set<Element>>) group.getProperty(GroupProperty.SubgroupSetLattice);

@@ -14,8 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_definition_factory;
+package nl.fh.factory;
 
+import nl.fh.group_def_general_linear.MatrixElement;
+import nl.fh.group_def_general_linear.MatrixMultiplicator;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -23,12 +25,16 @@ import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
+import nl.fh.field.Field;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupException;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_calculators.GroupProperty;
-import nl.fh.group_catalogue.SmallGroupCatalog;
+import nl.fh.catalogue.SmallGroupCatalog;
+import nl.fh.field.FieldElement;
+import nl.fh.field_calculators.FieldProperty;
+import nl.fh.field.Polynomial;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_cyclic.CyclicMultiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
@@ -404,5 +410,226 @@ public class GroupFactory {
         } 
         return result;
     }    
+
+    public Group getGroup24_1() {
+        Set<Element> generators = new HashSet<Element>();
+        generators.add(new StringElement("a"));
+        generators.add(new StringElement("b"));
+        generators.add(new StringElement("c"));        
+        
+        StringMultiplicator multiplication = new StringMultiplicator();
+        multiplication.addSubstitution(new StringSubstitution(repeat("a",4), ""));
+        multiplication.addSubstitution(new StringSubstitution(repeat("b",2), ""));
+        multiplication.addSubstitution(new StringSubstitution(repeat("c",3), ""));  
+        
+        multiplication.addSubstitution(new StringSubstitution("ba", "aaab"));
+        multiplication.addSubstitution(new StringSubstitution("ca", "acc"));
+        multiplication.addSubstitution(new StringSubstitution("cb", "bc"));
+        
+        String name = "G24_1";
+        Group result = null;
+        try {
+            result =  new Group(name, generators, multiplication);
+        } catch (GroupException ex) {
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, "could not create group", ex);
+            System.exit(-1);
+        } 
+        return result;    }
+
+    /**
+     * 
+     * @param q the order of the field
+     * @param n the dimension of the vector space on which the group acts
+     * @return the General Linear group in n dimensions of the field F_q 
+     */
+    public Group getGL(int n, int q){
+        // check the parameters for validity
+        if(n < 1){
+            throw new IllegalArgumentException("dimension of GL has to be positive");
+        }
+        
+        if(!IntNumber.isPrimePower(q)){
+            throw new IllegalArgumentException("GL uses invalid field");
+        }
+        
+         // create the set to contain the elements of the group
+        Set<Element> setElements = new HashSet<Element>();
+        
+        // create the field
+        FieldFactory ff = new FieldFactory();
+        Field Fq = ff.getField(q);
+        
+        // add a set of generators to the set
+        try {
+            
+            setElements.add(singleUpperDiagonal(n, Fq));
+            setElements.add(singleDiagonal(n, Fq));
+            setElements.addAll(permutations(n, Fq));
+            
+        } catch (EvaluationException ex) {
+            String mess = "could not find members of a field";
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, mess, ex);
+            throw new IllegalStateException(mess);
+        }
+
+        //set the name
+        String name = "GL(" + Integer.toString(n) + ",F_" + Integer.toString(q);
+        
+        // finally, set the multiplicator
+        Multiplicator mult = new MatrixMultiplicator();
+        
+        try {
+            return new Group(name, setElements, mult);
+        } catch (GroupException ex) {
+            String mess = "could not create group " + name;
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, mess, ex);
+            throw new IllegalStateException(mess);
+        }
+    }
     
+    
+    /**
+     * 
+     * @param q the order of the field
+     * @param n the dimension of the vector space on which the group acts
+     * @return the Special Linear group in n dimensions of the field F_q 
+     * 
+     */
+    public Group getSL(int n, int q) {
+        // check the parameters for validity
+        if(n < 1){
+            throw new IllegalArgumentException("dimension of SL has to be positive");
+        }
+        
+        if(!IntNumber.isPrimePower(q)){
+            throw new IllegalArgumentException("SL uses invalid Field");
+        }
+        
+        // find the single prime factor of q
+        int p = IntNumber.factorize(q).keySet().iterator().next();
+        
+        try {
+            
+            Group gl = getGL(n,q);
+            
+            Set<MatrixElement> setGL = (Set<MatrixElement>) gl.getProperty(GroupProperty.Elements);
+            MatrixElement unit = (MatrixElement) gl.getProperty(GroupProperty.UnitElement);
+            Field Fq = unit.getField();
+            FieldElement one = (FieldElement) Fq.getProperty(FieldProperty.ONE);
+            
+            Set<Element> setSL = new HashSet<Element>();
+            
+            for(MatrixElement g : setGL){
+                if(g.det().equals(one)){
+                    setSL.add(g);
+                }
+            }
+            
+            Multiplicator mult = (Multiplicator) gl.getProperty(GroupProperty.MultiplicationTable);
+            String name = "SL(" + Integer.toString(n) + ",F_" + Integer.toString(q) + ")";
+            
+            return new Group(name, setSL, mult);
+            
+        } catch (EvaluationException | GroupException ex) {
+            String mess = "cannot create Special Linear Group";
+            Logger.getLogger(GroupFactory.class.getName()).log(Level.SEVERE, mess, ex);
+            throw new IllegalStateException(mess);
+        }
+    }
+
+    /**
+     * 
+     * @param n
+     * @param unit
+     * @return a matrix with ones on the diagonal and a single one off diagonal
+     * 
+     * The off diagonal is in the [0][1] position. The exceptional case is n==1,
+     * then no off diagonal element is created. In this case, this method returns 
+     * the 1x1 unit matrix. 
+     */
+    private MatrixElement singleUpperDiagonal(int n, Field Fq) throws EvaluationException {
+        FieldElement unit = (FieldElement) Fq.getProperty(FieldProperty.ONE);
+        FieldElement zero = (FieldElement) Fq.getProperty(FieldProperty.ZERO);
+        FieldElement generator = (FieldElement) Fq.getProperty(FieldProperty.PRIMITIVE);        
+        
+        FieldElement[][] matrix = new FieldElement[n][n];
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                matrix[i][j] = zero;
+            }
+            matrix[i][i] = unit;
+        }
+        
+        if(n>1){
+            matrix[0][1] = unit;
+        }
+        
+        return new MatrixElement(matrix);
+    }
+
+    /**
+     * 
+     * @param n
+     * @param zero
+     * @param unit
+     * @param generator a multiplicative generator of the Field
+     * @return a matrix that is diagonal( generator, unit, unit,...., unit) 
+     */
+    private MatrixElement singleDiagonal(int n, Field Fq) throws EvaluationException {
+        FieldElement unit = (FieldElement) Fq.getProperty(FieldProperty.ONE);
+        FieldElement zero = (FieldElement) Fq.getProperty(FieldProperty.ZERO);
+        FieldElement generator = (FieldElement) Fq.getProperty(FieldProperty.PRIMITIVE);           
+        
+        FieldElement[][] matrix = new FieldElement[n][n];
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                matrix[i][j] = zero;
+            }
+            matrix[i][i] = unit;
+        }
+        
+        matrix[0][0] = generator;
+        
+        return new MatrixElement(matrix);
+    }
+    
+    /**
+     * 
+     * @param n
+     * @param unit
+     * @param zero 
+     * @return all permutation matrices
+     * 
+     * For any sigma in S_n, mat_ij = 1 iff sigma: i-> j amd zero otherwise
+     */
+    private Set<MatrixElement> permutations(int n, Field Fq) throws EvaluationException {
+        FieldElement unit = (FieldElement) Fq.getProperty(FieldProperty.ONE);
+        FieldElement zero = (FieldElement) Fq.getProperty(FieldProperty.ZERO);
+        FieldElement generator = (FieldElement) Fq.getProperty(FieldProperty.PRIMITIVE);           
+        
+        GroupFactory fac = new GroupFactory();
+        Group sn = fac.getSymmetricGroup(n);
+        Set<PermutationElement> set = (Set<PermutationElement>) sn.getProperty(GroupProperty.Elements);
+        
+        Set<MatrixElement> result = new HashSet<MatrixElement>();
+        for(PermutationElement pe : set){
+            int[] perm = pe.getPermutation();
+            
+            FieldElement[][] matrix = new FieldElement[n][n];
+            
+            for(int i = 0; i < n; i++){
+                for(int j = 0; j < n; j++){
+                    matrix[i][j] = zero;
+                }
+                matrix[i][perm[i]] = unit;
+            }
+            
+            result.add(new MatrixElement(matrix));
+        }
+        
+        return result;
+        
+    }  
 }

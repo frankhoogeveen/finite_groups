@@ -21,7 +21,7 @@ import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group_calculators.GroupProperty;
-import nl.fh.group_definition_factory.GroupFactory;
+import nl.fh.factory.GroupFactory;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 

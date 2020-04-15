@@ -19,7 +19,7 @@ package nl.fh.subgroups;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
 import nl.fh.group_calculators.GroupProperty;
-import nl.fh.group_definition_factory.GroupFactory;
+import nl.fh.factory.GroupFactory;
 import nl.fh.homomorphism.GroupHomomorphism;
 import nl.fh.homomorphism_calculator.HomomorphismProperty;
 import static org.junit.Assert.assertEquals;

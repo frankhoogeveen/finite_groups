@@ -18,7 +18,10 @@
 package nl.fh._test;
 
 import nl.fh.classifier.ClassifierTest;
+import nl.fh.field.FieldTest;
+import nl.fh.field.FieldElementTest;
 import nl.fh.field.PolynomialTest;
+import nl.fh.field_calculator.FieldCalculatorTest;
 import nl.fh.group.GroupFactoryTest;
 import nl.fh.group.GroupPermutationConstructorTest;
 import nl.fh.group.SquareOfGroupTest;
@@ -31,6 +34,7 @@ import nl.fh.group_calculators.InverseCalculatorTest;
 import nl.fh.group_calculators.PowerTableCalculatorTest;
 import nl.fh.group_calculators.StronglyMinimalGeneratingSetsCalculatorTest;
 import nl.fh.group_def_cyclic.GroupCyclicConstructorTest;
+import nl.fh.group_def_general_linear.MatrixGroupTest;
 import nl.fh.group_def_product.GroupProductConstructorTest;
 import nl.fh.group_formatter.FactorizationFormattingTest;
 import nl.fh.lattice.LatticeTest;
@@ -42,6 +46,7 @@ import nl.fh.homomorphism.GroupHomomorphismTest;
 import nl.fh.homomorphism.InnerAutomorphismTest;
 import nl.fh.homomorphism.KernelTest;
 import nl.fh.homomorphism.OuterAutomorphismTest;
+import nl.fh.number.ModTest;
 import nl.fh.number.PrimeFactorsTest;
 import nl.fh.number.PrimesTest;
 import nl.fh.subgroups.*;
@@ -92,7 +97,12 @@ import org.junit.runners.Suite;
     SemiDirectProductTest.class,
     FactorizationFormattingTest.class,
     FrattiniTest.class,
-    PolynomialTest.class
+    PolynomialTest.class,
+    ModTest.class,
+    MatrixGroupTest.class,
+    FieldTest.class,
+    FieldElementTest.class,
+    FieldCalculatorTest.class
 })
 
 

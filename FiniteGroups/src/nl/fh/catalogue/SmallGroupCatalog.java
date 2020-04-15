@@ -14,19 +14,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.group_catalogue;
+package nl.fh.catalogue;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
 import nl.fh.group.GroupException;
 import nl.fh.group_def_product.GroupProduct;
-import nl.fh.group_definition_factory.GroupFactory;
-import nl.fh.group_formatter.GroupFormatter;
+import nl.fh.factory.GroupFactory;
 
 /**
  *
@@ -220,6 +215,43 @@ public class SmallGroupCatalog extends GroupCatalog {
         /* order twenty three */
         Group c23 = factory.getCyclicGroup(23);
         super.add(c23);
+        
+        /* order twenty four */
+        Group c24 = factory.getCyclicGroup(24);
+        super.add(c24);
+        
+        super.add(GroupProduct.of(new Group[]{c4, c3, c2})); 
+        
+        super.add(GroupProduct.of(new Group[]{c3, c2, c2, c2}));    
+        
+        super.add(GroupProduct.of(new Group[]{c2, d6})); 
+
+        super.add(GroupProduct.of(new Group[]{c2, q3}));  
+        
+        super.add(GroupProduct.of(new Group[]{c2, a4})); 
+
+        super.add(GroupProduct.of(new Group[]{c3, d4})); 
+        
+        super.add(GroupProduct.of(new Group[]{c3, q2}));          
+
+        super.add(GroupProduct.of(new Group[]{c4, s3}));   
+
+        Group s4 = factory.getSymmetricGroup(4);
+        super.add(s4);
+        
+        Group d12 = factory.getDihedralGroup(12);
+        super.add(d12);
+        
+        Group q6 = factory.getDicyclicGroup(6);
+        
+        Group sl23 = factory.getSL(2,3);
+        
+        Group mc382 = factory.getMetacyclicGroup(3,8,2);
+        super.add(mc382);
+        
+        Group g24 = factory.getGroup24_1();
+        super.add(g24);
+        
         
     }
 }

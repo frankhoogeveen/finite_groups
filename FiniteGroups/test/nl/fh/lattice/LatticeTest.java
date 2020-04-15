@@ -17,7 +17,7 @@
 package nl.fh.lattice;
 
 import java.util.HashMap;
-import nl.fh.number.DivisionLatticeComparator;
+import nl.fh.lattice_implementations.DivisionLatticeComparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;

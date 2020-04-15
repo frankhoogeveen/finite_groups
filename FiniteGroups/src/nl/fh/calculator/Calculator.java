@@ -21,7 +21,7 @@ package nl.fh.calculator;
  * @author frank
  * @param <T> the type of object on which this calculator acts
  */
-public interface Calculator <T> {
+public interface Calculator<T> {
     
     /**
      * 

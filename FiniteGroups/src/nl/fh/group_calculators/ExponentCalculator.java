@@ -34,8 +34,8 @@ public class ExponentCalculator implements Calculator<Group> {
     @Override
     public Integer evaluate(Group group) throws EvaluationException {
         Map<Element, Integer> orders = (Map<Element, Integer>) group.getProperty(GroupProperty.ElementOrders);
-        int result = 1;
         
+        int result = 1;
         for(Element g : orders.keySet()){
             result = IntNumber.lcm(result, orders.get(g));
         }

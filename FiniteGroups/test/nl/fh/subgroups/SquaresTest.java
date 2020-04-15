@@ -25,7 +25,7 @@ import nl.fh.group_calculators.EmbeddingCalculator;
 import nl.fh.group_calculators.GroupFromSetCalculator;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_calculators.SquaresSetCalculator;
-import nl.fh.group_definition_factory.GroupFactory;
+import nl.fh.factory.GroupFactory;
 import nl.fh.homomorphism.GroupHomomorphism;
 import nl.fh.homomorphism_calculator.HomomorphismProperty;
 import static org.junit.Assert.assertEquals;

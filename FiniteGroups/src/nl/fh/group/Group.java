@@ -16,8 +16,8 @@
  */
 package nl.fh.group;
 
-import nl.fh.calculator.PropertyCache;
 import nl.fh.group_calculators.GroupProperty;
+import nl.fh.calculator.PropertyCache;
 import nl.fh.group_calculators.GroupTable;
 import java.util.Collection;
 import java.util.HashMap;

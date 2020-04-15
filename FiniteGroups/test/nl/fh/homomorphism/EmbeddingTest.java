@@ -25,7 +25,7 @@ import nl.fh.group.GroupException;
 import nl.fh.group.Multiplicator;
 import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_def_permutation.PermutationElement;
-import nl.fh.group_definition_factory.GroupFactory;
+import nl.fh.factory.GroupFactory;
 import nl.fh.homomorphism.GroupHomomorphism;
 import nl.fh.homomorphism.HomomorphismException;
 import nl.fh.homomorphism_calculator.HomomorphismProperty;

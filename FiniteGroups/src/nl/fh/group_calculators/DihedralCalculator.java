@@ -28,12 +28,11 @@ import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.GroupException;
 import nl.fh.group.Multiplicator;
-import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_def_automorphism.Automorphism;
 import nl.fh.group_def_automorphism.AutomorphismMultiplicator;
 import nl.fh.group_def_cyclic.CyclicElement;
 import nl.fh.group_def_semidirect_product.GroupSemiDirectProduct;
-import nl.fh.group_definition_factory.GroupFactory;
+import nl.fh.factory.GroupFactory;
 import nl.fh.homomorphism.GroupHomomorphism;
 import nl.fh.homomorphism.HomomorphismException;
 

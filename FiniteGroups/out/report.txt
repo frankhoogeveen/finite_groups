@@ -1,4 +1,4 @@
-*** SmallGroupCatalog [59 items] ***
+*** SmallGroupCatalog [70 items] ***
 
 ================================================================================
 C1
@@ -3479,10 +3479,10 @@ C21
 Order: 21  =3*7
 exponent: 21
 Is abelean: true
-Order of Z(G): 21  identified as:error
+Order of Z(G): 21  identified as:C21
 Order of der(G): 1  identified as:C1
-Order of ab(G): 21  identified as:error
-Order of Phi(G): 1 identified as:C1   G/Phi(G): error
+Order of ab(G): 21  identified as:C21
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C21
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -3500,7 +3500,7 @@ Sylow Numbers:
     n_7 = 1
 
 number of subgroups: 4
-----subgroup of order: 21 identified as error
+----subgroup of order: 21 identified as C21
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 7 identified as C7
@@ -3515,7 +3515,7 @@ number of subgroups: 4
     quotient is identified as: C7
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: error
+    quotient is identified as: C21
 
 
 
@@ -3527,9 +3527,9 @@ Is abelean: false
 Order of Z(G): 1  identified as:C1
 Order of der(G): 7  identified as:C7
 Order of ab(G): 3  identified as:C3
-Order of Phi(G): 1 identified as:C1   G/Phi(G): error
+Order of Phi(G): 1 identified as:C1   G/Phi(G): MC(7,3,2)
 
-Order of inner automorphism group: 21   classified as: error
+Order of inner automorphism group: 21   classified as: MC(7,3,2)
 Order of automorphism group: 42
 Order of outer automorphism group: 2
 
@@ -3544,7 +3544,7 @@ Sylow Numbers:
     n_7 = 1
 
 number of subgroups: 10
-----subgroup of order: 21 identified as error
+----subgroup of order: 21 identified as MC(7,3,2)
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 3 identified as C3
@@ -3582,7 +3582,7 @@ number of subgroups: 10
     is normal: false
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: error
+    quotient is identified as: MC(7,3,2)
 
 
 
@@ -3591,10 +3591,10 @@ C22
 Order: 22  =2*11
 exponent: 22
 Is abelean: true
-Order of Z(G): 22  identified as:error
+Order of Z(G): 22  identified as:C22
 Order of der(G): 1  identified as:C1
-Order of ab(G): 22  identified as:error
-Order of Phi(G): 1 identified as:C1   G/Phi(G): error
+Order of ab(G): 22  identified as:C22
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C22
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -3612,7 +3612,7 @@ Sylow Numbers:
     n_11 = 1
 
 number of subgroups: 4
-----subgroup of order: 22 identified as error
+----subgroup of order: 22 identified as C22
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 11 identified as C11
@@ -3627,7 +3627,7 @@ number of subgroups: 4
     quotient is identified as: C11
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: error
+    quotient is identified as: C22
 
 
 
@@ -3639,9 +3639,9 @@ Is abelean: false
 Order of Z(G): 1  identified as:C1
 Order of der(G): 11  identified as:C11
 Order of ab(G): 2  identified as:C2
-Order of Phi(G): 1 identified as:C1   G/Phi(G): error
+Order of Phi(G): 1 identified as:C1   G/Phi(G): D11
 
-Order of inner automorphism group: 22   classified as: error
+Order of inner automorphism group: 22   classified as: D11
 Order of automorphism group: 110
 Order of outer automorphism group: 5
 
@@ -3656,7 +3656,7 @@ Sylow Numbers:
     n_11 = 1
 
 number of subgroups: 14
-----subgroup of order: 22 identified as error
+----subgroup of order: 22 identified as D11
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 2 identified as C2
@@ -3710,7 +3710,7 @@ number of subgroups: 14
     is normal: false
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: error
+    quotient is identified as: D11
 
 
 
@@ -3747,4 +3747,1152 @@ number of subgroups: 2
     quotient is identified as: C23
 
 
---- end of  SmallGroupCatalog [59 items] ---
+
+================================================================================
+C24
+Order: 24  =2^3*3
+exponent: 24
+Is abelean: true
+Order of Z(G): 24  identified as:unidentified
+Order of der(G): 1  identified as:C1
+Order of ab(G): 24  identified as:unidentified
+Order of Phi(G): 4 identified as:C4   G/Phi(G): C6
+
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+Total number of conjugation classes: 24
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 1
+order: 3  size: 1 count: 2
+order: 4  size: 1 count: 2
+order: 6  size: 1 count: 2
+order: 8  size: 1 count: 4
+order: 24  size: 1 count: 8
+order: 12  size: 1 count: 4
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
+
+number of subgroups: 8
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as C12
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as C8
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 4 identified as C4
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C4
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C12
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: true
+    quotient is identified as: C8
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C4xC3xC2
+Order: 24  =2^3*3
+exponent: 12
+Is abelean: true
+Order of Z(G): 24  identified as:unidentified
+Order of der(G): 1  identified as:C1
+Order of ab(G): 24  identified as:unidentified
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C3xC2xC2
+
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+Total number of conjugation classes: 24
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 3
+order: 3  size: 1 count: 2
+order: 4  size: 1 count: 4
+order: 6  size: 1 count: 6
+order: 12  size: 1 count: 8
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
+
+number of subgroups: 16
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as C12
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C4
+----subgroup of order: 8 identified as C4xC2
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C4
+----subgroup of order: 4 identified as C4
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 12 identified as C12
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 4 identified as C4
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C12
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C12
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: true
+    quotient is identified as: C4xC2
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C3xC2xC2xC2
+Order: 24  =2^3*3
+exponent: 6
+Is abelean: true
+Order of Z(G): 24  identified as:unidentified
+Order of der(G): 1  identified as:C1
+Order of ab(G): 24  identified as:unidentified
+Order of Phi(G): 1 identified as:C1   G/Phi(G): unidentified
+
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+Total number of conjugation classes: 24
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 7
+order: 3  size: 1 count: 2
+order: 6  size: 1 count: 14
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
+
+number of subgroups: 32
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as C2xC2xC2
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: true
+    quotient is identified as: C2xC2xC2
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C2xD6
+Order: 24  =2^3*3
+exponent: 6
+Is abelean: false
+Order of Z(G): 4  identified as:C2xC2
+Order of der(G): 3  identified as:C3
+Order of ab(G): 8  identified as:C2xC2xC2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): unidentified
+
+Order of inner automorphism group: 6   classified as: S3
+Order of automorphism group: 144
+Order of outer automorphism group: 24
+
+Total number of conjugation classes: 12
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 3
+order: 2  size: 3 count: 4
+order: 3  size: 2 count: 1
+order: 6  size: 2 count: 3
+
+Sylow Numbers:
+    n_2 = 3
+    n_3 = 1
+
+number of subgroups: 54
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as D6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as C2xC2xC2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 12 identified as D6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as D6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as D6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as C2xC2xC2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 6 identified as S3
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 8 identified as C2xC2xC2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 12 identified as D6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as D6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: D6
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: D6
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: true
+    quotient is identified as: C2xC2xC2
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: D6
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C2xQ3
+Order: 24  =2^3*3
+exponent: 12
+Is abelean: false
+Order of Z(G): 4  identified as:C2xC2
+Order of der(G): 3  identified as:C3
+Order of ab(G): 8  identified as:C4xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): D6
+
+Order of inner automorphism group: 6   classified as: S3
+Order of automorphism group: 48
+Order of outer automorphism group: 8
+
+Total number of conjugation classes: 12
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 3
+order: 3  size: 2 count: 1
+order: 4  size: 3 count: 4
+order: 6  size: 2 count: 3
+
+Sylow Numbers:
+    n_2 = 3
+    n_3 = 1
+
+number of subgroups: 22
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as Q3
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as C4xC2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 12 identified as Q3
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as C4xC2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C4
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C4
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: true
+    quotient is identified as: C4xC2
+----subgroup of order: 8 identified as C4xC2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: Q3
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: Q3
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: D6
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C2xA4
+Order: 24  =2^3*3
+exponent: 6
+Is abelean: false
+Order of Z(G): 2  identified as:C2
+Order of der(G): 4  identified as:C2xC2
+Order of ab(G): 6  identified as:C6
+Order of Phi(G): 1 identified as:C1   G/Phi(G): unidentified
+
+Order of inner automorphism group: 12   classified as: A4
+Order of automorphism group: 24
+Order of outer automorphism group: 2
+
+Total number of conjugation classes: 8
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 1
+order: 2  size: 3 count: 2
+order: 3  size: 4 count: 2
+order: 6  size: 4 count: 2
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 4
+
+number of subgroups: 26
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 12 identified as A4
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: false
+----subgroup of order: 8 identified as C2xC2xC2
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: A4
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C3xD4
+Order: 24  =2^3*3
+exponent: 12
+Is abelean: false
+Order of Z(G): 6  identified as:C6
+Order of der(G): 2  identified as:C2
+Order of ab(G): 12  identified as:C3xC2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C3xC2xC2
+
+Order of inner automorphism group: 4   classified as: C2xC2
+Order of automorphism group: 16
+Order of outer automorphism group: 4
+
+Total number of conjugation classes: 15
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 1
+order: 2  size: 2 count: 2
+order: 3  size: 1 count: 2
+order: 4  size: 2 count: 1
+order: 6  size: 1 count: 2
+order: 6  size: 2 count: 4
+order: 12  size: 2 count: 2
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
+
+number of subgroups: 20
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as D4
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 12 identified as C12
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as C6
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 12 identified as C3xC2xC2
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 6 identified as C6
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 6 identified as C6
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: true
+    quotient is identified as: D4
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C3xQ2
+Order: 24  =2^3*3
+exponent: 12
+Is abelean: false
+Order of Z(G): 6  identified as:C6
+Order of der(G): 2  identified as:C2
+Order of ab(G): 12  identified as:C3xC2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): C3xC2xC2
+
+Order of inner automorphism group: 4   classified as: C2xC2
+Order of automorphism group: 48
+Order of outer automorphism group: 12
+
+Total number of conjugation classes: 15
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 1
+order: 3  size: 1 count: 2
+order: 4  size: 2 count: 3
+order: 6  size: 1 count: 2
+order: 12  size: 2 count: 6
+
+Sylow Numbers:
+    n_2 = 1
+    n_3 = 1
+
+number of subgroups: 12
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as C12
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as Q2
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C3
+----subgroup of order: 12 identified as C12
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 4 identified as C4
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 12 identified as C12
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: true
+    quotient is identified as: Q2
+----subgroup of order: 4 identified as C4
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 4 identified as C4
+    is normal: true
+    quotient is identified as: C6
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: C3xC2xC2
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C4xS3
+Order: 24  =2^3*3
+exponent: 12
+Is abelean: false
+Order of Z(G): 4  identified as:C4
+Order of der(G): 3  identified as:C3
+Order of ab(G): 8  identified as:C4xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): D6
+
+Order of inner automorphism group: 6   classified as: S3
+Order of automorphism group: 24
+Order of outer automorphism group: 4
+
+Total number of conjugation classes: 12
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 1
+order: 2  size: 3 count: 2
+order: 3  size: 2 count: 1
+order: 4  size: 1 count: 2
+order: 4  size: 3 count: 2
+order: 6  size: 2 count: 1
+order: 12  size: 2 count: 2
+
+Sylow Numbers:
+    n_2 = 3
+    n_3 = 1
+
+number of subgroups: 26
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as C12
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 12 identified as Q3
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as C4xC2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 12 identified as D6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 6 identified as S3
+    is normal: true
+    quotient is identified as: C4
+----subgroup of order: 8 identified as C4xC2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 8 identified as C4xC2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 6 identified as S3
+    is normal: true
+    quotient is identified as: C4
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: true
+    quotient is identified as: C4xC2
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: D6
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+S4
+Order: 24  =2^3*3
+exponent: 12
+Is abelean: false
+Order of Z(G): 1  identified as:C1
+Order of der(G): 12  identified as:A4
+Order of ab(G): 2  identified as:C2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): unidentified
+
+Order of inner automorphism group: 24   classified as: unidentified
+Order of automorphism group: 24
+Order of outer automorphism group: 1
+
+Total number of conjugation classes: 5
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 3 count: 1
+order: 2  size: 6 count: 1
+order: 3  size: 8 count: 1
+order: 4  size: 6 count: 1
+
+Sylow Numbers:
+    n_2 = 3
+    n_3 = 4
+
+number of subgroups: 30
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as A4
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as D4
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 8 identified as D4
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 8 identified as D4
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is maximal subgroup
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+D12
+Order: 24  =2^3*3
+exponent: 12
+Is abelean: false
+Order of Z(G): 2  identified as:C2
+Order of der(G): 6  identified as:C6
+Order of ab(G): 4  identified as:C2xC2
+Order of Phi(G): 2 identified as:C2   G/Phi(G): D6
+
+Order of inner automorphism group: 12   classified as: D6
+Order of automorphism group: 48
+Order of outer automorphism group: 4
+
+Total number of conjugation classes: 9
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 1
+order: 2  size: 6 count: 2
+order: 3  size: 2 count: 1
+order: 4  size: 2 count: 1
+order: 6  size: 2 count: 1
+order: 12  size: 2 count: 2
+
+Sylow Numbers:
+    n_2 = 3
+    n_3 = 1
+
+number of subgroups: 34
+----subgroup of order: 24 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 12 identified as D6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 8 identified as D4
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 8 identified as D4
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is normal: false
+----subgroup of order: 12 identified as C12
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 12 identified as D6
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 6 identified as C6
+    is normal: true
+    quotient is identified as: C2xC2
+----subgroup of order: 8 identified as D4
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 6 identified as S3
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 4 identified as C4
+    is normal: true
+    quotient is identified as: S3
+----subgroup of order: 6 identified as S3
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 4 identified as C2xC2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: true
+    quotient is identified as: D6
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 3 identified as C3
+    is Sylow
+    is normal: true
+    quotient is identified as: D4
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+--- end of  SmallGroupCatalog [70 items] ---

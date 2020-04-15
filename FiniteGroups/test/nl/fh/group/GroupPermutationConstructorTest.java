@@ -16,6 +16,7 @@
  */
 package nl.fh.group;
 
+import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_def_permutation.PermutationMultiplicator;
 import nl.fh.group_def_permutation.PermutationElement;
 import java.util.HashSet;
@@ -23,7 +24,6 @@ import java.util.Set;
 import nl.fh.group.Element;
 import nl.fh.group.Group;
 import nl.fh.group.Multiplicator;
-import nl.fh.group_calculators.GroupProperty;
 import nl.fh.checker.GroupChecker;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.GroupException;

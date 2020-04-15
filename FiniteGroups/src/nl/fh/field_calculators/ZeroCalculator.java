@@ -14,40 +14,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package nl.fh.number;
+package nl.fh.field_calculators;
 
-import nl.fh.lattice.LatticeComparator;
-import nl.fh.lattice.LatticeComparison;
+import nl.fh.calculator.Calculator;
+import nl.fh.calculator.EvaluationException;
+import nl.fh.field.Field;
+import nl.fh.field.FieldElement;
+import nl.fh.field.Polynomial;
 
 /**
- *
- *  Comparator on the division lattice of the integers
+ * Calculator returns the additive unit(zero) of a field
  * 
- *  t1 < t2 iff t1 divides t2
  * 
  * @author frank
  */
-public class DivisionLatticeComparator implements LatticeComparator<Integer> {
+public class ZeroCalculator implements Calculator<Field> {
 
     @Override
-    public LatticeComparison compare(Integer t1, Integer t2) {
-        if((t1 < 1)||(t2 < 1)){
-            throw new IllegalArgumentException();
-        }
-        
-        if(t1.equals(t2)){
-            return LatticeComparison.Equal;
-        }
-        
-        if(t1 % t2 == 0){
-            return LatticeComparison.Greater;
-        }
-        
-         if(t2 % t1 == 0){
-            return LatticeComparison.Smaller;
-        }
-         
-        return LatticeComparison.Unrelated;
+    public FieldElement evaluate(Field field) throws EvaluationException {
+        return new FieldElement(new Polynomial(new int[]{0}), field);
     }
+
     
 }

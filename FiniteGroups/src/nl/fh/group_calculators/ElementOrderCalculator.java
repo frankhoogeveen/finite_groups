@@ -30,13 +30,6 @@ import nl.fh.group.Multiplicator;
  * @author frank
  */
 class ElementOrderCalculator implements Calculator<Group> {
-    
-    
-    /**
-     *
-     */
-    ElementOrderCalculator() {
-    }
 
     @Override
     public Map<Element, Integer> evaluate(Group group) throws EvaluationException {
@@ -47,6 +40,7 @@ class ElementOrderCalculator implements Calculator<Group> {
         for(Element g : group){
            map.put(g, calculateOrder(g, mult, unit));
         }
+        
         return map;
     }
     

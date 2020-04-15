@@ -47,5 +47,4 @@ public class PropertyCache<P extends Property> {
         }
         return cache.get(property);
     }
-    
 }

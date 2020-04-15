@@ -65,8 +65,7 @@ public class GroupChecker {
      * @throws EvaluationException if the group operation is not defined
      */
     public boolean isGroup(Group group) throws EvaluationException{
-
-        boolean result = true;
+        
         try{
             checkClosed(group);
             checkNeutralElement(group);

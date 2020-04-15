@@ -22,7 +22,6 @@ import nl.fh.calculator.Calculator;
 import nl.fh.calculator.EvaluationException;
 import nl.fh.group.Group;
 import nl.fh.group.GroupException;
-import nl.fh.group_calculators.GroupProperty;
 import nl.fh.group_def_semidirect_product.GroupSemiDirectProduct;
 import nl.fh.homomorphism.GroupHomomorphism;
 import nl.fh.homomorphism.HomomorphismException;

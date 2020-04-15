@@ -19,7 +19,7 @@ package nl.fh.group_formatter;
 import java.util.ArrayList;
 import java.util.List;
 import nl.fh.group.Group;
-import nl.fh.group_catalogue.GroupCatalog;
+import nl.fh.catalogue.GroupCatalog;
 
 /**
  *

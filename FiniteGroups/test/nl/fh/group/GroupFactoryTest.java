@@ -16,8 +16,8 @@
  */
 package nl.fh.group;
 
-import nl.fh.group_definition_factory.GroupFactory;
 import nl.fh.group_calculators.GroupProperty;
+import nl.fh.factory.GroupFactory;
 import nl.fh.calculator.EvaluationException;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
