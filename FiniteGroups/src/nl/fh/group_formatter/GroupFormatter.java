@@ -37,6 +37,7 @@ public class GroupFormatter {
         this.list.add(new GroupHeaderFormatter(this));
         this.list.add(new OrderFormatter(this));
         this.list.add(new IsAbeleanFormatter(this));
+        this.list.add(new RankFormatter(this));
         this.list.add(new CenterFormatter(this));
         this.list.add(new DerivedGroupFormatter(this));
         this.list.add(new AbeleanizationFormatter(this));

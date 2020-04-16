@@ -5,6 +5,7 @@ C1
 Order: 1  =1
 exponent: 1
 Is abelean: true
+rank: 0
 Order of Z(G): 1  identified as:C1
 Order of der(G): 1  identified as:C1
 Order of ab(G): 1  identified as:C1
@@ -33,6 +34,7 @@ C2
 Order: 2  =2
 exponent: 2
 Is abelean: true
+rank: 1
 Order of Z(G): 2  identified as:C2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 2  identified as:C2
@@ -67,6 +69,7 @@ C3
 Order: 3  =3
 exponent: 3
 Is abelean: true
+rank: 1
 Order of Z(G): 3  identified as:C3
 Order of der(G): 1  identified as:C1
 Order of ab(G): 3  identified as:C3
@@ -101,6 +104,7 @@ C4
 Order: 4  =2^2
 exponent: 4
 Is abelean: true
+rank: 1
 Order of Z(G): 4  identified as:C4
 Order of der(G): 1  identified as:C1
 Order of ab(G): 4  identified as:C4
@@ -139,6 +143,7 @@ C2xC2
 Order: 4  =2^2
 exponent: 2
 Is abelean: true
+rank: 2
 Order of Z(G): 4  identified as:C2xC2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 4  identified as:C2xC2
@@ -184,6 +189,7 @@ C5
 Order: 5  =5
 exponent: 5
 Is abelean: true
+rank: 1
 Order of Z(G): 5  identified as:C5
 Order of der(G): 1  identified as:C1
 Order of ab(G): 5  identified as:C5
@@ -218,6 +224,7 @@ C6
 Order: 6  =2*3
 exponent: 6
 Is abelean: true
+rank: 1
 Order of Z(G): 6  identified as:C6
 Order of der(G): 1  identified as:C1
 Order of ab(G): 6  identified as:C6
@@ -263,6 +270,7 @@ S3
 Order: 6  =2*3
 exponent: 6
 Is abelean: false
+rank: 2
 Order of Z(G): 1  identified as:C1
 Order of der(G): 3  identified as:C3
 Order of ab(G): 2  identified as:C2
@@ -314,6 +322,7 @@ C7
 Order: 7  =7
 exponent: 7
 Is abelean: true
+rank: 1
 Order of Z(G): 7  identified as:C7
 Order of der(G): 1  identified as:C1
 Order of ab(G): 7  identified as:C7
@@ -348,6 +357,7 @@ C8
 Order: 8  =2^3
 exponent: 8
 Is abelean: true
+rank: 1
 Order of Z(G): 8  identified as:C8
 Order of der(G): 1  identified as:C1
 Order of ab(G): 8  identified as:C8
@@ -390,6 +400,7 @@ C4xC2
 Order: 8  =2^3
 exponent: 4
 Is abelean: true
+rank: 2
 Order of Z(G): 8  identified as:C4xC2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 8  identified as:C4xC2
@@ -445,6 +456,7 @@ C2xC2xC2
 Order: 8  =2^3
 exponent: 2
 Is abelean: true
+rank: 3
 Order of Z(G): 8  identified as:C2xC2xC2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 8  identified as:C2xC2xC2
@@ -527,6 +539,7 @@ D4
 Order: 8  =2^3
 exponent: 4
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 2  identified as:C2
 Order of ab(G): 4  identified as:C2xC2
@@ -585,6 +598,7 @@ Q2
 Order: 8  =2^3
 exponent: 4
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 2  identified as:C2
 Order of ab(G): 4  identified as:C2xC2
@@ -634,6 +648,7 @@ C9
 Order: 9  =3^2
 exponent: 9
 Is abelean: true
+rank: 1
 Order of Z(G): 9  identified as:C9
 Order of der(G): 1  identified as:C1
 Order of ab(G): 9  identified as:C9
@@ -672,6 +687,7 @@ C3xC3
 Order: 9  =3^2
 exponent: 3
 Is abelean: true
+rank: 2
 Order of Z(G): 9  identified as:C3xC3
 Order of der(G): 1  identified as:C1
 Order of ab(G): 9  identified as:C3xC3
@@ -721,6 +737,7 @@ C10
 Order: 10  =2*5
 exponent: 10
 Is abelean: true
+rank: 1
 Order of Z(G): 10  identified as:C10
 Order of der(G): 1  identified as:C1
 Order of ab(G): 10  identified as:C10
@@ -766,6 +783,7 @@ D5
 Order: 10  =2*5
 exponent: 10
 Is abelean: false
+rank: 2
 Order of Z(G): 1  identified as:C1
 Order of der(G): 5  identified as:C5
 Order of ab(G): 2  identified as:C2
@@ -825,6 +843,7 @@ C11
 Order: 11  =11
 exponent: 11
 Is abelean: true
+rank: 1
 Order of Z(G): 11  identified as:C11
 Order of der(G): 1  identified as:C1
 Order of ab(G): 11  identified as:C11
@@ -859,6 +878,7 @@ C12
 Order: 12  =2^2*3
 exponent: 12
 Is abelean: true
+rank: 1
 Order of Z(G): 12  identified as:C12
 Order of der(G): 1  identified as:C1
 Order of ab(G): 12  identified as:C12
@@ -912,6 +932,7 @@ C3xC2xC2
 Order: 12  =2^2*3
 exponent: 6
 Is abelean: true
+rank: 2
 Order of Z(G): 12  identified as:C3xC2xC2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 12  identified as:C3xC2xC2
@@ -977,6 +998,7 @@ D6
 Order: 12  =2^2*3
 exponent: 6
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 3  identified as:C3
 Order of ab(G): 4  identified as:C2xC2
@@ -1056,6 +1078,7 @@ Q3
 Order: 12  =2^2*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 3  identified as:C3
 Order of ab(G): 4  identified as:C4
@@ -1115,6 +1138,7 @@ A4
 Order: 12  =2^2*3
 exponent: 6
 Is abelean: false
+rank: 2
 Order of Z(G): 1  identified as:C1
 Order of der(G): 4  identified as:C2xC2
 Order of ab(G): 3  identified as:C3
@@ -1176,6 +1200,7 @@ C13
 Order: 13  =13
 exponent: 13
 Is abelean: true
+rank: 1
 Order of Z(G): 13  identified as:C13
 Order of der(G): 1  identified as:C1
 Order of ab(G): 13  identified as:C13
@@ -1210,6 +1235,7 @@ C14
 Order: 14  =2*7
 exponent: 14
 Is abelean: true
+rank: 1
 Order of Z(G): 14  identified as:C14
 Order of der(G): 1  identified as:C1
 Order of ab(G): 14  identified as:C14
@@ -1255,6 +1281,7 @@ D7
 Order: 14  =2*7
 exponent: 14
 Is abelean: false
+rank: 2
 Order of Z(G): 1  identified as:C1
 Order of der(G): 7  identified as:C7
 Order of ab(G): 2  identified as:C2
@@ -1322,6 +1349,7 @@ C15
 Order: 15  =3*5
 exponent: 15
 Is abelean: true
+rank: 1
 Order of Z(G): 15  identified as:C15
 Order of der(G): 1  identified as:C1
 Order of ab(G): 15  identified as:C15
@@ -1367,6 +1395,7 @@ C16
 Order: 16  =2^4
 exponent: 16
 Is abelean: true
+rank: 1
 Order of Z(G): 16  identified as:C16
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C16
@@ -1413,6 +1442,7 @@ C8xC2
 Order: 16  =2^4
 exponent: 8
 Is abelean: true
+rank: 2
 Order of Z(G): 16  identified as:C8xC2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C8xC2
@@ -1478,6 +1508,7 @@ C4xC4
 Order: 16  =2^4
 exponent: 4
 Is abelean: true
+rank: 2
 Order of Z(G): 16  identified as:C4xC4
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C4xC4
@@ -1554,6 +1585,7 @@ C4xC2xC2
 Order: 16  =2^4
 exponent: 4
 Is abelean: true
+rank: 3
 Order of Z(G): 16  identified as:C4xC2xC2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C4xC2xC2
@@ -1670,6 +1702,7 @@ C2xC2xC2xC2
 Order: 16  =2^4
 exponent: 2
 Is abelean: true
+rank: 4
 Order of Z(G): 16  identified as:C2xC2xC2xC2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 16  identified as:C2xC2xC2xC2
@@ -1913,6 +1946,7 @@ D4xC2
 Order: 16  =2^4
 exponent: 4
 Is abelean: false
+rank: 3
 Order of Z(G): 4  identified as:C2xC2
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C2xC2xC2
@@ -2038,6 +2072,7 @@ Q2xC2
 Order: 16  =2^4
 exponent: 4
 Is abelean: false
+rank: 3
 Order of Z(G): 4  identified as:C2xC2
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C2xC2xC2
@@ -2130,6 +2165,7 @@ D8
 Order: 16  =2^4
 exponent: 8
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 4  identified as:C4
 Order of ab(G): 4  identified as:C2xC2
@@ -2208,6 +2244,7 @@ Q4
 Order: 16  =2^4
 exponent: 8
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 4  identified as:C4
 Order of ab(G): 4  identified as:C2xC2
@@ -2270,6 +2307,7 @@ M4
 Order: 16  =2^4
 exponent: 8
 Is abelean: false
+rank: 2
 Order of Z(G): 4  identified as:C4
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C4xC2
@@ -2335,6 +2373,7 @@ SD4
 Order: 16  =2^4
 exponent: 8
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 4  identified as:C4
 Order of ab(G): 4  identified as:C2xC2
@@ -2406,6 +2445,7 @@ MC(4,4,3)
 Order: 16  =2^4
 exponent: 4
 Is abelean: false
+rank: 2
 Order of Z(G): 4  identified as:C2xC2
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C4xC2
@@ -2478,6 +2518,7 @@ G16_1
 Order: 16  =2^4
 exponent: 4
 Is abelean: false
+rank: 2
 Order of Z(G): 4  identified as:C2xC2
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C4xC2
@@ -2567,6 +2608,7 @@ G16_2
 Order: 16  =2^4
 exponent: 4
 Is abelean: false
+rank: 3
 Order of Z(G): 4  identified as:C4
 Order of der(G): 2  identified as:C2
 Order of ab(G): 8  identified as:C2xC2xC2
@@ -2667,6 +2709,7 @@ C17
 Order: 17  =17
 exponent: 17
 Is abelean: true
+rank: 1
 Order of Z(G): 17  identified as:C17
 Order of der(G): 1  identified as:C1
 Order of ab(G): 17  identified as:C17
@@ -2701,6 +2744,7 @@ C18
 Order: 18  =2*3^2
 exponent: 18
 Is abelean: true
+rank: 1
 Order of Z(G): 18  identified as:C18
 Order of der(G): 1  identified as:C1
 Order of ab(G): 18  identified as:C18
@@ -2754,6 +2798,7 @@ C3xC3xC2
 Order: 18  =2*3^2
 exponent: 6
 Is abelean: true
+rank: 2
 Order of Z(G): 18  identified as:C3xC3xC2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 18  identified as:C3xC3xC2
@@ -2826,6 +2871,7 @@ C3xS3
 Order: 18  =2*3^2
 exponent: 6
 Is abelean: false
+rank: 2
 Order of Z(G): 3  identified as:C3
 Order of der(G): 3  identified as:C3
 Order of ab(G): 6  identified as:C6
@@ -2899,6 +2945,7 @@ D9
 Order: 18  =2*3^2
 exponent: 18
 Is abelean: false
+rank: 2
 Order of Z(G): 1  identified as:C1
 Order of der(G): 9  identified as:C9
 Order of ab(G): 2  identified as:C2
@@ -2978,6 +3025,7 @@ C2⋊C3xC3
 Order: 18  =2*3^2
 exponent: 6
 Is abelean: false
+rank: 3
 Order of Z(G): 1  identified as:C1
 Order of der(G): 9  identified as:C3xC3
 Order of ab(G): 2  identified as:C2
@@ -3092,6 +3140,7 @@ C19
 Order: 19  =19
 exponent: 19
 Is abelean: true
+rank: 1
 Order of Z(G): 19  identified as:C19
 Order of der(G): 1  identified as:C1
 Order of ab(G): 19  identified as:C19
@@ -3126,6 +3175,7 @@ C20
 Order: 20  =2^2*5
 exponent: 20
 Is abelean: true
+rank: 1
 Order of Z(G): 20  identified as:C20
 Order of der(G): 1  identified as:C1
 Order of ab(G): 20  identified as:C20
@@ -3179,6 +3229,7 @@ C10xC2
 Order: 20  =2^2*5
 exponent: 10
 Is abelean: true
+rank: 2
 Order of Z(G): 20  identified as:C10xC2
 Order of der(G): 1  identified as:C1
 Order of ab(G): 20  identified as:C10xC2
@@ -3244,6 +3295,7 @@ D10
 Order: 20  =2^2*5
 exponent: 10
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 5  identified as:C5
 Order of ab(G): 4  identified as:C2xC2
@@ -3339,6 +3391,7 @@ Q5
 Order: 20  =2^2*5
 exponent: 20
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 5  identified as:C5
 Order of ab(G): 4  identified as:C4
@@ -3406,6 +3459,7 @@ MC(5,4,2)
 Order: 20  =2^2*5
 exponent: 20
 Is abelean: false
+rank: 2
 Order of Z(G): 1  identified as:C1
 Order of der(G): 5  identified as:C5
 Order of ab(G): 4  identified as:C4
@@ -3479,6 +3533,7 @@ C21
 Order: 21  =3*7
 exponent: 21
 Is abelean: true
+rank: 1
 Order of Z(G): 21  identified as:C21
 Order of der(G): 1  identified as:C1
 Order of ab(G): 21  identified as:C21
@@ -3524,6 +3579,7 @@ MC(7,3,2)
 Order: 21  =3*7
 exponent: 21
 Is abelean: false
+rank: 2
 Order of Z(G): 1  identified as:C1
 Order of der(G): 7  identified as:C7
 Order of ab(G): 3  identified as:C3
@@ -3591,6 +3647,7 @@ C22
 Order: 22  =2*11
 exponent: 22
 Is abelean: true
+rank: 1
 Order of Z(G): 22  identified as:C22
 Order of der(G): 1  identified as:C1
 Order of ab(G): 22  identified as:C22
@@ -3636,6 +3693,7 @@ D11
 Order: 22  =2*11
 exponent: 22
 Is abelean: false
+rank: 2
 Order of Z(G): 1  identified as:C1
 Order of der(G): 11  identified as:C11
 Order of ab(G): 2  identified as:C2
@@ -3719,6 +3777,7 @@ C23
 Order: 23  =23
 exponent: 23
 Is abelean: true
+rank: 1
 Order of Z(G): 23  identified as:C23
 Order of der(G): 1  identified as:C1
 Order of ab(G): 23  identified as:C23
@@ -3753,9 +3812,10 @@ C24
 Order: 24  =2^3*3
 exponent: 24
 Is abelean: true
-Order of Z(G): 24  identified as:TODO
+rank: 1
+Order of Z(G): 24  identified as:C24
 Order of der(G): 1  identified as:C1
-Order of ab(G): 24  identified as:TODO
+Order of ab(G): 24  identified as:C24
 Order of Phi(G): 4 identified as:C4   G/Phi(G): C6
 
 Order of inner automorphism group: 1   classified as: C1
@@ -3778,7 +3838,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 8
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as C24
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as C12
@@ -3805,7 +3865,7 @@ number of subgroups: 8
     quotient is identified as: C8
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: C24
 
 
 
@@ -3814,9 +3874,10 @@ C4xC3xC2
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: true
-Order of Z(G): 24  identified as:TODO
+rank: 2
+Order of Z(G): 24  identified as:C4xC3xC2
 Order of der(G): 1  identified as:C1
-Order of ab(G): 24  identified as:TODO
+Order of ab(G): 24  identified as:C4xC3xC2
 Order of Phi(G): 2 identified as:C2   G/Phi(G): C3xC2xC2
 
 Order of inner automorphism group: 1   classified as: C1
@@ -3837,7 +3898,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 16
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as C4xC3xC2
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as C12
@@ -3890,7 +3951,7 @@ number of subgroups: 16
     quotient is identified as: C3xC2xC2
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: C4xC3xC2
 
 
 
@@ -3899,10 +3960,11 @@ C3xC2xC2xC2
 Order: 24  =2^3*3
 exponent: 6
 Is abelean: true
-Order of Z(G): 24  identified as:TODO
+rank: 3
+Order of Z(G): 24  identified as:C3xC2xC2xC2
 Order of der(G): 1  identified as:C1
-Order of ab(G): 24  identified as:TODO
-Order of Phi(G): 1 identified as:C1   G/Phi(G): TODO
+Order of ab(G): 24  identified as:C3xC2xC2xC2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C3xC2xC2xC2
 
 Order of inner automorphism group: 1   classified as: C1
 Outer automorphism group not calculated
@@ -3920,7 +3982,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 32
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as C3xC2xC2xC2
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as C3xC2xC2
@@ -4025,7 +4087,7 @@ number of subgroups: 32
     quotient is identified as: C3xC2xC2
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: C3xC2xC2xC2
 
 
 
@@ -4034,10 +4096,11 @@ C2xD6
 Order: 24  =2^3*3
 exponent: 6
 Is abelean: false
+rank: 3
 Order of Z(G): 4  identified as:C2xC2
 Order of der(G): 3  identified as:C3
 Order of ab(G): 8  identified as:C2xC2xC2
-Order of Phi(G): 1 identified as:C1   G/Phi(G): TODO
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C2xD6
 
 Order of inner automorphism group: 6   classified as: S3
 Order of automorphism group: 144
@@ -4056,7 +4119,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 54
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as C2xD6
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as C3xC2xC2
@@ -4198,7 +4261,7 @@ number of subgroups: 54
     is normal: false
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: C2xD6
 
 
 
@@ -4207,6 +4270,7 @@ C2xQ3
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 4  identified as:C2xC2
 Order of der(G): 3  identified as:C3
 Order of ab(G): 8  identified as:C4xC2
@@ -4229,7 +4293,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 22
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as C2xQ3
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as Q3
@@ -4295,7 +4359,7 @@ number of subgroups: 22
     quotient is identified as: D6
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: C2xQ3
 
 
 
@@ -4304,10 +4368,11 @@ C2xA4
 Order: 24  =2^3*3
 exponent: 6
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 4  identified as:C2xC2
 Order of ab(G): 6  identified as:C6
-Order of Phi(G): 1 identified as:C1   G/Phi(G): TODO
+Order of Phi(G): 1 identified as:C1   G/Phi(G): C2xA4
 
 Order of inner automorphism group: 12   classified as: A4
 Order of automorphism group: 24
@@ -4326,7 +4391,7 @@ Sylow Numbers:
     n_3 = 4
 
 number of subgroups: 26
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as C2xA4
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 6 identified as C6
@@ -4394,7 +4459,7 @@ number of subgroups: 26
     quotient is identified as: A4
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: C2xA4
 
 
 
@@ -4403,6 +4468,7 @@ C3xD4
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 6  identified as:C6
 Order of der(G): 2  identified as:C2
 Order of ab(G): 12  identified as:C3xC2xC2
@@ -4428,7 +4494,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 20
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as C3xD4
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as C3xC2xC2
@@ -4485,7 +4551,7 @@ number of subgroups: 20
     is normal: false
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: C3xD4
 
 
 
@@ -4494,6 +4560,7 @@ C3xQ2
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 6  identified as:C6
 Order of der(G): 2  identified as:C2
 Order of ab(G): 12  identified as:C3xC2xC2
@@ -4517,7 +4584,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 12
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as C3xQ2
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as C12
@@ -4558,7 +4625,7 @@ number of subgroups: 12
     quotient is identified as: C3xC2xC2
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: C3xQ2
 
 
 
@@ -4567,6 +4634,7 @@ C4xS3
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 4  identified as:C4
 Order of der(G): 3  identified as:C3
 Order of ab(G): 8  identified as:C4xC2
@@ -4592,7 +4660,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 26
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as C4xS3
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as C12
@@ -4664,7 +4732,7 @@ number of subgroups: 26
     quotient is identified as: D6
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: C4xS3
 
 
 
@@ -4673,12 +4741,13 @@ S4
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 1  identified as:C1
 Order of der(G): 12  identified as:A4
 Order of ab(G): 2  identified as:C2
-Order of Phi(G): 1 identified as:C1   G/Phi(G): TODO
+Order of Phi(G): 1 identified as:C1   G/Phi(G): S4
 
-Order of inner automorphism group: 24   classified as: TODO
+Order of inner automorphism group: 24   classified as: S4
 Order of automorphism group: 24
 Order of outer automorphism group: 1
 
@@ -4695,7 +4764,7 @@ Sylow Numbers:
     n_3 = 4
 
 number of subgroups: 30
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as S4
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as A4
@@ -4773,7 +4842,7 @@ number of subgroups: 30
     is normal: false
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: S4
 
 
 
@@ -4782,6 +4851,7 @@ D12
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 6  identified as:C6
 Order of ab(G): 4  identified as:C2xC2
@@ -4806,7 +4876,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 34
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as D12
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as D6
@@ -4892,7 +4962,7 @@ number of subgroups: 34
     is normal: false
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: D12
 
 
 
@@ -4901,6 +4971,7 @@ Q6
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 6  identified as:C6
 Order of ab(G): 4  identified as:C2xC2
@@ -4925,7 +4996,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 18
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as Q6
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as Q3
@@ -4979,7 +5050,7 @@ number of subgroups: 18
     quotient is identified as: D6
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: Q6
 
 
 
@@ -4988,6 +5059,7 @@ SL(2,F_3)
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 8  identified as:Q2
 Order of ab(G): 3  identified as:C3
@@ -5010,7 +5082,7 @@ Sylow Numbers:
     n_3 = 4
 
 number of subgroups: 15
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as SL(2,F_3)
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 8 identified as Q2
@@ -5053,7 +5125,7 @@ number of subgroups: 15
     quotient is identified as: A4
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: SL(2,F_3)
 
 
 
@@ -5062,6 +5134,7 @@ MC(3,8,2)
 Order: 24  =2^3*3
 exponent: 24
 Is abelean: false
+rank: 2
 Order of Z(G): 4  identified as:C4
 Order of der(G): 3  identified as:C3
 Order of ab(G): 8  identified as:C8
@@ -5086,7 +5159,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 10
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as MC(3,8,2)
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as C12
@@ -5120,7 +5193,7 @@ number of subgroups: 10
     quotient is identified as: Q3
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: MC(3,8,2)
 
 
 
@@ -5129,6 +5202,7 @@ G24_1
 Order: 24  =2^3*3
 exponent: 12
 Is abelean: false
+rank: 2
 Order of Z(G): 2  identified as:C2
 Order of der(G): 6  identified as:C6
 Order of ab(G): 4  identified as:C2xC2
@@ -5153,7 +5227,7 @@ Sylow Numbers:
     n_3 = 1
 
 number of subgroups: 30
-----subgroup of order: 24 identified as TODO
+----subgroup of order: 24 identified as G24_1
     is normal: true
     quotient is identified as: C1
 ----subgroup of order: 12 identified as D6
@@ -5231,7 +5305,7 @@ number of subgroups: 30
     is normal: false
 ----subgroup of order: 1 identified as C1
     is normal: true
-    quotient is identified as: TODO
+    quotient is identified as: G24_1
 
 
 --- end of  SmallGroupCatalog [74 items] ---

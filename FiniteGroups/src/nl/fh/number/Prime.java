@@ -37,7 +37,7 @@ public class Prime {
         }
         
         if(n >= sieve.size()){
-            updateSieve(n);
+            updateSieve(2 * n);
         }
         
         return sieve.get(n);
