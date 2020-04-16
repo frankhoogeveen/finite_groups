@@ -253,5 +253,19 @@ public class SmallGroupCatalog extends GroupCatalog {
         
         Group g24 = factory.getGroup24_1();
         super.add(g24);
+        
+        /* order twenty five */
+        Group c25= factory.getCyclicGroup(25);
+        super.add(c25);
+        
+        Group c5xc5 = GroupProduct.of(new Group[]{c5, c5});
+        super.add(c5xc5);  
+        
+        /* order twenty six */
+        Group c26 = factory.getCyclicGroup(26);
+        super.add(c26);
+        
+        Group d13 = factory.getDihedralGroup(13);
+        super.add(d13);        
     }
 }

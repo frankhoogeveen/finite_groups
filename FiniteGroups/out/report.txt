@@ -1,4 +1,4 @@
-*** SmallGroupCatalog [74 items] ***
+*** SmallGroupCatalog [78 items] ***
 
 ================================================================================
 C1
@@ -5308,4 +5308,239 @@ number of subgroups: 30
     quotient is identified as: G24_1
 
 
---- end of  SmallGroupCatalog [74 items] ---
+
+================================================================================
+C25
+Order: 25  =5^2
+exponent: 25
+Is abelean: true
+rank: 1
+Order of Z(G): 25  identified as:unidentified
+Order of der(G): 1  identified as:C1
+Order of ab(G): 25  identified as:unidentified
+Order of Phi(G): 5 identified as:C5   G/Phi(G): C5
+
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+Total number of conjugation classes: 25
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 5  size: 1 count: 4
+order: 25  size: 1 count: 20
+
+Sylow Numbers:
+    n_5 = 1
+
+number of subgroups: 3
+----subgroup of order: 25 identified as unidentified
+    is Sylow
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 5 identified as C5
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C5
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C5xC5
+Order: 25  =5^2
+exponent: 5
+Is abelean: true
+rank: 2
+Order of Z(G): 25  identified as:unidentified
+Order of der(G): 1  identified as:C1
+Order of ab(G): 25  identified as:unidentified
+Order of Phi(G): 1 identified as:C1   G/Phi(G): unidentified
+
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+Total number of conjugation classes: 25
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 5  size: 1 count: 24
+
+Sylow Numbers:
+    n_5 = 1
+
+number of subgroups: 8
+----subgroup of order: 25 identified as unidentified
+    is Sylow
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 5 identified as C5
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C5
+----subgroup of order: 5 identified as C5
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C5
+----subgroup of order: 5 identified as C5
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C5
+----subgroup of order: 5 identified as C5
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C5
+----subgroup of order: 5 identified as C5
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C5
+----subgroup of order: 5 identified as C5
+    is maximal subgroup
+    is normal: true
+    quotient is identified as: C5
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+C26
+Order: 26  =2*13
+exponent: 26
+Is abelean: true
+rank: 1
+Order of Z(G): 26  identified as:unidentified
+Order of der(G): 1  identified as:C1
+Order of ab(G): 26  identified as:unidentified
+Order of Phi(G): 1 identified as:C1   G/Phi(G): unidentified
+
+Order of inner automorphism group: 1   classified as: C1
+Outer automorphism group not calculated
+Outer automorphism group not calculated
+
+Total number of conjugation classes: 26
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 1 count: 1
+order: 26  size: 1 count: 12
+order: 13  size: 1 count: 12
+
+Sylow Numbers:
+    n_2 = 1
+    n_13 = 1
+
+number of subgroups: 4
+----subgroup of order: 26 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 13 identified as C13
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C13
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+
+================================================================================
+D13
+Order: 26  =2*13
+exponent: 26
+Is abelean: false
+rank: 2
+Order of Z(G): 1  identified as:C1
+Order of der(G): 13  identified as:C13
+Order of ab(G): 2  identified as:C2
+Order of Phi(G): 1 identified as:C1   G/Phi(G): unidentified
+
+Order of inner automorphism group: 26   classified as: unidentified
+Order of automorphism group: 156
+Order of outer automorphism group: 6
+
+Total number of conjugation classes: 8
+number of conjugation class by size and order of the elements:
+order: 1  size: 1 count: 1
+order: 2  size: 13 count: 1
+order: 13  size: 2 count: 6
+
+Sylow Numbers:
+    n_2 = 13
+    n_13 = 1
+
+number of subgroups: 16
+----subgroup of order: 26 identified as unidentified
+    is normal: true
+    quotient is identified as: C1
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 13 identified as C13
+    is maximal subgroup
+    is Sylow
+    is normal: true
+    quotient is identified as: C2
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 2 identified as C2
+    is maximal subgroup
+    is Sylow
+    is normal: false
+----subgroup of order: 1 identified as C1
+    is normal: true
+    quotient is identified as: unidentified
+
+
+--- end of  SmallGroupCatalog [78 items] ---

@@ -81,6 +81,8 @@ public class GroupClassifier {
             case 22 : return classify22(group);  
             case 23 : return "C23";
             case 24 : return classify24(group);
+            case 25 : return classify25(group);
+            case 26 : return classify26(group);            
             
             default : return UNKNOWN;
         }
@@ -286,5 +288,23 @@ public class GroupClassifier {
             result += profile.get(order).keySet().size();
         }
         return result;
+    }
+
+    private String classify25(Group group) throws EvaluationException {
+        Map<Integer, Map<Integer, Integer>> profile = ( Map<Integer, Map<Integer, Integer>>)group.getProperty(GroupProperty.ConjugationProfile);
+        
+        if(getCount(25, 1, profile) == 20){ return "C25";}
+        if(getCount( 5, 1, profile) == 24){ return "C5xC5";}
+                
+        return ERROR;
+    }
+
+    private String classify26(Group group) throws EvaluationException {
+        Map<Integer, Map<Integer, Integer>> profile = ( Map<Integer, Map<Integer, Integer>>)group.getProperty(GroupProperty.ConjugationProfile);
+        
+        if(getCount(26, 1, profile) == 12){ return "C26";}
+        if(getCount(13, 2, profile) == 6){ return "D13";}
+                
+        return ERROR;
     }
 }
